@@ -1,0 +1,30 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<Dialogue>
+	<_nodes>
+		<Node>
+			<_ID>0</_ID>
+			<_text>Wow! So this is what it's like to exist in this miserable and unforgiving world! Incredible!
+Let's keep going!</_text>
+			<_name>Trevor</_name>
+			<_options>
+				<dialogueOption>
+					<_text>Hello, how is it going?</_text>
+					<_dest>1</_dest>
+				</dialogueOption>
+			</_options>
+		</Node>
+
+		<Node>
+			<_ID>1</_ID>
+			<_text>Damn!</_text>
+			<_name>Mike</_name>
+			<_options>
+				<dialogueOption>
+					<_text>Where am I?</_text>
+					<_dest>-1</_dest>
+				</dialogueOption>
+			</_options>
+		</Node>
+
+	</_nodes>
+</Dialogue>
