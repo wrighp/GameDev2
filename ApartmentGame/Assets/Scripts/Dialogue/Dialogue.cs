@@ -4,9 +4,11 @@ using UnityEngine;
 using System.Xml.Serialization;
 using System.IO;
 
+//get the root tag with the information you want to deserialize
 [XmlRoot("Dialogue")]
 public class Dialogue{
 	
+	//list of Node objects under _nodes
 	[XmlArray("_nodes")]
 	[XmlArrayItem("Node")]
 	public List<Node> _nodes;
@@ -14,7 +16,7 @@ public class Dialogue{
 	public Dialogue(){
 		_nodes = new List<Node>();
 	}
-	
+	/*
 	public void addNode(Node node){
 		if (node == null)	return;
 		
@@ -37,8 +39,9 @@ public class Dialogue{
 		
 		start._options.Add(option);
 		
-	}
+	}*/
 	
+	//static dialogue loader for use of all instances of Dialogue
 	public static Dialogue Load(string path){
 		
 		TextAsset _xml = Resources.Load<TextAsset>(path);

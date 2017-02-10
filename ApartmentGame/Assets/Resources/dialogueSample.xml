@@ -12,6 +12,19 @@ Let's keep going!</_text>
 					<_dest>1</_dest>
 				</dialogueOption>
 			</_options>
+			<_calls>
+				<Call _m="LogBulletPoints">
+					<_arg>Argument</_arg>
+					<_lst>
+						<Lst>
+							<_s>Alice</_s>
+							<_s>Alice</_s>
+							<_s>Alice</_s>
+							<_s>Alice</_s>
+						</Lst>
+					</_lst>
+				</Call>
+			</_calls>
 		</Node>
 
 		<Node>

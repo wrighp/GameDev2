@@ -139,6 +139,8 @@ public class npcDialogue : MonoBehaviour {
 		//while the node isn't an exit node...
 		while(nodeID!=-1){
 			updateText(dialogue._nodes[nodeID]);
+			//testing out the execute function
+			dialogue._nodes[nodeID]._calls[0].execute();
 			
 			select = -2;
 			while(select == -2){

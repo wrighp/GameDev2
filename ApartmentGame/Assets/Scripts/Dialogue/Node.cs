@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Xml.Serialization;
-
+/*
+	Contains the dialogue, the character speaking and 
+	a list of dialogueOption objects for choices
+	as well as the list of methods and arguments for said methods
+*/
 [XmlRoot("Node")]
 public class Node{
 	
@@ -18,6 +22,10 @@ public class Node{
 	[XmlArray("_options")]
 	[XmlArrayItem("dialogueOption")]
 	public List<dialogueOption> _options;
+	
+	[XmlArray("_calls")]
+	[XmlArrayItem("Call")]
+	public List<Call> _calls;
 	
 	//for serialization
 	public Node() {
