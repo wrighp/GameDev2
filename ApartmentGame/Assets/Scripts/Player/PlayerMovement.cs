@@ -8,15 +8,15 @@ using UnityEngine;
 [RequireComponent (typeof (Rigidbody))]
 public class PlayerMovement : MonoBehaviour {
 
-	public Camera camera;
+	public Camera cam;
 	public float acceleration;
 	public float maxSpeed; //Max horizontal speed (not vertical)
 	public ForceMode forceMode;
-	public Vector3 dir;
 	private Rigidbody rb;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
+		cam = cam ?? Camera.main;
 	}
 
 	// Update is called once per frame
@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		Vector3 camAngle = new Vector3(0, camera.transform.eulerAngles.y, 0);
+		Vector3 camAngle = new Vector3(0, cam.transform.eulerAngles.y, 0);
 		Quaternion quat = Quaternion.Euler(camAngle);
 		Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal"), 0 ,Input.GetAxisRaw("Vertical")).normalized;
 		//Input axis is now corrected for camera rotation
