@@ -24,20 +24,20 @@ public class PullFollow : MonoBehaviour {
 	}
 
 	void LateUpdate(){
-		Vector3 targetFlat = new Vector3(target.position.x, 0, target.position.z);
-		Vector3 posFlat = new Vector3(transform.position.x, 0, transform.position.z);
+		if (target != null) {
+			Vector3 targetFlat = new Vector3 (target.position.x, 0, target.position.z);
+			Vector3 posFlat = new Vector3 (transform.position.x, 0, transform.position.z);
 
-		float dist = Vector3.Distance(targetFlat, posFlat);
+			float dist = Vector3.Distance (targetFlat, posFlat);
 
-		if(dist < minDistance){
-			SetGoal(targetFlat, posFlat, minDistance);
+			if (dist < minDistance) {
+				SetGoal (targetFlat, posFlat, minDistance);
+			} else if (dist > maxDistance) {
+				SetGoal (targetFlat, posFlat, maxDistance);
+			}
+			goal.y = target.position.y + height;
+			transform.position = Vector3.Slerp (transform.position, goal, Time.deltaTime / followSpeed);
 		}
-		else if(dist > maxDistance){
-			SetGoal(targetFlat, posFlat, maxDistance);
-		}
-		goal.y = target.position.y + height;
-
-		transform.position = Vector3.Slerp(transform.position, goal, Time.deltaTime / followSpeed);
 	}
 
 	private void SetGoal(Vector3 targetFlat, Vector3 posFlat, float distance){

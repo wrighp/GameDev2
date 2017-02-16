@@ -23,9 +23,11 @@ GameObject:
   - component: {fileID: 92145791660236192}
   - component: {fileID: 124969652600071670}
   - component: {fileID: 81965221581450478}
-  - component: {fileID: 114072165470686222}
   - component: {fileID: 114854236794095796}
+  - component: {fileID: 114072165470686222}
   - component: {fileID: 114019723343142982}
+  - component: {fileID: 114683309640639218}
+  - component: {fileID: 114812045396402574}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -39,13 +41,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1164105548690514}
-  m_LocalRotation: {x: 0.20617832, y: 0.29113606, z: -0.06440707, w: 0.9319775}
-  m_LocalPosition: {x: -20.146317, y: 6.00039, z: -18.346136}
+  m_LocalRotation: {x: 0.010290529, y: 0.9886626, z: -0.12629981, w: 0.080553256}
+  m_LocalPosition: {x: -0.5, y: 10.8, z: 29.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 26.025002, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 14.56, y: 170.684, z: 0}
 --- !u!20 &20047408454492510
 Camera:
   m_ObjectHideFlags: 1
@@ -126,7 +128,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1164105548690514}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d947636a9390f6a46a121124154e6e3f, type: 3}
   m_Name: 
@@ -140,6 +142,33 @@ MonoBehaviour:
   m_BaseSwayAmount: 0.5
   m_TrackingSwayAmount: 0.5
   m_TrackingBias: 0
+--- !u!114 &114683309640639218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1164105548690514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eed1d9cbe64423499f1fefc0ce50417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Resolution: 1
+  DefaultSpotCookie: {fileID: 2800000, guid: 5157bf6d690b6df458f6c0ce0c06d329, type: 3}
+--- !u!114 &114812045396402574
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1164105548690514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f2c09e7ff953b4fac9445a9ad1b1bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFrameRate: -1
+  autoSetMaxFramerate: 1
+  vsync: 2
 --- !u!114 &114854236794095796
 MonoBehaviour:
   m_ObjectHideFlags: 1
