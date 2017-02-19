@@ -1,4 +1,4 @@
-﻿Shader "Custom/celShade_v3" {
+﻿Shader "Custom/celShade_v4" {
 	Properties {
 		_Color("Main Color", Color) = (1,1,1,1)
 		_UnlitColor("Shadow Color", Color) = (1, 1, 1, 1)
@@ -114,6 +114,7 @@
 				half rim = 1 - saturate(dot(viewD,normalD));
 					
 				float3 diffuseReflection = (1-specularCutoff) * _Color.xyz * diffuseCutoff;
+					
 				float3 specularReflection = /*_SpecColor use this to control 
 					the specular colour vs letting the light colour decide*/
 					_LightColor0.xyz * specularCutoff;
@@ -256,7 +257,7 @@
 				int shadow = (int) (shd+0.5);
 				
 				float3 lightFinal = rimLight + (
-					lerp(_UnlitColor.rgb, diffuseReflection, shadow)
+					lerp(_UnlitColor.rgb, diffuseReflection, shadow) 
 					) + specularReflection;
 					
 				//lightFinal = (ambientLight + diffuseReflection) * outlineStr + specularReflection
