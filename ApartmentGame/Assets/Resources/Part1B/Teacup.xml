@@ -1,0 +1,125 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<Dialogue>
+	<_yznodes>
+		<Node>
+			<_ID>0</_ID>
+			<_name>Ms. Teacup</_name>
+			<_text>How dare they-!</_text>
+			<_calls>
+				<Call _m="MoveToCharacter">
+					<_arg>Teacup</_arg>
+					<_arg>player</_arg>
+				</Call>
+			</_calls>
+			<_options><dialogueOption><_dest>1</_dest></dialogueOption></_options>
+		</Node>
+
+		<Node>
+			<_ID>1</_ID>
+			<_name>Ms. Teacup</_name>
+			<_text>How dare YOU-! You..- You and your…’people’, how DARE you let them violate my privacy with their- their-!\nThis never would’ve happened if [insert old landlord name here] was still around!</_text>
+			<_calls>
+				<Call _m="CharacterAnimation">
+					<_arg>Teacup</_arg>
+					<_arg>Boiling</_arg>
+				</Call>
+			</_calls>
+			<_options><dialogueOption><_dest>2</_dest></dialogueOption></_options>
+		</Node>
+		
+		<Node>
+			<_ID>2</_ID>
+			<_name>Danny</_name>
+			<_text>She seems upset! :D</_text>
+			<_calls>
+				<Call _m="CharacterAnimation">
+					<_arg>Danny</_arg>
+					<_arg>Salute</_arg>
+				</Call>
+			</_calls>
+			<_options><dialogueOption><_dest>3</_dest></dialogueOption></_options>
+		</Node>
+		
+		<Node>
+			<_ID>3</_ID>
+			<_name>Ms. Teacup</_name>
+			<_text>You. It was you, wasn’t it! Don’t think I don’t notice you eyeing my oranges with your greedy, little eyes-!</_text>
+			<_calls>
+				<Call _m="CharacterFaceTowards">
+					<_arg>Teacup</_arg>
+					<_arg>Danny</_arg>
+				</Call>
+			</_calls>
+			<_options>
+				<dialogueOption>
+					<_text>Are you okay?<_text>
+					<_dest>4</_dest>
+				</dialogueOption>
+				<dialogueOption>
+					<_text>Did someone trash your room?<_text>
+					<_dest>5</_dest>
+				</dialogueOption>
+			</_options>
+		</Node>
+		
+		<Node>
+			<_ID>4</_ID>
+			<_name>Ms. Teacup</_name>
+			<_text>Heavens, no, are you daft?! A rotten thief has violated my sanctuary, and as your most valued tenant I demand justice. Chop chop.</_text>
+			<_options><dialogueOption><_dest>6</_dest></dialogueOption></_options>
+		</Node>
+		
+		<Node>
+			<_ID>5</_ID>
+			<_name>Ms. Teacup</_name>
+			<_text>Did someone-- NO! My tree! Just look at it! A thief has stripped my poor baby bare! How could someone be so cruel...! I’ll tear their fucking head off!</_text>
+			<_options><dialogueOption><_dest>6</_dest></dialogueOption></_options>
+		</Node>
+		
+		<Node>
+			<_ID>6</_ID>
+			<_name>Danny</_name>
+			<_text>A thief…? That's impossible, Ms Teacup, everyone here is so nice!</_text>
+			<_options><dialogueOption><_dest>7</_dest></dialogueOption></_options>
+		</Node>
+		
+		<Node>
+			<_ID>7</_ID>
+			<_name>Ms. Teacup</_name>
+			<_text>Don’t be daft! Have you even spoken to any of these hoodlums more than twice in your whole life?</_text>
+			<_options><dialogueOption><_dest>8</_dest></dialogueOption></_options>
+		</Node>
+		
+		<Node>
+			<_ID>8</_ID>
+			<_name>Danny</_name>
+			<_text>Mr. Deer tells me to go play in the street a lot.</_text>
+			<_options><dialogueOption><_dest>9</_dest></dialogueOption></_options>
+		</Node>
+		
+		<Node>
+			<_ID>9</_ID>
+			<_name>Ms. Teacup</_name>
+			<_text>(scoffs)\nWhy do I waste my time... You’re all so useless! None of you possess the strength of character to aid me in my time of need...</_text>
+			<_options><dialogueOption><_dest>10</_dest></dialogueOption></_options>
+		</Node>
+		
+		<Node>
+			<_ID>10</_ID>
+			<_name>Danny</_name>
+			<_text>Oh… Don’t be upset Ms Teacup, I’ll help you find your oranges, just you watch! I’ll be your hero!</_text>
+			<_calls>
+				<Call _m="P1BDannyLeaves"></Call>
+			<_calls>
+			<_options><dialogueOption><_dest>11</_dest></dialogueOption></_options>
+		</Node>
+		
+		<Node>
+			<_ID>11</_ID>
+			<_name>Ms. Teacup</_name>
+			<_text>… “My hero”...? He’s starting to sound like...- bah, nevermind... It’s none of your business anyway...\n[Default]/nHuh-?! You can’t expect me to concentrate on your silly rent money at a time like this! Not until I get my oranges back for heaven’s sake! Shoo, shoo!</_text>
+			<_options><dialogueOption><_dest>-1</_dest></dialogueOption></_options>
+		</Node>
+		
+	</_nodes>
+</Dialogue>
