@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Test3
+  m_Name: Test4
   m_Shader: {fileID: 4800000, guid: 5b29daa8ef989c0478bab4f6eded171f, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
@@ -77,14 +77,11 @@ Material:
         name: _Cutoff
       second: 0.5
     - first:
-        name: _Cuts
-      second: 1
-    - first:
         name: _DetailNormalMapScale
       second: 1
     - first:
         name: _DiffuseThres
-      second: 0.432
+      second: 0.35
     - first:
         name: _DstBlend
       second: 0
@@ -111,7 +108,7 @@ Material:
       second: 0.02
     - first:
         name: _RimPow
-      second: 2.92
+      second: 4.33
     - first:
         name: _Shininess
       second: 1
@@ -133,16 +130,16 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0, g: 0.28128803, b: 0.9485294, a: 1}
+      second: {r: 1, g: 0, b: 0, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _RimCol
-      second: {r: 1, g: 1, b: 1, a: 1}
+      second: {r: 1, g: 0, b: 0.5586209, a: 1}
     - first:
         name: _SpecColor
-      second: {r: 1, g: 0.08823532, b: 0.08823532, a: 1}
+      second: {r: 0.8088235, g: 0.30925605, b: 0.30925605, a: 1}
     - first:
         name: _UnlitColor
-      second: {r: 0.7794118, g: 0.063040674, b: 0.063040674, a: 1}
+      second: {r: 0.35294116, g: 0.119377166, b: 0.119377166, a: 1}

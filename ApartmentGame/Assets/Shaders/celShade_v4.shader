@@ -99,6 +99,9 @@
 						)
 					);
 				
+				//attenuation will be < 1 when a point light is being used
+				//use this to prevent the light from
+				//showing further than it should be able to
 				float atten = lerp(1.0,1/distance, _WorldSpaceLightPos0.w);
 				
 				//get the dot product of the normal to the light
@@ -107,7 +110,7 @@
 				//lighting
 				//get cutoff values for the diffuse and specularity to get
 				//the cell shaded effect
-				float diffuseCutoff = saturate((max(_DiffuseThres, NDotL) - _DiffuseThres)*1000);
+				float diffuseCutoff = saturate((max(_DiffuseThres, NDotL) - _DiffuseThres/atten)*1000);
 				float specularCutoff = saturate(max(_Shininess, 
 					dot(reflect(-lightD,i.normalDir),viewD)) - _Shininess)*1000;
 					
@@ -239,7 +242,7 @@
 				float NDotL = saturate(dot(i.normalDir, lightD));
 				
 				//lighting
-				float diffuseCutoff = saturate((max(_DiffuseThres, NDotL) - _DiffuseThres)*1000);
+				float diffuseCutoff = saturate((max(_DiffuseThres, NDotL) - _DiffuseThres/atten)*1000);
 				//tone down the specularity
 				float specularCutoff = saturate(max(_Shininess, 
 					dot(reflect(-lightD,i.normalDir),viewD)) - (_Shininess*1.05))*1000;
@@ -270,4 +273,5 @@
 		// shadow casting support
         UsePass "Legacy Shaders/VertexLit/SHADOWCASTER"
 	}
+	FallBack "Diffuse"
 }
