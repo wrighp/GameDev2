@@ -104,6 +104,11 @@
 				//showing further than it should be able to
 				float atten = lerp(1.0,1/distance, _WorldSpaceLightPos0.w);
 				
+				float testDistance = length(lightD);
+				float3 L = lightD;
+				L/=distance;
+				float dotL = max(dot(L, i.normalDir), 0);
+				
 				//get the dot product of the normal to the light
 				float NDotL = saturate(dot(i.normalDir, lightD));
 				
@@ -138,13 +143,16 @@
 					//UNITY_LIGHTMODEL_AMBIENT;
 					
 				//lightFinal = (ambientLight + diffuseReflection) * outlineStr + specularReflection
+				UNITY_LIGHT_ATTENUATION(attenuation, i, float3(i.posWorld.xy, 0.0));
 				
+				float3 finalAddition = lerp(float3(1, 1, 1), dotL*attenuation, 
+					_WorldSpaceLightPos0.w);
 				//get the texture
 				//textureMaps
 				float4 tex = tex2D(_MainTex, i.tex.xy * _MainTex_ST.xy + 
 					_MainTex_ST.zw);
 				
-				return float4(tex.xyz * lightFinal * _Color.rgb, 1.0);
+				return float4(tex.xyz * lightFinal * _Color.rgb * finalAddition, 1.0);
 				
 			}
 			ENDCG
@@ -235,6 +243,11 @@
 						_WorldSpaceLightPos0.w
 						)
 					);
+					
+				float testDistance = length(lightD);
+				float3 L = lightD;
+				L/=distance;
+				float dotL = max(dot(L, i.normalDir), 0);
 				
 				float atten = lerp(1.0,1/distance, _WorldSpaceLightPos0.w);
 				
@@ -263,9 +276,14 @@
 					lerp(_UnlitColor.rgb, diffuseReflection, shadow) 
 					) + specularReflection;
 					
+				UNITY_LIGHT_ATTENUATION(attenuation, i, float3(i.posWorld.xy, 0.0));
+				
+				float3 finalAddition = lerp(float3(1, 1, 1), dotL*attenuation, 
+					_WorldSpaceLightPos0.w);
+					
 				//lightFinal = (ambientLight + diffuseReflection) * outlineStr + specularReflection
 				
-				return float4( lightFinal * _Color.rgb * _LightColor0.rgb, 1.0);
+				return float4(lightFinal * _Color.rgb * finalAddition, 1.0);
 				
 			}
 			ENDCG
