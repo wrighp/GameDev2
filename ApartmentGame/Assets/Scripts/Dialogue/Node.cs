@@ -23,9 +23,13 @@ public class Node{
 	[XmlArrayItem("dialogueOption")]
 	public List<dialogueOption> _options;
 	
-	[XmlArray("_calls")]
+	[XmlArray("_precalls")]
 	[XmlArrayItem("Call")]
-	public List<Call> _calls;
+	public List<Call> _precalls;
+	
+	[XmlArray("_postcalls")]
+	[XmlArrayItem("Call")]
+	public List<Call> _postcalls;
 	
 	//for serialization
 	public Node() {
