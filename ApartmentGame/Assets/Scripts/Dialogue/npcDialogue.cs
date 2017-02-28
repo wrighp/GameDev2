@@ -140,13 +140,13 @@ public class npcDialogue : MonoBehaviour {
 		while(nodeID!=-1){
 			updateText(dialogue._nodes[nodeID]);
 			//testing out the execute function
-			dialogue._nodes[nodeID]._calls[0].execute();
+			dialogue._nodes [nodeID]._precalls.ForEach ((Call c) => c.execute ());
 			
 			select = -2;
 			while(select == -2){
-				yield return new WaitForSeconds(0.25f);
+				yield return new WaitForEndOfFrame ();
 			}
-			
+			dialogue._nodes [nodeID]._postcalls.ForEach ((Call c) => c.execute ());
 			nodeID = select;
 		}
 		dialogueWindow.SetActive(false);
