@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 4ce8c384b99529e4ca43537ed7c9ebbd
-timeCreated: 1487084533
+guid: 87c2c5db311cabf41a3b2d02c63d33d2
+timeCreated: 1488343589
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,8 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pCube158
-    4300002: protag_body_geo:ambientLight2
+    4300000: PIPE:PIPE:PIPE:PIPE:PIPE:PIPE:pCube69
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -53,7 +52,7 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 1
+    normalImportMode: 0
     tangentImportMode: 3
   importAnimation: 1
   copyAvatar: 0

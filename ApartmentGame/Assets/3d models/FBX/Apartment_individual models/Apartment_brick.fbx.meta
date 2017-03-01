@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: 4ce8c384b99529e4ca43537ed7c9ebbd
-timeCreated: 1487084533
+guid: 30ae906125efe4845b67d9c0645e2255
+timeCreated: 1488057912
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: polySurface660
+    100004: transform8
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: pCube158
-    4300002: protag_body_geo:ambientLight2
+    400002: polySurface660
+    400004: transform8
+    2300000: polySurface660
+    3300000: polySurface660
+    4300000: polySurface660
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -53,7 +56,7 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 1
+    normalImportMode: 0
     tangentImportMode: 3
   importAnimation: 1
   copyAvatar: 0
