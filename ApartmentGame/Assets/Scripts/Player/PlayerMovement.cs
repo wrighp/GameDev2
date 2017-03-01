@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour {
 	public float acceleration;
 	public float maxSpeed; //Max horizontal speed (not vertical)
 	public ForceMode forceMode;
+	public LayerMask jumpMask;
+	public float jumpForce = 8f;
 	private Rigidbody rb;
 	// Use this for initialization
 	void Start () {
@@ -21,6 +23,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		
 	}
 
 	void FixedUpdate(){
@@ -37,8 +40,13 @@ public class PlayerMovement : MonoBehaviour {
 		Vector3 hVel = rb.velocity;
 		hVel.y = 0;
 		hVel = hVel.sqrMagnitude > maxSpeed * maxSpeed ? hVel.normalized * maxSpeed : hVel;
+		//Jumping
 		hVel.y =  rb.velocity.y;
 		rb.velocity = hVel;
+
+		if (Input.GetKeyDown (KeyCode.Space) && Physics.Raycast (transform.position, Vector3.down, 1.1f, jumpMask)) {
+			rb.AddForce (Vector3.up * jumpForce, ForceMode.Impulse);
+		}
 
 	}
 }
