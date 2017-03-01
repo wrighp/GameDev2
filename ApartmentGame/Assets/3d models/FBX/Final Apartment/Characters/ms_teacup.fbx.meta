@@ -1,25 +1,22 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: dc77380cdb4fd41248e96c2fdfd88a23
-timeCreated: 1488394528
-=======
-guid: 30ae906125efe4845b67d9c0645e2255
-timeCreated: 1488057912
->>>>>>> origin/master
+guid: 7d26152a558184e2b8762ad2d5011498
+timeCreated: 1488394523
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: polySurface660
-    100004: transform8
-    400000: //RootNode
-    400002: polySurface660
-    400004: transform8
-    2300000: polySurface660
-    3300000: polySurface660
-    4300000: polySurface660
-    9500000: //RootNode
+    100000: body
+    100002: dress
+    100004: //RootNode
+    400000: body
+    400002: dress
+    400004: //RootNode
+    2300000: body
+    2300002: dress
+    3300000: body
+    3300002: dress
+    4300000: dress
+    4300002: body
   materials:
     importMaterials: 1
     materialName: 0
@@ -82,7 +79,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

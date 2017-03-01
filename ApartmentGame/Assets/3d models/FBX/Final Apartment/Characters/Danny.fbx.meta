@@ -1,25 +1,34 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: dc77380cdb4fd41248e96c2fdfd88a23
-timeCreated: 1488394528
-=======
-guid: 30ae906125efe4845b67d9c0645e2255
-timeCreated: 1488057912
->>>>>>> origin/master
+guid: 3f6dcb8e46a89481398e927d3aa0db2a
+timeCreated: 1488394518
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: polySurface660
-    100004: transform8
-    400000: //RootNode
-    400002: polySurface660
-    400004: transform8
-    2300000: polySurface660
-    3300000: polySurface660
-    4300000: polySurface660
-    9500000: //RootNode
+    100000: backpack_geo
+    100002: //RootNode
+    100004: danny_head_geo
+    100006: work_clothes
+    100008: Danny
+    100010: body_geo
+    400000: backpack_geo
+    400002: //RootNode
+    400004: danny_head_geo
+    400006: work_clothes
+    400008: Danny
+    400010: body_geo
+    2300000: backpack_geo
+    2300002: danny_head_geo
+    2300004: work_clothes
+    2300006: body_geo
+    3300000: backpack_geo
+    3300002: danny_head_geo
+    3300004: work_clothes
+    3300006: body_geo
+    4300000: danny_head_geo
+    4300002: work_clothes
+    4300004: backpack_geo
+    4300006: body_geo
   materials:
     importMaterials: 1
     materialName: 0
@@ -82,7 +91,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
