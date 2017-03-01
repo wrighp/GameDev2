@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: ebff61041d0c9490f8497bfc943a10db
 timeCreated: 1488394529
 licenseType: Free
@@ -224,6 +225,14 @@ ModelImporter:
     4300008: polySurface1
     4300010: PIPE:PIPE:PIPE:PIPE:PIPE:PIPE:pCube69
     9500000: //RootNode
+=======
+guid: de08c8ecb89073948b4f0c0752e31e83
+timeCreated: 1488343590
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName: {}
+>>>>>>> origin/master
   materials:
     importMaterials: 1
     materialName: 0

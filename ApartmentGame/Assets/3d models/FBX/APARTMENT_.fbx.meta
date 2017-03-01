@@ -10,6 +10,7 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: pCube158
+    4300002: protag_body_geo:ambientLight2
     9500000: //RootNode
   materials:
     importMaterials: 1

@@ -115,7 +115,7 @@
 				//lighting
 				//get cutoff values for the diffuse and specularity to get
 				//the cell shaded effect
-				float diffuseCutoff = saturate((max(_DiffuseThres, NDotL) - _DiffuseThres/atten)*1000);
+				float diffuseCutoff = saturate((max(_DiffuseThres, NDotL) - _DiffuseThres/*atten*/)*1000);
 				float specularCutoff = saturate(max(_Shininess, 
 					dot(reflect(-lightD,i.normalDir),viewD)) - _Shininess)*1000;
 					
@@ -152,7 +152,7 @@
 				float4 tex = tex2D(_MainTex, i.tex.xy * _MainTex_ST.xy + 
 					_MainTex_ST.zw);
 				
-				return float4(tex.xyz * lightFinal * _Color.rgb * finalAddition, 1.0);
+				return float4(tex.xyz * lightFinal * _Color.rgb * _LightColor0 * finalAddition, 1.0);
 				
 			}
 			ENDCG
@@ -255,7 +255,7 @@
 				float NDotL = saturate(dot(i.normalDir, lightD));
 				
 				//lighting
-				float diffuseCutoff = saturate((max(_DiffuseThres, NDotL) - _DiffuseThres/atten)*1000);
+				float diffuseCutoff = saturate((max(_DiffuseThres, NDotL) - _DiffuseThres/*atten*/)*1000);
 				//tone down the specularity
 				float specularCutoff = saturate(max(_Shininess, 
 					dot(reflect(-lightD,i.normalDir),viewD)) - (_Shininess*1.05))*1000;
@@ -283,7 +283,7 @@
 					
 				//lightFinal = (ambientLight + diffuseReflection) * outlineStr + specularReflection
 				
-				return float4(lightFinal * _Color.rgb * finalAddition, 1.0);
+				return float4(lightFinal * _Color.rgb * _LightColor0 * finalAddition, 1.0);
 				
 			}
 			ENDCG

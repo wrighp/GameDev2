@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: d170fcc5353444b5bbbc486a08da472d
 timeCreated: 1488394528
 licenseType: Free
@@ -137,6 +138,14 @@ ModelImporter:
     4300034: protag_body_geo:buttons
     4300036: protag_body_geo:ambientLight2
     9500000: //RootNode
+=======
+guid: b836912baef5e3b4b904754d34051ee1
+timeCreated: 1488057912
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName: {}
+>>>>>>> origin/master
   materials:
     importMaterials: 1
     materialName: 0

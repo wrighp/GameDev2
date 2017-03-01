@@ -10,11 +10,13 @@ using System.IO;
 public class itemContainer{
 	
 	//array of items, each item in the array is of type Item
-	[XmlArray("Items")]
+	[XmlArray("_items")]
 	[XmlArrayItem("Item")]
 	
 	//Item list
-	public List<Item> items = new List<Item>();
+	public List<Item> _items;
+	
+	itemContainer(){_items = new List<Item>();}
 
 	public static itemContainer Load(string Path){
 		
