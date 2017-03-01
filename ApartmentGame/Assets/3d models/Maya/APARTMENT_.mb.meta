@@ -1,0 +1,207 @@
+fileFormatVersion: 2
+guid: d170fcc5353444b5bbbc486a08da472d
+timeCreated: 1488394528
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: protag_body_geo:ambientLight1
+    100004: protag_body_geo:ambientLight2
+    100006: protag_body_geo:apperal
+    100008: protag_body_geo:back1
+    100010: protag_body_geo:body1
+    100012: protag_body_geo:body_2
+    100014: protag_body_geo:body_base_hp
+    100016: protag_body_geo:body_base_lp
+    100018: protag_body_geo:body_geo
+    100020: protag_body_geo:body_geo 1
+    100022: protag_body_geo:buttons
+    100024: protag_body_geo:fan
+    100026: protag_body_geo:hair
+    100028: protag_body_geo:hair2
+    100030: protag_body_geo:hair_geo
+    100032: protag_body_geo:hat
+    100034: protag_body_geo:hat1
+    100036: protag_body_geo:outfit
+    100038: protag_body_geo:outfit_set
+    100040: protag_body_geo:pCube1
+    100042: protag_body_geo:pCube1 1
+    100044: protag_body_geo:pCylinder1
+    100046: protag_body_geo:pCylinder1 1
+    100048: protag_body_geo:pointLight1
+    100050: protag_body_geo:polySurface1
+    100052: protag_body_geo:Protag_body
+    100054: protag_body_geo:reference1
+    100056: protag_body_geo:shirt_thing
+    100058: protag_body_geo:transform1
+    100060: protag_body_geo:transform2
+    100062: protag_body_geo:transform3
+    100064: Sewers:back
+    100066: Sewers:polySurface2
+    100068: Sewers:polySurface4
+    100070: Sewers:polySurface5
+    100072: Sewers:pPipe3
+    400000: //RootNode
+    400002: protag_body_geo:ambientLight1
+    400004: protag_body_geo:ambientLight2
+    400006: protag_body_geo:apperal
+    400008: protag_body_geo:back1
+    400010: protag_body_geo:body1
+    400012: protag_body_geo:body_2
+    400014: protag_body_geo:body_base_hp
+    400016: protag_body_geo:body_base_lp
+    400018: protag_body_geo:body_geo
+    400020: protag_body_geo:body_geo 1
+    400022: protag_body_geo:buttons
+    400024: protag_body_geo:fan
+    400026: protag_body_geo:hair
+    400028: protag_body_geo:hair2
+    400030: protag_body_geo:hair_geo
+    400032: protag_body_geo:hat
+    400034: protag_body_geo:hat1
+    400036: protag_body_geo:outfit
+    400038: protag_body_geo:outfit_set
+    400040: protag_body_geo:pCube1
+    400042: protag_body_geo:pCube1 1
+    400044: protag_body_geo:pCylinder1
+    400046: protag_body_geo:pCylinder1 1
+    400048: protag_body_geo:pointLight1
+    400050: protag_body_geo:polySurface1
+    400052: protag_body_geo:Protag_body
+    400054: protag_body_geo:reference1
+    400056: protag_body_geo:shirt_thing
+    400058: protag_body_geo:transform1
+    400060: protag_body_geo:transform2
+    400062: protag_body_geo:transform3
+    400064: Sewers:back
+    400066: Sewers:polySurface2
+    400068: Sewers:polySurface4
+    400070: Sewers:polySurface5
+    400072: Sewers:pPipe3
+    2300000: protag_body_geo:ambientLight2
+    2300002: protag_body_geo:body_2
+    2300004: protag_body_geo:buttons
+    2300006: protag_body_geo:fan
+    2300008: protag_body_geo:hair
+    2300010: protag_body_geo:hair2
+    2300012: protag_body_geo:hat
+    2300014: protag_body_geo:hat1
+    2300016: protag_body_geo:outfit
+    2300018: protag_body_geo:pCube1
+    2300020: protag_body_geo:pCube1 1
+    2300022: protag_body_geo:pCylinder1
+    2300024: protag_body_geo:pCylinder1 1
+    2300026: protag_body_geo:polySurface1
+    2300028: protag_body_geo:reference1
+    2300030: protag_body_geo:shirt_thing
+    2300032: Sewers:polySurface2
+    2300034: Sewers:polySurface4
+    2300036: Sewers:polySurface5
+    3300000: protag_body_geo:ambientLight2
+    3300002: protag_body_geo:body_2
+    3300004: protag_body_geo:buttons
+    3300006: protag_body_geo:fan
+    3300008: protag_body_geo:hair
+    3300010: protag_body_geo:hair2
+    3300012: protag_body_geo:hat
+    3300014: protag_body_geo:hat1
+    3300016: protag_body_geo:outfit
+    3300018: protag_body_geo:pCube1
+    3300020: protag_body_geo:pCube1 1
+    3300022: protag_body_geo:pCylinder1
+    3300024: protag_body_geo:pCylinder1 1
+    3300026: protag_body_geo:polySurface1
+    3300028: protag_body_geo:reference1
+    3300030: protag_body_geo:shirt_thing
+    3300032: Sewers:polySurface2
+    3300034: Sewers:polySurface4
+    3300036: Sewers:polySurface5
+    4300000: Sewers:polySurface2
+    4300002: Sewers:polySurface4
+    4300004: Sewers:polySurface5
+    4300006: protag_body_geo:reference1
+    4300008: protag_body_geo:pCylinder1
+    4300010: protag_body_geo:pCube1
+    4300012: protag_body_geo:pCube1
+    4300014: protag_body_geo:pCylinder1
+    4300016: protag_body_geo:hair
+    4300018: protag_body_geo:polySurface1
+    4300020: protag_body_geo:hat1
+    4300022: protag_body_geo:hair2
+    4300024: protag_body_geo:hat
+    4300026: protag_body_geo:fan
+    4300028: protag_body_geo:body_2
+    4300030: protag_body_geo:outfit
+    4300032: protag_body_geo:shirt_thing
+    4300034: protag_body_geo:buttons
+    4300036: protag_body_geo:ambientLight2
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
