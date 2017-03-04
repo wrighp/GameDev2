@@ -1,16 +1,32 @@
 fileFormatVersion: 2
-guid: 5398cb4e4f0594223b87ef097d037470
-timeCreated: 1488394519
+guid: 7d12c47acb3ef3c41b07b30b5d818032
+timeCreated: 1488646499
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Protag_mesh
-    4300002: Protag_mesh_final
+    100000: antlers
+    100002: body_mesh
+    100004: glasses
+    100006: //RootNode
+    100008: tail
+    400000: antlers
+    400002: body_mesh
+    400004: glasses
+    400006: //RootNode
+    400008: tail
+    2300000: antlers
+    2300002: body_mesh
+    2300004: glasses
+    2300006: tail
+    3300000: antlers
+    3300002: body_mesh
+    3300004: glasses
+    3300006: tail
+    4300000: body_mesh
+    4300002: glasses
+    4300004: tail
+    4300006: antlers
   materials:
     importMaterials: 1
     materialName: 0
