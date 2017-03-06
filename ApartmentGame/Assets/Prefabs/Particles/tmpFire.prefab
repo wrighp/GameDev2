@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4355335635439266}
   - component: {fileID: 135125883926940976}
+  - component: {fileID: 114406570922844270}
   m_Layer: 0
   m_Name: tmpFire
   m_TagString: Untagged
@@ -64,13 +65,29 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1070597596506392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.851985, y: 0.86295223, z: 19.514534}
+  m_LocalPosition: {x: -13.77, y: 131.19, z: 38.992245}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4331279886228754}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114406570922844270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1070597596506392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a6f2daf5c3a484fa416187d056801e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attribute: Fire
+  effects:
+  - {fileID: 1653386931885110, guid: d313a1b582b7be448adc335ea29467a6, type: 2}
+  affects:
+  - Wet
 --- !u!135 &135125883926940976
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -82,7 +99,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.82
-  m_Center: {x: 0, y: 0.75, z: 0}
+  m_Center: {x: 0, y: 0.6, z: 0}
 --- !u!198 &198991164290005838
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -4,17 +4,32 @@ using UnityEngine;
 
 public class tmpItem : MonoBehaviour {
 	
+	//for the time being, every item has a single attribute,
+	//a list of effective attributes a particle effect to spawn once it collides with 
+	//an object with said effective attributes
+	
+	//NOTE
+	//eventually expand to something more genral like "melt" or "freeze"
+	//and instantiate the corresponding effect
+	
 	//this objects attribute(s)
 	public string attribute;
 	
 	//particle system or objects to instantiate when certain
 	//incoming attributes collide
 	public GameObject[] effects;
-	public string[] incomingAttribute;
+	public List<string> affects;
+	
+	private Dictionary<string, GameObject> dictionary;
 
 	// Use this for initialization
 	void Start () {
 		
+		dictionary = new Dictionary<string, GameObject>();
+		
+		for(int i=0; i<affects.Count; i++){
+			dictionary[affects[i]] = effects[i];
+		}
 	}
 	
 	// Update is called once per frame
@@ -22,15 +37,36 @@ public class tmpItem : MonoBehaviour {
 		
 	}
 	
-	void onTriggerEnter(Transform col){
+	string getAttribute(){
+		return attribute;
+	}
+	
+	void OnTriggerEnter(Collider col){
+		//see note above
+		string inAttribute = col.gameObject.GetComponent<tmpItem>().getAttribute();
+		Debug.Log(inAttribute);
+		
+		//instead of this, IE call "melt" function which would destroy
+		//bot this and the colliding object
+		//or squish that would only destroy this one
+		
+		if(affects.Count!=0 && affects.Contains(inAttribute)){
+			GameObject particle = Instantiate(dictionary[inAttribute], 
+				new Vector3(transform.position.x, 
+					transform.position.y,
+					transform.position.z), 
+				Quaternion.Euler(0,0,0)
+			);
+			Destroy(this.gameObject);
+			Destroy(particle, 3f);
+		}
+	}
+	
+	void OnTriggerExit(Collider col){
 		
 	}
 	
-	void onTriggerExit(Transform col){
-		
-	}
-	
-	void onTriggerStay(Transform col){
+	void OnTriggerStay(Collider col){
 		
 	}
 }
