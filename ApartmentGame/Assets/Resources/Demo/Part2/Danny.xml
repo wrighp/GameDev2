@@ -6,6 +6,7 @@
 			<_ID>0</_ID>
 			<_name>Danny</_name>
 			<_text>She sure is upset :D\nI wonder how can we get her out though...</_text>
+			<_reset>0</_reset>
 			<_options>
 				<dialogueOption>
 					<_text></_text>
@@ -35,9 +36,10 @@
 		</Node>
 		
 		<Node>
-			<_ID>0</_ID>
+			<_ID>1</_ID>
 			<_name>Danny</_name>
 			<_text>Wow, that was quick thinking!</_text>
+			<_reset>1</_reset>
 			<_options>
 				<dialogueOption>
 					<_text></_text>

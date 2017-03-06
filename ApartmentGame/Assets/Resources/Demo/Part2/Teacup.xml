@@ -7,6 +7,7 @@
 			<_name>Ms Teacup</_name>
 			<_text>Oh, thank god- That was dreadful! How could you let something like this happen under your watch! This is just disgraceful!\nHuh?\nYou saved me just for your silly rent money?! Fine! Take it. But you’d better spend that on better plumbing, hmph.
 			</_text>
+			<_reset>0</_reset>
 			
 			<_options>
 				<dialogueOption>
@@ -40,7 +41,8 @@
 			<_ID>1</_ID>
 			<_name>Ms Teacup</_name>
 			<_text>You’ve already taken my dignity and my money, what more do you want from me?\nJust leave me alone.</_text>
-			
+			<_reset>1</_reset>			
+
 			<_options>
 				<dialogueOption>
 					<_text></_text>

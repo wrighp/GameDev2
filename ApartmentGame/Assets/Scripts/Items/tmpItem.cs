@@ -12,6 +12,9 @@ public class tmpItem : MonoBehaviour {
 	//eventually expand to something more genral like "melt" or "freeze"
 	//and instantiate the corresponding effect
 	
+	//Also, account for the possibility that nothing may be spawned
+	//for certain occurrences
+	
 	//this objects attribute(s)
 	public string attribute;
 	
