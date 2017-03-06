@@ -42,6 +42,8 @@ public class tmpItem : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider col){
+		if(col.gameObject.GetComponent<tmpItem>() == null)
+			return;
 		//see note above
 		string inAttribute = col.gameObject.GetComponent<tmpItem>().getAttribute();
 		Debug.Log(inAttribute);
