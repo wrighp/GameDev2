@@ -12,34 +12,14 @@ public class Dialogue{
 	[XmlArray("_nodes")]
 	[XmlArrayItem("Node")]
 	public List<Node> _nodes;
-
+	
+	//where to start off the conversation the next time this
+	//npc is spoken to
+	public int _next = 0;
+	
 	public Dialogue(){
 		_nodes = new List<Node>();
 	}
-	/*
-	public void addNode(Node node){
-		if (node == null)	return;
-		
-		_nodes.Add(node);
-		node._ID = _nodes.IndexOf(node);
-	}
-	
-	public void addOption(string text, Node start, Node end){
-		if(!_nodes.Contains(start))
-			addNode(start);
-		if(!_nodes.Contains(end))
-			addNode(end);
-		
-		dialogueOption option;
-		
-		if(end == null)
-			option = new dialogueOption(text, -1);
-		else
-			option = new dialogueOption(text, end._ID);
-		
-		start._options.Add(option);
-		
-	}*/
 	
 	//static dialogue loader for use of all instances of Dialogue
 	public static Dialogue Load(string path){

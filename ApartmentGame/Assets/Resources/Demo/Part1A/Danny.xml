@@ -5,6 +5,7 @@
 			<_ID>0</_ID>
 			<_name>Danny</_name>
 			<_text>(giggles) Oh! Hey there, bud! Rent money? My new job pays a lot better, so I actually have it this time! By the way, have you seen my doo--</_text>
+			<_reset>0</_reset>
 			<_options>
 				<dialogueOption>
 					<_text></_text>
@@ -42,6 +43,7 @@
 			<_ID>1</_ID>
 			<_name>Danny</_name>
 			<_text>Whoa! Did you hear THAT?\nSounded like Ms. Teacup... Maybe you should go check it out?</_text>
+			<_reset>0</_reset>
 			<_options>
 				<dialogueOption>
 					<_text></_text>
@@ -76,6 +78,7 @@
 			<_ID>2</_ID>
 			<_name>Danny</_name>
 			<_text>We'd better hurry! \nI hope she's alright...</_text>
+			<_reset>-1</_reset>
 			<_options>
 				<dialogueOption>
 					<_text></_text>

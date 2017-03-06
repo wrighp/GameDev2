@@ -5,6 +5,7 @@
 			<_ID>0</_ID>
 			<_name>Ms Teacup</_name>
 			<_text>H-Hey you-! Don’t just stand there, get over here and help me you dolts!%pJust do something! Argh! This never would’ve happened if Dom was still around!</_text>
+			<_reset>0</_reset>
 			<_options><dialogueOption><_dest>-1</_dest></dialogueOption></_options>
 		</Node>
 
@@ -12,6 +13,7 @@
 			<_ID>1</_ID>
 			<_name>Ms Teacup</_name>
 			<_text>Where do you think you’re going?! You can’t just leave me here without any closure!</_text>
+			<_reset>1</_reset>
 			<_precalls>
 				<Call>< /Call>
 			<_precallscalls>

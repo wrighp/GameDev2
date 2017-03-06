@@ -19,6 +19,9 @@ public class Node{
 	[XmlElement("_name")]
 	public string _name;
 	
+	[XmlElement("_reset")]
+	public int _reset;
+	
 	[XmlArray("_options")]
 	[XmlArrayItem("dialogueOption")]
 	public List<dialogueOption> _options;

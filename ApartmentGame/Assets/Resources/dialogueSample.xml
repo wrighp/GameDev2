@@ -6,6 +6,7 @@
 			<_text>Wow! So this is what it's like to exist in this miserable and unforgiving world! Incredible!
 Let's keep going!</_text>
 			<_name>Trevor</_name>
+			<_reset>0</_reset>
 			<_options>
 				<dialogueOption>
 					<_text>Hello, how is it going?</_text>
@@ -44,6 +45,7 @@ Let's keep going!</_text>
 			<_ID>1</_ID>
 			<_text>Damn!</_text>
 			<_name>Mike</_name>
+			<_reset>0</_reset>
 			<_options>
 				<dialogueOption>
 					<_text>Where am I?</_text>

@@ -134,7 +134,7 @@ public class npcDialogue : MonoBehaviour {
 	public IEnumerator run(){
 		dialogueWindow.SetActive(true);
 		
-		nodeID = 0;
+		nodeID = dialogue._next;
 		
 		//while the node isn't an exit node...
 		while(nodeID!=-1){
@@ -147,9 +147,10 @@ public class npcDialogue : MonoBehaviour {
 				yield return new WaitForEndOfFrame ();
 			}
 			dialogue._nodes [nodeID]._postcalls.ForEach ((Call c) => c.execute ());
+			dialogue._next = dialogue._nodes[nodeID]._reset;
 			nodeID = select;
 		}
-		dialogueWindow.SetActive(false);
+		dialogueWindow.SetActive(false); 
 	}
 	
 	//shake the dialogue box, maybe play a noise
