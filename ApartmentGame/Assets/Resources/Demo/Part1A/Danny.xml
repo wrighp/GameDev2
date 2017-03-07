@@ -43,7 +43,7 @@
 			<_ID>1</_ID>
 			<_name>Danny</_name>
 			<_text>Whoa! Did you hear THAT?\nSounded like Ms. Teacup... Maybe you should go check it out?</_text>
-			<_reset>0</_reset>
+			<_reset>2</_reset>
 			<_options>
 				<dialogueOption>
 					<_text></_text>
@@ -78,7 +78,7 @@
 			<_ID>2</_ID>
 			<_name>Danny</_name>
 			<_text>We'd better hurry! \nI hope she's alright...</_text>
-			<_reset>-1</_reset>
+			<_reset>2</_reset>
 			<_options>
 				<dialogueOption>
 					<_text></_text>
