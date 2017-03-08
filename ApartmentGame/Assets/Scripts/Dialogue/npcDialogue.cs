@@ -14,9 +14,14 @@ public class npcDialogue : MonoBehaviour {
 	//the dialogue box info
 	GameObject Name;
 	GameObject nodeText;
+	
+	GameObject[] options;
+	GameObject[] availableOptions;
+	
 	GameObject option1;
 	GameObject option2;
 	GameObject option3;
+	
 	GameObject exit;
 	
 	//cameras to use
@@ -56,11 +61,16 @@ public class npcDialogue : MonoBehaviour {
 		
 		
 		Name = dialogueWindow.transform.Find("[npc]").gameObject;
-		option1 = dialogueWindow.transform.Find("[option 1]").gameObject;
-		option2 = dialogueWindow.transform.Find("[option 2]").gameObject;
-		option3 = dialogueWindow.transform.Find("[option 3]").gameObject;
+		
+		options = new GameObject[4];
+		availableOptions = new GameObject[4];
+		
+		options[0] = option1 = dialogueWindow.transform.Find("[option 1]").gameObject;
+		options[1] = option2 = dialogueWindow.transform.Find("[option 2]").gameObject;
+		options[2] = option3 = dialogueWindow.transform.Find("[option 3]").gameObject;
+		options[3] = exit = dialogueWindow.transform.Find("[end convo]").gameObject;
+		
 		nodeText = dialogueWindow.transform.Find("[dialogue]").gameObject;
-		exit = dialogueWindow.transform.Find("[end convo]").gameObject;
 		
 		//add an action to the exit button
 		exit.GetComponent<Button>().onClick.AddListener(delegate {
@@ -140,6 +150,12 @@ public class npcDialogue : MonoBehaviour {
 	
 	//run the dialogue tree coroutine
 	public IEnumerator run(){
+		//THIS WILL DO FOR NOW
+		yield return new WaitForEndOfFrame();
+		
+		//lock the cursor
+		//Cursor.lockState = CursorLockMode.Locked;
+		
 		dialogueWindow.SetActive(true);
 		
 		nodeID = dialogue._next;
@@ -150,17 +166,60 @@ public class npcDialogue : MonoBehaviour {
 			//testing out the execute function
 			dialogue._nodes [nodeID]._precalls.ForEach ((Call c) => c.execute ());
 			
-			select = -2;
-			while(select == -2){
-				yield return new WaitForEndOfFrame ();
+			//testing buttons
+			//se tthe corresponding button active
+			//for some reason, this works
+			//CHECK THIS OUT ============================================================
+			int j=0;
+			for(int i=0; i<4;i++){
+				if(options[i].activeSelf){
+					//options[i].GetComponent<Button>().Select();
+					availableOptions[j] = options[i];
+					j++;
+				}
 			}
+			
+			availableOptions[0].GetComponent<Button>().Select();
+			
+			select = -2;
+			
+			int index = 0;
+			int direction;
+			
+			while(select == -2){
+					availableOptions[index].GetComponent<Button>().Select();
+					direction = -(int) Input.GetAxisRaw("Vertical");
+					index+=direction;
+					
+					//bind the indices
+					if(index<0)
+						index = 0;
+					if(index>j-1)
+						index = j-1;
+					
+					//testing
+					/*if(direction!=0){
+						Debug.Log(direction);
+						Debug.Log("available Option is " + index);
+					}*/
+
+					//look for player input
+					if (Input.GetButtonDown("Fire1")){
+						//invoke a click through script
+						// referenceToTheButton.onClick.Invoke();
+						availableOptions[index].GetComponent<Button>().onClick.Invoke();
+						
+					}
+					yield return /*new WaitForEndOfFrame()*/null;
+			}
+			
 			dialogue._nodes [nodeID]._postcalls.ForEach ((Call c) => c.execute ());
 			dialogue._next = dialogue._nodes[nodeID]._reset;
 			nodeID = select;
 		}
 		running = false;
 		mainCamera.gameObject.SetActive(true);
-			dialogueCamera.gameObject.SetActive(false);
+		dialogueCamera.gameObject.SetActive(false);
 		dialogueWindow.SetActive(false); 
 	}
 	
@@ -210,7 +269,7 @@ public class npcDialogue : MonoBehaviour {
 		
 		//if the player presses "interact"/fire1, disable player movement and
 		//run the dialogue tree
-		if (Input.GetButton("Fire1") && !running){
+		if (Input.GetButtonDown("Fire1") && !running){
 			mainCamera.gameObject.SetActive(false);
 			dialogueCamera.gameObject.SetActive(true);
 			running = true;

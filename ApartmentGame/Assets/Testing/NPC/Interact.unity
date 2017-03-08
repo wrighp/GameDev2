@@ -753,6 +753,11 @@ Prefab:
       propertyPath: dialogueCamera
       value: 
       objectReference: {fileID: 719128231}
+    - target: {fileID: 114464876300228792, guid: 0919a45d5565dd143bfd41e1143c4cd8,
+        type: 2}
+      propertyPath: Path
+      value: Demo/Part1A/Danny
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0919a45d5565dd143bfd41e1143c4cd8, type: 2}
   m_IsPrefabParent: 0
