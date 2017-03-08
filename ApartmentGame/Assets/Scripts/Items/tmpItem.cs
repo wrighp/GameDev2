@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class tmpItem : MonoBehaviour {
 	
@@ -82,6 +83,7 @@ public class tmpItem : MonoBehaviour {
 				Quaternion.Euler(0,0,0)
 			);
 			//particle2.GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingLayerName = "Foreground";
+			SceneManager.LoadScene("Lose");
 			}
 			else if (attribute == "Sparks" && inAttribute == "Rubber"){
 				Destroy(this.gameObject);
