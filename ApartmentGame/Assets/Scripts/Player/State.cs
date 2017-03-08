@@ -48,17 +48,23 @@ public class State : MonoBehaviour {
 		
 		if(zapTimer>zapDeathTimer){
 			Debug.Log("DEAD");
-			SceneManager.LoadScene("Lose");
+			fireTimer = 0f;
+			burning(false);
+			//SceneManager.LoadScene("Lose");
 		}
 		if(fireTimer>fireDeathTimer){
 			Debug.Log("DEAD");
-			SceneManager.LoadScene("Lose");
+			fireTimer = 0f;
+			burning(false);
+			//SceneManager.LoadScene("Lose");
 		}
 		if(fireTimer<0){
 			fireTimer = 0f;
+			burning(false);
 		}
 		if(zapTimer<0){
 			zapTimer = 0f;
+			shocked(false);
 		}
 		
 	}
