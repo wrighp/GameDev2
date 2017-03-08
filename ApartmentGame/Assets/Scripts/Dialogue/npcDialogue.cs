@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //Needs to have a canvas in the scene (doesn't have to be attached to camera)
+//player could have a hash table <string, bool> of tasks to perform
+//for dialogue options and triggers, could check event name as such to see if 
+//the player has done it
 
 public class npcDialogue : MonoBehaviour {
 	
@@ -45,6 +48,8 @@ public class npcDialogue : MonoBehaviour {
 	public bool auto = false;
 	private bool running = false;
 	
+	public static Dictionary<string, bool> tasks;
+	
 	// Use this for initialization
 	void Start () {
 		//load the dialogue from the given path
@@ -52,6 +57,8 @@ public class npcDialogue : MonoBehaviour {
 		
 		//find the required components and initialize the private variables
 		var canvas = GameObject.Find("Canvas");
+		
+		initiateTasks();
 		
 		dialogueWindow = Instantiate<GameObject>(dialogueWindow);
 		dialogueWindow.transform.SetParent(canvas.transform, false);
@@ -85,6 +92,14 @@ public class npcDialogue : MonoBehaviour {
 		
 	}
 	
+	private void initiateTasks(){
+		tasks = new Dictionary<string, bool>();
+		tasks["A"] = false;
+		tasks["B"] = false;
+		tasks["C"] = false;
+		tasks["D"] = false;
+	}
+	
 	public void runDialogue(){
 		runCoroutine = run();
 		StartCoroutine(runCoroutine);
@@ -102,6 +117,10 @@ public class npcDialogue : MonoBehaviour {
 	//method for selecting the next dialogue node to load
 	public void setSelect(int x){
 		select = x;
+	}
+	
+	public void setNext(int x){
+		dialogue._next = x;
 	}
 	
 	//update the text
@@ -141,7 +160,17 @@ public class npcDialogue : MonoBehaviour {
 	
 	//make the buttons visible
 	private void updateButton(GameObject button, dialogueOption option){
+		//check to see if the option has any requirements
+		//if it does, check the hash table
+		if(option._req != null && option._req != ""){
+			//if the dictionary[option._req] == false, return
+			if(!tasks[option._req])
+				return;
+			//else setActive and continue
+		}
+		
 		button.SetActive(true);
+		
 		button.GetComponentInChildren<Text>().text = option._text;
 		button.GetComponent<Button>().onClick.AddListener(delegate {
 			Debug.Log(option._dest);
