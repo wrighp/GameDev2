@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class State : MonoBehaviour {
 	
@@ -46,9 +48,11 @@ public class State : MonoBehaviour {
 		
 		if(zapTimer>zapDeathTimer){
 			Debug.Log("DEAD");
+			SceneManager.LoadScene("Lose");
 		}
 		if(fireTimer>fireDeathTimer){
 			Debug.Log("DEAD");
+			SceneManager.LoadScene("Lose");
 		}
 		if(fireTimer<0){
 			fireTimer = 0f;
