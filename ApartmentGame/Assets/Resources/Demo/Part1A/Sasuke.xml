@@ -30,7 +30,7 @@
 					<_arg>player</_arg>
 				</Call>
 				<Call _m="P1ASasukeLeave"></Call>
-			<_postcalls>
+			</_postcalls>
 			<_options><dialogueOption><_dest>-1</_dest></dialogueOption></_options>
 		</Node>
 		
@@ -54,22 +54,6 @@
 			<_options><dialogueOption><_dest>-1</_dest></dialogueOption></_options>
 		</Node>
 
-<Node>
-			<_ID>1</_ID>
-			<_name>Sasuke</_name>
-			<_text>Ha! Don’t feel special, you’re hardly any challenge at all. I just wanted to give you your money.</_text>
-			<_reset>3</_reset>
-			<_postcalls>
-				<Call _m="GiveObject">
-					<_arg>Money</_arg>
-					<_arg>Sasuke</_arg>
-					<_arg>player</_arg>
-				</Call>
-				<Call _m="P1ASasukeLeave"></Call>
-			<_postcalls>
-			<_options><dialogueOption><_dest>-1</_dest></dialogueOption></_options>
-		</Node>
-		
 		<Node>
 			<_ID>3</_ID>
 			<_name>Sasuke</_name>
@@ -77,8 +61,8 @@
 			<_reset>3</_reset>
 			<_precalls>
 			</_precalls>
-			<_precalls>
-			</_precalls>
+			<_postcalls>
+			</_postcalls>
 			<_options><dialogueOption><_dest>-1</_dest></dialogueOption></_options>
 		</Node>
 		

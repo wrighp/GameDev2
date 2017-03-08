@@ -47,6 +47,7 @@ public class npcDialogue : MonoBehaviour {
 	//trigger area
 	public bool auto = false;
 	private bool running = false;
+	private bool textScroll = false;
 	
 	public static Dictionary<string, bool> tasks;
 	
@@ -238,7 +239,7 @@ public class npcDialogue : MonoBehaviour {
 			//only one option
 			if(j == 0){
 				while(select == -2){
-					if (Input.GetButtonDown("Fire1")){
+					if (Input.GetButtonDown("Fire1")&& !textScroll){
 						//invoke a click through script
 						// referenceToTheButton.onClick.Invoke();
 						options[0].GetComponent<Button>().onClick.Invoke();
@@ -272,7 +273,7 @@ public class npcDialogue : MonoBehaviour {
 						}
 
 						//look for player input
-						if (Input.GetButtonDown("Fire1")){
+						if (Input.GetButtonDown("Fire1") && !textScroll){
 							//invoke a click through script
 							// referenceToTheButton.onClick.Invoke();
 							availableOptions[index].GetComponent<Button>().onClick.Invoke();
@@ -301,8 +302,15 @@ public class npcDialogue : MonoBehaviour {
 		int index = 0;
 		
 		nodeText.GetComponent<Text>().text = "";
+		textScroll = true;
 		
 		while(true){
+			//if the player presses fire1, just put the text and get out
+			if (Input.GetButtonDown("Fire1")){
+				nodeText.GetComponent<Text>().text = displayText;
+				break;
+			}
+			
 			//deal with newline character
 			if(displayText[index] == '\\' && index<strLen-1 && displayText[index+1] == 'n'){
 				index++;
@@ -330,6 +338,7 @@ public class npcDialogue : MonoBehaviour {
 				break;
 			}
 		}
+		textScroll = false;
 	}
 	
 	//shake the dialogue box, maybe play a noise
@@ -345,6 +354,7 @@ public class npcDialogue : MonoBehaviour {
 			running = true;
 			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
 			runDialogue();
+			auto = false;
 		}
 	}
 	
