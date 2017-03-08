@@ -12,6 +12,7 @@ ModelImporter:
     100008: polySurface128 1
     100010: transform24
     100012: transform25
+    100014: polySurface175
     400000: //RootNode
     400002: PIPE:PIPE:PIPE:PIPE:PIPE:PIPE:pCube69
     400004: polySurface127
@@ -19,9 +20,13 @@ ModelImporter:
     400008: polySurface128 1
     400010: transform24
     400012: transform25
+    400014: polySurface175
     2300000: polySurface128
+    2300002: polySurface175
     3300000: polySurface128
+    3300002: polySurface175
     4300000: polySurface128
+    4300002: polySurface175
     9500000: //RootNode
   materials:
     importMaterials: 1

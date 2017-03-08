@@ -13,30 +13,8 @@
 				</dialogueOption>
 			</_options>
 			<_precalls>
-				<Call _m="null">
-					<_arg>Argument</_arg>
-					<_lst>
-						<Lst>
-							<_s>Alice</_s>
-							<_s>Alice</_s>
-							<_s>Alice</_s>
-							<_s>Alice</_s>
-						</Lst>
-					</_lst>
-				</Call>
 			</_precalls>
 			<_postcalls>
-				<Call _m="null">
-					<_arg>Argument</_arg>
-					<_lst>
-						<Lst>
-							<_s>Alice</_s>
-							<_s>Alice</_s>
-							<_s>Alice</_s>
-							<_s>Alice</_s>
-						</Lst>
-					</_lst>
-				</Call>
 			</_postcalls>
 		</Node>
 		<Node>
@@ -51,17 +29,6 @@
 				</dialogueOption>
 			</_options>
 			<_precalls>
-				<Call _m="null">
-					<_arg>Argument</_arg>
-					<_lst>
-						<Lst>
-							<_s>Alice</_s>
-							<_s>Alice</_s>
-							<_s>Alice</_s>
-							<_s>Alice</_s>
-						</Lst>
-					</_lst>
-				</Call>
 			</_precalls>
 			<_postcalls>
 				<Call _m="FollowPlayer">
@@ -86,24 +53,8 @@
 				</dialogueOption>
 			</_options>
 			<_precalls>
-				<Call _m="null">
-					<_arg>Argument</_arg>
-					<_lst>
-						<Lst>
-							<_s></_s>
-						</Lst>
-					</_lst>
-				</Call>
 			</_precalls>
 			<_postcalls>
-				<Call _m="null">
-					<_arg>Argument</_arg>
-					<_lst>
-						<Lst>
-							<_s></_s>
-						</Lst>
-					</_lst>
-				</Call>
 			</_postcalls>
 		</Node>
 	</_nodes>
