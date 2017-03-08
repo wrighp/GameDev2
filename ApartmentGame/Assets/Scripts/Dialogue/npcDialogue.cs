@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 using UnityEngine.UI;
 
@@ -404,6 +405,7 @@ public class npcDialogue : MonoBehaviour {
 		}
 		Debug.Log("YOU DID IT!");
 		//end the game
+		SceneManager.LoadScene("Win");
 	}
 	
 }
