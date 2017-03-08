@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 9fcc3865c4d70ae418221cf2a8c6069b
-timeCreated: 1487286733
+guid: 9cccb1040756e10499440ff85b2bd665
+timeCreated: 1488945444
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: polySurface773
-    100004: transform8
-    400000: //RootNode
-    400002: polySurface773
-    400004: transform8
-    2300000: polySurface773
-    3300000: polySurface773
-    4300000: polySurface773
+    100000: Apartment_geo
+    100002: polySurface39
+    100004: //RootNode
+    400000: Apartment_geo
+    400002: polySurface39
+    400004: //RootNode
+    2300000: polySurface39
+    3300000: polySurface39
+    4300000: polySurface39
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -58,7 +58,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2

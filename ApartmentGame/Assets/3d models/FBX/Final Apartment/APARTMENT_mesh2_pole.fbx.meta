@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 78d2588462d4d6f4fbc3d1dddc8f65f5
-timeCreated: 1487286733
+guid: 9b12a0ea7ad637a4f96fcb234db206d9
+timeCreated: 1488945444
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: polySurface742
-    100004: transform8
-    400000: //RootNode
-    400002: polySurface742
-    400004: transform8
-    2300000: polySurface742
-    3300000: polySurface742
-    4300000: polySurface742
+    100000: Apartment_geo
+    100002: //RootNode
+    100004: polySurface88
+    400000: Apartment_geo
+    400002: //RootNode
+    400004: polySurface88
+    2300000: polySurface88
+    3300000: polySurface88
+    4300000: polySurface88
     9500000: //RootNode
   materials:
     importMaterials: 1

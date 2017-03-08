@@ -1,17 +1,15 @@
 fileFormatVersion: 2
-guid: d3e768d73c674b6499b26e7a1712ee9e
+guid: f94b3e8689658654fb7dbba1125f1f06
+timeCreated: 1488945452
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: polySurface660
-    100004: transform8
     400000: //RootNode
-    400002: polySurface660
-    400004: transform8
-    2300000: polySurface660
-    3300000: polySurface660
-    4300000: polySurface660
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: polySurface141
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -56,7 +54,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
