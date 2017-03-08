@@ -153,3 +153,5 @@ MonoBehaviour:
   affects:
   - Wet
   - Absorbent
+  grabbable: 0
+  destroyAfterUse: 0

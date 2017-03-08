@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114916417842129690}
   - component: {fileID: 135323102784980068}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,6 +153,8 @@ MonoBehaviour:
   attribute: Absorbent
   effects: []
   affects: []
+  grabbable: 1
+  destroyAfterUse: 0
 --- !u!135 &135323102784980068
 SphereCollider:
   m_ObjectHideFlags: 1

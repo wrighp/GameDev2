@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 135119801264381078}
   - component: {fileID: 114837466586864832}
   m_Layer: 0
-  m_Name: Bottle
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   attribute: Wet
   effects: []
   affects: []
-  grabbable: 0
+  grabbable: 1
   destroyAfterUse: 0
 --- !u!135 &135119801264381078
 SphereCollider:
