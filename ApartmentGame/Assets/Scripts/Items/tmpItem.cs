@@ -24,6 +24,8 @@ public class tmpItem : MonoBehaviour {
 	public List<string> affects;
 	
 	private Dictionary<string, GameObject> dictionary;
+	public bool grabbable = false;
+	public bool destroyAfterUse = false;
 
 	// Use this for initialization
 	void Start () {
@@ -49,7 +51,7 @@ public class tmpItem : MonoBehaviour {
 			return;
 		//see note above
 		string inAttribute = col.gameObject.GetComponent<tmpItem>().getAttribute();
-		Debug.Log(inAttribute);
+		//Debug.Log(inAttribute);
 		
 		//instead of this, IE call "melt" function which would destroy
 		//bot this and the colliding object
@@ -62,7 +64,27 @@ public class tmpItem : MonoBehaviour {
 					transform.position.z), 
 				Quaternion.Euler(0,0,0)
 			);
-			Destroy(this.gameObject);
+			if(attribute == "Fire"){
+				GameObject particle2 = Instantiate(effects[1], 
+				new Vector3(transform.position.x, 
+					transform.position.y,
+					transform.position.z), 
+				Quaternion.Euler(-90,0,0)
+			);
+			particle2.GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingLayerName = "Foreground";
+			Destroy(particle2, 10f);
+			}
+			if(attribute == "Sparks"){
+				GameObject particle2 = Instantiate(effects[1], 
+				new Vector3(transform.position.x, 
+					transform.position.y-3,
+					transform.position.z), 
+				Quaternion.Euler(0,0,0)
+			);
+			//particle2.GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingLayerName = "Foreground";
+			}
+			if(destroyAfterUse)
+				Destroy(this.gameObject);
 			Destroy(particle, 3f);
 		}
 	}

@@ -10,17 +10,20 @@ public class dTrigger : MonoBehaviour {
 	public npcDialogue target;
 	public bool newPart = false;
 	public bool runImmediate = false;
+	public bool setAuto = false;
 
 	// Use this for initialization
 	void Start () {
 		if(newPart){
 			target.loadDialogue(path);
+			target.auto = setAuto;
 			if(runImmediate)
 				target.runDialogue();
 			Destroy(this);
 		}
 		else{
 			target.setNext(index);
+			target.auto = setAuto;
 			if(runImmediate)
 				target.runDialogue();
 			Destroy(this);

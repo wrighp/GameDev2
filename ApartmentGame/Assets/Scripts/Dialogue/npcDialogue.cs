@@ -48,6 +48,7 @@ public class npcDialogue : MonoBehaviour {
 	public bool auto = false;
 	private bool running = false;
 	private bool textScroll = false;
+	private bool protection = false;
 	
 	public static Dictionary<string, bool> tasks;
 	
@@ -197,7 +198,6 @@ public class npcDialogue : MonoBehaviour {
 		
 		//lock the cursor
 		//Cursor.lockState = CursorLockMode.Locked;
-		
 		dialogueWindow.SetActive(true);
 		
 		nodeID = dialogue._next;
@@ -218,17 +218,15 @@ public class npcDialogue : MonoBehaviour {
 					//options[i].GetComponent<Button>().Select();
 					availableOptions[j] = options[i];
 					j++;
-					Debug.Log( j + " " + options[i].GetComponentInChildren<Text>().text);
-					//Debug.Log("FUCK " + j);
 				}
 			}
-			
+			/*
 			Debug.Log("J IS EQUAL TO " + j);
 			Debug.Log("THE DIALOGUE OPTIONS ARE ");
 			
 			for(int i=0; i<j;i++){
 				Debug.Log( i + " " + availableOptions[i].GetComponentInChildren<Text>().text);
-			}
+			}*/
 			
 			
 			select = -2;
@@ -239,7 +237,7 @@ public class npcDialogue : MonoBehaviour {
 			//only one option
 			if(j == 0){
 				while(select == -2){
-					if (Input.GetButtonDown("Fire1")&& !textScroll){
+					if (Input.GetButtonDown("Fire1")&& !textScroll && running){
 						//invoke a click through script
 						// referenceToTheButton.onClick.Invoke();
 						options[0].GetComponent<Button>().onClick.Invoke();
@@ -251,29 +249,36 @@ public class npcDialogue : MonoBehaviour {
 			else{
 				availableOptions[0].GetComponent<Button>().Select();
 				
+				//cooldown to make selection less sensitive
+				float selCooldown = 0f;
 				while(select == -2){
-						availableOptions[index].GetComponent<Button>().Select();
-							
-						direction = -(int) Input.GetAxisRaw("Vertical");
-						index+=direction;
 						
-						//bind the indices
-						if(index<0)
-							index = 0;
-						if(index>j-1)
-							index = j-1;
+						availableOptions[index].GetComponent<Button>().Select();
+						
+						direction = -(int) Input.GetAxisRaw("Vertical");
+						
+						if(selCooldown<0){
+							index+=direction;
+							
+							//bind the indices
+							if(index<0)
+								index = 0;
+							if(index>j-1)
+								index = j-1;
+						
+						}
 						
 						//Debug.Log( index + " " + options[index].GetComponentInChildren<Text>().text);
 						
 						//testing
-						if(direction!=0){
-							Debug.Log(direction);
-							Debug.Log( "INDEX " + index + " " + 
-							availableOptions[index].GetComponentInChildren<Text>().text);
+						if(direction!=0 && selCooldown<0){
+							selCooldown = 2f;
 						}
-
+						
+						selCooldown -= 0.3f;
+						
 						//look for player input
-						if (Input.GetButtonDown("Fire1") && !textScroll){
+						if (Input.GetButtonDown("Fire1") && !textScroll && running){
 							//invoke a click through script
 							// referenceToTheButton.onClick.Invoke();
 							availableOptions[index].GetComponent<Button>().onClick.Invoke();
@@ -306,8 +311,8 @@ public class npcDialogue : MonoBehaviour {
 		
 		while(true){
 			//if the player presses fire1, just put the text and get out
-			if (Input.GetButtonDown("Fire1")){
-				nodeText.GetComponent<Text>().text = displayText;
+			if (Input.GetButtonDown("Fire1") && running){
+				nodeText.GetComponent<Text>().text = (string)displayText;
 				break;
 			}
 			
@@ -347,6 +352,7 @@ public class npcDialogue : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider col){
+		Debug.Log(col.tag);
 		if(col.tag == "Player" && auto && !running){
 			//run the dialogue
 			mainCamera.gameObject.SetActive(false);
@@ -359,9 +365,9 @@ public class npcDialogue : MonoBehaviour {
 	}
 	
 	void OnTriggerStay(Collider col){
-		if(col.tag!="Player" && !auto)
+		if(auto || col.tag!="Player")
 			return;
-		
+
 		//if the player presses "interact"/fire1, disable player movement and
 		//run the dialogue tree
 		if (Input.GetButtonDown("Fire1") && !running){

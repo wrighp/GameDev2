@@ -40,14 +40,13 @@ GameObject:
   - component: {fileID: 135427467171174712}
   - component: {fileID: 23248619771307598}
   - component: {fileID: 54598617605926214}
-  - component: {fileID: 114038168651642112}
   m_Layer: 0
   m_Name: WaterBottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4685910067841488
 Transform:
   m_ObjectHideFlags: 1
@@ -68,8 +67,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1406429398106566}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.294, y: 133.3, z: 35.94}
-  m_LocalScale: {x: 0.58278644, y: 0.5827864, z: 0.5827864}
+  m_LocalPosition: {x: 1.46, y: 1.59, z: -6.92}
+  m_LocalScale: {x: 0.8919186, y: 0.89191866, z: 0.89191866}
   m_Children:
   - {fileID: 4685910067841488}
   m_Father: {fileID: 0}
@@ -88,7 +87,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5242d4b7356b5f8498523226658c3357, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -128,20 +127,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114038168651642112
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1406429398106566}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33a6f2daf5c3a484fa416187d056801e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attribute: Wet
-  effects: []
-  affects: []
 --- !u!114 &114837466586864832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -156,6 +141,8 @@ MonoBehaviour:
   attribute: Wet
   effects: []
   affects: []
+  grabbable: 0
+  destroyAfterUse: 0
 --- !u!135 &135119801264381078
 SphereCollider:
   m_ObjectHideFlags: 1
