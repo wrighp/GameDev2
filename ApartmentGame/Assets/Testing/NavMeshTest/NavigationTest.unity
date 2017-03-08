@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 120512416}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Walkable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,16 +162,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114072165470686222, guid: 1d53e4d1e3548894198be208ac1e64e0,
-        type: 2}
-      propertyPath: m_Target
-      value: 
-      objectReference: {fileID: 962239043}
-    - target: {fileID: 114854236794095796, guid: 1d53e4d1e3548894198be208ac1e64e0,
+    - target: {fileID: 114249159799013496, guid: 1d53e4d1e3548894198be208ac1e64e0,
         type: 2}
       propertyPath: target
       value: 
-      objectReference: {fileID: 962239043}
+      objectReference: {fileID: 1597826728}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d53e4d1e3548894198be208ac1e64e0, type: 2}
   m_IsPrefabParent: 0
@@ -186,7 +181,7 @@ GameObject:
   - component: {fileID: 178970157}
   - component: {fileID: 178970156}
   - component: {fileID: 178970155}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +264,7 @@ GameObject:
   - component: {fileID: 194988171}
   - component: {fileID: 194988170}
   - component: {fileID: 194988169}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,7 +454,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 532826491}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: NotWalkable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +492,7 @@ GameObject:
   - component: {fileID: 837572039}
   - component: {fileID: 837572038}
   - component: {fileID: 837572037}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -684,11 +679,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   marker: {fileID: 319442045}
---- !u!4 &962239043 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4796808635913618, guid: 430332cd57ca4ea44a0e22aa3845fe76,
-    type: 2}
-  m_PrefabInternal: {fileID: 1597826727}
 --- !u!1 &1132782734
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,7 +870,7 @@ GameObject:
   - component: {fileID: 1422261685}
   - component: {fileID: 1422261684}
   - component: {fileID: 1422261683}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1056,7 +1046,7 @@ GameObject:
   - component: {fileID: 1587317423}
   - component: {fileID: 1587317422}
   - component: {fileID: 1587317421}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1173,6 +1163,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 430332cd57ca4ea44a0e22aa3845fe76, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1597826728 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4155057143037434, guid: 430332cd57ca4ea44a0e22aa3845fe76,
+    type: 2}
+  m_PrefabInternal: {fileID: 1597826727}
 --- !u!1 &1663759565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1694,7 +1689,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2038099807}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1727,7 +1722,7 @@ GameObject:
   - component: {fileID: 2133836658}
   - component: {fileID: 2133836657}
   - component: {fileID: 2133836656}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

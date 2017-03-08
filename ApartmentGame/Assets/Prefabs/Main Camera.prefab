@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114019723343142982}
   - component: {fileID: 114683309640639218}
   - component: {fileID: 114812045396402574}
+  - component: {fileID: 114249159799013496}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -134,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 0}
-  m_AutoTargetPlayer: 0
+  m_AutoTargetPlayer: 1
   m_UpdateType: 1
   m_RotationRange: {x: 360, y: 360}
   m_FollowSpeed: 0.4
@@ -142,7 +143,7 @@ MonoBehaviour:
   m_BaseSwayAmount: 0.5
   m_TrackingSwayAmount: 0.5
   m_TrackingBias: 0
---- !u!114 &114683309640639218
+--- !u!114 &114249159799013496
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -150,10 +151,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 1164105548690514}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4548a155d6f7e9d4c8b4f5facbe85517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  cameraCollisionLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  wallDepenetration: 0.15
+  distance: 5
+  mouseXSpeed: 120
+  mouseYSpeed: 60
+  controllerXSpeed: 240
+  controllerYSpeed: 120
+  yMinLimit: -15
+  yMaxLimit: 30
+  distanceMin: 2.5
+  distanceMax: 15
+--- !u!114 &114683309640639218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1164105548690514}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1eed1d9cbe64423499f1fefc0ce50417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Resolution: 1
+  Resolution: 0
   DefaultSpotCookie: {fileID: 2800000, guid: 5157bf6d690b6df458f6c0ce0c06d329, type: 3}
 --- !u!114 &114812045396402574
 MonoBehaviour:
@@ -175,7 +201,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1164105548690514}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 099d6ee647675434f81b04dd3a04c437, type: 3}
   m_Name: 

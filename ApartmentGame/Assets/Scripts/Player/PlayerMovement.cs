@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour {
 		hVel.y =  rb.velocity.y;
 		rb.velocity = hVel;
 
-		if (Input.GetKeyDown (KeyCode.Space) && Physics.Raycast (transform.position, Vector3.down, 1.1f, jumpMask)) {
+		if (Input.GetButtonDown ("Jump") && Physics.Raycast (transform.position, Vector3.down, 1.1f, jumpMask)) {
 			rb.AddForce (Vector3.up * jumpForce, ForceMode.Impulse);
 		}
 
