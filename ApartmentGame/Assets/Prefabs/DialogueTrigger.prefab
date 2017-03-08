@@ -54,7 +54,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
   dialogueCamera: {fileID: 0}
-  Path: 
+  speakers: []
+  Path: Demo/Part1A/Danny
   dialogueWindow: {fileID: 1905344328228412, guid: d9518a1eaceaabf44877ef4ddbf98327,
     type: 2}
   auto: 0
@@ -67,7 +68,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1.3
-  m_Height: 3.3211238
+  m_Radius: 3.3142297
+  m_Height: 8.663365
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}

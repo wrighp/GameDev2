@@ -4,7 +4,7 @@
 		<Node>
 			<_ID>0</_ID>
 			<_name>Danny</_name>
-			<_text>(giggles) Oh! Hey there, bud! Rent money? My new job pays a lot better, so I actually have it this time! By the way, have you seen my doo--</_text>
+			<_text>Oh! Hey there, bud! Rent money? My new job pays a lot better, so I actually have it this time! By the way, have you seen my doo--</_text>
 			<_reset>0</_reset>
 			<_options>
 				<dialogueOption>
@@ -20,13 +20,19 @@
 		<Node>
 			<_ID>1</_ID>
 			<_name>Danny</_name>
-			<_text>Whoa! Did you hear THAT?\nSounded like Ms. Teacup... Maybe you should go check it out?</_text>
+			<_text>Whoa! Did you hear THAT?\nSounded like Ms Teacup... Maybe you should go check it out?</_text>
 			<_reset>2</_reset>
 			<_options>
 				<dialogueOption>
-					<_text></_text>
+					<_text>Nah...</_text>
 					<_dest>-1</_dest>
 				</dialogueOption>
+				
+				<dialogueOption>
+					<_text>Sure...</_text>
+					<_dest>-1</_dest>
+				</dialogueOption>
+				
 			</_options>
 			<_precalls>
 			</_precalls>

@@ -64,7 +64,7 @@ public class npcDialogue : MonoBehaviour {
 		dialogueWindow.transform.SetParent(canvas.transform, false);
 		
 		RectTransform windowTrans = (RectTransform)dialogueWindow.transform;
-		windowTrans.localPosition = new Vector3(0,0,0);
+		windowTrans.localPosition = new Vector3(0,-100,0);
 		
 		
 		Name = dialogueWindow.transform.Find("[npc]").gameObject;
@@ -98,6 +98,11 @@ public class npcDialogue : MonoBehaviour {
 		tasks["B"] = false;
 		tasks["C"] = false;
 		tasks["D"] = false;
+	}
+	
+	//bla bla bla
+	public void achieve(string thing){
+		tasks[thing] = true;
 	}
 	
 	public void runDialogue(){
@@ -137,29 +142,34 @@ public class npcDialogue : MonoBehaviour {
 		option1.SetActive(false);
 		option2.SetActive(false);
 		option3.SetActive(false);
+		exit.SetActive(false);
 		
 		//loop through all of this node's possible options and display them, currently
 		//a maximum of 3 options per node
 		for(int i=0;i<node._options.Count/*||i<2for later expansion?*/;i++){
 			switch(i){
 				case 0:
-					updateButton(option1, node._options[i]);
+					updateButton(node, option1, node._options[i]);
 				break;
 				
 				case 1:
-					updateButton(option2, node._options[i]);
+					updateButton(node, option2, node._options[i]);
 				break;
 				
 				case 2:
-					updateButton(option3, node._options[i]);
+					updateButton(node, option3, node._options[i]);
 				break;
 				
 			}
 		}
+		
+		if(node._options.Count>1){
+			exit.SetActive(true);
+		}
 	}
 	
 	//make the buttons visible
-	private void updateButton(GameObject button, dialogueOption option){
+	private void updateButton(Node node, GameObject button, dialogueOption option){
 		//check to see if the option has any requirements
 		//if it does, check the hash table
 		if(option._req != null && option._req != ""){
@@ -169,11 +179,13 @@ public class npcDialogue : MonoBehaviour {
 			//else setActive and continue
 		}
 		
-		button.SetActive(true);
+		if(node._options.Count > 1){
+			button.SetActive(true);
+		}
 		
 		button.GetComponentInChildren<Text>().text = option._text;
 		button.GetComponent<Button>().onClick.AddListener(delegate {
-			Debug.Log(option._dest);
+			//Debug.Log(option._dest);
 			setSelect(option._dest);});
 	}
 	
@@ -196,7 +208,7 @@ public class npcDialogue : MonoBehaviour {
 			dialogue._nodes [nodeID]._precalls.ForEach ((Call c) => c.execute ());
 			
 			//testing buttons
-			//se tthe corresponding button active
+			//set the corresponding button active
 			//for some reason, this works
 			//CHECK THIS OUT ============================================================
 			int j=0;
@@ -205,43 +217,70 @@ public class npcDialogue : MonoBehaviour {
 					//options[i].GetComponent<Button>().Select();
 					availableOptions[j] = options[i];
 					j++;
+					Debug.Log( j + " " + options[i].GetComponentInChildren<Text>().text);
+					//Debug.Log("FUCK " + j);
 				}
 			}
 			
-			availableOptions[0].GetComponent<Button>().Select();
+			Debug.Log("J IS EQUAL TO " + j);
+			Debug.Log("THE DIALOGUE OPTIONS ARE ");
+			
+			for(int i=0; i<j;i++){
+				Debug.Log( i + " " + availableOptions[i].GetComponentInChildren<Text>().text);
+			}
+			
 			
 			select = -2;
 			
 			int index = 0;
 			int direction;
 			
-			while(select == -2){
-					availableOptions[index].GetComponent<Button>().Select();
-					direction = -(int) Input.GetAxisRaw("Vertical");
-					index+=direction;
-					
-					//bind the indices
-					if(index<0)
-						index = 0;
-					if(index>j-1)
-						index = j-1;
-					
-					//testing
-					/*if(direction!=0){
-						Debug.Log(direction);
-						Debug.Log("available Option is " + index);
-					}*/
-
-					//look for player input
+			//only one option
+			if(j == 0){
+				while(select == -2){
 					if (Input.GetButtonDown("Fire1")){
 						//invoke a click through script
 						// referenceToTheButton.onClick.Invoke();
-						availableOptions[index].GetComponent<Button>().onClick.Invoke();
+						options[0].GetComponent<Button>().onClick.Invoke();
 						
 					}
 					yield return /*new WaitForEndOfFrame()*/null;
+				}
 			}
-			
+			else{
+				availableOptions[0].GetComponent<Button>().Select();
+				
+				while(select == -2){
+						availableOptions[index].GetComponent<Button>().Select();
+							
+						direction = -(int) Input.GetAxisRaw("Vertical");
+						index+=direction;
+						
+						//bind the indices
+						if(index<0)
+							index = 0;
+						if(index>j-1)
+							index = j-1;
+						
+						//Debug.Log( index + " " + options[index].GetComponentInChildren<Text>().text);
+						
+						//testing
+						if(direction!=0){
+							Debug.Log(direction);
+							Debug.Log( "INDEX " + index + " " + 
+							availableOptions[index].GetComponentInChildren<Text>().text);
+						}
+
+						//look for player input
+						if (Input.GetButtonDown("Fire1")){
+							//invoke a click through script
+							// referenceToTheButton.onClick.Invoke();
+							availableOptions[index].GetComponent<Button>().onClick.Invoke();
+							
+						}
+						yield return /*new WaitForEndOfFrame()*/null;
+				}
+			}
 			dialogue._nodes [nodeID]._postcalls.ForEach ((Call c) => c.execute ());
 			dialogue._next = dialogue._nodes[nodeID]._reset;
 			nodeID = select;
@@ -250,6 +289,7 @@ public class npcDialogue : MonoBehaviour {
 		mainCamera.gameObject.SetActive(true);
 		dialogueCamera.gameObject.SetActive(false);
 		dialogueWindow.SetActive(false); 
+		GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = true;
 	}
 	
 	//coroutine for displaying the text, add something to allow the player to skip
@@ -263,13 +303,28 @@ public class npcDialogue : MonoBehaviour {
 		nodeText.GetComponent<Text>().text = "";
 		
 		while(true){
-			nodeText.GetComponent<Text>().text += displayText[index];
+			//deal with newline character
+			if(displayText[index] == '\\' && index<strLen-1 && displayText[index+1] == 'n'){
+				index++;
+				nodeText.GetComponent<Text>().text+='\n';
+			}
+			//otherwise go normally
+			else{
+				nodeText.GetComponent<Text>().text += displayText[index];
+			}
+			
+			if((displayText[index] == '!' || displayText[index] == '?' ||
+				displayText[index] == '.') && index<strLen-1 && 
+				(displayText[index+1] == ' '|| displayText[index+1] == '\n')){
+					yield return new WaitForSeconds(0.3f);
+				}
+			
 			index++;
 			
 			if(index<strLen){
 				//play a sound potentially
 				//wait for a moment before adding next character
-				yield return new WaitForSeconds(0.05f);
+				yield return new WaitForSeconds(0.02f);
 			}
 			else{
 				break;
@@ -288,7 +343,8 @@ public class npcDialogue : MonoBehaviour {
 			mainCamera.gameObject.SetActive(false);
 			dialogueCamera.gameObject.SetActive(true);
 			running = true;
-			Debug.Log("Welcome to dialogue!");
+			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
+			runDialogue();
 		}
 	}
 	
@@ -302,6 +358,7 @@ public class npcDialogue : MonoBehaviour {
 			mainCamera.gameObject.SetActive(false);
 			dialogueCamera.gameObject.SetActive(true);
 			running = true;
+			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
 			runDialogue();
 		}
 	}
