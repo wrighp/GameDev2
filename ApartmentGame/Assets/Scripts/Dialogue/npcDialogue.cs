@@ -51,6 +51,8 @@ public class npcDialogue : MonoBehaviour {
 	private bool protection = false;
 	
 	public static Dictionary<string, bool> tasks;
+	public static string[] taskList;
+	public static int numTasks = 4;
 	
 	// Use this for initialization
 	void Start () {
@@ -96,10 +98,16 @@ public class npcDialogue : MonoBehaviour {
 	
 	private void initiateTasks(){
 		tasks = new Dictionary<string, bool>();
+		taskList = new string[numTasks];
 		tasks["A"] = false;
 		tasks["B"] = false;
 		tasks["C"] = false;
 		tasks["D"] = false;
+		
+		taskList[0] = "A";
+		taskList[1] = "B";
+		taskList[2] = "C";
+		taskList[3] = "D";
 	}
 	
 	//bla bla bla
@@ -207,6 +215,14 @@ public class npcDialogue : MonoBehaviour {
 			updateText(dialogue._nodes[nodeID]);
 			//testing out the execute function
 			dialogue._nodes [nodeID]._precalls.ForEach ((Call c) => c.execute ());
+			
+			//add accomplishment to dictionary
+			if(dialogue._nodes[nodeID]._accomplish!=null && 
+				dialogue._nodes[nodeID]._accomplish!=""){
+				tasks[dialogue._nodes[nodeID]._accomplish] = true;
+				Debug.Log("ACCOMPLISHED " + dialogue._nodes[nodeID]._accomplish);
+				checkStatus();
+			}
 			
 			//testing buttons
 			//set the corresponding button active
@@ -377,6 +393,17 @@ public class npcDialogue : MonoBehaviour {
 			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
 			runDialogue();
 		}
+	}
+	
+	//cycle through all tasks, if they're all complete, you win!
+	void checkStatus(){
+		for(int i=0; i<numTasks;i++){
+			Debug.Log("CYCLING..." + taskList[i]);
+			if(tasks[taskList[i]] == false)
+				return;
+		}
+		Debug.Log("YOU DID IT!");
+		//end the game
 	}
 	
 }

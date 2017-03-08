@@ -23,6 +23,7 @@
 			<_name>Sasuke</_name>
 			<_text>Ha! Don’t feel special, you’re hardly any challenge at all. I just wanted to give you your money.</_text>
 			<_reset>3</_reset>
+			<_accomplish>B</_accomplish>
 			<_postcalls>
 				<Call _m="GiveObject">
 					<_arg>Money</_arg>
@@ -39,6 +40,7 @@
 			<_name>Sasuke</_name>
 			<_text>Wait a minute, calm down- I can’t get into any more trouble, man, I can’t-! Just take your stupid money!</_text>
 			<_reset>3</_reset>
+			<_accomplish>B</_accomplish>
 			<_postcalls>
 				<Call _m="CharacterAnimation">
 					<_arg>Sasuke</_arg>

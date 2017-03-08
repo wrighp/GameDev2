@@ -1866,6 +1866,21 @@ Prefab:
       propertyPath: Path
       value: Demo/Part1A/Firelord
       objectReference: {fileID: 0}
+    - target: {fileID: 136437526663006524, guid: fc25988eefff4e04b935f6fd86e223c3,
+        type: 2}
+      propertyPath: m_Radius
+      value: 3.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 136437526663006524, guid: fc25988eefff4e04b935f6fd86e223c3,
+        type: 2}
+      propertyPath: m_Height
+      value: 9.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 114590525607945920, guid: fc25988eefff4e04b935f6fd86e223c3,
+        type: 2}
+      propertyPath: numTasks
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc25988eefff4e04b935f6fd86e223c3, type: 2}
   m_IsPrefabParent: 0

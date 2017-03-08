@@ -42,7 +42,7 @@ public class tmpItem : MonoBehaviour {
 		
 	}
 	
-	string getAttribute(){
+	public string getAttribute(){
 		return attribute;
 	}
 	
@@ -74,7 +74,7 @@ public class tmpItem : MonoBehaviour {
 			particle2.GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingLayerName = "Foreground";
 			Destroy(particle2, 10f);
 			}
-			if(attribute == "Sparks"){
+			if(attribute == "Sparks" && inAttribute=="Wet"){
 				GameObject particle2 = Instantiate(effects[1], 
 				new Vector3(transform.position.x, 
 					transform.position.y-3,
@@ -83,6 +83,10 @@ public class tmpItem : MonoBehaviour {
 			);
 			//particle2.GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingLayerName = "Foreground";
 			}
+			else if (attribute == "Sparks" && inAttribute == "Rubber"){
+				Destroy(this.gameObject);
+			}
+			
 			if(destroyAfterUse)
 				Destroy(this.gameObject);
 			Destroy(particle, 3f);

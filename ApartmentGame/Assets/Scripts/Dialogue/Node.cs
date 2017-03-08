@@ -34,6 +34,9 @@ public class Node{
 	[XmlArrayItem("Call")]
 	public List<Call> _postcalls;
 	
+	[XmlElement("_accomplish")]
+	public string _accomplish;
+	
 	//for serialization
 	public Node() {
 		_options = new List<dialogueOption>();
