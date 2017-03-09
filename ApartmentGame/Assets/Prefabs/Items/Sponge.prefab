@@ -20,9 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4980479387515982}
   - component: {fileID: 33203408778305000}
-  - component: {fileID: 65402784288118526}
   - component: {fileID: 23183611646780038}
   - component: {fileID: 54172655171280658}
+  - component: {fileID: 114835603407773694}
+  - component: {fileID: 135725606141612504}
   m_Layer: 0
   m_Name: Sponge
   m_TagString: Untagged
@@ -38,8 +39,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4336994770377992}
-  - component: {fileID: 114916417842129690}
-  - component: {fileID: 135323102784980068}
+  - component: {fileID: 65579437495716374}
   m_Layer: 0
   m_Name: 
   m_TagString: Untagged
@@ -127,24 +127,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65402784288118526
+--- !u!65 &65579437495716374
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1307712774750156}
+  m_GameObject: {fileID: 1950657147646604}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114916417842129690
+--- !u!114 &114835603407773694
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1950657147646604}
+  m_GameObject: {fileID: 1307712774750156}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33a6f2daf5c3a484fa416187d056801e, type: 3}
@@ -155,12 +155,12 @@ MonoBehaviour:
   affects: []
   grabbable: 1
   destroyAfterUse: 0
---- !u!135 &135323102784980068
+--- !u!135 &135725606141612504
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1950657147646604}
+  m_GameObject: {fileID: 1307712774750156}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1

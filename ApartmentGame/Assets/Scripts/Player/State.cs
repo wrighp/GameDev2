@@ -50,13 +50,13 @@ public class State : MonoBehaviour {
 			Debug.Log("DEAD");
 			fireTimer = 0f;
 			burning(false);
-			//SceneManager.LoadScene("Lose");
+			SceneManager.LoadScene("Lose");
 		}
 		if(fireTimer>fireDeathTimer){
 			Debug.Log("DEAD");
 			fireTimer = 0f;
 			burning(false);
-			//SceneManager.LoadScene("Lose");
+			SceneManager.LoadScene("Lose");
 		}
 		if(fireTimer<0){
 			fireTimer = 0f;
@@ -88,22 +88,22 @@ public class State : MonoBehaviour {
 		
 		if(affliction == "Wet"){
 			wet = false;
-			Debug.Log("NOT WET");
+			//Debug.Log("NOT WET");
 		}
 		if(affliction == "Rubber"){
 			insulated = false;
-			Debug.Log("NOT INSULATED");
+			//Debug.Log("NOT INSULATED");
 		}
 		
 		//take fire damage
 		if(affliction == "Fire"){
 			burning(false);
-			Debug.Log("NOT ON FIRE");
+			//Debug.Log("NOT ON FIRE");
 		}
 		
 		if(affliction == "Sparks"){
 			shocked(false);
-			Debug.Log("NOT ZAPPED");
+			//Debug.Log("NOT ZAPPED");
 		}
 	}
 	
@@ -115,11 +115,11 @@ public class State : MonoBehaviour {
 		
 		if(affliction == "Wet"){
 			burning(false);
-			Debug.Log("NOT ON FIRE");
+			//Debug.Log("NOT ON FIRE");
 		}
 		if(affliction == "Rubber"){
 			shocked(false);
-			Debug.Log("NOT SHOCKED");
+			//Debug.Log("NOT SHOCKED");
 		}
 		
 		//take fire damage

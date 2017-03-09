@@ -150,7 +150,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4397354713157970, guid: 8eaf711fb350c684f9fedfdd87903a8a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 35.61
+      value: 36.31
       objectReference: {fileID: 0}
     - target: {fileID: 4397354713157970, guid: 8eaf711fb350c684f9fedfdd87903a8a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -379,6 +379,8 @@ MonoBehaviour:
   attribute: Wet
   effects: []
   affects: []
+  grabbable: 0
+  destroyAfterUse: 0
 --- !u!135 &1009948443
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -727,6 +729,8 @@ MonoBehaviour:
   attribute: Dry
   effects: []
   affects: []
+  grabbable: 0
+  destroyAfterUse: 0
 --- !u!54 &1790533707
 Rigidbody:
   m_ObjectHideFlags: 0

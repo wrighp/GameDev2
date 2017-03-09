@@ -83,7 +83,7 @@ public class tmpItem : MonoBehaviour {
 				Quaternion.Euler(0,0,0)
 			);
 			//particle2.GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingLayerName = "Foreground";
-			SceneManager.LoadScene("Lose");
+			//SceneManager.LoadScene("Lose");
 			}
 			else if (attribute == "Sparks" && inAttribute == "Rubber"){
 				Destroy(this.gameObject);

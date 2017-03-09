@@ -20,9 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4685910067841488}
   - component: {fileID: 135119801264381078}
-  - component: {fileID: 114837466586864832}
   m_Layer: 0
-  m_Name: 
+  m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,16 +36,17 @@ GameObject:
   m_Component:
   - component: {fileID: 4905216546507218}
   - component: {fileID: 33095993003561000}
-  - component: {fileID: 135427467171174712}
   - component: {fileID: 23248619771307598}
   - component: {fileID: 54598617605926214}
+  - component: {fileID: 135756616117187024}
+  - component: {fileID: 114096819512672224}
   m_Layer: 0
   m_Name: WaterBottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4685910067841488
 Transform:
   m_ObjectHideFlags: 1
@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1406429398106566}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.46, y: 1.59, z: -6.92}
+  m_LocalPosition: {x: 3.0946121, y: 0.43195933, z: 13.891018}
   m_LocalScale: {x: 0.8919186, y: 0.89191866, z: 0.89191866}
   m_Children:
   - {fileID: 4685910067841488}
@@ -127,12 +127,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114837466586864832
+--- !u!114 &114096819512672224
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1266209906434718}
+  m_GameObject: {fileID: 1406429398106566}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33a6f2daf5c3a484fa416187d056801e, type: 3}
@@ -150,20 +150,20 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1266209906434718}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.6280651
+  m_Radius: 0.50982386
   m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135427467171174712
+--- !u!135 &135756616117187024
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1406429398106566}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6280651
   m_Center: {x: 0, y: 0, z: 0}
