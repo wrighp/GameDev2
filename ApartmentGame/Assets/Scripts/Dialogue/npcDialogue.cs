@@ -56,6 +56,8 @@ public class npcDialogue : MonoBehaviour {
 	public static int numTasks = 4;
 	
 	// Use this for initialization
+	
+	
 	void Start () {
 		//load the dialogue from the given path
 		dialogue = Dialogue.Load(Path);
@@ -250,16 +252,19 @@ public class npcDialogue : MonoBehaviour {
 			
 			int index = 0;
 			int direction;
+			float selCooldown = 0.25f;
 			
 			//only one option
 			if(j == 0){
 				while(select == -2){
-					if (Input.GetButtonDown("Fire1")&& !textScroll && running){
+					if (Input.GetButtonDown("Fire1")&& !textScroll && running
+						&& selCooldown<0){
 						//invoke a click through script
 						// referenceToTheButton.onClick.Invoke();
 						options[0].GetComponent<Button>().onClick.Invoke();
 						
 					}
+					selCooldown -=Time.deltaTime;
 					yield return /*new WaitForEndOfFrame()*/null;
 				}
 			}
@@ -267,7 +272,6 @@ public class npcDialogue : MonoBehaviour {
 				availableOptions[0].GetComponent<Button>().Select();
 				
 				//cooldown to make selection less sensitive
-				float selCooldown = 0f;
 				while(select == -2){
 						
 						availableOptions[index].GetComponent<Button>().Select();
@@ -289,16 +293,18 @@ public class npcDialogue : MonoBehaviour {
 						
 						//testing
 						if(direction!=0 && selCooldown<0){
-							selCooldown = 2f;
+							selCooldown = 0.25f;
 						}
 						
-						selCooldown -= 0.3f;
+						selCooldown -= Time.deltaTime;
 						
 						//look for player input
-						if (Input.GetButtonDown("Fire1") && !textScroll && running){
+						if (Input.GetButtonDown("Fire1") && !textScroll && running 
+							&& selCooldown<0){
 							//invoke a click through script
 							// referenceToTheButton.onClick.Invoke();
 							availableOptions[index].GetComponent<Button>().onClick.Invoke();
+							selCooldown = 0.25f;
 							
 						}
 						yield return /*new WaitForEndOfFrame()*/null;
@@ -369,7 +375,7 @@ public class npcDialogue : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider col){
-		Debug.Log(col.tag);
+		//Debug.Log(col.tag);
 		if(col.tag == "Player" && auto && !running){
 			//run the dialogue
 			mainCamera.gameObject.SetActive(false);

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Xml;
 using System.Xml.Serialization;
 using System.IO;
 
@@ -25,6 +26,10 @@ public class Dialogue{
 	public static Dialogue Load(string path){
 		
 		TextAsset _xml = Resources.Load<TextAsset>(path);
+		XmlDocument xmldoc = new XmlDocument();
+		xmldoc.LoadXml(_xml.text);
+		
+		//_xml = (TextAsset) xmldoc;
 		
 		XmlSerializer serial = new XmlSerializer(typeof(Dialogue));
 		StringReader reader = new StringReader(_xml.text);

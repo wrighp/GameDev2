@@ -24,8 +24,9 @@ public class dTrigger : MonoBehaviour {
 		else{
 			target.setNext(index);
 			target.auto = setAuto;
-			if(runImmediate)
+			if(runImmediate){
 				target.runDialogue();
+			}
 			Destroy(this);
 		}
 	}

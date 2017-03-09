@@ -6,7 +6,7 @@
 			<_name>Ms Teacup</_name>
 			<_text>H-Hey you-! Don’t just stand there, get over here and help me you dolts!
 Just do something! Argh! This never would’ve happened if Dom was still around!</_text>
-			<_reset>0</_reset>
+			<_reset>2</_reset>
 			<_options><dialogueOption><_dest>-1</_dest></dialogueOption></_options>
 		</Node>
 

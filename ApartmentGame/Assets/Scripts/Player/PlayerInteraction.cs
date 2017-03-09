@@ -20,6 +20,9 @@ public class PlayerInteraction : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//pickedUp = false;
+		if(item1 == null)
+			pickedUp = false;
+		
 		if(pickedUp && item1!=null){
 			item1.transform.position = rightHand.position;
 			item1.transform.localPosition = Vector3.zero;
@@ -65,9 +68,9 @@ public class PlayerInteraction : MonoBehaviour {
 					
 					item1.GetComponent<Rigidbody>().velocity = Vector3.zero;
 					item1.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+					pickedUp = true;
+					cooldown = 0.5f;
 				}
-				pickedUp = true;
-				cooldown = 0.5f;
 			}		
 		}
 		
