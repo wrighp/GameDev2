@@ -51,8 +51,11 @@ public class npcDialogue : MonoBehaviour {
 	private bool textScroll = false;
 	private bool protection = false;
 	
+	//the list of tasks and achievements the player has accomplished or rather, hasn't
 	public static Dictionary<string, bool> tasks;
+	public static Dictionary<string, bool> chapterTasks;
 	public static string[] taskList;
+	public static string[] chapterTaskList;
 	public static int numTasks = 4;
 	
 	// Use this for initialization
@@ -159,6 +162,8 @@ public class npcDialogue : MonoBehaviour {
 		
 		//loop through all of this node's possible options and display them, currently
 		//a maximum of 3 options per node
+		//CHECK THIS OUT ===============================================================
+		//instantiate buttons over each other instead of using predefined buttons
 		for(int i=0;i<node._options.Count/*||i<2for later expansion?*/;i++){
 			switch(i){
 				case 0:
@@ -206,9 +211,7 @@ public class npcDialogue : MonoBehaviour {
 	public IEnumerator run(){
 		//THIS WILL DO FOR NOW
 		yield return new WaitForEndOfFrame();
-		
-		//lock the cursor
-		//Cursor.lockState = CursorLockMode.Locked;
+
 		dialogueWindow.SetActive(true);
 		
 		nodeID = dialogue._next;
@@ -227,9 +230,8 @@ public class npcDialogue : MonoBehaviour {
 				checkStatus();
 			}
 			
-			//testing buttons
 			//set the corresponding button active
-			//for some reason, this works
+			//for some reason, this works,  not complaining
 			//CHECK THIS OUT ============================================================
 			int j=0;
 			for(int i=0; i<4;i++){
@@ -239,13 +241,6 @@ public class npcDialogue : MonoBehaviour {
 					j++;
 				}
 			}
-			/*
-			Debug.Log("J IS EQUAL TO " + j);
-			Debug.Log("THE DIALOGUE OPTIONS ARE ");
-			
-			for(int i=0; i<j;i++){
-				Debug.Log( i + " " + availableOptions[i].GetComponentInChildren<Text>().text);
-			}*/
 			
 			
 			select = -2;
@@ -254,7 +249,7 @@ public class npcDialogue : MonoBehaviour {
 			int direction;
 			float selCooldown = 0.25f;
 			
-			//only one option
+			//only one option, fire1 goes straight to the next one
 			if(j == 0){
 				while(select == -2){
 					if (Input.GetButtonDown("Fire1")&& !textScroll && running
@@ -321,10 +316,8 @@ public class npcDialogue : MonoBehaviour {
 		GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = true;
 	}
 	
-	//coroutine for displaying the text, add something to allow the player to skip
-	//forward later
+	//coroutine for displaying the text
 	//handle text wrapping too
-	//also, break out of coroutine when the player advances
 	private IEnumerator DisplayText(string displayText){
 		int strLen = displayText.Length;
 		int index = 0;
@@ -369,11 +362,6 @@ public class npcDialogue : MonoBehaviour {
 		textScroll = false;
 	}
 	
-	//shake the dialogue box, maybe play a noise
-	void shake(){
-		
-	}
-	
 	void OnTriggerEnter(Collider col){
 		//Debug.Log(col.tag);
 		if(col.tag == "Player" && auto && !running){
@@ -394,11 +382,20 @@ public class npcDialogue : MonoBehaviour {
 		//if the player presses "interact"/fire1, disable player movement and
 		//run the dialogue tree
 		if (Input.GetButtonDown("Fire1") && !running){
-			mainCamera.gameObject.SetActive(false);
-			dialogueCamera.gameObject.SetActive(true);
-			running = true;
-			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
-			runDialogue();
+			//get player's forward facing direction
+			Vector3 p4 = col.transform.TransformDirection(Vector3.forward);
+			Vector3 npc4 = -transform.forward;
+			float dp = Vector3.Dot(p4, npc4);
+			float dst = Vector3.Distance(col.transform.position, transform.position);
+			//only run dialogue if they're facing each other (more or less) or
+			//within a certain distance 
+			if((dp<=1 &&dp>=0.75) || dst<10){
+				mainCamera.gameObject.SetActive(false);
+				dialogueCamera.gameObject.SetActive(true);
+				running = true;
+				GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
+				runDialogue();
+			}
 		}
 	}
 	

@@ -39,4 +39,14 @@ public class Dialogue{
 		reader.Close();
 		return dialogue;
 	}
+	
+	//serialize the dialogue 
+	public void Save(string path)
+	{
+		var serializer = new XmlSerializer(typeof(Dialogue));
+ 		using(var stream = new FileStream(path, FileMode.Create))
+ 		{
+ 			serializer.Serialize(stream, this);
+ 		}
+	}
 }

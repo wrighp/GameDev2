@@ -24,4 +24,19 @@ public class dialogueOption{
 		_text = text;
 		_dest = dest;
 	}
+	
+	public void setDst(int destination)
+	{
+		_dest = destination;
+	}
+	
+	public void setReq(string req)
+	{
+		_req = req;
+	}
+	
+	public void setText(string text)
+	{
+		_text = text;
+	}
 }
