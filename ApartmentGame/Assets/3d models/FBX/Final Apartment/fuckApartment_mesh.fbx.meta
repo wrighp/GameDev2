@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 31da35f8805c949fa8f11971c47c305a
-timeCreated: 1488394518
+guid: 43640da0dab614121a6e134fd6d04ad3
+timeCreated: 1489904013
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -10,12 +10,8 @@ ModelImporter:
     400000: Apartment_geo
     400002: //RootNode
     2300000: Apartment_geo
-    2300002: //RootNode
     3300000: Apartment_geo
-    3300002: //RootNode
     4300000: Apartment_geo
-    4300002: polySurface4
-    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -78,7 +74,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

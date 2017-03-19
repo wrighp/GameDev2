@@ -1,16 +1,32 @@
 fileFormatVersion: 2
-guid: d6d060a594c47af40bba2f9647378751
-timeCreated: 1488945444
+guid: ca848f5872d0f4ce797fe1fccc8ebb54
+timeCreated: 1489904013
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: polySurface8
-    9500000: //RootNode
+    100000: ac_unit
+    100002: building
+    100004: //RootNode
+    100006: ladder
+    100008: stairs
+    400000: ac_unit
+    400002: building
+    400004: //RootNode
+    400006: ladder
+    400008: stairs
+    2300000: ac_unit
+    2300002: building
+    2300004: ladder
+    2300006: stairs
+    3300000: ac_unit
+    3300002: building
+    3300004: ladder
+    3300006: stairs
+    4300000: building
+    4300002: ladder
+    4300004: ac_unit
+    4300006: stairs
   materials:
     importMaterials: 1
     materialName: 0
@@ -73,7 +89,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

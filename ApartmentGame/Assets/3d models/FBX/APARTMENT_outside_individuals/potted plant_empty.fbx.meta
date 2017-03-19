@@ -1,20 +1,20 @@
 fileFormatVersion: 2
-guid: 31da35f8805c949fa8f11971c47c305a
-timeCreated: 1488394518
+guid: 3b84281bfa09442ce94202b58d096cf2
+timeCreated: 1489904013
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Apartment_geo
-    100002: //RootNode
-    400000: Apartment_geo
-    400002: //RootNode
-    2300000: Apartment_geo
-    2300002: //RootNode
-    3300000: Apartment_geo
-    3300002: //RootNode
-    4300000: Apartment_geo
-    4300002: polySurface4
+    100000: //RootNode
+    100002: polySurface5
+    400000: //RootNode
+    400002: polySurface5
+    2300000: //RootNode
+    2300002: polySurface5
+    3300000: //RootNode
+    3300002: polySurface5
+    4300000: pCylinder6
+    4300002: polySurface5
     9500000: //RootNode
   materials:
     importMaterials: 1
