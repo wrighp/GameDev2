@@ -11,7 +11,7 @@ public class TreeDesigner : EditorWindow {
 	Texture2D mainSectionTex;
 	
 	Color headerSectionCol = new Color(0, 0, 0, 1);
-	Color mainSectionCol = new Color(10, 50, 200, 1);
+	Color mainSectionCol = new Color(50f/255f, 150f/255f, 200f/255f, 1);
 	
 	Rect headerSection;
 	Rect mainSection;
@@ -68,6 +68,7 @@ public class TreeDesigner : EditorWindow {
 		//like open braces
 		GUILayout.BeginArea(headerSection);
 		
+		GUILayout.Label("Dialogue Tree Designer");
 		
 		//like close braces
 		GUILayout.EndArea();
@@ -94,7 +95,10 @@ public class TreeDesigner : EditorWindow {
 	
 	void DrawBody()
 	{
+		GUILayout.BeginArea(mainSection);
 		
+		
+		GUILayout.EndArea();
 	}
 	
 }
