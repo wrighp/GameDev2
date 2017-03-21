@@ -7,12 +7,11 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: clover_patch
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: f56fa6e1e81160b4eb00feab83d99448, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON _EMISSION _GLOSSYREFLECTIONS_OFF _NORMALMAP _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 1
-  m_CustomRenderQueue: 2450
-  stringTagMap:
-    RenderType: TransparentCutout
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -72,6 +71,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
+        name: _Amp
+      second: 0.652
+    - first:
         name: _BumpScale
       second: 1
     - first:
@@ -105,6 +107,9 @@ Material:
         name: _Parallax
       second: 0.02
     - first:
+        name: _Rate
+      second: 50.9
+    - first:
         name: _SmoothnessTextureChannel
       second: 0
     - first:
@@ -117,12 +122,25 @@ Material:
         name: _UVSec
       second: 0
     - first:
+        name: _V1
+      second: 0.134
+    - first:
+        name: _V2
+      second: 0.145
+    - first:
+        name: _V3
+      second: 0.356
+    - first:
         name: _ZWrite
       second: 1
     m_Colors:
     - first:
         name: _Color
+<<<<<<< HEAD
       second: {r: 0.48453343, g: 0.61764705, b: 0.23161764, a: 1}
+=======
+      second: {r: 0.46438733, g: 0.6691177, b: 0.16235943, a: 1}
+>>>>>>> origin/master
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
