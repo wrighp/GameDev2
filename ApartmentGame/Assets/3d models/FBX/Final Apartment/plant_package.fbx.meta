@@ -1,34 +1,29 @@
 fileFormatVersion: 2
-guid: ca848f5872d0f4ce797fe1fccc8ebb54
-timeCreated: 1489904013
+guid: 6204df6a44bba4f1bacb174123025552
+timeCreated: 1490056887
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: ac_unit
-    100002: building
-    100004: //RootNode
-    100006: ladder
-    100008: stairs
-    400000: ac_unit
-    400002: building
-    400004: //RootNode
-    400006: ladder
-    400008: stairs
-    2300000: ac_unit
-    2300002: building
-    2300004: ladder
-    2300006: stairs
-    3300000: ac_unit
-    3300002: building
-    3300004: ladder
-    3300006: stairs
-    4300000: building
-    4300002: ladder
-    4300004: ac_unit
-    4300006: stairs
+    100000: clover_dense
+    100002: clover_hobo
+    100004: clover_spread
+    100006: //RootNode
+    400000: clover_dense
+    400002: clover_hobo
+    400004: clover_spread
+    400006: //RootNode
+    2300000: clover_dense
+    2300002: clover_hobo
+    2300004: clover_spread
+    3300000: clover_dense
+    3300002: clover_hobo
+    3300004: clover_spread
+    4300000: clover_dense
+    4300002: clover_hobo
+    4300004: clover_spread
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
