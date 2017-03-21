@@ -12,6 +12,10 @@
 		
 	}
 	SubShader {
+		
+		Tags{"Queue"="Transparent"}
+		Blend SrcAlpha OneMinusSrcAlpha
+		
 		pass{
 		
 			CGPROGRAM
@@ -69,9 +73,11 @@
 				return o;
 			}
 			
-			float4 frag(vertexOutput i) : SV_TARGET
+			float4 frag(vertexOutput i) : COLOR
 			{
 				float4 tex = tex2D(_MainTex, i.tex.xy * _MainTex_ST.xy + _MainTex_ST.zw);
+				if(tex.a == 0)
+					discard;
 				return float4(tex.xyz * _Color, 1);
 				//return i.colour;
 			}
