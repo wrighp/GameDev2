@@ -184,14 +184,20 @@ public class TreeDesigner : EditorWindow {
 	//draw the node window
 	//change this to edit node instead
 	void DrawNodeWindow(int id) {
+		//edit the node
+		if (GUILayout.Button("Edit Node")) {
+            //windowsToAttach.Add(id);
+			NodeSettings.OpenWindow(nodes[id]);
+        }
+		//edit the dialogue options from here
+		if (GUILayout.Button("Edit Dialogue Options")) {
+            //windowsToAttach.Add(id);
+			//NodeSettings.OpenWindow(nodes[id]);
+			Debug.Log("Let's rock and roll!");
+        }
 		//attach to other nodes
         if (GUILayout.Button("Attach")) {
             windowsToAttach.Add(id);
-        }
-		//edit the node
-		if (GUILayout.Button("Edit")) {
-            //windowsToAttach.Add(id);
-			NodeSettings.OpenWindow(nodes[id]);
         }
  
         GUI.DragWindow();
