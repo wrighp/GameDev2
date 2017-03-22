@@ -174,7 +174,7 @@ public class TreeDesigner : EditorWindow {
 		//edit the node
 		if (GUILayout.Button("Edit")) {
             //windowsToAttach.Add(id);
-			NodeSettings.OpenWindow();
+			NodeSettings.OpenWindow(nodes[id]);
         }
  
         GUI.DragWindow();
@@ -200,23 +200,23 @@ public class TreeDesigner : EditorWindow {
 	{
 		GUILayout.BeginArea(buttonSection);
 		
-		
+		//add a new node and window to the main area
 		if(GUILayout.Button("Add Node", GUILayout.Height(40)))
 		{
-			windows.Add(new Rect(10, 10, 100, 100));
 			Node tmp = new Node("");
-			
+			tmp._ID = nodes.Count;
 			nodes.Add(tmp);
 			//maybe remove?
 			dialogue.addNode(tmp);
+			windows.Add(new Rect(10, 10, 100, 100));
 			//NodeSettings.OpenWindow();
 		}
-		
+		/*
 		if(GUILayout.Button("Edit Node", GUILayout.Height(40)))
 		{
 			NodeSettings.OpenWindow();
 		}
-		
+		*/
 		if(GUILayout.Button("Delete Node", GUILayout.Height(40)))
 		{
 			NodeSettings.OpenWindow();
@@ -240,6 +240,7 @@ public class TreeDesigner : EditorWindow {
 	
 	//update the state of the tree
 	//clear everything that's been drawn and redraw the tree
+	//go through the whole list of nodes and draw the stuff from there
 	static public void UpdateTree()
 	{
 		
@@ -254,9 +255,33 @@ public class NodeSettings : EditorWindow
 {
 	static NodeSettings window;
 	
+	//members
+	static Node node;
+	
+	static string text;
+	static string name;
+	static string accomplish;
+	static int reset;
+	
+	//list of pre and post calls
+	static List<Call> precalls;
+	static List<Call> postcalls;
+	
 	//for opening the window
-	static public void OpenWindow()
+	static public void OpenWindow(Node n = null)
 	{
+		node = n;
+		
+		if(node!=null)
+		{
+			text = node._text;
+			name = node._name;
+			accomplish = node._accomplish;
+			reset = node._reset;
+			
+			precalls = node._precalls;
+			postcalls = node._postcalls;
+		}
 		window = (NodeSettings)GetWindow(typeof(NodeSettings));
 		window.minSize = new Vector2(300, 300);
 		window.Show();
@@ -265,7 +290,58 @@ public class NodeSettings : EditorWindow
 	//draw shit for the node
 	void OnGUI()
 	{
+		DrawNode();
+	}
+	
+	void DrawNode()
+	{
+		//a field for each of them
+		EditorGUILayout.BeginHorizontal();
+		GUILayout.Label("Name");
+		EditorGUILayout.EndHorizontal();
+		//enter data
+		name = EditorGUILayout.TextField(name);
+		
+		EditorGUILayout.BeginHorizontal();
+		GUILayout.Label("Text");
+		EditorGUILayout.EndHorizontal();
+		//enter data
+		text = EditorGUILayout.TextField(text);
+		
+		//probably bringing this inside the main gui later
+		EditorGUILayout.BeginHorizontal();
+		GUILayout.Label("Reset Node");
+		EditorGUILayout.EndHorizontal();
+		//enter data
+		reset = EditorGUILayout.IntField(reset);
+		
+		EditorGUILayout.BeginHorizontal();
+		GUILayout.Label("Accomplishment");
+		EditorGUILayout.EndHorizontal();
+		//enter data
+		accomplish = EditorGUILayout.TextField(accomplish);
+		
+		
+		
+		EditorGUILayout.BeginHorizontal();
+		GUILayout.Label("Precalls");
+		EditorGUILayout.EndHorizontal();
 
+		
+		EditorGUILayout.BeginHorizontal();
+		GUILayout.Label("Postcalls");
+		EditorGUILayout.EndHorizontal();
+
+		
+		if(GUILayout.Button("Save", GUILayout.Height(40)))
+		{
+			node._text = text;
+			node._name = name;
+			node._accomplish = accomplish;
+			node._reset = reset;
+			//Debug.Log("Saved to " +path);
+			this.Close();
+		}
 	}
 }
 
@@ -290,17 +366,14 @@ public class TreeManager : EditorWindow
 	
 	static public Dialogue Load(string p)
 	{
-		Debug.Log(p);
-		
-		string path = "tmp";
-		return (new Dialogue());
-		//return Dialogue.Load(path);
+		//Debug.Log(p);
+		//return (new Dialogue());
+		return Dialogue.Load(p);
 	}
 	
 	static public void Save(string p)
 	{
-		Debug.Log(p);
-		//dialogue.Save(path);
+		dialogue.Save(p);
 	}
 	
 	void OnGUI()

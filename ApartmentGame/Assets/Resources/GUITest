@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Dialogue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <_nodes>
+    <Node>
+      <_ID>0</_ID>
+      <_text>Don't panic</_text>
+      <_name>Cry</_name>
+      <_reset>0</_reset>
+      <_options />
+    </Node>
+    <Node>
+      <_ID>1</_ID>
+      <_text>Please?</_text>
+      <_name>Please work</_name>
+      <_reset>0</_reset>
+      <_options />
+    </Node>
+  </_nodes>
+  <_next>0</_next>
+</Dialogue>
