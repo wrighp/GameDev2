@@ -6,11 +6,11 @@ using UnityEditor;
 //anything including unityEditor won't be included in the final build
 public class TreeDesigner : EditorWindow {
 	
-	//==========================NODE COMPONENTS===========================
-	Dialogue dialogue;
-	List<Node> nodes;
-	List<dialogueOption> options;
-	List<Call> calls;
+	//==========================Dialogue Tree Components===========================
+	Dialogue dialogue = new Dialogue();
+	List<Node> nodes = new List<Node>();
+	List<dialogueOption> options = new List<dialogueOption>();
+	//List<Call> calls;
 	
 	Node currentNode;
 	
@@ -29,6 +29,12 @@ public class TreeDesigner : EditorWindow {
 	Rect headerSection;
 	Rect mainSection;
 	Rect buttonSection;
+	
+	//============================Node Editor Components===================
+	//index'd the same way as the nodes
+	List<Rect> windows = new List<Rect>();
+    List<int> windowsToAttach = new List<int>();
+    List<int> attachedWindows = new List<int>();
 	
 	//styles
 	static GUIStyle textStyle;
@@ -63,6 +69,7 @@ public class TreeDesigner : EditorWindow {
 		DrawLayouts();
 		DrawButtons();
 		DrawBody();
+		
 	}
 	
 	//===================================================
@@ -131,9 +138,62 @@ public class TreeDesigner : EditorWindow {
 	{
 		GUILayout.BeginArea(mainSection);
 		
+		if (windowsToAttach.Count == 2) {
+            attachedWindows.Add(windowsToAttach[0]);
+            attachedWindows.Add(windowsToAttach[1]);
+            windowsToAttach = new List<int>();
+        }
+		
+		if (attachedWindows.Count >= 2) {
+            for (int i = 0; i < attachedWindows.Count; i += 2) {
+                DrawNodeCurve(windows[attachedWindows[i]], windows[attachedWindows[i + 1]]);
+            }
+        }
+		
+		//for the node editor
+		//mark beginning area for all popup windows
+		BeginWindows();
+		
+		//iterate over the contained windows and draw them
+        for (int i = 0; i < windows.Count; i++) {
+            windows[i] = GUI.Window(i, windows[i], DrawNodeWindow, "Node " + i);
+        }
+ 
+        EndWindows();
 		
 		GUILayout.EndArea();
 	}
+	
+	//draw the node window
+	//change this to edit node instead
+	void DrawNodeWindow(int id) {
+		//attach to other nodes
+        if (GUILayout.Button("Attach")) {
+            windowsToAttach.Add(id);
+        }
+		//edit the node
+		if (GUILayout.Button("Edit")) {
+            //windowsToAttach.Add(id);
+			NodeSettings.OpenWindow();
+        }
+ 
+        GUI.DragWindow();
+    }
+	
+	//node curve
+	void DrawNodeCurve(Rect start, Rect end) {
+        Vector3 startPos = new Vector3(start.x + start.width, start.y + start.height / 2, 0);
+        Vector3 endPos = new Vector3(end.x, end.y + end.height / 2, 0);
+        Vector3 startTan = startPos + Vector3.right * 50;
+        Vector3 endTan = endPos + Vector3.left * 50;
+        Color shadowCol = new Color(0, 0, 0, 0.06f);
+ 
+        for (int i = 0; i < 3; i++) {// Draw a shadow
+            Handles.DrawBezier(startPos, endPos, startTan, endTan, shadowCol, null, (i + 1) * 5);
+        }
+ 
+        Handles.DrawBezier(startPos, endPos, startTan, endTan, Color.black, null, 1);
+    }
 	
 	//handles all of the buttons
 	void DrawButtons()
@@ -141,9 +201,15 @@ public class TreeDesigner : EditorWindow {
 		GUILayout.BeginArea(buttonSection);
 		
 		
-		if(GUILayout.Button("Create Node", GUILayout.Height(40)))
+		if(GUILayout.Button("Add Node", GUILayout.Height(40)))
 		{
-			NodeSettings.OpenWindow();
+			windows.Add(new Rect(10, 10, 100, 100));
+			Node tmp = new Node("");
+			
+			nodes.Add(tmp);
+			//maybe remove?
+			dialogue.addNode(tmp);
+			//NodeSettings.OpenWindow();
 		}
 		
 		if(GUILayout.Button("Edit Node", GUILayout.Height(40)))
@@ -196,7 +262,7 @@ public class NodeSettings : EditorWindow
 		window.Show();
 		
 	}
-	
+	//draw shit for the node
 	void OnGUI()
 	{
 

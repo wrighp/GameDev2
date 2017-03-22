@@ -22,6 +22,11 @@ public class Dialogue{
 		_nodes = new List<Node>();
 	}
 	
+	public void addNode(Node node)
+	{
+		_nodes.Add(node);
+	}
+	
 	//static dialogue loader for use of all instances of Dialogue
 	public static Dialogue Load(string path){
 		
