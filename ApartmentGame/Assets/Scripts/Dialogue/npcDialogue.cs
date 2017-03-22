@@ -384,12 +384,12 @@ public class npcDialogue : MonoBehaviour {
 		if (Input.GetButtonDown("Fire1") && !running){
 			//get player's forward facing direction
 			Vector3 p4 = col.transform.TransformDirection(Vector3.forward);
-			Vector3 npc4 = -transform.forward;
+			Vector3 npc4 = (transform.forward - p4);
 			float dp = Vector3.Dot(p4, npc4);
 			float dst = Vector3.Distance(col.transform.position, transform.position);
 			//only run dialogue if they're facing each other (more or less) or
 			//within a certain distance 
-			if((dp<=1 &&dp>=0.75) || dst<10){
+			if((dp<=1 &&dp>=0.75) || dst<2){
 				mainCamera.gameObject.SetActive(false);
 				dialogueCamera.gameObject.SetActive(true);
 				running = true;
