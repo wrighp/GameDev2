@@ -395,6 +395,7 @@ public class TreeManager : EditorWindow
 		if(GUILayout.Button("Save", GUILayout.Height(40)))
 		{
 			Save(path);
+			this.Close();
 			//Debug.Log("Saved to " +path);
 		}
 	}
@@ -412,6 +413,7 @@ public class TreeManager : EditorWindow
 			dialogue = Load(path);
 			//Debug.Log("Loaded " + path);
 			TreeDesigner.UpdateTree();
+			this.Close();
 		}
 	}
 }
