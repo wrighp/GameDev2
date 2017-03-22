@@ -6,11 +6,11 @@ using UnityEditor;
 //anything including unityEditor won't be included in the final build
 public class TreeDesigner : EditorWindow {
 	
-	//==========================NODE COMPONENTS===========================
-	Dialogue dialogue;
-	List<Node> nodes;
-	List<dialogueOption> options;
-	List<Call> calls;
+	//==========================Dialogue Tree Components===========================
+	Dialogue dialogue = new Dialogue();
+	List<Node> nodes = new List<Node>();
+	List<dialogueOption> options = new List<dialogueOption>();
+	//List<Call> calls;
 	
 	Node currentNode;
 	
@@ -29,6 +29,14 @@ public class TreeDesigner : EditorWindow {
 	Rect headerSection;
 	Rect mainSection;
 	Rect buttonSection;
+	
+	//============================Node Editor Components===================
+	//index'd the same way as the nodes
+	List<Rect> windows = new List<Rect>();
+    List<int> windowsToAttach = new List<int>();
+    List<int> attachedWindows = new List<int>();
+	
+	Dictionary<int, List<int>> nodeConnections = new Dictionary<int, List<int>>();
 	
 	//styles
 	static GUIStyle textStyle;
@@ -63,6 +71,7 @@ public class TreeDesigner : EditorWindow {
 		DrawLayouts();
 		DrawButtons();
 		DrawBody();
+		
 	}
 	
 	//===================================================
@@ -131,24 +140,98 @@ public class TreeDesigner : EditorWindow {
 	{
 		GUILayout.BeginArea(mainSection);
 		
+		//if windowstotattach is 2 and the connecting node isn't parented to that
+		if (windowsToAttach.Count == 2 && 
+			!(nodeConnections[windowsToAttach[0]].Contains(windowsToAttach[1]))) 
+		{
+            attachedWindows.Add(windowsToAttach[0]);
+            attachedWindows.Add(windowsToAttach[1]);
+			
+			//create new dialogueOption
+			//then open up dialogue window editor
+			dialogueOption opt = new dialogueOption();
+			OptionSettings.OpenWindow(opt);
+			opt._dest = windowsToAttach[1];
+			
+			//add the dialogue option to the thingy thing
+			nodes[windowsToAttach[0]]._options.Add(opt);
+			
+			nodeConnections[windowsToAttach[0]].Add(windowsToAttach[1]);
+			
+            windowsToAttach = new List<int>();
+        }
+		
+		if (attachedWindows.Count >= 2) {
+            for (int i = 0; i < attachedWindows.Count; i += 2) {
+                DrawNodeCurve(windows[attachedWindows[i]], windows[attachedWindows[i + 1]]);
+            }
+        }
+		
+		//for the node editor
+		//mark beginning area for all popup windows
+		BeginWindows();
+		
+		//iterate over the contained windows and draw them
+        for (int i = 0; i < windows.Count; i++) {
+            windows[i] = GUI.Window(i, windows[i], DrawNodeWindow, "Node " + i);
+        }
+ 
+        EndWindows();
 		
 		GUILayout.EndArea();
 	}
+	
+	//draw the node window
+	//change this to edit node instead
+	void DrawNodeWindow(int id) {
+		//attach to other nodes
+        if (GUILayout.Button("Attach")) {
+            windowsToAttach.Add(id);
+        }
+		//edit the node
+		if (GUILayout.Button("Edit")) {
+            //windowsToAttach.Add(id);
+			NodeSettings.OpenWindow(nodes[id]);
+        }
+ 
+        GUI.DragWindow();
+    }
+	
+	//node curve
+	void DrawNodeCurve(Rect start, Rect end) {
+        Vector3 startPos = new Vector3(start.x + start.width, start.y + start.height / 2, 0);
+        Vector3 endPos = new Vector3(end.x, end.y + end.height / 2, 0);
+        Vector3 startTan = startPos + Vector3.right * 50;
+        Vector3 endTan = endPos + Vector3.left * 50;
+        Color shadowCol = new Color(0, 0, 0, 0.06f);
+ 
+        for (int i = 0; i < 3; i++) {// Draw a shadow
+            Handles.DrawBezier(startPos, endPos, startTan, endTan, shadowCol, null, (i + 1) * 5);
+        }
+ 
+        Handles.DrawBezier(startPos, endPos, startTan, endTan, Color.black, null, 1);
+    }
 	
 	//handles all of the buttons
 	void DrawButtons()
 	{
 		GUILayout.BeginArea(buttonSection);
 		
-		
-		if(GUILayout.Button("Create Node", GUILayout.Height(40)))
+		//add a new node and window to the main area
+		if(GUILayout.Button("Add Node", GUILayout.Height(40)))
 		{
-			NodeSettings.OpenWindow();
-		}
-		
-		if(GUILayout.Button("Edit Node", GUILayout.Height(40)))
-		{
-			NodeSettings.OpenWindow();
+			Node tmp = new Node("");
+			tmp._ID = nodes.Count;
+			tmp._options = new List<dialogueOption>();
+			tmp._precalls = new List<Call>();
+			tmp._postcalls = new List<Call>();
+			
+			nodes.Add(tmp);
+			//maybe remove?
+			dialogue.addNode(tmp);
+			windows.Add(new Rect(10, 10, 100, 100));
+			//NodeSettings.OpenWindow();
+			nodeConnections[tmp._ID] = new List<int>();
 		}
 		
 		if(GUILayout.Button("Delete Node", GUILayout.Height(40)))
@@ -166,6 +249,11 @@ public class TreeDesigner : EditorWindow {
 			TreeManager.OpenWindow(true, dialogue);
 		}
 		
+		if(GUILayout.Button("Close", GUILayout.Height(40)))
+		{
+			this.Close();
+		}
+		
 		GUILayout.EndArea();
 	}
 	
@@ -174,6 +262,7 @@ public class TreeDesigner : EditorWindow {
 	
 	//update the state of the tree
 	//clear everything that's been drawn and redraw the tree
+	//go through the whole list of nodes and draw the stuff from there
 	static public void UpdateTree()
 	{
 		
@@ -188,18 +277,151 @@ public class NodeSettings : EditorWindow
 {
 	static NodeSettings window;
 	
+	//members
+	static Node node;
+	
+	static string text;
+	static string name;
+	static string accomplish;
+	static int reset;
+	
+	//list of pre and post calls
+	static List<Call> precalls;
+	static List<Call> postcalls;
+	
 	//for opening the window
-	static public void OpenWindow()
+	static public void OpenWindow(Node n = null)
 	{
+		node = n;
+		
+		if(node!=null)
+		{
+			text = node._text;
+			name = node._name;
+			accomplish = node._accomplish;
+			reset = node._reset;
+			
+			precalls = node._precalls;
+			postcalls = node._postcalls;
+		}
 		window = (NodeSettings)GetWindow(typeof(NodeSettings));
 		window.minSize = new Vector2(300, 300);
 		window.Show();
 		
 	}
-	
+	//draw shit for the node
 	void OnGUI()
 	{
+		DrawNode();
+	}
+	
+	void DrawNode()
+	{
+		//a field for each of them
+		EditorGUILayout.BeginHorizontal();
+		GUILayout.Label("Name");
+		EditorGUILayout.EndHorizontal();
+		//enter data
+		name = EditorGUILayout.TextField(name);
+		
+		EditorGUILayout.BeginHorizontal();
+		GUILayout.Label("Text");
+		EditorGUILayout.EndHorizontal();
+		//enter data
+		text = EditorGUILayout.TextField(text);
+		
+		//probably bringing this inside the main gui later
+		EditorGUILayout.BeginHorizontal();
+		GUILayout.Label("Reset Node");
+		EditorGUILayout.EndHorizontal();
+		//enter data
+		reset = EditorGUILayout.IntField(reset);
+		
+		EditorGUILayout.BeginHorizontal();
+		GUILayout.Label("Accomplishment");
+		EditorGUILayout.EndHorizontal();
+		//enter data
+		accomplish = EditorGUILayout.TextField(accomplish);
+		
+		
+		
+		EditorGUILayout.BeginHorizontal();
+		GUILayout.Label("Precalls");
+		EditorGUILayout.EndHorizontal();
 
+		
+		EditorGUILayout.BeginHorizontal();
+		GUILayout.Label("Postcalls");
+		EditorGUILayout.EndHorizontal();
+
+		
+		if(GUILayout.Button("Save", GUILayout.Height(40)))
+		{
+			node._text = text;
+			node._name = name;
+			node._accomplish = accomplish;
+			node._reset = reset;
+			//Debug.Log("Saved to " +path);
+			this.Close();
+		}
+	}
+}
+
+public class OptionSettings : EditorWindow
+{
+	static OptionSettings window;
+	
+	//members
+	static dialogueOption option;
+	
+	static string text;
+	static string req;
+
+	
+	//for opening the window
+	static public void OpenWindow(dialogueOption o = null)
+	{
+		option = o;
+		
+		if(option!=null)
+		{
+			//set values
+			text = option._text;
+			req = option._req;
+		}
+		window = (OptionSettings)GetWindow(typeof(OptionSettings));
+		window.minSize = new Vector2(300, 300);
+		window.Show();
+		
+	}
+	//draw shit for the node
+	void OnGUI()
+	{
+		DrawOption();
+	}
+	
+	void DrawOption()
+	{
+		//a field for each of them	
+		EditorGUILayout.BeginHorizontal();
+		GUILayout.Label("Text");
+		EditorGUILayout.EndHorizontal();
+		//enter data
+		text = EditorGUILayout.TextField(text);
+		
+		EditorGUILayout.BeginHorizontal();
+		GUILayout.Label("Requirement");
+		EditorGUILayout.EndHorizontal();
+		//enter data
+		req = EditorGUILayout.TextField(req);
+
+		
+		if(GUILayout.Button("Save", GUILayout.Height(40)))
+		{
+			option._text = text;
+			option._req = req;
+			this.Close();
+		}
 	}
 }
 
@@ -224,17 +446,14 @@ public class TreeManager : EditorWindow
 	
 	static public Dialogue Load(string p)
 	{
-		Debug.Log(p);
-		
-		string path = "tmp";
-		return (new Dialogue());
-		//return Dialogue.Load(path);
+		//Debug.Log(p);
+		//return (new Dialogue());
+		return Dialogue.Load(p);
 	}
 	
 	static public void Save(string p)
 	{
-		Debug.Log(p);
-		//dialogue.Save(path);
+		dialogue.Save(p);
 	}
 	
 	void OnGUI()
@@ -256,6 +475,7 @@ public class TreeManager : EditorWindow
 		if(GUILayout.Button("Save", GUILayout.Height(40)))
 		{
 			Save(path);
+			this.Close();
 			//Debug.Log("Saved to " +path);
 		}
 	}
@@ -273,6 +493,7 @@ public class TreeManager : EditorWindow
 			dialogue = Load(path);
 			//Debug.Log("Loaded " + path);
 			TreeDesigner.UpdateTree();
+			this.Close();
 		}
 	}
 }

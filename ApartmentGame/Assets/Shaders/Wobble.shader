@@ -2,7 +2,7 @@
 	Properties {
 		_Color("Main Color", Color) = (1,1,1,1)
 		
-		_V1 ("Size(?)", range(0, 1)) = 0.0
+		_V1 ("Offset", range(0, 1)) = 0.0
 		_V2 ("value2", range(0, 1)) = 0.0
 		_V3 ("value3", range(0, 1)) = 0.0
 		_Rate ("Rate", range(0, 100)) = 50
