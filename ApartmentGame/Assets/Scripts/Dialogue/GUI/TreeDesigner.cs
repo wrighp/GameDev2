@@ -36,6 +36,8 @@ public class TreeDesigner : EditorWindow {
     List<int> windowsToAttach = new List<int>();
     List<int> attachedWindows = new List<int>();
 	
+	Dictionary<int, List<int>> nodeConnections = new Dictionary<int, List<int>>();
+	
 	//styles
 	static GUIStyle textStyle;
 	
@@ -138,9 +140,24 @@ public class TreeDesigner : EditorWindow {
 	{
 		GUILayout.BeginArea(mainSection);
 		
-		if (windowsToAttach.Count == 2) {
+		//if windowstotattach is 2 and the connecting node isn't parented to that
+		if (windowsToAttach.Count == 2 && 
+			!(nodeConnections[windowsToAttach[0]].Contains(windowsToAttach[1]))) 
+		{
             attachedWindows.Add(windowsToAttach[0]);
             attachedWindows.Add(windowsToAttach[1]);
+			
+			//create new dialogueOption
+			//then open up dialogue window editor
+			dialogueOption opt = new dialogueOption();
+			OptionSettings.OpenWindow(opt);
+			opt._dest = windowsToAttach[1];
+			
+			//add the dialogue option to the thingy thing
+			nodes[windowsToAttach[0]]._options.Add(opt);
+			
+			nodeConnections[windowsToAttach[0]].Add(windowsToAttach[1]);
+			
             windowsToAttach = new List<int>();
         }
 		
@@ -205,18 +222,18 @@ public class TreeDesigner : EditorWindow {
 		{
 			Node tmp = new Node("");
 			tmp._ID = nodes.Count;
+			tmp._options = new List<dialogueOption>();
+			tmp._precalls = new List<Call>();
+			tmp._postcalls = new List<Call>();
+			
 			nodes.Add(tmp);
 			//maybe remove?
 			dialogue.addNode(tmp);
 			windows.Add(new Rect(10, 10, 100, 100));
 			//NodeSettings.OpenWindow();
+			nodeConnections[tmp._ID] = new List<int>();
 		}
-		/*
-		if(GUILayout.Button("Edit Node", GUILayout.Height(40)))
-		{
-			NodeSettings.OpenWindow();
-		}
-		*/
+		
 		if(GUILayout.Button("Delete Node", GUILayout.Height(40)))
 		{
 			NodeSettings.OpenWindow();
@@ -230,6 +247,11 @@ public class TreeDesigner : EditorWindow {
 		if(GUILayout.Button("Save Tree", GUILayout.Height(40)))
 		{
 			TreeManager.OpenWindow(true, dialogue);
+		}
+		
+		if(GUILayout.Button("Close", GUILayout.Height(40)))
+		{
+			this.Close();
 		}
 		
 		GUILayout.EndArea();
@@ -340,6 +362,64 @@ public class NodeSettings : EditorWindow
 			node._accomplish = accomplish;
 			node._reset = reset;
 			//Debug.Log("Saved to " +path);
+			this.Close();
+		}
+	}
+}
+
+public class OptionSettings : EditorWindow
+{
+	static OptionSettings window;
+	
+	//members
+	static dialogueOption option;
+	
+	static string text;
+	static string req;
+
+	
+	//for opening the window
+	static public void OpenWindow(dialogueOption o = null)
+	{
+		option = o;
+		
+		if(option!=null)
+		{
+			//set values
+			text = option._text;
+			req = option._req;
+		}
+		window = (OptionSettings)GetWindow(typeof(OptionSettings));
+		window.minSize = new Vector2(300, 300);
+		window.Show();
+		
+	}
+	//draw shit for the node
+	void OnGUI()
+	{
+		DrawOption();
+	}
+	
+	void DrawOption()
+	{
+		//a field for each of them	
+		EditorGUILayout.BeginHorizontal();
+		GUILayout.Label("Text");
+		EditorGUILayout.EndHorizontal();
+		//enter data
+		text = EditorGUILayout.TextField(text);
+		
+		EditorGUILayout.BeginHorizontal();
+		GUILayout.Label("Requirement");
+		EditorGUILayout.EndHorizontal();
+		//enter data
+		req = EditorGUILayout.TextField(req);
+
+		
+		if(GUILayout.Button("Save", GUILayout.Height(40)))
+		{
+			option._text = text;
+			option._req = req;
 			this.Close();
 		}
 	}
