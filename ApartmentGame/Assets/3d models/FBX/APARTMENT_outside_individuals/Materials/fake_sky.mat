@@ -120,7 +120,7 @@ Material:
       second: 0
     - first:
         name: _Exposure
-      second: 1
+      second: 3
     - first:
         name: _GlossMapScale
       second: 1
@@ -169,4 +169,4 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _Tint
-      second: {r: 0.90262073, g: 1, b: 0.29400003, a: 0.484}
+      second: {r: 1, g: 1, b: 1, a: 0.484}
