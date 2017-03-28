@@ -30,7 +30,7 @@ ModelImporter:
     4300004: backpack_geo
     4300006: body_geo
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:

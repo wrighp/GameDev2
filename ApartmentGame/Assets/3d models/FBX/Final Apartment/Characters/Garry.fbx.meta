@@ -18,7 +18,7 @@ ModelImporter:
     4300000: body
     4300002: head
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:

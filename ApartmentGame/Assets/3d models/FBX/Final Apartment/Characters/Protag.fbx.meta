@@ -258,7 +258,7 @@ ModelImporter:
     13700008: Protag_master:head
     13700010: Protag_master:outfit
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
