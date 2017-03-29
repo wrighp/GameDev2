@@ -58,7 +58,7 @@ public class PlayerInteraction : MonoBehaviour {
 					if(item1==null){
 						item1 = other.gameObject;
 					}
-					Debug.Log("Grabbed!");
+					//Debug.Log("Grabbed!");
 					
 					item1.transform.GetChild(0).
 						gameObject.GetComponent<Collider>().enabled = false;

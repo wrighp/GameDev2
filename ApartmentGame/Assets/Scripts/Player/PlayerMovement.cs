@@ -14,16 +14,20 @@ public class PlayerMovement : MonoBehaviour {
 	public ForceMode forceMode;
 	public LayerMask jumpMask;
 	public float jumpForce = 8f;
+	private Animator animator;
 	private Rigidbody rb;
+	private float horizontalSpeed;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
 		cam = cam ?? Camera.main;
+		animator = GetComponentInChildren<Animator> ();
 	}
 
 	// Update is called once per frame
 	void Update () {
-		
+		//Animations here
+		animator.SetFloat("MoveSpeed", horizontalSpeed/maxSpeed);
 	}
 
 	void FixedUpdate(){
@@ -39,7 +43,8 @@ public class PlayerMovement : MonoBehaviour {
 		//Cap max horizontal speed;
 		Vector3 hVel = rb.velocity;
 		hVel.y = 0;
-		hVel = hVel.sqrMagnitude > maxSpeed * maxSpeed ? hVel.normalized * maxSpeed : hVel;
+		horizontalSpeed = rb.velocity.magnitude;
+		hVel = horizontalSpeed > maxSpeed ? hVel.normalized * maxSpeed : hVel;
 		//Jumping
 		hVel.y =  rb.velocity.y;
 		rb.velocity = hVel;

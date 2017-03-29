@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour {
 	
-	public string scene;
+	public Camera transition;
 	//public npcDialogue dummy;
 
 	// Use this for initialization
@@ -23,7 +22,9 @@ public class LoadScene : MonoBehaviour {
 		if(col.tag == "Player"){
 			//dummy.saveState();
 			//preserve.Instance.transitions+=1;
-			SceneManager.LoadScene(scene);
+			//SceneManager.LoadScene(scene);
+			//transition.GetComponent<SceneTransition>().fadeOut = false;
+			transition.GetComponent<SceneTransition>().play = true;
 		}
 	}
 }
