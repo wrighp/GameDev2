@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 /*
 	Script to use for scene transitions
@@ -8,9 +9,11 @@ using System.Collections;
 [ExecuteInEditMode]
 public class SceneTransition : MonoBehaviour
 {
+	public string scene;
+	
     public Material TransitionMaterial;
 	
-	public bool fadeIn = true;
+	public bool fadeOut = true;
 	public bool play = false;
 	public float cutoff = 0;
 
@@ -24,7 +27,7 @@ public class SceneTransition : MonoBehaviour
 	{
 		if(play)
 		{
-			if(fadeIn)
+			if(fadeOut)
 				cutoff+=Time.deltaTime;
 			else
 				cutoff-=Time.deltaTime;
@@ -35,6 +38,8 @@ public class SceneTransition : MonoBehaviour
 			{
 				play = false;
 				cutoff = 1;
+				SceneManager.LoadScene(scene);
+				fadeOut = false;
 			}
 			
 			if(cutoff < 0)
