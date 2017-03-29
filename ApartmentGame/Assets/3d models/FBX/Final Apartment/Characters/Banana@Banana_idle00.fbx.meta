@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: e3926901925274fc5a19968a09dfcd45
-timeCreated: 1488394528
+guid: 136558411880443ac9cbb3a28d2f4a11
+timeCreated: 1490750382
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -113,22 +113,15 @@ ModelImporter:
     400102: upper
     400104: upper_body
     400106: upper_body_1
-    2300000: //RootNode
-    2300002: body
-    2300004: knife
-    2300006: limbs
-    2300008: mask
-    3300000: //RootNode
-    3300002: body
-    3300004: knife
-    3300006: limbs
-    3300008: mask
-    4300000: banana_no
-    4300002: body
-    4300004: mask
-    4300006: limbs
-    4300008: knife
-    7400000: nose_poke
+    2300000: knife
+    2300002: mask
+    3300000: knife
+    3300002: mask
+    4300000: body
+    4300002: mask
+    4300004: limbs
+    4300006: knife
+    7400000: Banana_idle00
     9500000: //RootNode
     13700000: body
     13700002: limbs
@@ -146,7 +139,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -154,17 +147,17 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: nose_poke
+      name: Banana_idle00
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 60
+      lastFrame: 240
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -311,8 +304,8 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-  importAnimation: 0
-  copyAvatar: 0
+  importAnimation: 1
+  copyAvatar: 1
   humanDescription:
     serializedVersion: 2
     human: []
@@ -329,7 +322,8 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: e3926901925274fc5a19968a09dfcd45,
+    type: 3}
   animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
