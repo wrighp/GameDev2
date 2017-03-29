@@ -13,7 +13,7 @@ public class SceneTransition : MonoBehaviour
 	
     public Material TransitionMaterial;
 	
-	public bool fadeOut = true;
+	bool fadeOut = true;
 	public bool play = false;
 	public float cutoff = 0;
 
@@ -46,6 +46,7 @@ public class SceneTransition : MonoBehaviour
 			{
 				play = false;
 				cutoff = 0;
+				fadeOut = true;
 			}
 		}
 		
