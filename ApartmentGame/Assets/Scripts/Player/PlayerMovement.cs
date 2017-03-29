@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour {
 		//Cap max horizontal speed;
 		Vector3 hVel = rb.velocity;
 		hVel.y = 0;
-		horizontalSpeed = rb.velocity.magnitude;
+		horizontalSpeed = hVel.magnitude;
 		hVel = horizontalSpeed > maxSpeed ? hVel.normalized * maxSpeed : hVel;
 		//Jumping
 		hVel.y =  rb.velocity.y;

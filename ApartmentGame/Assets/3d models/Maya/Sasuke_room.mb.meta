@@ -65,6 +65,26 @@ ModelImporter:
     100114: transform5
     100116: transform6
     100118: walls
+    100120: left
+    100122: polySurface266
+    100124: polySurface267
+    100126: polySurface268
+    100128: polySurface269
+    100130: polySurface270
+    100132: polySurface271
+    100134: polySurface272
+    100136: polySurface273
+    100138: polySurface274
+    100140: polySurface275
+    100142: polySurface276
+    100144: polySurface277
+    100146: polySurface278
+    100148: polySurface279
+    100150: polySurface280
+    100152: polySurface281
+    100154: polySurface282
+    100156: polySurface283
+    100158: polySurface284
     400000: Apartment_backwindow:polySurface680
     400002: areaLight1
     400004: bottom
@@ -125,6 +145,26 @@ ModelImporter:
     400114: transform5
     400116: transform6
     400118: walls
+    400120: left
+    400122: polySurface266
+    400124: polySurface267
+    400126: polySurface268
+    400128: polySurface269
+    400130: polySurface270
+    400132: polySurface271
+    400134: polySurface272
+    400136: polySurface273
+    400138: polySurface274
+    400140: polySurface275
+    400142: polySurface276
+    400144: polySurface277
+    400146: polySurface278
+    400148: polySurface279
+    400150: polySurface280
+    400152: polySurface281
+    400154: polySurface282
+    400156: polySurface283
+    400158: polySurface284
     2300000: Apartment_backwindow:polySurface680
     2300002: door_window
     2300004: pCube1
@@ -169,6 +209,25 @@ ModelImporter:
     2300082: polySurface87
     2300084: polySurface88
     2300086: walls
+    2300088: polySurface266
+    2300090: polySurface267
+    2300092: polySurface268
+    2300094: polySurface269
+    2300096: polySurface270
+    2300098: polySurface271
+    2300100: polySurface272
+    2300102: polySurface273
+    2300104: polySurface274
+    2300106: polySurface275
+    2300108: polySurface276
+    2300110: polySurface277
+    2300112: polySurface278
+    2300114: polySurface279
+    2300116: polySurface280
+    2300118: polySurface281
+    2300120: polySurface282
+    2300122: polySurface283
+    2300124: polySurface284
     3300000: Apartment_backwindow:polySurface680
     3300002: door_window
     3300004: pCube1
@@ -213,6 +272,25 @@ ModelImporter:
     3300082: polySurface87
     3300084: polySurface88
     3300086: walls
+    3300088: polySurface266
+    3300090: polySurface267
+    3300092: polySurface268
+    3300094: polySurface269
+    3300096: polySurface270
+    3300098: polySurface271
+    3300100: polySurface272
+    3300102: polySurface273
+    3300104: polySurface274
+    3300106: polySurface275
+    3300108: polySurface276
+    3300110: polySurface277
+    3300112: polySurface278
+    3300114: polySurface279
+    3300116: polySurface280
+    3300118: polySurface281
+    3300120: polySurface282
+    3300122: polySurface283
+    3300124: polySurface284
     4300000: Apartment_backwindow:polySurface680
     4300002: door_window
     4300004: polySurface1
@@ -257,6 +335,25 @@ ModelImporter:
     4300082: polySurface254
     4300084: pCube51
     4300086: pCube52
+    4300088: polySurface266
+    4300090: polySurface267
+    4300092: polySurface268
+    4300094: polySurface269
+    4300096: polySurface270
+    4300098: polySurface271
+    4300100: polySurface272
+    4300102: polySurface273
+    4300104: polySurface274
+    4300106: polySurface275
+    4300108: polySurface276
+    4300110: polySurface277
+    4300112: polySurface278
+    4300114: polySurface279
+    4300116: polySurface280
+    4300118: polySurface281
+    4300120: polySurface282
+    4300122: polySurface283
+    4300124: polySurface284
     9500000: //RootNode
   materials:
     importMaterials: 1

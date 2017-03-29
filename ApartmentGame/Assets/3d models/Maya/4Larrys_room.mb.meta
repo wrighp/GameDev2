@@ -59,6 +59,8 @@ ModelImporter:
     100102: transform28
     100104: transform29
     100106: walls
+    100108: polySurface205
+    100110: polySurface208
     400000: //RootNode
     400002: Apartment_backwindow:polySurface680
     400004: areaLight2
@@ -113,6 +115,8 @@ ModelImporter:
     400102: transform28
     400104: transform29
     400106: walls
+    400108: polySurface205
+    400110: polySurface208
     2300000: pCube1
     2300002: pCube7
     2300004: pCylinder5
@@ -142,6 +146,8 @@ ModelImporter:
     2300052: polySurface199
     2300054: polySurface200
     2300056: polySurface201
+    2300058: polySurface205
+    2300060: polySurface208
     3300000: pCube1
     3300002: pCube7
     3300004: pCylinder5
@@ -171,6 +177,8 @@ ModelImporter:
     3300052: polySurface199
     3300054: polySurface200
     3300056: polySurface201
+    3300058: polySurface205
+    3300060: polySurface208
     4300000: polySurface191
     4300002: polySurface196
     4300004: polySurface197
@@ -200,6 +208,8 @@ ModelImporter:
     4300052: pCube7
     4300054: polySurface185
     4300056: polySurface192
+    4300058: polySurface208
+    4300060: polySurface205
     9500000: //RootNode
   materials:
     importMaterials: 1
