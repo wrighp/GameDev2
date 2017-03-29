@@ -1,0 +1,210 @@
+fileFormatVersion: 2
+guid: 254757e1e950544838b37e6f7e472924
+timeCreated: 1490804623
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Apartment_backwindow:polySurface680
+    100002: areaLight1
+    100004: //RootNode
+    100006: bottom
+    100008: door_window
+    100010: PIPE:PIPE:PIPE:PIPE:PIPE:PIPE:pCube69
+    100012: polySurface100
+    100014: polySurface491
+    100016: polySurface492
+    100018: polySurface494
+    100020: polySurface496
+    100022: polySurface497
+    100024: polySurface500
+    100026: polySurface501
+    100028: polySurface503
+    100030: polySurface506
+    100032: polySurface507
+    100034: polySurface519
+    100036: polySurface617
+    100038: polySurface618
+    100040: polySurface619
+    100042: polySurface620
+    100044: polySurface625
+    100046: polySurface629
+    100048: polySurface630
+    100050: polySurface641
+    100052: polySurface642
+    100054: polySurface643
+    100056: polySurface644
+    100058: polySurface645
+    100060: polySurface99
+    100062: Protag_Room:bottom
+    100064: transform6
+    100066: transform7
+    400000: Apartment_backwindow:polySurface680
+    400002: areaLight1
+    400004: //RootNode
+    400006: bottom
+    400008: door_window
+    400010: PIPE:PIPE:PIPE:PIPE:PIPE:PIPE:pCube69
+    400012: polySurface100
+    400014: polySurface491
+    400016: polySurface492
+    400018: polySurface494
+    400020: polySurface496
+    400022: polySurface497
+    400024: polySurface500
+    400026: polySurface501
+    400028: polySurface503
+    400030: polySurface506
+    400032: polySurface507
+    400034: polySurface519
+    400036: polySurface617
+    400038: polySurface618
+    400040: polySurface619
+    400042: polySurface620
+    400044: polySurface625
+    400046: polySurface629
+    400048: polySurface630
+    400050: polySurface641
+    400052: polySurface642
+    400054: polySurface643
+    400056: polySurface644
+    400058: polySurface645
+    400060: polySurface99
+    400062: Protag_Room:bottom
+    400064: transform6
+    400066: transform7
+    2300000: Apartment_backwindow:polySurface680
+    2300002: door_window
+    2300004: polySurface492
+    2300006: polySurface494
+    2300008: polySurface496
+    2300010: polySurface497
+    2300012: polySurface500
+    2300014: polySurface501
+    2300016: polySurface503
+    2300018: polySurface506
+    2300020: polySurface507
+    2300022: polySurface519
+    2300024: polySurface617
+    2300026: polySurface618
+    2300028: polySurface619
+    2300030: polySurface620
+    2300032: polySurface625
+    2300034: polySurface629
+    2300036: polySurface642
+    2300038: polySurface643
+    2300040: polySurface644
+    2300042: polySurface645
+    3300000: Apartment_backwindow:polySurface680
+    3300002: door_window
+    3300004: polySurface492
+    3300006: polySurface494
+    3300008: polySurface496
+    3300010: polySurface497
+    3300012: polySurface500
+    3300014: polySurface501
+    3300016: polySurface503
+    3300018: polySurface506
+    3300020: polySurface507
+    3300022: polySurface519
+    3300024: polySurface617
+    3300026: polySurface618
+    3300028: polySurface619
+    3300030: polySurface620
+    3300032: polySurface625
+    3300034: polySurface629
+    3300036: polySurface642
+    3300038: polySurface643
+    3300040: polySurface644
+    3300042: polySurface645
+    4300000: Apartment_backwindow:polySurface680
+    4300002: door_window
+    4300004: polySurface492
+    4300006: polySurface494
+    4300008: polySurface496
+    4300010: polySurface497
+    4300012: polySurface500
+    4300014: polySurface501
+    4300016: polySurface503
+    4300018: polySurface506
+    4300020: polySurface507
+    4300022: polySurface519
+    4300024: polySurface617
+    4300026: polySurface618
+    4300028: polySurface619
+    4300030: polySurface620
+    4300032: polySurface625
+    4300034: polySurface629
+    4300036: polySurface644
+    4300038: polySurface645
+    4300040: polySurface642
+    4300042: polySurface643
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

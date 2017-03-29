@@ -8,15 +8,105 @@ ModelImporter:
     100000: body
     100002: dress
     100004: //RootNode
+    100006: body1
+    100008: head
+    100010: head 1
+    100012: hip
+    100014: joints
+    100016: L_arm
+    100018: L_arm_1
+    100020: L_arm_2
+    100022: L_arm_3
+    100024: L_arm_4
+    100026: L_arm_5
+    100028: L_arm_6
+    100030: L_leg
+    100032: L_leg_1
+    100034: L_leg_2
+    100036: L_leg_3
+    100038: L_leg_4
+    100040: L_leg_5
+    100042: L_leg_6
+    100044: lower_hip
+    100046: ms_teacup_geo
+    100048: neck_1
+    100050: neck_2
+    100052: R_arm
+    100054: R_arm_1
+    100056: R_arm_2
+    100058: R_arm_3
+    100060: R_arm_4
+    100062: R_arm_5
+    100064: R_arm_6
+    100066: R_leg
+    100068: R_leg_1
+    100070: R_leg_2
+    100072: R_leg_3
+    100074: R_leg_4
+    100076: R_leg_5
+    100078: R_leg_6
+    100080: spine_1
+    100082: spine_2
+    100084: Spine_3
+    100086: spine_4
+    100088: upper_hip
     400000: body
     400002: dress
     400004: //RootNode
+    400006: body1
+    400008: head
+    400010: head 1
+    400012: hip
+    400014: joints
+    400016: L_arm
+    400018: L_arm_1
+    400020: L_arm_2
+    400022: L_arm_3
+    400024: L_arm_4
+    400026: L_arm_5
+    400028: L_arm_6
+    400030: L_leg
+    400032: L_leg_1
+    400034: L_leg_2
+    400036: L_leg_3
+    400038: L_leg_4
+    400040: L_leg_5
+    400042: L_leg_6
+    400044: lower_hip
+    400046: ms_teacup_geo
+    400048: neck_1
+    400050: neck_2
+    400052: R_arm
+    400054: R_arm_1
+    400056: R_arm_2
+    400058: R_arm_3
+    400060: R_arm_4
+    400062: R_arm_5
+    400064: R_arm_6
+    400066: R_leg
+    400068: R_leg_1
+    400070: R_leg_2
+    400072: R_leg_3
+    400074: R_leg_4
+    400076: R_leg_5
+    400078: R_leg_6
+    400080: spine_1
+    400082: spine_2
+    400084: Spine_3
+    400086: spine_4
+    400088: upper_hip
     2300000: body
     2300002: dress
+    2300004: body1
+    2300006: head
     3300000: body
     3300002: dress
+    3300004: body1
+    3300006: head
     4300000: dress
     4300002: body
+    4300004: body1
+    4300006: head
   materials:
     importMaterials: 0
     materialName: 0
