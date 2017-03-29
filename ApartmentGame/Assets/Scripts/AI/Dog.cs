@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Dog : MonoBehaviour {
 	public Transform player;
+	public bool autoAddPlayer = true;
 	private NavMeshAgent nav;
 
 	public float followResetTime = 6f;
@@ -18,6 +19,9 @@ public class Dog : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Have dog run to random positions around the player every so often
+		if (autoAddPlayer && !player) {
+			player = GameObject.FindGameObjectWithTag ("Player").transform;
+		}
 		timer += Time.deltaTime;
 		Vector2 direction = Random.insideUnitCircle;
 		Vector3 moveDirection = new Vector3 (direction.x, 0, direction.y);
