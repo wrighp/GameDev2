@@ -6,20 +6,19 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: sampledDiffuseColor
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION _NORMALMAP
+  m_Name: msteacup_body
+  m_Shader: {fileID: 4800000, guid: 550e3cdbe03f87e43831eb7b858905ee, type: 3}
+  m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
-  m_CustomRenderQueue: 3000
-  stringTagMap:
-    RenderType: Transparent
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
     - first:
         name: _BumpMap
       second:
-        m_Texture: {fileID: 2800000, guid: 2b7c1521523b644209654ce9803e2e24, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -41,6 +40,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
+        name: _DisplaceTex
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
         name: _EmissionMap
       second:
         m_Texture: {fileID: 0}
@@ -49,7 +54,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: 120b2c34bcc0f4ba0914c2adc4d9cb81, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6a9aed2e7e9fd4a1390d5232ae94b1c7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -72,17 +77,32 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
+        name: _AX
+      second: 0.1
+    - first:
+        name: _AY
+      second: 0.1
+    - first:
+        name: _AZ
+      second: 0.1
+    - first:
         name: _BumpScale
       second: 1
     - first:
         name: _Cutoff
       second: 0.5
     - first:
+        name: _Cuts
+      second: 1
+    - first:
         name: _DetailNormalMapScale
       second: 1
     - first:
+        name: _DiffuseThres
+      second: 0.35
+    - first:
         name: _DstBlend
-      second: 10
+      second: 0
     - first:
         name: _GlossMapScale
       second: 1
@@ -93,17 +113,44 @@ Material:
         name: _GlossyReflections
       second: 1
     - first:
+        name: _Magnitude
+      second: 1
+    - first:
         name: _Metallic
       second: 0
     - first:
         name: _Mode
-      second: 3
+      second: 0
     - first:
         name: _OcclusionStrength
       second: 1
     - first:
+        name: _PX
+      second: 50
+    - first:
+        name: _PY
+      second: 50
+    - first:
+        name: _PZ
+      second: 50
+    - first:
         name: _Parallax
       second: 0.02
+    - first:
+        name: _RX
+      second: 50
+    - first:
+        name: _RY
+      second: 50
+    - first:
+        name: _RZ
+      second: 50
+    - first:
+        name: _RimPow
+      second: 0.1
+    - first:
+        name: _Shininess
+      second: 1
     - first:
         name: _SmoothnessTextureChannel
       second: 0
@@ -118,7 +165,7 @@ Material:
       second: 0
     - first:
         name: _ZWrite
-      second: 0
+      second: 1
     m_Colors:
     - first:
         name: _Color
@@ -126,3 +173,12 @@ Material:
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _RimCol
+      second: {r: 1, g: 0, b: 0, a: 1}
+    - first:
+        name: _SpecColor
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _UnlitColor
+      second: {r: 0.9485294, g: 0.8857591, b: 0.8857591, a: 1}

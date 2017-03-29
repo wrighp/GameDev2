@@ -23,7 +23,7 @@ ModelImporter:
     4300002: clover_hobo
     4300004: clover_spread
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:

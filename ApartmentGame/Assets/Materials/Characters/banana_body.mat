@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: banana_body
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 550e3cdbe03f87e43831eb7b858905ee, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -95,6 +95,9 @@ Material:
         name: _DetailNormalMapScale
       second: 1
     - first:
+        name: _DiffuseThres
+      second: 0.35
+    - first:
         name: _DstBlend
       second: 0
     - first:
@@ -122,6 +125,12 @@ Material:
         name: _Parallax
       second: 0.02
     - first:
+        name: _RimPow
+      second: 0.1
+    - first:
+        name: _Shininess
+      second: 1
+    - first:
         name: _SmoothnessTextureChannel
       second: 0
     - first:
@@ -146,3 +155,12 @@ Material:
     - first:
         name: _OutlineColor
       second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _RimCol
+      second: {r: 1, g: 0, b: 0, a: 1}
+    - first:
+        name: _SpecColor
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _UnlitColor
+      second: {r: 0.9485294, g: 0.8857591, b: 0.8857591, a: 1}
