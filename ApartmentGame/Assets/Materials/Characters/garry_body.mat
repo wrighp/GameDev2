@@ -6,20 +6,19 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Clover_Material
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHABLEND_ON _EMISSION _GLOSSYREFLECTIONS_OFF _NORMALMAP _SPECULARHIGHLIGHTS_OFF
-  m_LightmapFlags: 0
-  m_CustomRenderQueue: 3000
-  stringTagMap:
-    RenderType: Transparent
+  m_Name: garry_body
+  m_Shader: {fileID: 4800000, guid: 550e3cdbe03f87e43831eb7b858905ee, type: 3}
+  m_ShaderKeywords: _EMISSION
+  m_LightmapFlags: 1
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
     - first:
         name: _BumpMap
       second:
-        m_Texture: {fileID: 2800000, guid: 2b7c1521523b644209654ce9803e2e24, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -41,12 +40,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
-        name: _DisplaceTex
-      second:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - first:
         name: _EmissionMap
       second:
         m_Texture: {fileID: 0}
@@ -55,7 +48,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: 1ae2836eaad96436cb7c7aba695a6073, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6a9aed2e7e9fd4a1390d5232ae94b1c7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -76,104 +69,77 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _SpecGlossMap
-      second:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - first:
-        name: _ToonShade
-      second:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - first:
-        name: _AX
-      second: 0.02
-    - first:
-        name: _AY
-      second: 0.02
-    - first:
-        name: _AZ
-      second: 0.02
     - first:
         name: _BumpScale
       second: 1
     - first:
         name: _Cutoff
-      second: 0.63
+      second: 0.5
     - first:
         name: _DetailNormalMapScale
       second: 1
     - first:
+        name: _DiffuseThres
+      second: 0.35
+    - first:
         name: _DstBlend
-      second: 10
+      second: 0
     - first:
         name: _GlossMapScale
       second: 1
     - first:
         name: _Glossiness
-      second: 0
+      second: 0.5
     - first:
         name: _GlossyReflections
-      second: 0
-    - first:
-        name: _Magnitude
-      second: 0
+      second: 1
     - first:
         name: _Metallic
       second: 0
     - first:
         name: _Mode
-      second: 2
+      second: 0
     - first:
         name: _OcclusionStrength
       second: 1
     - first:
-        name: _PX
-      second: 51
-    - first:
-        name: _PY
-      second: 3
-    - first:
-        name: _PZ
-      second: 0
-    - first:
         name: _Parallax
       second: 0.02
     - first:
-        name: _RX
-      second: 1
+        name: _RimPow
+      second: 0.1
     - first:
-        name: _RY
-      second: 1
-    - first:
-        name: _RZ
+        name: _Shininess
       second: 1
     - first:
         name: _SmoothnessTextureChannel
       second: 0
     - first:
         name: _SpecularHighlights
-      second: 0
+      second: 1
     - first:
         name: _SrcBlend
-      second: 5
+      second: 1
     - first:
         name: _UVSec
       second: 0
     - first:
         name: _ZWrite
-      second: 0
+      second: 1
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0.44221604, g: 0.78676474, b: 0.052065317, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _EmissionColor
-      second: {r: 0.39525786, g: 0.5514706, b: 0.32033953, a: 1}
+      second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _RimCol
+      second: {r: 1, g: 0, b: 0, a: 1}
     - first:
         name: _SpecColor
       second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _UnlitColor
+      second: {r: 0.9485294, g: 0.8857591, b: 0.8857591, a: 1}

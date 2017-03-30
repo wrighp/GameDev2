@@ -50,6 +50,7 @@ ModelImporter:
     100084: Spine_3
     100086: spine_4
     100088: upper_hip
+    100090: tea_flower:tea_flower
     400000: body
     400002: dress
     400004: //RootNode
@@ -95,18 +96,22 @@ ModelImporter:
     400084: Spine_3
     400086: spine_4
     400088: upper_hip
+    400090: tea_flower:tea_flower
     2300000: body
     2300002: dress
     2300004: body1
     2300006: head
+    2300008: tea_flower:tea_flower
     3300000: body
     3300002: dress
     3300004: body1
     3300006: head
+    3300008: tea_flower:tea_flower
     4300000: dress
     4300002: body
     4300004: body1
     4300006: head
+    4300008: tea_flower:tea_flower
     9500000: //RootNode
     13700000: body1
     13700002: dress
