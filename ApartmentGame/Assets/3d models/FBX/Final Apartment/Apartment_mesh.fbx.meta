@@ -7,14 +7,54 @@ ModelImporter:
   fileIDToRecycleName:
     100000: Apartment_geo
     100002: //RootNode
+    100004: ac_unit
+    100006: apartment_geo
+    100008: board
+    100010: ladder
+    100012: pole
+    100014: shingles
+    100016: stairs
+    100018: walk_thing
     400000: Apartment_geo
     400002: //RootNode
+    400004: ac_unit
+    400006: apartment_geo
+    400008: board
+    400010: ladder
+    400012: pole
+    400014: shingles
+    400016: stairs
+    400018: walk_thing
     2300000: Apartment_geo
     2300002: //RootNode
+    2300004: ac_unit
+    2300006: apartment_geo
+    2300008: board
+    2300010: ladder
+    2300012: pole
+    2300014: shingles
+    2300016: stairs
+    2300018: walk_thing
     3300000: Apartment_geo
     3300002: //RootNode
+    3300004: ac_unit
+    3300006: apartment_geo
+    3300008: board
+    3300010: ladder
+    3300012: pole
+    3300014: shingles
+    3300016: stairs
+    3300018: walk_thing
     4300000: Apartment_geo
     4300002: polySurface4
+    4300004: board
+    4300006: apartment_geo
+    4300008: ladder
+    4300010: walk_thing
+    4300012: shingles
+    4300014: ac_unit
+    4300016: stairs
+    4300018: pole
     9500000: //RootNode
   materials:
     importMaterials: 1
