@@ -65,6 +65,7 @@ ModelImporter:
     100114: polySurface991
     100116: polySurface995
     100118: polySurface997
+    100120: building_07
     400000: //RootNode
     400002: pCube169
     400004: pCube170
@@ -125,6 +126,7 @@ ModelImporter:
     400114: polySurface991
     400116: polySurface995
     400118: polySurface997
+    400120: building_07
     2300000: pCube169
     2300002: pCube170
     2300004: pCube171

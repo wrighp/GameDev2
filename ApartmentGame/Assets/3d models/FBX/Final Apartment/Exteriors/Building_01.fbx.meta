@@ -64,6 +64,7 @@ ModelImporter:
     100112: polySurface884
     100114: polySurface885
     100116: stick_blanket_L
+    100118: building_01
     400000: box_pile_S
     400002: //RootNode
     400004: pCube173
@@ -123,6 +124,7 @@ ModelImporter:
     400112: polySurface884
     400114: polySurface885
     400116: stick_blanket_L
+    400118: building_01
     2300000: box_pile_S
     2300002: pCube173
     2300004: pCube174

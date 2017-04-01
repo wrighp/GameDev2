@@ -30,6 +30,7 @@ ModelImporter:
     100044: polySurface876
     100046: polySurface877
     100048: polySurface886
+    100050: building_02
     400000: //RootNode
     400002: pipes
     400004: polySurface520
@@ -55,6 +56,7 @@ ModelImporter:
     400044: polySurface876
     400046: polySurface877
     400048: polySurface886
+    400050: building_02
     2300000: polySurface520
     2300002: polySurface748
     2300004: polySurface753

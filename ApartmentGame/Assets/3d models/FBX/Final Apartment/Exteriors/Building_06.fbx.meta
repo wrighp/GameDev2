@@ -32,6 +32,7 @@ ModelImporter:
     100048: polySurface979
     100050: polySurface980
     100052: stick_blanket_S
+    100054: building_06
     400000: //RootNode
     400002: polySurface1199
     400004: polySurface904
@@ -59,6 +60,7 @@ ModelImporter:
     400048: polySurface979
     400050: polySurface980
     400052: stick_blanket_S
+    400054: building_06
     2300000: polySurface1199
     2300002: polySurface904
     2300004: polySurface918

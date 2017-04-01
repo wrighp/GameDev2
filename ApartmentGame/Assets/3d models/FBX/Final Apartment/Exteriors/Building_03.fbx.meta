@@ -29,6 +29,7 @@ ModelImporter:
     100042: polySurface964
     100044: polySurface965
     100046: polySurface966
+    100048: building_03
     400000: //RootNode
     400002: pCube185
     400004: pCube186
@@ -53,6 +54,7 @@ ModelImporter:
     400042: polySurface964
     400044: polySurface965
     400046: polySurface966
+    400048: building_03
     2300000: pCube185
     2300002: pCube186
     2300004: pCube187

@@ -23,6 +23,7 @@ ModelImporter:
     100030: polySurface1198
     100032: polySurface248
     100034: polySurface326
+    100036: crack_house
     400000: //RootNode
     400002: pCube189
     400004: pCube190
@@ -41,6 +42,7 @@ ModelImporter:
     400030: polySurface1198
     400032: polySurface248
     400034: polySurface326
+    400036: crack_house
     2300000: pCube189
     2300002: pCube190
     2300004: pCube191
