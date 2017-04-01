@@ -8,11 +8,11 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Clover_Material
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHABLEND_ON _EMISSION _GLOSSYREFLECTIONS_OFF _NORMALMAP _SPECULARHIGHLIGHTS_OFF
+  m_ShaderKeywords: _ALPHATEST_ON _EMISSION _GLOSSYREFLECTIONS_OFF _NORMALMAP _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: 2450
   stringTagMap:
-    RenderType: Transparent
+    RenderType: TransparentCutout
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -77,6 +77,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
+        name: _SecondTex
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
         name: _SpecGlossMap
       second:
         m_Texture: {fileID: 0}
@@ -88,16 +94,22 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - first:
+        name: _TransitionTex
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
         name: _AX
-      second: 0.02
+      second: 0.15
     - first:
         name: _AY
-      second: 0.02
+      second: 0.34
     - first:
         name: _AZ
-      second: 0.02
+      second: 0.15
     - first:
         name: _BumpScale
       second: 1
@@ -105,11 +117,23 @@ Material:
         name: _Cutoff
       second: 0.63
     - first:
+        name: _Cuts
+      second: 1
+    - first:
         name: _DetailNormalMapScale
       second: 1
     - first:
+        name: _DiffuseThres
+      second: 0.35
+    - first:
+        name: _Distort
+      second: 0
+    - first:
         name: _DstBlend
-      second: 10
+      second: 0
+    - first:
+        name: _Fade
+      second: 0
     - first:
         name: _GlossMapScale
       second: 1
@@ -127,30 +151,36 @@ Material:
       second: 0
     - first:
         name: _Mode
-      second: 2
+      second: 1
     - first:
         name: _OcclusionStrength
       second: 1
     - first:
         name: _PX
-      second: 51
+      second: 85
     - first:
         name: _PY
-      second: 3
+      second: 20
     - first:
         name: _PZ
-      second: 0
+      second: 1
     - first:
         name: _Parallax
       second: 0.02
     - first:
         name: _RX
-      second: 1
+      second: 2
     - first:
         name: _RY
-      second: 1
+      second: 25
     - first:
         name: _RZ
+      second: 1
+    - first:
+        name: _RimPow
+      second: 3
+    - first:
+        name: _Shininess
       second: 1
     - first:
         name: _SmoothnessTextureChannel
@@ -160,13 +190,16 @@ Material:
       second: 0
     - first:
         name: _SrcBlend
-      second: 5
+      second: 1
+    - first:
+        name: _Tween
+      second: 0
     - first:
         name: _UVSec
       second: 0
     - first:
         name: _ZWrite
-      second: 0
+      second: 1
     m_Colors:
     - first:
         name: _Color
@@ -175,5 +208,11 @@ Material:
         name: _EmissionColor
       second: {r: 0.39525786, g: 0.5514706, b: 0.32033953, a: 1}
     - first:
+        name: _RimCol
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
         name: _SpecColor
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _UnlitColor
       second: {r: 1, g: 1, b: 1, a: 1}
