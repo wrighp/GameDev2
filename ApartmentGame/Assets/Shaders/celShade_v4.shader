@@ -151,6 +151,10 @@
 				//textureMaps
 				float4 tex = tex2D(_MainTex, i.tex.xy * _MainTex_ST.xy + 
 					_MainTex_ST.zw);
+					
+				//discard transparent pixels ======================================= TRANSPARENCY
+				if(tex.a == 0)
+					discard;
 				
 				return float4(tex.xyz * lightFinal * _Color.rgb * _LightColor0 * finalAddition, 1.0);
 				
