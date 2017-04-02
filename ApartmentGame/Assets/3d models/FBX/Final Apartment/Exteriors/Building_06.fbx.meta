@@ -33,6 +33,9 @@ ModelImporter:
     100050: polySurface980
     100052: stick_blanket_S
     100054: building_06
+    100056: blanket
+    100058: building
+    100060: metal_thing
     400000: //RootNode
     400002: polySurface1199
     400004: polySurface904
@@ -61,6 +64,9 @@ ModelImporter:
     400050: polySurface980
     400052: stick_blanket_S
     400054: building_06
+    400056: blanket
+    400058: building
+    400060: metal_thing
     2300000: polySurface1199
     2300002: polySurface904
     2300004: polySurface918
@@ -87,6 +93,9 @@ ModelImporter:
     2300046: polySurface979
     2300048: polySurface980
     2300050: stick_blanket_S
+    2300052: blanket
+    2300054: building
+    2300056: metal_thing
     3300000: polySurface1199
     3300002: polySurface904
     3300004: polySurface918
@@ -113,6 +122,9 @@ ModelImporter:
     3300046: polySurface979
     3300048: polySurface980
     3300050: stick_blanket_S
+    3300052: blanket
+    3300054: building
+    3300056: metal_thing
     4300000: polySurface980
     4300002: polySurface979
     4300004: polySurface978
@@ -139,6 +151,9 @@ ModelImporter:
     4300046: polySurface949
     4300048: polySurface923
     4300050: polySurface1199
+    4300052: blanket
+    4300054: building
+    4300056: metal_thing
   materials:
     importMaterials: 0
     materialName: 0

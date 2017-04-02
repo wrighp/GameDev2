@@ -31,6 +31,10 @@ ModelImporter:
     100046: polySurface877
     100048: polySurface886
     100050: building_02
+    100052: building
+    100054: gap_fillers
+    100056: metal_thing
+    100058: paper_pile
     400000: //RootNode
     400002: pipes
     400004: polySurface520
@@ -57,6 +61,10 @@ ModelImporter:
     400046: polySurface877
     400048: polySurface886
     400050: building_02
+    400052: building
+    400054: gap_fillers
+    400056: metal_thing
+    400058: paper_pile
     2300000: polySurface520
     2300002: polySurface748
     2300004: polySurface753
@@ -80,6 +88,10 @@ ModelImporter:
     2300040: polySurface876
     2300042: polySurface877
     2300044: polySurface886
+    2300046: building
+    2300048: gap_fillers
+    2300050: metal_thing
+    2300052: paper_pile
     3300000: polySurface520
     3300002: polySurface748
     3300004: polySurface753
@@ -103,6 +115,10 @@ ModelImporter:
     3300040: polySurface876
     3300042: polySurface877
     3300044: polySurface886
+    3300046: building
+    3300048: gap_fillers
+    3300050: metal_thing
+    3300052: paper_pile
     4300000: polySurface863
     4300002: polySurface862
     4300004: polySurface869
@@ -126,6 +142,10 @@ ModelImporter:
     4300040: polySurface520
     4300042: polySurface850
     4300044: polySurface748
+    4300046: gap_fillers
+    4300048: building
+    4300050: metal_thing
+    4300052: paper_pile
   materials:
     importMaterials: 0
     materialName: 0

@@ -24,6 +24,9 @@ ModelImporter:
     100032: polySurface248
     100034: polySurface326
     100036: crack_house
+    100038: building
+    100040: can
+    100042: paper
     400000: //RootNode
     400002: pCube189
     400004: pCube190
@@ -43,6 +46,9 @@ ModelImporter:
     400032: polySurface248
     400034: polySurface326
     400036: crack_house
+    400038: building
+    400040: can
+    400042: paper
     2300000: pCube189
     2300002: pCube190
     2300004: pCube191
@@ -60,6 +66,9 @@ ModelImporter:
     2300028: polySurface1198
     2300030: polySurface248
     2300032: polySurface326
+    2300034: building
+    2300036: can
+    2300038: paper
     3300000: pCube189
     3300002: pCube190
     3300004: pCube191
@@ -77,6 +86,9 @@ ModelImporter:
     3300028: polySurface1198
     3300030: polySurface248
     3300032: polySurface326
+    3300034: building
+    3300036: can
+    3300038: paper
     4300000: polySurface1008
     4300002: polySurface1006
     4300004: polySurface248
@@ -94,6 +106,9 @@ ModelImporter:
     4300028: pCube189
     4300030: pCube190
     4300032: polySurface1124
+    4300034: building
+    4300036: can
+    4300038: paper
   materials:
     importMaterials: 0
     materialName: 0

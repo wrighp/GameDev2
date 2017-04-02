@@ -136,6 +136,12 @@ ModelImporter:
     100260: polySurface88
     100262: //RootNode
     100264: walls
+    100266: pCube53
+    100268: pCube54
+    100270: pCylinder11
+    100272: polySurface619
+    100274: polySurface622
+    100276: polySurface623
     400000: Apartment_backwindow:polySurface680
     400002: door_window
     400004: pCube1
@@ -269,6 +275,12 @@ ModelImporter:
     400260: polySurface88
     400262: //RootNode
     400264: walls
+    400266: pCube53
+    400268: pCube54
+    400270: pCylinder11
+    400272: polySurface619
+    400274: polySurface622
+    400276: polySurface623
     2300000: pCube1
     2300002: pCube10
     2300004: pCube11
@@ -396,6 +408,12 @@ ModelImporter:
     2300248: polySurface87
     2300250: polySurface88
     2300252: walls
+    2300254: pCube53
+    2300256: pCube54
+    2300258: pCylinder11
+    2300260: polySurface619
+    2300262: polySurface622
+    2300264: polySurface623
     3300000: pCube1
     3300002: pCube10
     3300004: pCube11
@@ -523,6 +541,12 @@ ModelImporter:
     3300248: polySurface87
     3300250: polySurface88
     3300252: walls
+    3300254: pCube53
+    3300256: pCube54
+    3300258: pCylinder11
+    3300260: polySurface619
+    3300262: polySurface622
+    3300264: polySurface623
     4300000: polySurface616
     4300002: polySurface613
     4300004: polySurface614
@@ -650,9 +674,15 @@ ModelImporter:
     4300248: polySurface607
     4300250: polySurface612
     4300252: polySurface617
+    4300254: pCylinder11
+    4300256: polySurface619
+    4300258: polySurface622
+    4300260: pCube53
+    4300262: polySurface623
+    4300264: pCube54
     9500000: //RootNode
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -694,7 +724,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -710,10 +740,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

@@ -15,6 +15,9 @@ ModelImporter:
     100014: polySurface936
     100016: polySurface976
     100018: building_05
+    100020: AC_unit_Big
+    100022: building
+    100024: gap_filler
     400000: AC_unit
     400002: //RootNode
     400004: polySurface1200
@@ -25,6 +28,9 @@ ModelImporter:
     400014: polySurface936
     400016: polySurface976
     400018: building_05
+    400020: AC_unit_Big
+    400022: building
+    400024: gap_filler
     2300000: AC_unit
     2300002: polySurface1200
     2300004: polySurface1201
@@ -33,6 +39,9 @@ ModelImporter:
     2300010: polySurface905
     2300012: polySurface936
     2300014: polySurface976
+    2300016: AC_unit_Big
+    2300018: building
+    2300020: gap_filler
     3300000: AC_unit
     3300002: polySurface1200
     3300004: polySurface1201
@@ -41,6 +50,9 @@ ModelImporter:
     3300010: polySurface905
     3300012: polySurface936
     3300014: polySurface976
+    3300016: AC_unit_Big
+    3300018: building
+    3300020: gap_filler
     4300000: AC_unit
     4300002: polySurface976
     4300004: polySurface936
@@ -49,6 +61,9 @@ ModelImporter:
     4300010: polySurface1202
     4300012: polySurface1201
     4300014: polySurface1200
+    4300016: AC_unit_Big
+    4300018: gap_filler
+    4300020: building
   materials:
     importMaterials: 0
     materialName: 0

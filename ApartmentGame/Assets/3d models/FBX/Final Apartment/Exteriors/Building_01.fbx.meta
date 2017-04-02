@@ -65,6 +65,8 @@ ModelImporter:
     100114: polySurface885
     100116: stick_blanket_L
     100118: building_01
+    100120: building
+    100122: paper_pile
     400000: box_pile_S
     400002: //RootNode
     400004: pCube173
@@ -125,6 +127,8 @@ ModelImporter:
     400114: polySurface885
     400116: stick_blanket_L
     400118: building_01
+    400120: building
+    400122: paper_pile
     2300000: box_pile_S
     2300002: pCube173
     2300004: pCube174
@@ -183,6 +187,8 @@ ModelImporter:
     2300110: polySurface884
     2300112: polySurface885
     2300114: stick_blanket_L
+    2300116: building
+    2300118: paper_pile
     3300000: box_pile_S
     3300002: pCube173
     3300004: pCube174
@@ -241,6 +247,8 @@ ModelImporter:
     3300110: polySurface884
     3300112: polySurface885
     3300114: stick_blanket_L
+    3300116: building
+    3300118: paper_pile
     4300000: polySurface784
     4300002: polySurface841
     4300004: polySurface761
@@ -299,6 +307,8 @@ ModelImporter:
     4300110: polySurface758
     4300112: pCube179
     4300114: polySurface750
+    4300116: building
+    4300118: paper_pile
   materials:
     importMaterials: 0
     materialName: 0

@@ -30,6 +30,7 @@ ModelImporter:
     100044: polySurface965
     100046: polySurface966
     100048: building_03
+    100050: building
     400000: //RootNode
     400002: pCube185
     400004: pCube186
@@ -55,6 +56,7 @@ ModelImporter:
     400044: polySurface965
     400046: polySurface966
     400048: building_03
+    400050: building
     2300000: pCube185
     2300002: pCube186
     2300004: pCube187
@@ -78,6 +80,7 @@ ModelImporter:
     2300040: polySurface964
     2300042: polySurface965
     2300044: polySurface966
+    2300046: building
     3300000: pCube185
     3300002: pCube186
     3300004: pCube187
@@ -101,6 +104,7 @@ ModelImporter:
     3300040: polySurface964
     3300042: polySurface965
     3300044: polySurface966
+    3300046: building
     4300000: polySurface899
     4300002: polySurface966
     4300004: polySurface965
@@ -124,6 +128,7 @@ ModelImporter:
     4300040: pCube187
     4300042: pCube188
     4300044: polySurface1206
+    4300046: building
   materials:
     importMaterials: 0
     materialName: 0

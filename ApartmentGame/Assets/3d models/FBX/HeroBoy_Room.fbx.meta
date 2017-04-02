@@ -58,6 +58,17 @@ ModelImporter:
     100100: polySurface346
     100102: polySurface348
     100104: polySurface350
+    100106: pCylinder7
+    100108: pCylinder8
+    100110: persp1
+    100112: persp2
+    100114: polySurface351
+    100116: polySurface352
+    100118: polySurface353
+    100120: polySurface354
+    100122: polySurface355
+    100124: polySurface356
+    100126: polySurface357
     400000: //RootNode
     400002: MrDeer_room:polySurface592
     400004: polySurface204
@@ -111,6 +122,17 @@ ModelImporter:
     400100: polySurface346
     400102: polySurface348
     400104: polySurface350
+    400106: pCylinder7
+    400108: pCylinder8
+    400110: persp1
+    400112: persp2
+    400114: polySurface351
+    400116: polySurface352
+    400118: polySurface353
+    400120: polySurface354
+    400122: polySurface355
+    400124: polySurface356
+    400126: polySurface357
     2300000: //RootNode
     2300002: polySurface205
     2300004: polySurface210
@@ -161,6 +183,15 @@ ModelImporter:
     2300094: polySurface346
     2300096: polySurface348
     2300098: polySurface350
+    2300100: pCylinder7
+    2300102: pCylinder8
+    2300104: polySurface351
+    2300106: polySurface352
+    2300108: polySurface353
+    2300110: polySurface354
+    2300112: polySurface355
+    2300114: polySurface356
+    2300116: polySurface357
     3300000: //RootNode
     3300002: polySurface205
     3300004: polySurface210
@@ -211,6 +242,15 @@ ModelImporter:
     3300094: polySurface346
     3300096: polySurface348
     3300098: polySurface350
+    3300100: pCylinder7
+    3300102: pCylinder8
+    3300104: polySurface351
+    3300106: polySurface352
+    3300108: polySurface353
+    3300110: polySurface354
+    3300112: polySurface355
+    3300114: polySurface356
+    3300116: polySurface357
     4300000: polySurface204
     4300002: polySurface205
     4300004: polySurface210
@@ -261,9 +301,18 @@ ModelImporter:
     4300094: polySurface305
     4300096: polySurface334
     4300098: polySurface307
+    4300100: pCylinder7
+    4300102: pCylinder8
+    4300104: polySurface351
+    4300106: polySurface352
+    4300108: polySurface353
+    4300110: polySurface354
+    4300112: polySurface355
+    4300114: polySurface356
+    4300116: polySurface357
     9500000: //RootNode
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -321,10 +370,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
