@@ -9,13 +9,18 @@ ModelImporter:
     100002: //RootNode
     100004: polySurface139
     100006: transform1
+    100008: garbage
     400000: Apartment_geo
     400002: //RootNode
     400004: polySurface139
     400006: transform1
+    400008: garbage
     2300000: polySurface139
+    2300002: garbage
     3300000: polySurface139
+    3300002: garbage
     4300000: polySurface139
+    4300002: garbage
     9500000: //RootNode
   materials:
     importMaterials: 0
