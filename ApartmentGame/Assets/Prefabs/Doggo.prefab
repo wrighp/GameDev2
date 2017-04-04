@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 195190655143253784}
   - component: {fileID: 114330466941303422}
   m_Layer: 0
-  m_Name: Dog
+  m_Name: Doggo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1353,7 +1353,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1361980938697106}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.01, y: 1.55, z: -8.357073}
+  m_LocalPosition: {x: -4.9402385, y: 1.84, z: 9.16472}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4153824229236590}
@@ -1560,7 +1560,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1361980938697106}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: fd634fbbf6e833446a2142e02f64984b, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.25
