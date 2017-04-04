@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour {
 	public float itemPickupDistance = 4f;
+	public Collider parentCollider;
 	public Transform rightHand;
 	public Transform leftHand;
 	private bool pickedUp = false;
@@ -36,9 +37,8 @@ public class PlayerInteraction : MonoBehaviour {
 		
 		if(Input.GetButtonDown("Fire3") && item1!=null){
 			Debug.Log("Thrown");
-			item1.transform.Translate(transform.forward * 4f);
-			//item1.GetComponent<Rigidbody>().AddForce(-1 *transform.forward * force, 
-				//ForceMode.Acceleration);
+			//item1.transform.Translate(transform.forward * 4f);
+			item1.GetComponent<Rigidbody>().AddForce(1f *transform.forward * force, ForceMode.Impulse);
 			
 			item1.transform.parent = null;
 			
@@ -76,10 +76,11 @@ public class PlayerInteraction : MonoBehaviour {
 		
 		if(Input.GetButtonDown("Fire2") && pickedUp && cooldown<0.01f){
 			Debug.Log("Dropped.");
-			
-			item1.transform.GetChild(0).
-						gameObject.GetComponent<Collider>().enabled = true;
-						
+			Collider childCollider = item1.transform.GetChild (0).gameObject.GetComponent<Collider> ();
+			childCollider.enabled = true;
+			//Ignore collision for a half a second so it can pass through player
+			Physics.IgnoreCollision (childCollider, parentCollider, true);
+			StartCoroutine(EnableColliders(.5f,childCollider,parentCollider));
 			item1.transform.parent = null;
 			item1 = null;
 			pickedUp = false;
@@ -87,6 +88,9 @@ public class PlayerInteraction : MonoBehaviour {
 		}
 	}
 
-
+	IEnumerator EnableColliders(float waitTime, Collider a, Collider b) {
+		yield return new WaitForSeconds(waitTime);
+		Physics.IgnoreCollision (a, b, false);
+	}
 
 }
