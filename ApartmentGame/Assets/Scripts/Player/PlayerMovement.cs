@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
+		
 		Vector3 camAngle = new Vector3(0, cam.transform.eulerAngles.y, 0);
 		Quaternion quat = Quaternion.Euler(camAngle);
 		Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal"), 0 ,Input.GetAxisRaw("Vertical")).normalized;
