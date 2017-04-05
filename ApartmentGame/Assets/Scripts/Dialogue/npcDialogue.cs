@@ -58,8 +58,7 @@ public class npcDialogue : MonoBehaviour {
 	public static Dictionary<string, bool> tasks;
 	public static Dictionary<string, bool> chapterTasks;
 	public static string[] taskList;
-	public static string[] chapterTaskList;
-	public static int numTasks = 4;
+	public static int numTasks = 0;
 	
 	// Use this for initialization
 	void Start () {
@@ -106,7 +105,12 @@ public class npcDialogue : MonoBehaviour {
 	
 	private void initiateTasks(){
 		tasks = new Dictionary<string, bool>();
-		taskList = new string[numTasks];
+		for(int i=0; i<dialogue._tasks.Count; i++)
+		{
+			tasks[dialogue._tasks[i]] = false;
+			numTasks+=1;
+		}
+		/*taskList = new string[numTasks];
 		tasks["A"] = false;
 		tasks["B"] = false;
 		tasks["C"] = false;
@@ -115,7 +119,7 @@ public class npcDialogue : MonoBehaviour {
 		taskList[0] = "A";
 		taskList[1] = "B";
 		taskList[2] = "C";
-		taskList[3] = "D";
+		taskList[3] = "D";*/
 	}
 	
 	//add the achievement to the hash table

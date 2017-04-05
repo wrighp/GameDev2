@@ -14,6 +14,8 @@ public class Dialogue{
 	[XmlArrayItem("Node")]
 	public List<Node> _nodes;
 	
+	[XmlElement("_tasks")]
+	public List<string> _tasks;
 	//where to start off the conversation the next time this
 	//npc is spoken to
 	public int _next = 0;
