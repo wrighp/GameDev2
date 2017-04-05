@@ -27,12 +27,9 @@ public class npcDialogue : MonoBehaviour {
 	GameObject[] options;
 	GameObject[] availableOptions;
 	
-	GameObject option1;
-	GameObject option2;
-	GameObject option3;
-	
-	GameObject exit;
-	
+	public GameObject buttonPrefab;
+	RectTransform ParentPanel;
+
 	//cameras to use
 	public Camera mainCamera;
 	public Camera dialogueCamera;
@@ -87,17 +84,10 @@ public class npcDialogue : MonoBehaviour {
 		options = new GameObject[4];
 		availableOptions = new GameObject[4];
 		
-		options[0] = option1 = dialogueWindow.transform.Find("[option 1]").gameObject;
-		options[1] = option2 = dialogueWindow.transform.Find("[option 2]").gameObject;
-		options[2] = option3 = dialogueWindow.transform.Find("[option 3]").gameObject;
-		options[3] = exit = dialogueWindow.transform.Find("[end convo]").gameObject;
+		ParentPanel = dialogueWindow.transform.Find("ButtonPanel").gameObject.
+			GetComponent<RectTransform>();
 		
 		nodeText = dialogueWindow.transform.Find("[dialogue]").gameObject;
-		
-		//add an action to the exit button
-		exit.GetComponent<Button>().onClick.AddListener(delegate {
-				setSelect(-1);
-		});
 		
 		dialogueWindow.SetActive(false);
 		
@@ -171,58 +161,42 @@ public class npcDialogue : MonoBehaviour {
 		displayCoroutine = DisplayText(node._text);
 		StartCoroutine(displayCoroutine);
 		
-		//nodeText.GetComponent<Text>().text = node._text;
+		options = new GameObject[node._options.Count];
 		
-		option1.SetActive(false);
-		option2.SetActive(false);
-		option3.SetActive(false);
-		exit.SetActive(false);
-		
-		//loop through all of this node's possible options and display them, currently
-		//a maximum of 3 options per node
-		//CHECK THIS OUT ========================================================DYNAMIC BUTTON=====
-		//instantiate buttons over each other instead of using predefined buttons
+		//loop through all of this node's possible options and display them
 		for(int i=0;i<node._options.Count/*||i<2for later expansion?*/;i++){
-			switch(i){
-				case 0:
-					updateButton(node, option1, node._options[i]);
-				break;
-				
-				case 1:
-					updateButton(node, option2, node._options[i]);
-				break;
-				
-				case 2:
-					updateButton(node, option3, node._options[i]);
-				break;
-				
-			}
-		}
-		
-		if(node._options.Count>1){
-			exit.SetActive(true);
+			updateButton(node, node._options[i], i);
 		}
 	}
 	
-	//make the buttons visible
-	private void updateButton(Node node, GameObject button, dialogueOption option){
-		//check to see if the option has any requirements
-		//if it does, check the hash table
+	void updateButton(Node node, dialogueOption option, int index)
+	{
 		if(option._req != null && option._req != ""){
 			//if the dictionary[option._req] == false, return
 			if(!tasks[option._req])
 				return;
-			//else setActive and continue
 		}
 		
-		if(node._options.Count > 1){
-			button.SetActive(true);
-		}
+		GameObject newButton = (GameObject) Instantiate(buttonPrefab);
+		newButton.transform.SetParent(ParentPanel, false);
+		newButton.transform.localScale = new Vector3(1, 1, 1);
+			
+		newButton.GetComponentInChildren<Text>().text = option._text;
+		Button tmpButton = newButton.GetComponent<Button>();
+		tmpButton.onClick.AddListener(delegate{
+		setSelect(option._dest);});
 		
-		button.GetComponentInChildren<Text>().text = option._text;
-		button.GetComponent<Button>().onClick.AddListener(delegate {
-			//Debug.Log(option._dest);
-			setSelect(option._dest);});
+		options[index] = newButton;
+		
+		//if there's more than one option, display it
+		if(node._options.Count > 1)
+		{
+			newButton.SetActive(true);
+		}
+		else
+		{
+			newButton.SetActive(false);
+		}
 	}
 	
 	//run the dialogue tree coroutine
@@ -252,7 +226,7 @@ public class npcDialogue : MonoBehaviour {
 			//for some reason, this works,  not complaining
 			//CHECK THIS OUT ============================================================
 			int j=0;
-			for(int i=0; i<4;i++){
+			for(int i=0; i<dialogue._nodes[nodeID]._options.Count;i++){
 				if(options[i].activeSelf){
 					//options[i].GetComponent<Button>().Select();
 					availableOptions[j] = options[i];
@@ -321,6 +295,11 @@ public class npcDialogue : MonoBehaviour {
 							
 						}
 						yield return /*new WaitForEndOfFrame()*/null;
+				}
+				//destroy the buttons
+				for(int i=0; i<dialogue._nodes[nodeID]._options.Count;i++)
+				{
+					Destroy(options[i]);
 				}
 			}
 			coolingDown = true;
@@ -433,21 +412,8 @@ public class npcDialogue : MonoBehaviour {
 				GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
 				runDialogue();
 			}
-				//Debug.Log("MISS");
-			}
+		}
 			
-			/*Vector3 npc4 = (transform.forward - p4);
-			float dp = Vector3.Dot(p4, npc4);
-			float dst = Vector3.Distance(col.transform.position, transform.position);
-			//only run dialogue if they're facing each other (more or less) or
-			//within a certain distance 
-			if((dp<=1 &&dp>=0.75) || dst<2){
-				mainCamera.gameObject.SetActive(false);
-				dialogueCamera.gameObject.SetActive(true);
-				running = true;
-				GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
-				runDialogue();
-			}*/
 	}
 	
 	//cycle through all tasks, if they're all complete, you win!
