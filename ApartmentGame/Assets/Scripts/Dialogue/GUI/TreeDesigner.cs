@@ -150,7 +150,7 @@ public class TreeDesigner : EditorWindow {
 			//create new dialogueOption
 			//then open up dialogue window editor
 			dialogueOption opt = new dialogueOption();
-			OptionSettings.OpenWindow(opt);
+			OptionSettings.OpenWindow(opt, nodes[windowsToAttach[0]]);
 			opt._dest = windowsToAttach[1];
 			
 			//add the dialogue option to the thingy thing
@@ -188,12 +188,6 @@ public class TreeDesigner : EditorWindow {
 		if (GUILayout.Button("Edit Node")) {
             //windowsToAttach.Add(id);
 			NodeSettings.OpenWindow(nodes[id]);
-        }
-		//edit the dialogue options from here
-		if (GUILayout.Button("Edit Dialogue Options")) {
-            //windowsToAttach.Add(id);
-			//NodeSettings.OpenWindow(nodes[id]);
-			Debug.Log("Let's rock and roll!");
         }
 		//attach to other nodes
         if (GUILayout.Button("Attach")) {
@@ -295,6 +289,39 @@ public class NodeSettings : EditorWindow
 	static List<Call> precalls;
 	static List<Call> postcalls;
 	
+	static List<dialogueOption> options;
+	
+	//============================ Editor Components===================
+	//index'd the same way as the options
+	static List<Rect> windows;
+	
+	Color mainSectionCol = new Color(50f/255f, 150f/255f, 200f/255f, 1);
+	Color infoSectionCol = new Color(1f, 1f, 1f, 1);
+	
+	
+	Rect mainSection;
+	Rect infoSection;
+	
+	
+	Texture2D mainSectionTex;
+	Texture2D infoSectionTex;
+	
+	void OnEnable()
+	{
+		InitTex();
+	}
+	
+	void InitTex()
+	{
+		mainSectionTex = new Texture2D(1, 1);
+		mainSectionTex.SetPixel(0, 0, mainSectionCol);
+		mainSectionTex.Apply();
+		
+		infoSectionTex = new Texture2D(1, 1);
+		infoSectionTex.SetPixel(0, 0, infoSectionCol);
+		infoSectionTex.Apply();
+	}
+	
 	//for opening the window
 	static public void OpenWindow(Node n = null)
 	{
@@ -309,7 +336,15 @@ public class NodeSettings : EditorWindow
 			
 			precalls = node._precalls;
 			postcalls = node._postcalls;
+			
+			options = node._options;
 		}
+		windows = new List<Rect>();
+		for(int i=0; i<node._options.Count; i++)
+		{
+			windows.Add(new Rect(10, 10, 100, 100));
+		}
+		
 		window = (NodeSettings)GetWindow(typeof(NodeSettings));
 		window.minSize = new Vector2(300, 300);
 		window.Show();
@@ -318,11 +353,51 @@ public class NodeSettings : EditorWindow
 	//draw shit for the node
 	void OnGUI()
 	{
+		DrawLayouts();
 		DrawNode();
+		DrawBody();
+	}
+	
+	void DrawLayouts()
+	{
+		//main section => where all the nodes will be shown
+		mainSection.x = Screen.width/4;
+		mainSection.y = 50;
+		mainSection.width = Screen.width;
+		mainSection.height = Screen.height-50;
+		
+		//button section
+		infoSection.x = 0;
+		infoSection.y = 50;
+		infoSection.width = Screen.width/4;
+		infoSection.height = Screen.height-50;
+		
+		//pass it to GUI
+		GUI.DrawTexture(mainSection, mainSectionTex);
+		GUI.DrawTexture(infoSection, infoSectionTex);
+	}
+	
+	void DrawBody()
+	{
+		GUILayout.BeginArea(mainSection);
+		
+		//for the node editor
+		//mark beginning area for all popup windows
+		BeginWindows();
+		
+		//iterate over the contained windows and draw them
+        for (int i = 0; i < windows.Count; i++) {
+            windows[i] = GUI.Window(i, windows[i], DrawOptionWindow, options[i]._text);
+        }
+ 
+        EndWindows();
+		
+		GUILayout.EndArea();
 	}
 	
 	void DrawNode()
 	{
+		GUILayout.BeginArea(infoSection);
 		//a field for each of them
 		EditorGUILayout.BeginHorizontal();
 		GUILayout.Label("Name");
@@ -359,7 +434,13 @@ public class NodeSettings : EditorWindow
 		EditorGUILayout.BeginHorizontal();
 		GUILayout.Label("Postcalls");
 		EditorGUILayout.EndHorizontal();
-
+		
+		//have a section here for all of the dialogue options available
+		//from that node
+		EditorGUILayout.BeginHorizontal();
+		GUILayout.Label("Dialogue Options");
+		EditorGUILayout.EndHorizontal();
+		
 		
 		if(GUILayout.Button("Save", GUILayout.Height(40)))
 		{
@@ -367,10 +448,25 @@ public class NodeSettings : EditorWindow
 			node._name = name;
 			node._accomplish = accomplish;
 			node._reset = reset;
+			node._options = options;
 			//Debug.Log("Saved to " +path);
 			this.Close();
 		}
+		
+		GUILayout.EndArea();
 	}
+	
+	//draw the node window
+	//change this to edit node instead
+	void DrawOptionWindow(int id) {
+		//edit the node
+		if (GUILayout.Button("Edit Info")) {
+            //windowsToAttach.Add(id);
+			OptionSettings.OpenWindow(options[id], node);
+        }
+ 
+        GUI.DragWindow();
+    }
 }
 
 public class OptionSettings : EditorWindow
@@ -379,26 +475,39 @@ public class OptionSettings : EditorWindow
 	
 	//members
 	static dialogueOption option;
+	static Node parent;
 	
 	static string text;
 	static string req;
+	static int dest;
+	
 
 	
-	//for opening the window
-	static public void OpenWindow(dialogueOption o = null)
+	//for opening the window for the first time
+	public static void OpenWindow(dialogueOption o = null, Node p = null)
 	{
 		option = o;
+		parent = p;
 		
 		if(option!=null)
 		{
 			//set values
 			text = option._text;
 			req = option._req;
+			dest = option._dest;
 		}
 		window = (OptionSettings)GetWindow(typeof(OptionSettings));
 		window.minSize = new Vector2(300, 300);
 		window.Show();
 		
+	}
+	
+	//for opening the window any other time
+	public void OpenWindow()
+	{
+		window = (OptionSettings)GetWindow(typeof(OptionSettings));
+		window.minSize = new Vector2(300, 300);
+		window.Show();
 	}
 	//draw shit for the node
 	void OnGUI()
@@ -408,26 +517,24 @@ public class OptionSettings : EditorWindow
 	
 	void DrawOption()
 	{
-		//a field for each of them	
-		EditorGUILayout.BeginHorizontal();
-		GUILayout.Label("Text");
-		EditorGUILayout.EndHorizontal();
-		//enter data
-		text = EditorGUILayout.TextField(text);
-		
-		EditorGUILayout.BeginHorizontal();
-		GUILayout.Label("Requirement");
-		EditorGUILayout.EndHorizontal();
-		//enter data
-		req = EditorGUILayout.TextField(req);
 
-		
+		text = EditorGUILayout.TextField("Text: ", text);
+		dest = EditorGUILayout.IntField("Destination Node: ", dest);
+		req = EditorGUILayout.TextField("Requirement :", req);
+
 		if(GUILayout.Button("Save", GUILayout.Height(40)))
 		{
 			option._text = text;
 			option._req = req;
 			this.Close();
 		}
+		
+		if(GUILayout.Button("Remove Option", GUILayout.Height(40)))
+		{
+			parent._options.Remove(option);
+			this.Close();
+		}
+		
 	}
 }
 

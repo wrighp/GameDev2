@@ -23,7 +23,6 @@ public class LoadScene : MonoBehaviour {
 			//dummy.saveState();
 			//preserve.Instance.transitions+=1;
 			//SceneManager.LoadScene(scene);
-			//transition.GetComponent<SceneTransition>().fadeOut = false;
 			transition.GetComponent<SceneTransition>().play = true;
 		}
 	}
