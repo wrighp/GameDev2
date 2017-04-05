@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: 9ee484cd1988bde4f8ece5131be81a10
+timeCreated: 1491374545
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: protag:body
+    100002: protag:hair
+    100004: protag:head
+    100006: protag:head 1
+    100008: protag:hip
+    100010: protag:hip_lower
+    100012: protag:hip_upper
+    100014: protag:joints
+    100016: protag:L_ankle
+    100018: protag:L_arm
+    100020: protag:L_elbow
+    100022: protag:L_foot
+    100024: protag:L_forearm
+    100026: protag:L_hand
+    100028: protag:L_knee
+    100030: protag:L_leg
+    100032: protag:L_muffin_01
+    100034: protag:L_muffin_02
+    100036: protag:L_muffin_03
+    100038: protag:L_shoulder
+    100040: protag:L_thumb
+    100042: protag:L_thumb_01
+    100044: protag:L_thumb_2
+    100046: protag:L_toe
+    100048: protag:L_wrist
+    100050: protag:neck_1
+    100052: protag:neck_2
+    100054: protag:outfit
+    100056: protag:pivot
+    100058: protag:protag_geo
+    100060: protag:R_ankle
+    100062: protag:R_arm
+    100064: protag:R_elbow
+    100066: protag:R_foot
+    100068: protag:R_forearm
+    100070: protag:R_hand
+    100072: protag:R_knee
+    100074: protag:R_leg
+    100076: protag:R_muffin_01
+    100078: protag:R_muffin_02
+    100080: protag:R_muffin_03
+    100082: protag:R_shoulder
+    100084: protag:R_thumb
+    100086: protag:R_thumb_01
+    100088: protag:R_thumb_2
+    100090: protag:R_toe
+    100092: protag:R_wrist
+    100094: protag:silly_hat
+    100096: protag:spine_1
+    100098: protag:spine_2
+    100100: protag:spine_3
+    100102: protag:wing_rotaion
+    100104: protag:wings1
+    100106: //RootNode
+    400000: protag:body
+    400002: protag:hair
+    400004: protag:head
+    400006: protag:head 1
+    400008: protag:hip
+    400010: protag:hip_lower
+    400012: protag:hip_upper
+    400014: protag:joints
+    400016: protag:L_ankle
+    400018: protag:L_arm
+    400020: protag:L_elbow
+    400022: protag:L_foot
+    400024: protag:L_forearm
+    400026: protag:L_hand
+    400028: protag:L_knee
+    400030: protag:L_leg
+    400032: protag:L_muffin_01
+    400034: protag:L_muffin_02
+    400036: protag:L_muffin_03
+    400038: protag:L_shoulder
+    400040: protag:L_thumb
+    400042: protag:L_thumb_01
+    400044: protag:L_thumb_2
+    400046: protag:L_toe
+    400048: protag:L_wrist
+    400050: protag:neck_1
+    400052: protag:neck_2
+    400054: protag:outfit
+    400056: protag:pivot
+    400058: protag:protag_geo
+    400060: protag:R_ankle
+    400062: protag:R_arm
+    400064: protag:R_elbow
+    400066: protag:R_foot
+    400068: protag:R_forearm
+    400070: protag:R_hand
+    400072: protag:R_knee
+    400074: protag:R_leg
+    400076: protag:R_muffin_01
+    400078: protag:R_muffin_02
+    400080: protag:R_muffin_03
+    400082: protag:R_shoulder
+    400084: protag:R_thumb
+    400086: protag:R_thumb_01
+    400088: protag:R_thumb_2
+    400090: protag:R_toe
+    400092: protag:R_wrist
+    400094: protag:silly_hat
+    400096: protag:spine_1
+    400098: protag:spine_2
+    400100: protag:spine_3
+    400102: protag:wing_rotaion
+    400104: protag:wings1
+    400106: //RootNode
+    2300000: protag:hair
+    2300002: protag:silly_hat
+    2300004: protag:wings1
+    3300000: protag:hair
+    3300002: protag:silly_hat
+    3300004: protag:wings1
+    4300000: protag:body
+    4300002: protag:head
+    4300004: protag:hair
+    4300006: protag:silly_hat
+    4300008: protag:wings1
+    4300010: protag:outfit
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: protag:body
+    13700002: protag:head
+    13700004: protag:outfit
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

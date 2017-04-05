@@ -15,6 +15,11 @@ public class npcDialogue : MonoBehaviour {
 	//the dialogue tree that's being referenced
 	Dialogue dialogue;
 	
+	public LayerMask layer;
+	public float talkDistance = 5f;
+	public float talkCooldown = 2f;
+	bool coolingDown = false;
+	
 	//the dialogue box info
 	GameObject Name;
 	GameObject nodeText;
@@ -102,6 +107,19 @@ public class npcDialogue : MonoBehaviour {
 		
 	}
 	
+	void Update()
+	{
+		if(coolingDown)
+		{
+			talkCooldown+=Time.deltaTime;
+		}
+		if(coolingDown && talkCooldown>0.5f)
+		{
+			talkCooldown = 0.5f;
+			coolingDown = false;
+		}
+	}
+	
 	private void initiateTasks(){
 		tasks = new Dictionary<string, bool>();
 		taskList = new string[numTasks];
@@ -162,7 +180,7 @@ public class npcDialogue : MonoBehaviour {
 		
 		//loop through all of this node's possible options and display them, currently
 		//a maximum of 3 options per node
-		//CHECK THIS OUT ===============================================================
+		//CHECK THIS OUT ========================================================DYNAMIC BUTTON=====
 		//instantiate buttons over each other instead of using predefined buttons
 		for(int i=0;i<node._options.Count/*||i<2for later expansion?*/;i++){
 			switch(i){
@@ -305,6 +323,8 @@ public class npcDialogue : MonoBehaviour {
 						yield return /*new WaitForEndOfFrame()*/null;
 				}
 			}
+			coolingDown = true;
+			talkCooldown = 0f;
 			dialogue._nodes [nodeID]._postcalls.ForEach ((Call c) => c.execute ());
 			dialogue._next = dialogue._nodes[nodeID]._reset;
 			nodeID = select;
@@ -375,16 +395,48 @@ public class npcDialogue : MonoBehaviour {
 		}
 	}
 	
+	//have a talking cooldown so the player doesn't automatically jump back when they
+	//exit conversation
 	void OnTriggerStay(Collider col){
 		if(auto || col.tag!="Player")
 			return;
 
 		//if the player presses "interact"/fire1, disable player movement and
 		//run the dialogue tree
-		if (Input.GetButtonDown("Fire1") && !running){
+		if (Input.GetButtonDown("Fire1") && !running && !coolingDown){
 			//get player's forward facing direction
 			Vector3 p4 = col.transform.TransformDirection(Vector3.forward);
-			Vector3 npc4 = (transform.forward - p4);
+			Debug.Log("Player in area");
+			
+			RaycastHit hit;
+			//raycast from player, the player's forward, store it in hit, of distance hit
+			if(Physics.SphereCast(col.transform.position, 1, p4, out hit, talkDistance, layer))
+			{
+				Debug.Log("Let's talk?");
+				Debug.Log(hit.collider.gameObject);
+				Debug.Log(this);
+				//if the ray hits this character, run the thing
+				if(hit.collider.gameObject == this.transform.parent.gameObject)
+				{
+					mainCamera.gameObject.SetActive(false);
+					dialogueCamera.gameObject.SetActive(true);
+					running = true;
+					GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
+					runDialogue();
+				}
+			}
+			else if(Vector3.Distance(col.transform.position, transform.position) < 1)
+			{
+				mainCamera.gameObject.SetActive(false);
+				dialogueCamera.gameObject.SetActive(true);
+				running = true;
+				GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
+				runDialogue();
+			}
+				//Debug.Log("MISS");
+			}
+			
+			/*Vector3 npc4 = (transform.forward - p4);
 			float dp = Vector3.Dot(p4, npc4);
 			float dst = Vector3.Distance(col.transform.position, transform.position);
 			//only run dialogue if they're facing each other (more or less) or
@@ -395,8 +447,7 @@ public class npcDialogue : MonoBehaviour {
 				running = true;
 				GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
 				runDialogue();
-			}
-		}
+			}*/
 	}
 	
 	//cycle through all tasks, if they're all complete, you win!
