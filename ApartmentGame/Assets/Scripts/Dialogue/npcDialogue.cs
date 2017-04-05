@@ -164,7 +164,7 @@ public class npcDialogue : MonoBehaviour {
 		options = new GameObject[node._options.Count];
 		
 		//loop through all of this node's possible options and display them
-		for(int i=0;i<node._options.Count/*||i<2for later expansion?*/;i++){
+		for(int i=0;i<node._options.Count;i++){
 			updateButton(node, node._options[i], i);
 		}
 	}
@@ -208,25 +208,26 @@ public class npcDialogue : MonoBehaviour {
 		
 		nodeID = dialogue._next;
 		
+		Node current;
 		//while the node isn't an exit node...
 		while(nodeID!=-1){
-			updateText(dialogue._nodes[nodeID]);
+			current = dialogue._nodes[nodeID];
+			updateText(current);
 			//testing out the execute function
-			dialogue._nodes [nodeID]._precalls.ForEach ((Call c) => c.execute ());
+			current._precalls.ForEach ((Call c) => c.execute ());
 			
 			//add accomplishment to dictionary
-			if(dialogue._nodes[nodeID]._accomplish!=null && 
-				dialogue._nodes[nodeID]._accomplish!=""){
-				tasks[dialogue._nodes[nodeID]._accomplish] = true;
-				Debug.Log("ACCOMPLISHED " + dialogue._nodes[nodeID]._accomplish);
+			if(current._accomplish!=null && 
+				current._accomplish!=""){
+				tasks[current._accomplish] = true;
+				Debug.Log("ACCOMPLISHED " + current._accomplish);
 				checkStatus();
 			}
 			
 			//set the corresponding button active
 			//for some reason, this works,  not complaining
-			//CHECK THIS OUT ============================================================
 			int j=0;
-			for(int i=0; i<dialogue._nodes[nodeID]._options.Count;i++){
+			for(int i=0; i<current._options.Count;i++){
 				if(options[i].activeSelf){
 					//options[i].GetComponent<Button>().Select();
 					availableOptions[j] = options[i];
@@ -247,7 +248,6 @@ public class npcDialogue : MonoBehaviour {
 					if (Input.GetButtonDown("Fire1")&& !textScroll && running
 						&& selCooldown<0){
 						//invoke a click through script
-						// referenceToTheButton.onClick.Invoke();
 						options[0].GetComponent<Button>().onClick.Invoke();
 						
 					}
@@ -275,40 +275,36 @@ public class npcDialogue : MonoBehaviour {
 								index = j-1;
 						
 						}
-						
-						//Debug.Log( index + " " + options[index].GetComponentInChildren<Text>().text);
-						
+
 						//testing
 						if(direction!=0 && selCooldown<0){
 							selCooldown = 0.25f;
 						}
 						
 						selCooldown -= Time.deltaTime;
-						
-						//look for player input
+
 						if (Input.GetButtonDown("Fire1") && !textScroll && running 
 							&& selCooldown<0){
-							//invoke a click through script
-							// referenceToTheButton.onClick.Invoke();
 							availableOptions[index].GetComponent<Button>().onClick.Invoke();
 							selCooldown = 0.25f;
 							
 						}
 						yield return /*new WaitForEndOfFrame()*/null;
 				}
-				//destroy the buttons
-				for(int i=0; i<dialogue._nodes[nodeID]._options.Count;i++)
-				{
-					Destroy(options[i]);
-				}
 			}
-			coolingDown = true;
-			talkCooldown = 0f;
-			dialogue._nodes [nodeID]._postcalls.ForEach ((Call c) => c.execute ());
-			dialogue._next = dialogue._nodes[nodeID]._reset;
+			//destroy the buttons
+			for(int i=0; i<current._options.Count;i++)
+			{
+				Destroy(options[i]);
+			}
+			
+			current._postcalls.ForEach ((Call c) => c.execute ());
+			dialogue._next = current._reset;
 			nodeID = select;
 		}
 		running = false;
+		coolingDown = true;
+		talkCooldown = 0f;
 		mainCamera.gameObject.SetActive(true);
 		dialogueCamera.gameObject.SetActive(false);
 		dialogueWindow.SetActive(false); 
