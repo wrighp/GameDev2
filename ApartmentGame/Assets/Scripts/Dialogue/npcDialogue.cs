@@ -211,8 +211,7 @@ public class npcDialogue : MonoBehaviour {
 		runCoroutine = run();
 		StartCoroutine(runCoroutine);
 	}
-	//run t
-	he dialogue tree coroutine
+	//run the dialogue tree coroutine
 	public IEnumerator run(){
 		//THIS WILL DO FOR NOW
 		yield return new WaitForEndOfFrame();
