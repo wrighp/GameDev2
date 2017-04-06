@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: trailermat
-  m_Shader: {fileID: 4800000, guid: 550e3cdbe03f87e43831eb7b858905ee, type: 3}
-  m_ShaderKeywords: _EMISSION _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+  m_Name: fuck
+  m_Shader: {fileID: 10755, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -54,7 +54,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: 07a23cc25ae31304f93f2f29d6d835ba, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -71,6 +71,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     - first:
         name: _ParallaxMap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _SecondTex
       second:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -102,7 +108,7 @@ Material:
       second: 1
     - first:
         name: _DiffuseThres
-      second: 0.297
+      second: 0.35
     - first:
         name: _Distort
       second: 0
@@ -156,19 +162,22 @@ Material:
       second: 50
     - first:
         name: _RimPow
-      second: 10
+      second: 3
     - first:
         name: _Shininess
       second: 1
     - first:
         name: _SmoothnessTextureChannel
-      second: 1
+      second: 0
     - first:
         name: _SpecularHighlights
       second: 1
     - first:
         name: _SrcBlend
       second: 1
+    - first:
+        name: _Tween
+      second: 0
     - first:
         name: _UVSec
       second: 0
@@ -178,7 +187,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0.9485294, g: 0.8857591, b: 0.8857591, a: 1}
+      second: {r: 0, g: 0.6985294, b: 0.0048174052, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
@@ -190,4 +199,4 @@ Material:
       second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _UnlitColor
-      second: {r: 0.6813359, g: 0.6517085, b: 0.9044118, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 1}
