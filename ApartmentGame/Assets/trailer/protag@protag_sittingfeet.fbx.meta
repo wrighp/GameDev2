@@ -155,7 +155,7 @@ ModelImporter:
       name: protag_sittingfeet
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 40
+      lastFrame: 80
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
