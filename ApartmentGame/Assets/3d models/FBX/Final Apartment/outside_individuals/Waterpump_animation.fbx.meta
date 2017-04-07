@@ -1,15 +1,45 @@
 fileFormatVersion: 2
-guid: 1e2eb61b203fb4cb8ad1ff3fb9840591
-timeCreated: 1491558775
+guid: bdcca1652c19e4c188df2df9f11fcfff
+timeCreated: 1491604737
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: polySurface9
+    100000: group1
+    100002: handle
+    100004: polySurface10
+    100006: polySurface12
+    100008: polySurface13
+    100010: polySurface16
+    100012: polySurface17
+    100014: polySurface18
+    100016: //RootNode
+    400000: group1
+    400002: handle
+    400004: polySurface10
+    400006: polySurface12
+    400008: polySurface13
+    400010: polySurface16
+    400012: polySurface17
+    400014: polySurface18
+    400016: //RootNode
+    2300000: polySurface12
+    2300002: polySurface13
+    2300004: polySurface16
+    2300006: polySurface17
+    2300008: polySurface18
+    3300000: polySurface12
+    3300002: polySurface13
+    3300004: polySurface16
+    3300006: polySurface17
+    3300008: polySurface18
+    4300000: polySurface17
+    4300002: polySurface18
+    4300004: polySurface12
+    4300006: polySurface13
+    4300008: polySurface16
+    7400000: Take 001
+    9500000: //RootNode
   materials:
     importMaterials: 0
     materialName: 0
@@ -34,7 +64,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 5
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -72,7 +102,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
