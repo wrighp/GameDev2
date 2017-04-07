@@ -83,15 +83,14 @@ public class npcDialogue : MonoBehaviour {
 		windowTrans.localPosition = new Vector3(0,-100,0);
 		
 		
-		Name = dialogueWindow.transform.Find("[npc]").gameObject;
+		Name = dialogueWindow.transform.Find("SpeakerPanel").gameObject.transform.Find("[npc]").gameObject;
 		
 		options = new GameObject[4];
 		availableOptions = new GameObject[4];
 		
-		ParentPanel = dialogueWindow.transform.Find("ButtonPanel").gameObject.
-			GetComponent<RectTransform>();
+		ParentPanel = dialogueWindow.transform.Find("ButtonPanel").gameObject.GetComponent<RectTransform>();
 		
-		nodeText = dialogueWindow.transform.Find("[dialogue]").gameObject;
+		nodeText = dialogueWindow.transform.Find("TextPanel").gameObject.transform.Find("[dialogue]").gameObject;
 		
 		dialogueWindow.SetActive(false);
 	}
