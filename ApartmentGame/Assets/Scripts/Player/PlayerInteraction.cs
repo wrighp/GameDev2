@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour {
-	public float itemPickupDistance = 4f;
 	public Collider parentCollider;
 	public Transform rightHand;
 	public Transform leftHand;
@@ -35,23 +34,30 @@ public class PlayerInteraction : MonoBehaviour {
 			cooldown = 0;
 		}
 		
-		if(Input.GetButtonDown("Fire3") && item1!=null){
+		if(Input.GetButtonDown("Fire3") && pickedUp && cooldown < 0.01f){
 			Debug.Log("Thrown");
 			//item1.transform.Translate(transform.forward * 4f);
-			item1.GetComponent<Rigidbody>().AddForce(1f *transform.forward * force, ForceMode.Impulse);
-			
-			item1.transform.parent = null;
-			
-			item1.transform.GetChild(0).
-				gameObject.GetComponent<Collider>().enabled = true;
-			
+			Collider childCollider = item1.transform.GetChild (0).gameObject.GetComponent<Collider> ();
+			item1.GetComponent<Rigidbody>().AddForce(1f *transform.forward * force, ForceMode.Impulse);		
+			StartCoroutine(EnableColliders(.5f,childCollider,parentCollider));
+			ReleaseItem(item1);
 			item1 = null;
-			pickedUp = false;
-			cooldown = 0.5f;
+
+		}
+		else if(Input.GetButtonDown("Fire2") && pickedUp && cooldown < 0.01f){
+			Debug.Log("Dropped.");
+			Collider childCollider = item1.transform.GetChild (0).gameObject.GetComponent<Collider> ();
+			StartCoroutine(EnableColliders(0,childCollider,parentCollider));
+			ReleaseItem (item1);
+			item1 = null;
+
 		}
 	}
 	void OnTriggerStay(Collider other) {
-		
+		IndicatorOverlay overlay = other.GetComponent<IndicatorOverlay> ();
+		if(overlay != null && other.gameObject != item1){
+			overlay.display = true;
+		}
 		if(Input.GetButtonDown("Fire2") && !pickedUp && cooldown<0.01f){
 			if(other.GetComponent<tmpItem>()!=null){
 				if(other.GetComponent<tmpItem>().grabbable){
@@ -59,38 +65,52 @@ public class PlayerInteraction : MonoBehaviour {
 						item1 = other.gameObject;
 					}
 					//Debug.Log("Grabbed!");
-					
-					item1.transform.GetChild(0).
-						gameObject.GetComponent<Collider>().enabled = false;
+					Collider childCollider = item1.transform.GetChild (0).gameObject.GetComponent<Collider> ();
+					//item1.transform.GetChild(0).gameObject.GetComponent<Collider>().enabled = false;
+					Physics.IgnoreCollision (childCollider, parentCollider, true);
 					item1.transform.position = rightHand.position;
 					item1.transform.parent = rightHand;
 					item1.transform.localPosition = Vector3.zero;
-					
 					item1.GetComponent<Rigidbody>().velocity = Vector3.zero;
 					item1.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 					pickedUp = true;
-					cooldown = 0.5f;
+					cooldown = 0.25f;
+
+					if(overlay != null){
+						overlay.display = false;
+					}
 				}
 			}		
 		}
+
+	}
+	void OnTriggerEnter(Collider other) {
 		
-		if(Input.GetButtonDown("Fire2") && pickedUp && cooldown<0.01f){
-			Debug.Log("Dropped.");
-			Collider childCollider = item1.transform.GetChild (0).gameObject.GetComponent<Collider> ();
-			childCollider.enabled = true;
-			//Ignore collision for a half a second so it can pass through player
-			Physics.IgnoreCollision (childCollider, parentCollider, true);
-			StartCoroutine(EnableColliders(.5f,childCollider,parentCollider));
-			item1.transform.parent = null;
-			item1 = null;
-			pickedUp = false;
-			cooldown = 0.5f;
+	}
+	void OnTriggerExit(Collider other) {
+		IndicatorOverlay overlay = other.GetComponent<IndicatorOverlay> ();
+		if(overlay != null){
+			overlay.display = false;
 		}
 	}
 
 	IEnumerator EnableColliders(float waitTime, Collider a, Collider b) {
 		yield return new WaitForSeconds(waitTime);
 		Physics.IgnoreCollision (a, b, false);
+	}
+
+	void ReleaseItem (GameObject item1)
+	{
+		item1.transform.parent = null;
+		item1.GetComponent<Rigidbody>().velocity = Vector3.zero;
+		item1.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+		pickedUp = false;
+		cooldown = 0.5f;
+
+	}
+
+	void ThrowGuide(){
+	
 	}
 
 }
