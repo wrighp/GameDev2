@@ -59,6 +59,56 @@ ModelImporter:
     100102: protag:wing_rotaion
     100104: protag:wings1
     100106: //RootNode
+    100108: body
+    100110: hair
+    100112: head
+    100114: head 1
+    100116: hip
+    100118: hip_lower
+    100120: hip_upper
+    100122: joints
+    100124: L_ankle
+    100126: L_arm
+    100128: L_elbow
+    100130: L_foot
+    100132: L_forearm
+    100134: L_hand
+    100136: L_knee
+    100138: L_leg
+    100140: L_muffin_01
+    100142: L_muffin_02
+    100144: L_muffin_03
+    100146: L_shoulder
+    100148: L_thumb
+    100150: L_thumb_01
+    100152: L_thumb_2
+    100154: L_toe
+    100156: L_wrist
+    100158: neck_1
+    100160: neck_2
+    100162: outfit
+    100164: protag_geo
+    100166: R_ankle
+    100168: R_arm
+    100170: R_elbow
+    100172: R_foot
+    100174: R_forearm
+    100176: R_hand
+    100178: R_knee
+    100180: R_leg
+    100182: R_muffin_01
+    100184: R_muffin_02
+    100186: R_muffin_03
+    100188: R_shoulder
+    100190: R_thumb
+    100192: R_thumb_01
+    100194: R_thumb_2
+    100196: R_toe
+    100198: R_wrist
+    100200: silly_hat
+    100202: spine_1
+    100204: spine_2
+    100206: spine_3
     400000: protag:body
     400002: protag:hair
     400004: protag:head
@@ -113,24 +163,87 @@ ModelImporter:
     400102: protag:wing_rotaion
     400104: protag:wings1
     400106: //RootNode
+    400108: body
+    400110: hair
+    400112: head
+    400114: head 1
+    400116: hip
+    400118: hip_lower
+    400120: hip_upper
+    400122: joints
+    400124: L_ankle
+    400126: L_arm
+    400128: L_elbow
+    400130: L_foot
+    400132: L_forearm
+    400134: L_hand
+    400136: L_knee
+    400138: L_leg
+    400140: L_muffin_01
+    400142: L_muffin_02
+    400144: L_muffin_03
+    400146: L_shoulder
+    400148: L_thumb
+    400150: L_thumb_01
+    400152: L_thumb_2
+    400154: L_toe
+    400156: L_wrist
+    400158: neck_1
+    400160: neck_2
+    400162: outfit
+    400164: protag_geo
+    400166: R_ankle
+    400168: R_arm
+    400170: R_elbow
+    400172: R_foot
+    400174: R_forearm
+    400176: R_hand
+    400178: R_knee
+    400180: R_leg
+    400182: R_muffin_01
+    400184: R_muffin_02
+    400186: R_muffin_03
+    400188: R_shoulder
+    400190: R_thumb
+    400192: R_thumb_01
+    400194: R_thumb_2
+    400196: R_toe
+    400198: R_wrist
+    400200: silly_hat
+    400202: spine_1
+    400204: spine_2
+    400206: spine_3
     2300000: protag:hair
     2300002: protag:silly_hat
     2300004: protag:wings1
+    2300006: hair
+    2300008: silly_hat
     3300000: protag:hair
     3300002: protag:silly_hat
     3300004: protag:wings1
+    3300006: hair
+    3300008: silly_hat
     4300000: protag:body
     4300002: protag:head
     4300004: protag:hair
     4300006: protag:silly_hat
     4300008: protag:wings1
     4300010: protag:outfit
+    4300012: body
+    4300014: head
+    4300016: hair
+    4300018: silly_hat
+    4300020: outfit
     7400000: protag_sittingpop
     7400002: protag_stop
+    7400004: protag_sittingpop
     9500000: //RootNode
     13700000: protag:body
     13700002: protag:head
     13700004: protag:outfit
+    13700006: body
+    13700008: head
+    13700010: outfit
   materials:
     importMaterials: 0
     materialName: 0
@@ -145,7 +258,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 0
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -156,7 +269,7 @@ ModelImporter:
       name: protag_sittingpop
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 40
+      lastFrame: 38
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -179,249 +292,111 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: protag:joints
+      - path: joints
         weight: 1
-      - path: protag:joints/protag:hip
+      - path: joints/hip
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_lower
+      - path: joints/hip/hip_lower
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_lower/protag:L_leg
+      - path: joints/hip/hip_lower/L_leg
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_lower/protag:L_leg/protag:L_knee
+      - path: joints/hip/hip_lower/L_leg/L_knee
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_lower/protag:L_leg/protag:L_knee/protag:L_ankle
+      - path: joints/hip/hip_lower/L_leg/L_knee/L_ankle
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_lower/protag:L_leg/protag:L_knee/protag:L_ankle/protag:L_foot
+      - path: joints/hip/hip_lower/L_leg/L_knee/L_ankle/L_foot
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_lower/protag:L_leg/protag:L_knee/protag:L_ankle/protag:L_foot/protag:L_toe
+      - path: joints/hip/hip_lower/L_leg/L_knee/L_ankle/L_foot/L_toe
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_lower/protag:R_leg
+      - path: joints/hip/hip_lower/R_leg
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_lower/protag:R_leg/protag:R_knee
+      - path: joints/hip/hip_lower/R_leg/R_knee
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_lower/protag:R_leg/protag:R_knee/protag:R_ankle
+      - path: joints/hip/hip_lower/R_leg/R_knee/R_ankle
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_lower/protag:R_leg/protag:R_knee/protag:R_ankle/protag:R_foot
+      - path: joints/hip/hip_lower/R_leg/R_knee/R_ankle/R_foot
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_lower/protag:R_leg/protag:R_knee/protag:R_ankle/protag:R_foot/protag:R_toe
+      - path: joints/hip/hip_lower/R_leg/R_knee/R_ankle/R_foot/R_toe
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper
+      - path: joints/hip/hip_upper
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1
+      - path: joints/hip/hip_upper/spine_1
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2
+      - path: joints/hip/hip_upper/spine_1/spine_2
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder/protag:L_arm
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder/L_arm
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder/protag:L_arm/protag:L_elbow
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder/L_arm/L_elbow
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder/protag:L_arm/protag:L_elbow/protag:L_forearm
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder/L_arm/L_elbow/L_forearm
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder/protag:L_arm/protag:L_elbow/protag:L_forearm/protag:L_wrist
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder/L_arm/L_elbow/L_forearm/L_wrist
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder/protag:L_arm/protag:L_elbow/protag:L_forearm/protag:L_wrist/protag:L_hand
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder/L_arm/L_elbow/L_forearm/L_wrist/L_hand
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder/protag:L_arm/protag:L_elbow/protag:L_forearm/protag:L_wrist/protag:L_hand/protag:L_muffin_01
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder/L_arm/L_elbow/L_forearm/L_wrist/L_hand/L_muffin_01
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder/protag:L_arm/protag:L_elbow/protag:L_forearm/protag:L_wrist/protag:L_hand/protag:L_muffin_01/protag:L_muffin_02
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder/L_arm/L_elbow/L_forearm/L_wrist/L_hand/L_muffin_01/L_muffin_02
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder/protag:L_arm/protag:L_elbow/protag:L_forearm/protag:L_wrist/protag:L_hand/protag:L_muffin_01/protag:L_muffin_02/protag:L_muffin_03
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder/L_arm/L_elbow/L_forearm/L_wrist/L_hand/L_muffin_01/L_muffin_02/L_muffin_03
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder/protag:L_arm/protag:L_elbow/protag:L_forearm/protag:L_wrist/protag:L_hand/protag:L_thumb
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder/L_arm/L_elbow/L_forearm/L_wrist/L_hand/L_thumb
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder/protag:L_arm/protag:L_elbow/protag:L_forearm/protag:L_wrist/protag:L_hand/protag:L_thumb/protag:L_thumb_01
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder/L_arm/L_elbow/L_forearm/L_wrist/L_hand/L_thumb/L_thumb_01
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder/protag:L_arm/protag:L_elbow/protag:L_forearm/protag:L_wrist/protag:L_hand/protag:L_thumb/protag:L_thumb_01/protag:L_thumb_2
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder/L_arm/L_elbow/L_forearm/L_wrist/L_hand/L_thumb/L_thumb_01/L_thumb_2
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:neck_1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/neck_1
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:neck_1/protag:neck_2
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/neck_1/neck_2
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:neck_1/protag:neck_2/protag:head
-          1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/neck_1/neck_2/head 1
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder/protag:R_arm
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder/R_arm
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder/protag:R_arm/protag:R_elbow
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder/R_arm/R_elbow
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder/protag:R_arm/protag:R_elbow/protag:R_forearm
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder/R_arm/R_elbow/R_forearm
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder/protag:R_arm/protag:R_elbow/protag:R_forearm/protag:R_wrist
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder/R_arm/R_elbow/R_forearm/R_wrist
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder/protag:R_arm/protag:R_elbow/protag:R_forearm/protag:R_wrist/protag:R_hand
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder/R_arm/R_elbow/R_forearm/R_wrist/R_hand
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder/protag:R_arm/protag:R_elbow/protag:R_forearm/protag:R_wrist/protag:R_hand/protag:R_muffin_01
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder/R_arm/R_elbow/R_forearm/R_wrist/R_hand/R_muffin_01
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder/protag:R_arm/protag:R_elbow/protag:R_forearm/protag:R_wrist/protag:R_hand/protag:R_muffin_01/protag:R_muffin_02
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder/R_arm/R_elbow/R_forearm/R_wrist/R_hand/R_muffin_01/R_muffin_02
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder/protag:R_arm/protag:R_elbow/protag:R_forearm/protag:R_wrist/protag:R_hand/protag:R_muffin_01/protag:R_muffin_02/protag:R_muffin_03
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder/R_arm/R_elbow/R_forearm/R_wrist/R_hand/R_muffin_01/R_muffin_02/R_muffin_03
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder/protag:R_arm/protag:R_elbow/protag:R_forearm/protag:R_wrist/protag:R_hand/protag:R_thumb
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder/R_arm/R_elbow/R_forearm/R_wrist/R_hand/R_thumb
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder/protag:R_arm/protag:R_elbow/protag:R_forearm/protag:R_wrist/protag:R_hand/protag:R_thumb/protag:R_thumb_01
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder/R_arm/R_elbow/R_forearm/R_wrist/R_hand/R_thumb/R_thumb_01
         weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder/protag:R_arm/protag:R_elbow/protag:R_forearm/protag:R_wrist/protag:R_hand/protag:R_thumb/protag:R_thumb_01/protag:R_thumb_2
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder/R_arm/R_elbow/R_forearm/R_wrist/R_hand/R_thumb/R_thumb_01/R_thumb_2
         weight: 1
-      - path: protag:protag_geo
+      - path: protag_geo
         weight: 1
-      - path: protag:protag_geo/protag:body
+      - path: protag_geo/body
         weight: 1
-      - path: protag:protag_geo/protag:head
+      - path: protag_geo/head
         weight: 1
-      - path: protag:protag_geo/protag:head/protag:hair
+      - path: protag_geo/head/hair
         weight: 1
-      - path: protag:protag_geo/protag:head/protag:silly_hat
+      - path: protag_geo/head/silly_hat
         weight: 1
-      - path: protag:protag_geo/protag:head/protag:silly_hat/protag:pivot
+      - path: protag_geo/head/silly_hat/protag:pivot
         weight: 1
-      - path: protag:protag_geo/protag:head/protag:silly_hat/protag:pivot/protag:wing_rotaion
+      - path: protag_geo/head/silly_hat/protag:pivot/protag:wing_rotaion
         weight: 1
-      - path: protag:protag_geo/protag:head/protag:silly_hat/protag:pivot/protag:wing_rotaion/protag:wings1
+      - path: protag_geo/head/silly_hat/protag:pivot/protag:wing_rotaion/protag:wings1
         weight: 1
-      - path: protag:protag_geo/protag:outfit
-        weight: 1
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: protag_stop
-      takeName: Take 001
-      firstFrame: 1
-      lastFrame: 1
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: protag:joints
-        weight: 1
-      - path: protag:joints/protag:hip
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_lower
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_lower/protag:L_leg
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_lower/protag:L_leg/protag:L_knee
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_lower/protag:L_leg/protag:L_knee/protag:L_ankle
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_lower/protag:L_leg/protag:L_knee/protag:L_ankle/protag:L_foot
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_lower/protag:L_leg/protag:L_knee/protag:L_ankle/protag:L_foot/protag:L_toe
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_lower/protag:R_leg
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_lower/protag:R_leg/protag:R_knee
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_lower/protag:R_leg/protag:R_knee/protag:R_ankle
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_lower/protag:R_leg/protag:R_knee/protag:R_ankle/protag:R_foot
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_lower/protag:R_leg/protag:R_knee/protag:R_ankle/protag:R_foot/protag:R_toe
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder/protag:L_arm
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder/protag:L_arm/protag:L_elbow
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder/protag:L_arm/protag:L_elbow/protag:L_forearm
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder/protag:L_arm/protag:L_elbow/protag:L_forearm/protag:L_wrist
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder/protag:L_arm/protag:L_elbow/protag:L_forearm/protag:L_wrist/protag:L_hand
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder/protag:L_arm/protag:L_elbow/protag:L_forearm/protag:L_wrist/protag:L_hand/protag:L_muffin_01
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder/protag:L_arm/protag:L_elbow/protag:L_forearm/protag:L_wrist/protag:L_hand/protag:L_muffin_01/protag:L_muffin_02
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder/protag:L_arm/protag:L_elbow/protag:L_forearm/protag:L_wrist/protag:L_hand/protag:L_muffin_01/protag:L_muffin_02/protag:L_muffin_03
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder/protag:L_arm/protag:L_elbow/protag:L_forearm/protag:L_wrist/protag:L_hand/protag:L_thumb
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder/protag:L_arm/protag:L_elbow/protag:L_forearm/protag:L_wrist/protag:L_hand/protag:L_thumb/protag:L_thumb_01
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:L_shoulder/protag:L_arm/protag:L_elbow/protag:L_forearm/protag:L_wrist/protag:L_hand/protag:L_thumb/protag:L_thumb_01/protag:L_thumb_2
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:neck_1
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:neck_1/protag:neck_2
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:neck_1/protag:neck_2/protag:head
-          1
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder/protag:R_arm
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder/protag:R_arm/protag:R_elbow
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder/protag:R_arm/protag:R_elbow/protag:R_forearm
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder/protag:R_arm/protag:R_elbow/protag:R_forearm/protag:R_wrist
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder/protag:R_arm/protag:R_elbow/protag:R_forearm/protag:R_wrist/protag:R_hand
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder/protag:R_arm/protag:R_elbow/protag:R_forearm/protag:R_wrist/protag:R_hand/protag:R_muffin_01
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder/protag:R_arm/protag:R_elbow/protag:R_forearm/protag:R_wrist/protag:R_hand/protag:R_muffin_01/protag:R_muffin_02
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder/protag:R_arm/protag:R_elbow/protag:R_forearm/protag:R_wrist/protag:R_hand/protag:R_muffin_01/protag:R_muffin_02/protag:R_muffin_03
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder/protag:R_arm/protag:R_elbow/protag:R_forearm/protag:R_wrist/protag:R_hand/protag:R_thumb
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder/protag:R_arm/protag:R_elbow/protag:R_forearm/protag:R_wrist/protag:R_hand/protag:R_thumb/protag:R_thumb_01
-        weight: 1
-      - path: protag:joints/protag:hip/protag:hip_upper/protag:spine_1/protag:spine_2/protag:spine_3/protag:R_shoulder/protag:R_arm/protag:R_elbow/protag:R_forearm/protag:R_wrist/protag:R_hand/protag:R_thumb/protag:R_thumb_01/protag:R_thumb_2
-        weight: 1
-      - path: protag:protag_geo
-        weight: 1
-      - path: protag:protag_geo/protag:body
-        weight: 1
-      - path: protag:protag_geo/protag:head
-        weight: 1
-      - path: protag:protag_geo/protag:head/protag:hair
-        weight: 1
-      - path: protag:protag_geo/protag:head/protag:silly_hat
-        weight: 1
-      - path: protag:protag_geo/protag:head/protag:silly_hat/protag:pivot
-        weight: 1
-      - path: protag:protag_geo/protag:head/protag:silly_hat/protag:pivot/protag:wing_rotaion
-        weight: 1
-      - path: protag:protag_geo/protag:head/protag:silly_hat/protag:pivot/protag:wing_rotaion/protag:wings1
-        weight: 1
-      - path: protag:protag_geo/protag:outfit
+      - path: protag_geo/outfit
         weight: 1
       maskType: 3
       maskSource: {instanceID: 0}
@@ -466,7 +441,7 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 718793be148f54e889e8e11615c2b151,
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: efbd334b36eed422db710f1154b6bb96,
     type: 3}
   animationType: 2
   humanoidOversampling: 1

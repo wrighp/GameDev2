@@ -96,7 +96,7 @@ ModelImporter:
     4300000: dress
     4300002: body1
     4300004: head
-    7400000: Take 001
+    7400000: teacup_convo
     9500000: //RootNode
     13700000: body1
     13700002: dress
@@ -121,7 +121,124 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: teacup_convo
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: joints
+        weight: 1
+      - path: joints/hip
+        weight: 1
+      - path: joints/hip/lower_hip
+        weight: 1
+      - path: joints/hip/lower_hip/L_leg
+        weight: 1
+      - path: joints/hip/lower_hip/L_leg/L_leg_1
+        weight: 1
+      - path: joints/hip/lower_hip/L_leg/L_leg_1/L_leg_2
+        weight: 1
+      - path: joints/hip/lower_hip/L_leg/L_leg_1/L_leg_2/L_leg_3
+        weight: 1
+      - path: joints/hip/lower_hip/L_leg/L_leg_1/L_leg_2/L_leg_3/L_leg_4
+        weight: 1
+      - path: joints/hip/lower_hip/L_leg/L_leg_1/L_leg_2/L_leg_3/L_leg_4/L_leg_5
+        weight: 1
+      - path: joints/hip/lower_hip/L_leg/L_leg_1/L_leg_2/L_leg_3/L_leg_4/L_leg_5/L_leg_6
+        weight: 1
+      - path: joints/hip/lower_hip/R_leg
+        weight: 1
+      - path: joints/hip/lower_hip/R_leg/R_leg_1
+        weight: 1
+      - path: joints/hip/lower_hip/R_leg/R_leg_1/R_leg_2
+        weight: 1
+      - path: joints/hip/lower_hip/R_leg/R_leg_1/R_leg_2/R_leg_3
+        weight: 1
+      - path: joints/hip/lower_hip/R_leg/R_leg_1/R_leg_2/R_leg_3/R_leg_4
+        weight: 1
+      - path: joints/hip/lower_hip/R_leg/R_leg_1/R_leg_2/R_leg_3/R_leg_4/R_leg_5
+        weight: 1
+      - path: joints/hip/lower_hip/R_leg/R_leg_1/R_leg_2/R_leg_3/R_leg_4/R_leg_5/R_leg_6
+        weight: 1
+      - path: joints/hip/upper_hip
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/L_arm
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/L_arm/L_arm_1
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/L_arm/L_arm_1/L_arm_2
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/L_arm/L_arm_1/L_arm_2/L_arm_3
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/L_arm/L_arm_1/L_arm_2/L_arm_3/L_arm_4
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/L_arm/L_arm_1/L_arm_2/L_arm_3/L_arm_4/L_arm_5
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/L_arm/L_arm_1/L_arm_2/L_arm_3/L_arm_4/L_arm_5/L_arm_6
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/neck_1
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/neck_1/neck_2
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/neck_1/neck_2/head
+          1
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/R_arm
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/R_arm/R_arm_1
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/R_arm/R_arm_1/R_arm_2
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/R_arm/R_arm_1/R_arm_2/R_arm_3
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/R_arm/R_arm_1/R_arm_2/R_arm_3/R_arm_4
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/R_arm/R_arm_1/R_arm_2/R_arm_3/R_arm_4/R_arm_5
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/R_arm/R_arm_1/R_arm_2/R_arm_3/R_arm_4/R_arm_5/R_arm_6
+        weight: 1
+      - path: ms_teacup_geo
+        weight: 1
+      - path: ms_teacup_geo/body1
+        weight: 1
+      - path: ms_teacup_geo/dress
+        weight: 1
+      - path: ms_teacup_geo/head
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
