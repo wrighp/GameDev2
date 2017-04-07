@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 9a88de7fc4648434b9b8c5bbb8ef4f2f
-timeCreated: 1491374544
+guid: 15ae7e5bfc20b4f67b8d0c870ae4d1d6
+timeCreated: 1491424953
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -131,7 +131,7 @@ ModelImporter:
     13700002: protag:head
     13700004: protag:outfit
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:

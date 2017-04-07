@@ -40,6 +40,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
+        name: _DisplaceTex
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
         name: _EmissionMap
       second:
         m_Texture: {fileID: 0}
@@ -69,7 +75,22 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - first:
+        name: _TransitionTex
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
+    - first:
+        name: _AX
+      second: 0.1
+    - first:
+        name: _AY
+      second: 0.1
+    - first:
+        name: _AZ
+      second: 0.1
     - first:
         name: _BumpScale
       second: 1
@@ -81,9 +102,15 @@ Material:
       second: 1
     - first:
         name: _DiffuseThres
-      second: 0.1
+      second: 0.297
+    - first:
+        name: _Distort
+      second: 0
     - first:
         name: _DstBlend
+      second: 0
+    - first:
+        name: _Fade
       second: 0
     - first:
         name: _GlossMapScale
@@ -95,6 +122,9 @@ Material:
         name: _GlossyReflections
       second: 1
     - first:
+        name: _Magnitude
+      second: 1
+    - first:
         name: _Metallic
       second: 0
     - first:
@@ -104,11 +134,29 @@ Material:
         name: _OcclusionStrength
       second: 1
     - first:
+        name: _PX
+      second: 50
+    - first:
+        name: _PY
+      second: 50
+    - first:
+        name: _PZ
+      second: 50
+    - first:
         name: _Parallax
       second: 0.02
     - first:
+        name: _RX
+      second: 50
+    - first:
+        name: _RY
+      second: 50
+    - first:
+        name: _RZ
+      second: 50
+    - first:
         name: _RimPow
-      second: 0.1
+      second: 10
     - first:
         name: _Shininess
       second: 1
@@ -130,16 +178,16 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 1, g: 0.996146, b: 0.8602941, a: 1}
+      second: {r: 0.9485294, g: 0.8857591, b: 0.8857591, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _RimCol
-      second: {r: 1, g: 0.90101427, b: 0.102941155, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _SpecColor
       second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _UnlitColor
-      second: {r: 0.4076557, g: 0.47794116, b: 0.42559066, a: 1}
+      second: {r: 0.6813359, g: 0.6517085, b: 0.9044118, a: 1}

@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Inspect
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
+  m_Name: fuck
+  m_Shader: {fileID: 10755, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _EMISSION
+  m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
@@ -40,6 +40,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
+        name: _DisplaceTex
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
         name: _EmissionMap
       second:
         m_Texture: {fileID: 0}
@@ -48,7 +54,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: 59fcb9ed6727e63419d8ac41de217158, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -69,7 +75,28 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - first:
+        name: _SecondTex
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _TransitionTex
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
+    - first:
+        name: _AX
+      second: 0.1
+    - first:
+        name: _AY
+      second: 0.1
+    - first:
+        name: _AZ
+      second: 0.1
     - first:
         name: _BumpScale
       second: 1
@@ -80,7 +107,16 @@ Material:
         name: _DetailNormalMapScale
       second: 1
     - first:
+        name: _DiffuseThres
+      second: 0.35
+    - first:
+        name: _Distort
+      second: 0
+    - first:
         name: _DstBlend
+      second: 0
+    - first:
+        name: _Fade
       second: 0
     - first:
         name: _GlossMapScale
@@ -92,6 +128,9 @@ Material:
         name: _GlossyReflections
       second: 1
     - first:
+        name: _Magnitude
+      second: 1
+    - first:
         name: _Metallic
       second: 0
     - first:
@@ -101,8 +140,32 @@ Material:
         name: _OcclusionStrength
       second: 1
     - first:
+        name: _PX
+      second: 50
+    - first:
+        name: _PY
+      second: 50
+    - first:
+        name: _PZ
+      second: 50
+    - first:
         name: _Parallax
       second: 0.02
+    - first:
+        name: _RX
+      second: 50
+    - first:
+        name: _RY
+      second: 50
+    - first:
+        name: _RZ
+      second: 50
+    - first:
+        name: _RimPow
+      second: 3
+    - first:
+        name: _Shininess
+      second: 1
     - first:
         name: _SmoothnessTextureChannel
       second: 0
@@ -113,6 +176,9 @@ Material:
         name: _SrcBlend
       second: 1
     - first:
+        name: _Tween
+      second: 0
+    - first:
         name: _UVSec
       second: 0
     - first:
@@ -121,7 +187,16 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 1, g: 1, b: 1, a: 1}
+      second: {r: 0, g: 0.6985294, b: 0.0048174052, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _RimCol
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _SpecColor
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _UnlitColor
+      second: {r: 1, g: 1, b: 1, a: 1}

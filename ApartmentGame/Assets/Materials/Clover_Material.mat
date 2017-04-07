@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Clover_Material
-  m_Shader: {fileID: 4800000, guid: 4ada174349f4a834f86be0a0f548aa48, type: 3}
+  m_Shader: {fileID: 4800000, guid: 358144b8871302744a71100c033b81e0, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON _EMISSION _GLOSSYREFLECTIONS_OFF _NORMALMAP _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 0
   m_CustomRenderQueue: -1
