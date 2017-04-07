@@ -36,6 +36,10 @@ public class npcDialogue : MonoBehaviour {
 	public Camera dialogueCamera;
 	public List<GameObject> speakers;
 	
+	public AudioSource Source;
+	public AudioClip Voice;
+	//public static AudioSource InitiateSound;
+	
 	//coroutine stuff
 	private IEnumerator runCoroutine;
 	private IEnumerator displayCoroutine;
@@ -69,6 +73,8 @@ public class npcDialogue : MonoBehaviour {
 		var canvas = GameObject.Find("Canvas");
 		
 		initiateTasks();
+		
+		Source = transform.parent.GetComponent<AudioSource>();
 		
 		dialogueWindow = Instantiate<GameObject>(dialogueWindow);
 		dialogueWindow.transform.SetParent(canvas.transform, false);
@@ -211,8 +217,7 @@ public class npcDialogue : MonoBehaviour {
 		runCoroutine = run();
 		StartCoroutine(runCoroutine);
 	}
-	//run t
-	he dialogue tree coroutine
+	//run the dialogue tree coroutine
 	public IEnumerator run(){
 		//THIS WILL DO FOR NOW
 		yield return new WaitForEndOfFrame();
@@ -326,6 +331,7 @@ public class npcDialogue : MonoBehaviour {
 			//otherwise go normally
 			else{
 				nodeText.GetComponent<Text>().text += displayText[index];
+				Source.PlayOneShot(Voice);
 			}
 			
 			if((displayText[index] == '!' || displayText[index] == '?' ||
@@ -379,6 +385,7 @@ public class npcDialogue : MonoBehaviour {
 		if (Input.GetButtonDown("Fire1") && !running && !coolingDown){
 			
 			Vector3 p4 = col.transform.TransformDirection(Vector3.forward);
+			float PDotN = Vector3.Dot(p4, transform.position - col.transform.position);
 			
 			RaycastHit hit;
 			//raycast from player, the player's forward, store it in hit, of distance hit
@@ -397,7 +404,8 @@ public class npcDialogue : MonoBehaviour {
 				}
 			}
 			//if the player is too close to raycast, it's probably alright
-			else if(Vector3.Distance(col.transform.position, transform.position) < 1)
+			else if(Vector3.Distance(col.transform.position, transform.position) < 1
+				&& PDotN>0.25)
 			{
 				mainCamera.gameObject.SetActive(false);
 				dialogueCamera.gameObject.SetActive(true);
@@ -412,14 +420,14 @@ public class npcDialogue : MonoBehaviour {
 	//cycle through all tasks, if they're all complete, you win!
 	//slash, move on to the next episode
 	void checkStatus(){
-		for(int i=0; i<numTasks;i++){
+	for(int i=0; i<numTasks;i++){
 			Debug.Log("CYCLING..." + taskList[i]);
 			if(tasks[taskList[i]] == false)
 				return;
 		}
 		Debug.Log("YOU DID IT!");
 		//end the game
-		SceneManager.LoadScene("Win");
+		//SceneManager.LoadScene("Win");
 	}
 	
 }
