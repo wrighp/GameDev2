@@ -78,7 +78,7 @@ Material:
     - first:
         name: _TransitionTex
       second:
-        m_Texture: {fileID: 2800000, guid: b41d530dfd144094e9ba979047a9d1f8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 954a16634e9a58d419fb62b53d7afb31, type: 3}
         m_Scale: {x: 16.8, y: 33.3}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -87,7 +87,7 @@ Material:
       second: 1
     - first:
         name: _Cutoff
-      second: 1.0031769
+      second: 1.0221251
     - first:
         name: _DetailNormalMapScale
       second: 1

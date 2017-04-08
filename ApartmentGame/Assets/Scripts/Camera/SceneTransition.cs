@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /*
 	Script to use for scene transitions
@@ -9,19 +10,29 @@ using UnityEngine.SceneManagement;
 [ExecuteInEditMode]
 public class SceneTransition : MonoBehaviour
 {
+	//get that canvas and the popup
+	public Canvas canvas;
+	GameObject popup;
+	
 	public string scene;
+	Scene currentScene;
 	
     public Material TransitionMaterial;
 	
-	bool fadeOut = true;
+	public bool fadeOut = true;
 	public bool play = false;
+	public bool playOnStart = false;
 	public float cutoff = 0;
+	public bool showPopup = false;
 	
 	//fade things back in if the screen is all black
 	void Start()
 	{
+		currentScene = SceneManager.GetActiveScene();
+		//call scene.name
+		
 		cutoff = TransitionMaterial.GetFloat("_Cutoff");
-		if(cutoff > 1)
+		if(cutoff > 1 && playOnStart)
 		{
 			cutoff = 1.5f;
 			fadeOut = false;
@@ -40,7 +51,19 @@ public class SceneTransition : MonoBehaviour
 		//Debug.Log(cutoff);
 		if(play)
 		{
-			if(fadeOut)
+			Play();
+		}
+		if(showPopup)
+		{
+			popup.GetComponent<Animator>().Play("PopupFade");
+			showPopup = false;
+		}
+	}
+	
+	//manually play
+	public void Play()
+	{
+		if(fadeOut)
 				cutoff+=Time.deltaTime;
 			else
 				cutoff-=Time.deltaTime;
@@ -55,13 +78,16 @@ public class SceneTransition : MonoBehaviour
 				fadeOut = false;
 			}
 			
-			if(cutoff < 0)
+			if(cutoff < 0 && ! fadeOut)
 			{
+				//change the popup text
+				popup = canvas.transform.Find("Popup").gameObject;
+				popup.transform.Find("[popupText]").gameObject.GetComponent<Text>().text = 
+					currentScene.name;
 				play = false;
 				cutoff = 0;
 				fadeOut = true;
+				showPopup = true;
 			}
-		}
-		
 	}
 }
