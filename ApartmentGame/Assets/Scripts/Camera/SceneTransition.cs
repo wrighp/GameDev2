@@ -16,6 +16,18 @@ public class SceneTransition : MonoBehaviour
 	bool fadeOut = true;
 	public bool play = false;
 	public float cutoff = 0;
+	
+	//fade things back in if the screen is all black
+	void Start()
+	{
+		cutoff = TransitionMaterial.GetFloat("_Cutoff");
+		if(cutoff > 1)
+		{
+			cutoff = 1.5f;
+			fadeOut = false;
+			play = true;
+		}
+	}
 
     void OnRenderImage(RenderTexture src, RenderTexture dst)
     {
@@ -25,6 +37,7 @@ public class SceneTransition : MonoBehaviour
 	
 	void Update()
 	{
+		//Debug.Log(cutoff);
 		if(play)
 		{
 			if(fadeOut)
@@ -34,7 +47,7 @@ public class SceneTransition : MonoBehaviour
 			
 			TransitionMaterial.SetFloat("_Cutoff", cutoff);
 			
-			if(cutoff > 1)
+			if(cutoff > 1 && fadeOut)
 			{
 				play = false;
 				cutoff = 1;

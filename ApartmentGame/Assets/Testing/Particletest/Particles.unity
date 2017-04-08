@@ -603,7 +603,7 @@ MonoBehaviour:
   scene: 
   TransitionMaterial: {fileID: 2100000, guid: 702a61262fb08f441b35c5917cc29c64, type: 2}
   play: 0
-  cutoff: 0
+  cutoff: 1
 --- !u!1 &1045069223
 GameObject:
   m_ObjectHideFlags: 0
