@@ -625,7 +625,7 @@ GameObject:
   - component: {fileID: 4917159459998324}
   - component: {fileID: 95897879484951586}
   m_Layer: 0
-  m_Name: 'Banana '
+  m_Name: Banana 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
