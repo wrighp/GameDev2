@@ -7,7 +7,9 @@ using UnityEngine;
 
 public class overseer : MonoBehaviour {
 	
+	//targets to destroy
 	public List<GameObject> targets;
+	//triggers to enable
 	public List<dTrigger> triggers;
 	public List<GameObject> toDestroy;
 	private bool success = false;

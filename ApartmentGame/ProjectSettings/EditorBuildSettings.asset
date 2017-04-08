@@ -15,3 +15,5 @@ EditorBuildSettings:
     path: Assets/Scenes/TeacupRoom.unity
   - enabled: 1
     path: Assets/Testing/Particletest/Particles.unity
+  - enabled: 1
+    path: Assets/Scenes/APARTMENT outside SCENE.unity

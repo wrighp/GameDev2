@@ -1654,7 +1654,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 734837386}
-  m_LocalRotation: {x: -0.32857972, y: 0.6245164, z: 0.32990626, w: 0.6270378}
+  m_LocalRotation: {x: -0.32857975, y: 0.6245165, z: 0.32990628, w: 0.6270379}
   m_LocalPosition: {x: -0.44245547, y: 0.0661971, z: 0.0013377634}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3180,12 +3180,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  scene: Particles
+  scene: APARTMENT outside SCENE
   TransitionMaterial: {fileID: 2100000, guid: 702a61262fb08f441b35c5917cc29c64, type: 2}
   fadeOut: 1
   play: 0
   playOnStart: 0
-  cutoff: -0.015619002
+  cutoff: 1.027894
   showPopup: 0
 --- !u!114 &1720165990
 MonoBehaviour:

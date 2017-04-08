@@ -55,7 +55,7 @@ public class npcDialogue : MonoBehaviour {
 	//Auto would cause the dialogue to run once the player enters the
 	//trigger area
 	public bool auto = false;
-	private bool running = false;
+	public static bool running = false;
 	private bool textScroll = false;
 	
 	//the list of tasks and achievements the player has accomplished or rather, hasn't
@@ -143,7 +143,15 @@ public class npcDialogue : MonoBehaviour {
 	
 	//update the text
 	private void updateText(Node node){
-		Name.GetComponent<Text>().text = node._name;
+		if(node._name == null || node._name == "")
+		{
+			Name.transform.parent.gameObject.SetActive(false);
+		}
+		else
+		{
+			Name.transform.parent.gameObject.SetActive(true);
+			Name.GetComponent<Text>().text = node._name;
+		}
 		if(displayCoroutine!=null)
 			StopCoroutine(displayCoroutine);
 		
@@ -220,8 +228,16 @@ public class npcDialogue : MonoBehaviour {
 	public IEnumerator run(){
 		//THIS WILL DO FOR NOW
 		yield return new WaitForEndOfFrame();
-
+	
 		dialogueWindow.SetActive(true);
+		
+		//disable the overhead UI
+		IndicatorOverlay overlay = transform.GetComponent<IndicatorOverlay> ();
+		if(overlay!=null)
+		{
+			overlay.enabled = false;
+		}
+		
 		
 		nodeID = dialogue._next;
 		
@@ -303,6 +319,11 @@ public class npcDialogue : MonoBehaviour {
 		dialogueCamera.gameObject.SetActive(false);
 		dialogueWindow.SetActive(false); 
 		GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = true;
+		
+		if(overlay!=null)
+		{
+			overlay.enabled = true;
+		}
 	}
 	
 	//coroutine for displaying the text
@@ -357,18 +378,23 @@ public class npcDialogue : MonoBehaviour {
 	void OnTriggerEnter(Collider col){
 		//Debug.Log(col.tag);
 		if(col.tag == "Player" && auto && !running){
-			Vector3 dir = this.transform.parent.position - col.transform.position;
+			Vector3 p4 = col.transform.TransformDirection(Vector3.forward);
+			float PDotN = Vector3.Dot(p4, transform.position - col.transform.position);
+			
 			RaycastHit hit;
-			if(Physics.Raycast(col.transform.position, dir , out hit, talkDistance, layer)
-				&& hit.collider.gameObject == this.transform.parent.gameObject)
+			//raycast from player, the player's forward, store it in hit, of distance hit
+			if(Physics.SphereCast(col.transform.position, 1, p4, out hit, talkDistance, layer))
 			{
-				//run the dialogue
-				mainCamera.gameObject.SetActive(false);
-				dialogueCamera.gameObject.SetActive(true);
-				running = true;
-				GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
-				runDialogue();
-			auto = false;
+				//if the ray hits this character, run the thing
+				if(hit.collider.gameObject == this.transform.parent.gameObject)
+				{
+					mainCamera.gameObject.SetActive(false);
+					dialogueCamera.gameObject.SetActive(true);
+					running = true;
+					GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
+					runDialogue();
+					auto = false;
+				}
 			}
 		}
 	}
@@ -378,11 +404,10 @@ public class npcDialogue : MonoBehaviour {
 	void OnTriggerStay(Collider col){
 		if(auto || col.tag!="Player")
 			return;
-
+		
 		//if the player presses "interact"/fire1, disable player movement and
 		//run the dialogue tree
 		if (Input.GetButtonDown("Fire1") && !running && !coolingDown){
-			
 			Vector3 p4 = col.transform.TransformDirection(Vector3.forward);
 			float PDotN = Vector3.Dot(p4, transform.position - col.transform.position);
 			
@@ -390,8 +415,6 @@ public class npcDialogue : MonoBehaviour {
 			//raycast from player, the player's forward, store it in hit, of distance hit
 			if(Physics.SphereCast(col.transform.position, 1, p4, out hit, talkDistance, layer))
 			{
-				Debug.Log(hit.collider.gameObject);
-				Debug.Log(this);
 				//if the ray hits this character, run the thing
 				if(hit.collider.gameObject == this.transform.parent.gameObject)
 				{
@@ -403,7 +426,7 @@ public class npcDialogue : MonoBehaviour {
 				}
 			}
 			//if the player is too close to raycast, it's probably alright
-			else if(Vector3.Distance(col.transform.position, transform.position) < 1
+			else if(Vector3.Distance(col.transform.position, transform.position) < 2
 				&& PDotN>0.25)
 			{
 				mainCamera.gameObject.SetActive(false);
