@@ -116,7 +116,7 @@ ModelImporter:
     4300000: arms
     4300002: body
     4300004: head
-    7400000: Take 001
+    7400000: garry_idle
     9500000: //RootNode
     13700000: arms
     13700002: body
@@ -141,7 +141,143 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: garry_idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Garry
+        weight: 1
+      - path: Garry/arms
+        weight: 1
+      - path: Garry/body
+        weight: 1
+      - path: Garry/head
+        weight: 1
+      - path: joints
+        weight: 1
+      - path: joints/hip
+        weight: 1
+      - path: joints/hip/lowerhip
+        weight: 1
+      - path: joints/hip/lowerhip/L_leg
+        weight: 1
+      - path: joints/hip/lowerhip/L_leg/L_leg_helper1
+        weight: 1
+      - path: joints/hip/lowerhip/L_leg/L_leg_helper1/L_knee
+        weight: 1
+      - path: joints/hip/lowerhip/L_leg/L_leg_helper1/L_knee/L_leg_helper2
+        weight: 1
+      - path: joints/hip/lowerhip/L_leg/L_leg_helper1/L_knee/L_leg_helper2/L_ankle
+        weight: 1
+      - path: joints/hip/lowerhip/L_leg/L_leg_helper1/L_knee/L_leg_helper2/L_ankle/L_foot
+        weight: 1
+      - path: joints/hip/lowerhip/L_leg/L_leg_helper1/L_knee/L_leg_helper2/L_ankle/L_foot/L_toe
+        weight: 1
+      - path: joints/hip/lowerhip/R_leg
+        weight: 1
+      - path: joints/hip/lowerhip/R_leg/R_leg_helper1
+        weight: 1
+      - path: joints/hip/lowerhip/R_leg/R_leg_helper1/R_knee
+        weight: 1
+      - path: joints/hip/lowerhip/R_leg/R_leg_helper1/R_knee/R_leg_helper2
+        weight: 1
+      - path: joints/hip/lowerhip/R_leg/R_leg_helper1/R_knee/R_leg_helper2/R_ankle
+        weight: 1
+      - path: joints/hip/lowerhip/R_leg/R_leg_helper1/R_knee/R_leg_helper2/R_ankle/R_foot
+        weight: 1
+      - path: joints/hip/lowerhip/R_leg/R_leg_helper1/R_knee/R_leg_helper2/R_ankle/R_foot/R_toe
+        weight: 1
+      - path: joints/hip/upperhip
+        weight: 1
+      - path: joints/hip/upperhip/spine1
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm/L_shoulder
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm/L_shoulder/L_helper1
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm/L_shoulder/L_helper1/L_helper2
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm/L_shoulder/L_helper1/L_helper2/L_elbow
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm/L_shoulder/L_helper1/L_helper2/L_elbow/L_forearm
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm/L_shoulder/L_helper1/L_helper2/L_elbow/L_forearm/L_wrist
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm/L_shoulder/L_helper1/L_helper2/L_elbow/L_forearm/L_wrist/L_hand
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm/L_shoulder/L_helper1/L_helper2/L_elbow/L_forearm/L_wrist/L_hand/L_hand_1
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm/L_shoulder/L_helper1/L_helper2/L_elbow/L_forearm/L_wrist/L_hand/L_hand_1/L_hand_2
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm/L_shoulder/L_helper1/L_helper2/L_elbow/L_forearm/L_wrist/L_hand/L_thumb1
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm/L_shoulder/L_helper1/L_helper2/L_elbow/L_forearm/L_wrist/L_hand/L_thumb1/L_thumb2
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/neck1
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/neck1/neck2
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/neck1/neck2/head 1
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm/R_shoulder
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm/R_shoulder/R_helper1
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm/R_shoulder/R_helper1/R_helper2
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm/R_shoulder/R_helper1/R_helper2/R_elbow
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm/R_shoulder/R_helper1/R_helper2/R_elbow/R_forearm
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm/R_shoulder/R_helper1/R_helper2/R_elbow/R_forearm/R_wrist
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm/R_shoulder/R_helper1/R_helper2/R_elbow/R_forearm/R_wrist/R_hand
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm/R_shoulder/R_helper1/R_helper2/R_elbow/R_forearm/R_wrist/R_hand/R_hand_1
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm/R_shoulder/R_helper1/R_helper2/R_elbow/R_forearm/R_wrist/R_hand/R_hand_1/R_hand_2
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm/R_shoulder/R_helper1/R_helper2/R_elbow/R_forearm/R_wrist/R_hand/R_thumb1
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm/R_shoulder/R_helper1/R_helper2/R_elbow/R_forearm/R_wrist/R_hand/R_thumb1/R_thumb2
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
