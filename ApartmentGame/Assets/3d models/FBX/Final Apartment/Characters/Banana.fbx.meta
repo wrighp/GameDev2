@@ -132,6 +132,7 @@ ModelImporter:
     9500000: //RootNode
     13700000: body
     13700002: limbs
+    13700004: mask
   materials:
     importMaterials: 0
     materialName: 0
