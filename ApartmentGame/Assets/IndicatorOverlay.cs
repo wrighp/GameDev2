@@ -42,7 +42,9 @@ public class IndicatorOverlay : MonoBehaviour {
 		
 	}
 	void OnDisable(){
-		indicator.SetActive(false);
+		if(indicator){
+			indicator.SetActive(false);
+		}
 	}
 	void OnDestroy(){
 		Destroy (indicator);
