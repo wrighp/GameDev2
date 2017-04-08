@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.05
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.24653918, g: 0.23448673, b: 0.1834746, a: 0.05}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0.05}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -767,7 +767,7 @@ MonoBehaviour:
   fadeOut: 1
   play: 0
   playOnStart: 1
-  cutoff: -2.7039504
+  cutoff: -0.017807059
   showPopup: 1
 --- !u!1 &44731225
 GameObject:
@@ -7102,6 +7102,7 @@ Prefab:
     - target: {fileID: 1949783354059274, guid: 430332cd57ca4ea44a0e22aa3845fe76, type: 2}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 120534368011828184, guid: 430332cd57ca4ea44a0e22aa3845fe76,
         type: 2}
       propertyPath: m_Materials.Array.data[0]
@@ -10068,24 +10069,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 855584592}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &856616729 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1097341581141384, guid: 430332cd57ca4ea44a0e22aa3845fe76,
-    type: 2}
-  m_PrefabInternal: {fileID: 599046637}
---- !u!114 &856616735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 856616729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b95ccbae4f2fa1d4cbf7fbac63946116, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 981da9e75392fa745a557b84425a4ded, type: 2}
-  panAmount: {x: -5, y: 0}
 --- !u!1 &861520902
 GameObject:
   m_ObjectHideFlags: 0
