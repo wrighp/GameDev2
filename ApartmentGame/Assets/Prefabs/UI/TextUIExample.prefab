@@ -113,8 +113,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followTransform: {fileID: 0}
   offset: {x: 0, y: 3, z: 0}
+  image: {fileID: 0}
   clampToScreen: 0
   lifespan: -1
+  childImage: {fileID: 0}
 --- !u!114 &114881991733292886
 MonoBehaviour:
   m_ObjectHideFlags: 1
