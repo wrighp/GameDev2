@@ -14,22 +14,21 @@ public class IndicatorOverlay : MonoBehaviour {
 
 	public GameObject indicatorPrefab;
 	private GameObject indicator;
-	private Image indicatorImage;
+	//private Image indicatorImage;
 	private WorldToScreenUI worldUI;
 	// Use this for initialization
 	void Start () {
 		Transform canvas = GameObject.FindObjectOfType<Canvas> ().transform;
 		indicator = (GameObject)GameObject.Instantiate (indicatorPrefab, canvas);
-		indicatorImage = indicator.GetComponent<Image> ();
 		worldUI = indicator.GetComponent<WorldToScreenUI> ();
-		indicatorImage.sprite = sourceImage;
-		indicatorImage.enabled = false;
+		indicator.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(display || alwaysDisplay){
-			indicatorImage.enabled = true;
+			worldUI.image = sourceImage;
+			indicator.SetActive(true);
 			worldUI.offset.y = yOffset;
 			Transform t = followTransform;
 			if(t == null){
@@ -38,12 +37,12 @@ public class IndicatorOverlay : MonoBehaviour {
 			worldUI.followTransform = t;
 		}
 		else{
-			indicatorImage.enabled = false;
+			indicator.SetActive(false);
 		}
 		
 	}
 	void OnDisable(){
-		indicatorImage.enabled = false;
+		indicator.SetActive(false);
 	}
 	void OnDestroy(){
 		Destroy (indicator);

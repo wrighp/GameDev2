@@ -1,24 +1,38 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class WorldToScreenUI : MonoBehaviour {
 	
 	public Transform followTransform;
 	public Vector3 offset;
+	public Sprite image;
 	public bool clampToScreen = false;
 	public float lifespan = 3f;
+	public Image childImage;
 	// Use this for initialization
 	void Start () {
 		//Subscribe to event to happen after camera moves
 		//Camera.main.GetComponent<> ().AfterMove += UpdatePosition;
-		if(lifespan >= 0)
+		if(lifespan >= 0){
 			Destroy (gameObject, lifespan);
+		}
+		if(childImage == null){
+			childImage = GetComponentInChildren<Image>();
+		}
+	}
+	void Update(){
 	}
 	void LateUpdate(){
+		if(childImage.sprite != image){
+			childImage.sprite = image;
+			childImage.SetNativeSize();
+		}
 		UpdatePosition ();
 	}
 
 	// Update is called once per frame
 	void UpdatePosition () {
+		if(followTransform == null) return;
 		float z = transform.position.z;
 		Vector3 vec = Camera.main.WorldToScreenPoint(followTransform.position + offset);
 		transform.position = Vector3.Scale(vec,new Vector3(1f,1f,0)) + new Vector3(0,0,z);
