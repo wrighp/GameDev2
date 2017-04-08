@@ -27,7 +27,14 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Animations here
-		animator.SetFloat("MoveSpeed", horizontalSpeed/maxSpeed);
+		float speedAmount = horizontalSpeed/maxSpeed;
+		animator.SetFloat("MoveSpeed", speedAmount);
+		if(speedAmount > .9){
+			animator.SetFloat("RunTime",animator.GetFloat("RunTime")+Time.deltaTime);
+		}
+		else{
+			animator.SetFloat("RunTime",0);
+		}
 	}
 
 	void FixedUpdate(){
