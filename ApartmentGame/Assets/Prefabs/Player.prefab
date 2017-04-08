@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 114779644892257818}
   - component: {fileID: 136821859100361664}
   - component: {fileID: 120534368011828184}
+  - component: {fileID: 114646895892812066}
   m_Layer: 0
   m_Name: State
   m_TagString: Untagged
@@ -2138,6 +2139,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sparking: {fileID: 1226677159620148}
   flaming: {fileID: 1689535881574886}
+--- !u!114 &114646895892812066
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1097341581141384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95ccbae4f2fa1d4cbf7fbac63946116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 981da9e75392fa745a557b84425a4ded, type: 2}
+  panAmount: {x: -5, y: 0}
 --- !u!114 &114779644892257818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2170,7 +2184,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 981da9e75392fa745a557b84425a4ded, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2193,7 +2207,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.1
+    widthMultiplier: 0.2
     widthCurve:
       serializedVersion: 2
       m_Curve:

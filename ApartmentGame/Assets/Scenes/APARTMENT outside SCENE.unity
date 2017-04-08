@@ -6732,6 +6732,16 @@ Prefab:
       value: 
       objectReference: {fileID: 1720475460875186, guid: e7d59ee91359f4c46a25e0725380239a,
         type: 2}
+    - target: {fileID: 120534368011828184, guid: 430332cd57ca4ea44a0e22aa3845fe76,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 981da9e75392fa745a557b84425a4ded, type: 2}
+    - target: {fileID: 120534368011828184, guid: 430332cd57ca4ea44a0e22aa3845fe76,
+        type: 2}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 430332cd57ca4ea44a0e22aa3845fe76, type: 2}
   m_IsPrefabParent: 0
@@ -9683,6 +9693,24 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 855584592}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &856616729 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1097341581141384, guid: 430332cd57ca4ea44a0e22aa3845fe76,
+    type: 2}
+  m_PrefabInternal: {fileID: 599046637}
+--- !u!114 &856616735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 856616729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95ccbae4f2fa1d4cbf7fbac63946116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 981da9e75392fa745a557b84425a4ded, type: 2}
+  panAmount: {x: -5, y: 0}
 --- !u!1 &861520902
 GameObject:
   m_ObjectHideFlags: 0
