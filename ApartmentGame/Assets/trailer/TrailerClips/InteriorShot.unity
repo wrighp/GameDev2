@@ -814,6 +814,7 @@ GameObject:
   - component: {fileID: 373348993}
   - component: {fileID: 373348992}
   - component: {fileID: 373348991}
+  - component: {fileID: 373348997}
   m_Layer: 0
   m_Name: cutsceneCam
   m_TagString: MainCamera
@@ -845,7 +846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abec11eb34355044b8c939db0936e7a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookTarget: {fileID: 573121975}
+  lookTarget: {fileID: 1304796540}
   moveTarget: {fileID: 84145456}
   speed: 0.5
 --- !u!114 &373348992
@@ -916,6 +917,32 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!114 &373348997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 373348989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646b5bc27a658f447b1d929fd5ffbd70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 1
+  showGeneratedNormals: 0
+  offsetScale: 0.2
+  blurRadius: 18
+  edgeThresholdMin: 0.05
+  edgeThreshold: 0.2
+  edgeSharpness: 4
+  dlaaSharp: 0
+  ssaaShader: {fileID: 4800000, guid: b3728d1488b02490cbd196c7941bf1f8, type: 3}
+  dlaaShader: {fileID: 4800000, guid: 017ca72b9e8a749058d13ebd527e98fa, type: 3}
+  nfaaShader: {fileID: 4800000, guid: ce0cb2621f6d84e21a87414e471a3cce, type: 3}
+  shaderFXAAPreset2: {fileID: 4800000, guid: 6f1418cffd12146f2a83be795f6fa5a7, type: 3}
+  shaderFXAAPreset3: {fileID: 4800000, guid: c182fa94a5a0a4c02870641efcd38cd5, type: 3}
+  shaderFXAAII: {fileID: 4800000, guid: cd5b323dcc592457790ff18b528f5e67, type: 3}
+  shaderFXAAIII: {fileID: 4800000, guid: c547503fff0e8482ea5793727057041c, type: 3}
 --- !u!1 &433051394
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,7 +1681,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 734837386}
-  m_LocalRotation: {x: -0.32857972, y: 0.6245164, z: 0.32990626, w: 0.6270378}
+  m_LocalRotation: {x: -0.32857975, y: 0.6245165, z: 0.32990628, w: 0.6270379}
   m_LocalPosition: {x: -0.44245547, y: 0.0661971, z: 0.0013377634}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2593,7 +2620,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1304796539}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.48, y: 1.623, z: -3.361}
+  m_LocalPosition: {x: 1.48, y: 1.8, z: -3.361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
