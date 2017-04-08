@@ -2123,6 +2123,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   jumpForce: 0
+  particleTrail: {fileID: 1720475460875186, guid: e7d59ee91359f4c46a25e0725380239a,
+    type: 2}
 --- !u!114 &114347814420761726
 MonoBehaviour:
   m_ObjectHideFlags: 1

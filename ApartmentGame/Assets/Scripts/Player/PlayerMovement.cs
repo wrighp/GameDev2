@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour {
 	public ForceMode forceMode;
 	public LayerMask jumpMask;
 	public float jumpForce = 8f;
+	public GameObject particleTrail; //spawned when you go fast
+	private GameObject particleChild;
 	private Animator animator;
 	private Rigidbody rb;
 	private float horizontalSpeed;
@@ -34,6 +36,11 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		else{
 			animator.SetFloat("RunTime",0);
+			if(particleChild){
+				//Will autodestruct due to trail renderer
+				particleChild.transform.parent = null;
+				particleChild = null;
+			}
 		}
 	}
 
@@ -55,6 +62,9 @@ public class PlayerMovement : MonoBehaviour {
 		horizontalSpeed = hVel.magnitude;
 		float max = maxSpeed;
 		if(animator.GetFloat("RunTime") > 8){
+			if(!particleChild){
+				particleChild = (GameObject)GameObject.Instantiate(particleTrail,transform, false);
+			}
 			max *= 2f;
 		}
 		hVel = horizontalSpeed > maxSpeed ? hVel.normalized * max : hVel;

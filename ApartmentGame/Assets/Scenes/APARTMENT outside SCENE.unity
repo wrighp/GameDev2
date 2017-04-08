@@ -6726,6 +6726,12 @@ Prefab:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1874858305}
+    - target: {fileID: 114294035643194254, guid: 430332cd57ca4ea44a0e22aa3845fe76,
+        type: 2}
+      propertyPath: particleTrail
+      value: 
+      objectReference: {fileID: 1720475460875186, guid: e7d59ee91359f4c46a25e0725380239a,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 430332cd57ca4ea44a0e22aa3845fe76, type: 2}
   m_IsPrefabParent: 0
