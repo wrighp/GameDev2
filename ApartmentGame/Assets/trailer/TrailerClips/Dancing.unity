@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44470146, g: 0.49423397, b: 0.5734613, a: 1}
+  m_IndirectSpecularColor: {r: 0.44470146, g: 0.49423397, b: 0.57346123, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -579,23 +579,23 @@ Prefab:
     - target: {fileID: 13700010, guid: 718793be148f54e889e8e11615c2b151, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ec3e3ccbd013b4b89b30924f9ae05531, type: 2}
+      objectReference: {fileID: 2100000, guid: 1fc90eb5a2a654ae28ac4bac2e51da45, type: 2}
     - target: {fileID: 13700008, guid: 718793be148f54e889e8e11615c2b151, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ec3e3ccbd013b4b89b30924f9ae05531, type: 2}
+      objectReference: {fileID: 2100000, guid: 1fc90eb5a2a654ae28ac4bac2e51da45, type: 2}
     - target: {fileID: 13700006, guid: 718793be148f54e889e8e11615c2b151, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ec3e3ccbd013b4b89b30924f9ae05531, type: 2}
+      objectReference: {fileID: 2100000, guid: 1fc90eb5a2a654ae28ac4bac2e51da45, type: 2}
     - target: {fileID: 2300006, guid: 718793be148f54e889e8e11615c2b151, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ec3e3ccbd013b4b89b30924f9ae05531, type: 2}
+      objectReference: {fileID: 2100000, guid: 1fc90eb5a2a654ae28ac4bac2e51da45, type: 2}
     - target: {fileID: 2300008, guid: 718793be148f54e889e8e11615c2b151, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ec3e3ccbd013b4b89b30924f9ae05531, type: 2}
+      objectReference: {fileID: 2100000, guid: 1fc90eb5a2a654ae28ac4bac2e51da45, type: 2}
     - target: {fileID: 2300010, guid: 718793be148f54e889e8e11615c2b151, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
