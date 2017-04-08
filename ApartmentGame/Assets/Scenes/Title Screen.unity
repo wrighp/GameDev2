@@ -1654,13 +1654,8 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 734837386}
-<<<<<<< HEAD
   m_LocalRotation: {x: -0.32857975, y: 0.6245165, z: 0.32990628, w: 0.6270379}
   m_LocalPosition: {x: -0.44245547, y: 0.0661971, z: 0.0013377634}
-=======
-  m_LocalRotation: {x: -0.32857978, y: 0.6245164, z: 0.32990628, w: 0.6270379}
-  m_LocalPosition: {x: -0.44245583, y: 0.06619698, z: 0.0013377621}
->>>>>>> origin/master
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1503029924}
@@ -3190,11 +3185,7 @@ MonoBehaviour:
   fadeOut: 1
   play: 0
   playOnStart: 0
-<<<<<<< HEAD
-  cutoff: 1.027894
-=======
   cutoff: 0
->>>>>>> origin/master
   showPopup: 0
 --- !u!114 &1720165990
 MonoBehaviour:
