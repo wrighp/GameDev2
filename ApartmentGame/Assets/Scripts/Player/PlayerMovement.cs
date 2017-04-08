@@ -53,7 +53,11 @@ public class PlayerMovement : MonoBehaviour {
 		hVel.y = 0;
 
 		horizontalSpeed = hVel.magnitude;
-		hVel = horizontalSpeed > maxSpeed ? hVel.normalized * maxSpeed : hVel;
+		float max = maxSpeed;
+		if(animator.GetFloat("RunTime") > 8){
+			max *= 2f;
+		}
+		hVel = horizontalSpeed > maxSpeed ? hVel.normalized * max : hVel;
 
 		//Jumping
 		hVel.y =  rb.velocity.y;
