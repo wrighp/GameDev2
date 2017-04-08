@@ -245,7 +245,7 @@ ModelImporter:
     4300022: outfit
     7400000: Protag_Specialrun
     7400002: Protag_Specialrun
-    7400004: Take 001
+    7400004: Protag_Specialrun
     9500000: //RootNode
     13700000: protag:body
     13700002: protag:head
@@ -273,7 +273,143 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Protag_Specialrun
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: joints
+        weight: 1
+      - path: joints/hip
+        weight: 1
+      - path: joints/hip/hip_lower
+        weight: 1
+      - path: joints/hip/hip_lower/L_leg
+        weight: 1
+      - path: joints/hip/hip_lower/L_leg/L_knee
+        weight: 1
+      - path: joints/hip/hip_lower/L_leg/L_knee/L_ankle
+        weight: 1
+      - path: joints/hip/hip_lower/L_leg/L_knee/L_ankle/L_foot
+        weight: 1
+      - path: joints/hip/hip_lower/L_leg/L_knee/L_ankle/L_foot/L_toe
+        weight: 1
+      - path: joints/hip/hip_lower/R_leg
+        weight: 1
+      - path: joints/hip/hip_lower/R_leg/R_knee
+        weight: 1
+      - path: joints/hip/hip_lower/R_leg/R_knee/R_ankle
+        weight: 1
+      - path: joints/hip/hip_lower/R_leg/R_knee/R_ankle/R_foot
+        weight: 1
+      - path: joints/hip/hip_lower/R_leg/R_knee/R_ankle/R_foot/R_toe
+        weight: 1
+      - path: joints/hip/hip_upper
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder/L_arm
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder/L_arm/L_elbow
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder/L_arm/L_elbow/L_forearm
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder/L_arm/L_elbow/L_forearm/L_wrist
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder/L_arm/L_elbow/L_forearm/L_wrist/L_hand
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder/L_arm/L_elbow/L_forearm/L_wrist/L_hand/L_muffin_01
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder/L_arm/L_elbow/L_forearm/L_wrist/L_hand/L_muffin_01/L_muffin_02
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder/L_arm/L_elbow/L_forearm/L_wrist/L_hand/L_muffin_01/L_muffin_02/L_muffin_03
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder/L_arm/L_elbow/L_forearm/L_wrist/L_hand/L_thumb
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder/L_arm/L_elbow/L_forearm/L_wrist/L_hand/L_thumb/L_thumb_01
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/L_shoulder/L_arm/L_elbow/L_forearm/L_wrist/L_hand/L_thumb/L_thumb_01/L_thumb_2
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/neck_1
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/neck_1/neck_2
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/neck_1/neck_2/head 1
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder/R_arm
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder/R_arm/R_elbow
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder/R_arm/R_elbow/R_forearm
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder/R_arm/R_elbow/R_forearm/R_wrist
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder/R_arm/R_elbow/R_forearm/R_wrist/R_hand
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder/R_arm/R_elbow/R_forearm/R_wrist/R_hand/R_muffin_01
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder/R_arm/R_elbow/R_forearm/R_wrist/R_hand/R_muffin_01/R_muffin_02
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder/R_arm/R_elbow/R_forearm/R_wrist/R_hand/R_muffin_01/R_muffin_02/R_muffin_03
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder/R_arm/R_elbow/R_forearm/R_wrist/R_hand/R_thumb
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder/R_arm/R_elbow/R_forearm/R_wrist/R_hand/R_thumb/R_thumb_01
+        weight: 1
+      - path: joints/hip/hip_upper/spine_1/spine_2/spine_3/R_shoulder/R_arm/R_elbow/R_forearm/R_wrist/R_hand/R_thumb/R_thumb_01/R_thumb_2
+        weight: 1
+      - path: protag_geo
+        weight: 1
+      - path: protag_geo/body
+        weight: 1
+      - path: protag_geo/head
+        weight: 1
+      - path: protag_geo/head/hair
+        weight: 1
+      - path: protag_geo/head/silly_hat
+        weight: 1
+      - path: protag_geo/head/silly_hat/pivot
+        weight: 1
+      - path: protag_geo/head/silly_hat/pivot/wing_rotaion
+        weight: 1
+      - path: protag_geo/head/silly_hat/pivot/wing_rotaion/wings1
+        weight: 1
+      - path: protag_geo/outfit
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
