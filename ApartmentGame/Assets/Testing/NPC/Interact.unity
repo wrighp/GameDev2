@@ -736,7 +736,7 @@ Prefab:
     - target: {fileID: 224646403739543898, guid: d9518a1eaceaabf44877ef4ddbf98327,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: -254.53998
+      value: -1078.678
       objectReference: {fileID: 0}
     - target: {fileID: 224646403739543898, guid: d9518a1eaceaabf44877ef4ddbf98327,
         type: 2}
@@ -775,11 +775,36 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1905344328228412, guid: d9518a1eaceaabf44877ef4ddbf98327, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1070291836702326, guid: d9518a1eaceaabf44877ef4ddbf98327, type: 2}
       propertyPath: m_Name
       value: TextPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 224866046828968382, guid: d9518a1eaceaabf44877ef4ddbf98327,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224866046828968382, guid: d9518a1eaceaabf44877ef4ddbf98327,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224866046828968382, guid: d9518a1eaceaabf44877ef4ddbf98327,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 394
+      objectReference: {fileID: 0}
+    - target: {fileID: 224866046828968382, guid: d9518a1eaceaabf44877ef4ddbf98327,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -422
+      objectReference: {fileID: 0}
+    - target: {fileID: 224866046828968382, guid: d9518a1eaceaabf44877ef4ddbf98327,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 86
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d9518a1eaceaabf44877ef4ddbf98327, type: 2}
