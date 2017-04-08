@@ -562,6 +562,18 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114867959175750340, guid: d9518a1eaceaabf44877ef4ddbf98327,
+        type: 2}
+      propertyPath: m_Text
+      value: I'm starting to think this was a mistake.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114260533426805666, guid: d9518a1eaceaabf44877ef4ddbf98327,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Danny
+
+'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d9518a1eaceaabf44877ef4ddbf98327, type: 2}
   m_IsPrefabParent: 0
