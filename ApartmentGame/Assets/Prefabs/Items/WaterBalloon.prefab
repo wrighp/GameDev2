@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4123832722411146}
   - component: {fileID: 33607734824962806}
   - component: {fileID: 23858036393403776}
-  - component: {fileID: 135829155416762988}
   m_Layer: 0
   m_Name: water_balloon
   m_TagString: Untagged
@@ -40,9 +39,10 @@ GameObject:
   - component: {fileID: 33195264690074438}
   - component: {fileID: 23404530567998170}
   - component: {fileID: 54615702097053118}
-  - component: {fileID: 135933967631896406}
   - component: {fileID: 114754968163043784}
   - component: {fileID: 114151049467764844}
+  - component: {fileID: 135476342421726182}
+  - component: {fileID: 135669619478190080}
   m_Layer: 0
   m_Name: WaterBalloon
   m_TagString: Untagged
@@ -203,19 +203,19 @@ MonoBehaviour:
   affects: []
   grabbable: 1
   destroyAfterUse: 0
---- !u!135 &135829155416762988
+--- !u!135 &135476342421726182
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1687451134764404}
+  m_GameObject: {fileID: 1752065814470212}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04529705
+  m_Radius: 0.2
   m_Center: {x: -0.0000000018626451, y: 0.0032562017, z: -0.0000000018626451}
---- !u!135 &135933967631896406
+--- !u!135 &135669619478190080
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -225,5 +225,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.6280651
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.62
+  m_Center: {x: -0.0000000018626451, y: 0.0032562017, z: -0.0000000018626451}
