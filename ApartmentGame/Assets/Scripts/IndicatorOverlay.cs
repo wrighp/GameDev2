@@ -25,7 +25,7 @@ public class IndicatorOverlay : MonoBehaviour {
 		indicator.GetComponent<LookAtCamera>().target = transform;
 		indicator.GetComponent<LookAtCamera>().yOffset = yOffset;
 		//worldUI = indicator.GetComponent<WorldToScreenUI> ();
-		indicator.SetActive(false);
+		//indicator.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -41,16 +41,29 @@ public class IndicatorOverlay : MonoBehaviour {
 			//worldUI.followTransform = t;
 		}
 		else{
-			indicator.SetActive(false);
+			//indicator.SetActive(false);
+			indicator.GetComponent<Animator>().Play("OverheadDisappear");
 		}
 		
 	}
 	void OnDisable(){
 		if(indicator){
-			indicator.SetActive(false);
+			indicator.GetComponent<Animator>().Play("OverheadDisappear");
+			//indicator.SetActive(false);
 		}
 	}
 	void OnDestroy(){
 		Destroy (indicator);
+	}
+	
+	public void Disable()
+	{
+		display = false;
+	}
+	
+	public void Enable()
+	{
+		indicator.GetComponent<Animator>().Play("OverheadPopUp");
+		display = true;
 	}
 }

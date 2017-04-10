@@ -19975,7 +19975,7 @@ MonoBehaviour:
   range: 3.4028235e+38
   yOffset: 1.5
   followTransform: {fileID: 0}
-  indicatorPrefab: {fileID: 1134289321268694, guid: dffaac7accf200c4783d488d346d4e16,
+  indicatorPrefab: {fileID: 1066566491534334, guid: 52ddc960099f5544ea6ad9daa9ad3429,
     type: 2}
 --- !u!4 &1863456297 stripped
 Transform:
@@ -23529,7 +23529,7 @@ MonoBehaviour:
   fadeOut: 1
   play: 0
   playOnStart: 1
-  cutoff: -0.038492445
+  cutoff: -0.028691646
 --- !u!1 &2103037790
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,13 +23,14 @@ GameObject:
   - component: {fileID: 114487691122453344}
   - component: {fileID: 114707255828750232}
   - component: {fileID: 114714098691145226}
+  - component: {fileID: 95405677045898988}
   m_Layer: 0
   m_Name: OverheadCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1563756488530892
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,6 +65,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &95405677045898988
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1066566491534334}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4beefd1dcd0b2b34f81dbe8d9551651f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114487691122453344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
   target: {fileID: 0}
-  offset: 0
+  yOffset: 0
 --- !u!114 &114944844099234496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -225,7 +243,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1066566491534334}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 13.663008}
+  m_LocalPosition: {x: 0, y: 0, z: 3.274065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224471890489810694}
@@ -235,7 +253,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -2.7256055, y: 3.2572196}
+  m_AnchoredPosition: {x: -0.6957617, y: 1.24}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224471890489810694

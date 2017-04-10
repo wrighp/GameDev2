@@ -89,8 +89,8 @@ public class PlayerInteraction : MonoBehaviour {
 	}
 	void OnTriggerStay(Collider other) {
 		IndicatorOverlay overlay = other.GetComponent<IndicatorOverlay> ();
-		if(overlay != null && other.gameObject != item1){
-			overlay.display = true;
+		if(overlay != null && other.gameObject != item1 && overlay.display == false){
+			overlay.Enable();
 		}
 		if(Input.GetButtonDown("Pickup") && !pickedUp && cooldown<0.01f){
 			if(other.GetComponent<tmpItem>()!=null){
@@ -120,12 +120,15 @@ public class PlayerInteraction : MonoBehaviour {
 
 	}
 	void OnTriggerEnter(Collider other) {
-		
+		IndicatorOverlay overlay = other.GetComponent<IndicatorOverlay> ();
+		if(overlay != null){
+			overlay.Enable();
+		}
 	}
 	void OnTriggerExit(Collider other) {
 		IndicatorOverlay overlay = other.GetComponent<IndicatorOverlay> ();
 		if(overlay != null){
-			overlay.display = false;
+			overlay.Disable();
 		}
 	}
 
