@@ -49,6 +49,11 @@ ModelImporter:
     100082: Spine_3
     100084: spine_4
     100086: upper_hip
+    100088: face
+    100090: left_eye
+    100092: mouth
+    100094: right_eye
+    100096: tea_flower:tea_flower
     400000: body1
     400002: dress
     400004: head
@@ -93,10 +98,28 @@ ModelImporter:
     400082: Spine_3
     400084: spine_4
     400086: upper_hip
+    400088: face
+    400090: left_eye
+    400092: mouth
+    400094: right_eye
+    400096: tea_flower:tea_flower
+    2300000: left_eye
+    2300002: mouth
+    2300004: right_eye
+    2300006: tea_flower:tea_flower
+    3300000: left_eye
+    3300002: mouth
+    3300004: right_eye
+    3300006: tea_flower:tea_flower
     4300000: dress
     4300002: body1
     4300004: head
-    7400000: Take 001
+    4300006: mouth
+    4300008: right_eye
+    4300010: left_eye
+    4300012: tea_flower:tea_flower
+    7400000: teacup_walk
+    7400002: Take 001
     9500000: //RootNode
     13700000: body1
     13700002: dress
@@ -115,7 +138,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
+    animationCompression: 0
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -128,7 +151,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importBlendShapes: 1
+    importBlendShapes: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

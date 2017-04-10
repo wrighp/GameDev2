@@ -120,6 +120,8 @@ ModelImporter:
     4300012: tea_flower:tea_flower
     7400000: teacup_idle00
     7400002: teacup_idle01
+    7400004: teacup_idle00
+    7400006: teacup_idle01
     9500000: //RootNode
     13700000: body1
     13700002: dress
@@ -257,7 +259,17 @@ ModelImporter:
         weight: 1
       - path: ms_teacup_geo/dress
         weight: 1
+      - path: ms_teacup_geo/face
+        weight: 1
+      - path: ms_teacup_geo/face/left_eye
+        weight: 1
+      - path: ms_teacup_geo/face/mouth
+        weight: 1
+      - path: ms_teacup_geo/face/right_eye
+        weight: 1
       - path: ms_teacup_geo/head
+        weight: 1
+      - path: ms_teacup_geo/tea_flower:tea_flower
         weight: 1
       maskType: 3
       maskSource: {instanceID: 0}
@@ -374,7 +386,17 @@ ModelImporter:
         weight: 1
       - path: ms_teacup_geo/dress
         weight: 1
+      - path: ms_teacup_geo/face
+        weight: 1
+      - path: ms_teacup_geo/face/left_eye
+        weight: 1
+      - path: ms_teacup_geo/face/mouth
+        weight: 1
+      - path: ms_teacup_geo/face/right_eye
+        weight: 1
       - path: ms_teacup_geo/head
+        weight: 1
+      - path: ms_teacup_geo/tea_flower:tea_flower
         weight: 1
       maskType: 3
       maskSource: {instanceID: 0}

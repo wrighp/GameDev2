@@ -49,6 +49,11 @@ ModelImporter:
     100082: Spine_3
     100084: spine_4
     100086: upper_hip
+    100088: face
+    100090: left_eye
+    100092: mouth
+    100094: right_eye
+    100096: tea_flower:tea_flower
     400000: body1
     400002: dress
     400004: head
@@ -93,13 +98,32 @@ ModelImporter:
     400082: Spine_3
     400084: spine_4
     400086: upper_hip
+    400088: face
+    400090: left_eye
+    400092: mouth
+    400094: right_eye
+    400096: tea_flower:tea_flower
+    2300000: left_eye
+    2300002: mouth
+    2300004: right_eye
+    2300006: tea_flower:tea_flower
+    3300000: left_eye
+    3300002: mouth
+    3300004: right_eye
+    3300006: tea_flower:tea_flower
     4300000: dress
     4300002: body1
     4300004: head
+    4300006: mouth
+    4300008: right_eye
+    4300010: left_eye
+    4300012: tea_flower:tea_flower
     7400000: teacup_convo
-    7400002: teacup_hmph
+    7400002: teacup_chopchop
     7400004: teacup_chopchop
     7400006: teacup_ohoho
+    7400008: teacup_convo
+    7400010: teacup_hmph
     9500000: //RootNode
     13700000: body1
     13700002: dress
@@ -129,7 +153,134 @@ ModelImporter:
       name: teacup_convo
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 39
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: joints
+        weight: 1
+      - path: joints/hip
+        weight: 1
+      - path: joints/hip/lower_hip
+        weight: 1
+      - path: joints/hip/lower_hip/L_leg
+        weight: 1
+      - path: joints/hip/lower_hip/L_leg/L_leg_1
+        weight: 1
+      - path: joints/hip/lower_hip/L_leg/L_leg_1/L_leg_2
+        weight: 1
+      - path: joints/hip/lower_hip/L_leg/L_leg_1/L_leg_2/L_leg_3
+        weight: 1
+      - path: joints/hip/lower_hip/L_leg/L_leg_1/L_leg_2/L_leg_3/L_leg_4
+        weight: 1
+      - path: joints/hip/lower_hip/L_leg/L_leg_1/L_leg_2/L_leg_3/L_leg_4/L_leg_5
+        weight: 1
+      - path: joints/hip/lower_hip/L_leg/L_leg_1/L_leg_2/L_leg_3/L_leg_4/L_leg_5/L_leg_6
+        weight: 1
+      - path: joints/hip/lower_hip/R_leg
+        weight: 1
+      - path: joints/hip/lower_hip/R_leg/R_leg_1
+        weight: 1
+      - path: joints/hip/lower_hip/R_leg/R_leg_1/R_leg_2
+        weight: 1
+      - path: joints/hip/lower_hip/R_leg/R_leg_1/R_leg_2/R_leg_3
+        weight: 1
+      - path: joints/hip/lower_hip/R_leg/R_leg_1/R_leg_2/R_leg_3/R_leg_4
+        weight: 1
+      - path: joints/hip/lower_hip/R_leg/R_leg_1/R_leg_2/R_leg_3/R_leg_4/R_leg_5
+        weight: 1
+      - path: joints/hip/lower_hip/R_leg/R_leg_1/R_leg_2/R_leg_3/R_leg_4/R_leg_5/R_leg_6
+        weight: 1
+      - path: joints/hip/upper_hip
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/L_arm
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/L_arm/L_arm_1
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/L_arm/L_arm_1/L_arm_2
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/L_arm/L_arm_1/L_arm_2/L_arm_3
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/L_arm/L_arm_1/L_arm_2/L_arm_3/L_arm_4
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/L_arm/L_arm_1/L_arm_2/L_arm_3/L_arm_4/L_arm_5
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/L_arm/L_arm_1/L_arm_2/L_arm_3/L_arm_4/L_arm_5/L_arm_6
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/neck_1
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/neck_1/neck_2
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/neck_1/neck_2/head
+          1
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/R_arm
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/R_arm/R_arm_1
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/R_arm/R_arm_1/R_arm_2
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/R_arm/R_arm_1/R_arm_2/R_arm_3
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/R_arm/R_arm_1/R_arm_2/R_arm_3/R_arm_4
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/R_arm/R_arm_1/R_arm_2/R_arm_3/R_arm_4/R_arm_5
+        weight: 1
+      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/R_arm/R_arm_1/R_arm_2/R_arm_3/R_arm_4/R_arm_5/R_arm_6
+        weight: 1
+      - path: ms_teacup_geo
+        weight: 1
+      - path: ms_teacup_geo/body1
+        weight: 1
+      - path: ms_teacup_geo/dress
+        weight: 1
+      - path: ms_teacup_geo/face
+        weight: 1
+      - path: ms_teacup_geo/face/left_eye
+        weight: 1
+      - path: ms_teacup_geo/face/mouth
+        weight: 1
+      - path: ms_teacup_geo/face/right_eye
+        weight: 1
+      - path: ms_teacup_geo/head
+        weight: 1
+      - path: ms_teacup_geo/tea_flower:tea_flower
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: teacup_chopchop
+      takeName: Take 001
+      firstFrame: 51
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -237,7 +388,17 @@ ModelImporter:
         weight: 1
       - path: ms_teacup_geo/dress
         weight: 1
+      - path: ms_teacup_geo/face
+        weight: 1
+      - path: ms_teacup_geo/face/left_eye
+        weight: 1
+      - path: ms_teacup_geo/face/mouth
+        weight: 1
+      - path: ms_teacup_geo/face/right_eye
+        weight: 1
       - path: ms_teacup_geo/head
+        weight: 1
+      - path: ms_teacup_geo/tea_flower:tea_flower
         weight: 1
       maskType: 3
       maskSource: {instanceID: 0}
@@ -246,7 +407,7 @@ ModelImporter:
       name: teacup_hmph
       takeName: Take 001
       firstFrame: 41
-      lastFrame: 50
+      lastFrame: 51
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -354,124 +515,17 @@ ModelImporter:
         weight: 1
       - path: ms_teacup_geo/dress
         weight: 1
-      - path: ms_teacup_geo/head
+      - path: ms_teacup_geo/face
         weight: 1
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: teacup_chopchop
-      takeName: Take 001
-      firstFrame: 52
-      lastFrame: 80
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
+      - path: ms_teacup_geo/face/left_eye
         weight: 1
-      - path: joints
+      - path: ms_teacup_geo/face/mouth
         weight: 1
-      - path: joints/hip
-        weight: 1
-      - path: joints/hip/lower_hip
-        weight: 1
-      - path: joints/hip/lower_hip/L_leg
-        weight: 1
-      - path: joints/hip/lower_hip/L_leg/L_leg_1
-        weight: 1
-      - path: joints/hip/lower_hip/L_leg/L_leg_1/L_leg_2
-        weight: 1
-      - path: joints/hip/lower_hip/L_leg/L_leg_1/L_leg_2/L_leg_3
-        weight: 1
-      - path: joints/hip/lower_hip/L_leg/L_leg_1/L_leg_2/L_leg_3/L_leg_4
-        weight: 1
-      - path: joints/hip/lower_hip/L_leg/L_leg_1/L_leg_2/L_leg_3/L_leg_4/L_leg_5
-        weight: 1
-      - path: joints/hip/lower_hip/L_leg/L_leg_1/L_leg_2/L_leg_3/L_leg_4/L_leg_5/L_leg_6
-        weight: 1
-      - path: joints/hip/lower_hip/R_leg
-        weight: 1
-      - path: joints/hip/lower_hip/R_leg/R_leg_1
-        weight: 1
-      - path: joints/hip/lower_hip/R_leg/R_leg_1/R_leg_2
-        weight: 1
-      - path: joints/hip/lower_hip/R_leg/R_leg_1/R_leg_2/R_leg_3
-        weight: 1
-      - path: joints/hip/lower_hip/R_leg/R_leg_1/R_leg_2/R_leg_3/R_leg_4
-        weight: 1
-      - path: joints/hip/lower_hip/R_leg/R_leg_1/R_leg_2/R_leg_3/R_leg_4/R_leg_5
-        weight: 1
-      - path: joints/hip/lower_hip/R_leg/R_leg_1/R_leg_2/R_leg_3/R_leg_4/R_leg_5/R_leg_6
-        weight: 1
-      - path: joints/hip/upper_hip
-        weight: 1
-      - path: joints/hip/upper_hip/spine_1
-        weight: 1
-      - path: joints/hip/upper_hip/spine_1/spine_2
-        weight: 1
-      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3
-        weight: 1
-      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4
-        weight: 1
-      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/L_arm
-        weight: 1
-      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/L_arm/L_arm_1
-        weight: 1
-      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/L_arm/L_arm_1/L_arm_2
-        weight: 1
-      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/L_arm/L_arm_1/L_arm_2/L_arm_3
-        weight: 1
-      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/L_arm/L_arm_1/L_arm_2/L_arm_3/L_arm_4
-        weight: 1
-      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/L_arm/L_arm_1/L_arm_2/L_arm_3/L_arm_4/L_arm_5
-        weight: 1
-      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/L_arm/L_arm_1/L_arm_2/L_arm_3/L_arm_4/L_arm_5/L_arm_6
-        weight: 1
-      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/neck_1
-        weight: 1
-      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/neck_1/neck_2
-        weight: 1
-      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/neck_1/neck_2/head
-          1
-        weight: 1
-      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/R_arm
-        weight: 1
-      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/R_arm/R_arm_1
-        weight: 1
-      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/R_arm/R_arm_1/R_arm_2
-        weight: 1
-      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/R_arm/R_arm_1/R_arm_2/R_arm_3
-        weight: 1
-      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/R_arm/R_arm_1/R_arm_2/R_arm_3/R_arm_4
-        weight: 1
-      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/R_arm/R_arm_1/R_arm_2/R_arm_3/R_arm_4/R_arm_5
-        weight: 1
-      - path: joints/hip/upper_hip/spine_1/spine_2/Spine_3/spine_4/R_arm/R_arm_1/R_arm_2/R_arm_3/R_arm_4/R_arm_5/R_arm_6
-        weight: 1
-      - path: ms_teacup_geo
-        weight: 1
-      - path: ms_teacup_geo/body1
-        weight: 1
-      - path: ms_teacup_geo/dress
+      - path: ms_teacup_geo/face/right_eye
         weight: 1
       - path: ms_teacup_geo/head
+        weight: 1
+      - path: ms_teacup_geo/tea_flower:tea_flower
         weight: 1
       maskType: 3
       maskSource: {instanceID: 0}
@@ -588,7 +642,17 @@ ModelImporter:
         weight: 1
       - path: ms_teacup_geo/dress
         weight: 1
+      - path: ms_teacup_geo/face
+        weight: 1
+      - path: ms_teacup_geo/face/left_eye
+        weight: 1
+      - path: ms_teacup_geo/face/mouth
+        weight: 1
+      - path: ms_teacup_geo/face/right_eye
+        weight: 1
       - path: ms_teacup_geo/head
+        weight: 1
+      - path: ms_teacup_geo/tea_flower:tea_flower
         weight: 1
       maskType: 3
       maskSource: {instanceID: 0}
@@ -614,7 +678,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 3
+    tangentImportMode: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
