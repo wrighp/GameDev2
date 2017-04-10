@@ -51,6 +51,10 @@ ModelImporter:
     100086: spine_4
     100088: upper_hip
     100090: tea_flower:tea_flower
+    100092: face
+    100094: left_eye
+    100096: mouth
+    100098: right_eye
     400000: body
     400002: dress
     400004: //RootNode
@@ -97,21 +101,34 @@ ModelImporter:
     400086: spine_4
     400088: upper_hip
     400090: tea_flower:tea_flower
+    400092: face
+    400094: left_eye
+    400096: mouth
+    400098: right_eye
     2300000: body
     2300002: dress
     2300004: body1
     2300006: head
     2300008: tea_flower:tea_flower
+    2300010: left_eye
+    2300012: mouth
+    2300014: right_eye
     3300000: body
     3300002: dress
     3300004: body1
     3300006: head
     3300008: tea_flower:tea_flower
+    3300010: left_eye
+    3300012: mouth
+    3300014: right_eye
     4300000: dress
     4300002: body
     4300004: body1
     4300006: head
     4300008: tea_flower:tea_flower
+    4300010: mouth
+    4300012: right_eye
+    4300014: left_eye
     9500000: //RootNode
     13700000: body1
     13700002: dress

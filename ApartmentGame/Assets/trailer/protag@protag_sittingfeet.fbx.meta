@@ -109,6 +109,9 @@ ModelImporter:
     100202: spine_1
     100204: spine_2
     100206: spine_3
+    100208: pivot
+    100210: wing_rotaion
+    100212: wings1
     400000: protag:body
     400002: protag:hair
     400004: protag:head
@@ -213,16 +216,21 @@ ModelImporter:
     400202: spine_1
     400204: spine_2
     400206: spine_3
+    400208: pivot
+    400210: wing_rotaion
+    400212: wings1
     2300000: protag:hair
     2300002: protag:silly_hat
     2300004: protag:wings1
     2300006: hair
     2300008: silly_hat
+    2300010: wings1
     3300000: protag:hair
     3300002: protag:silly_hat
     3300004: protag:wings1
     3300006: hair
     3300008: silly_hat
+    3300010: wings1
     4300000: protag:body
     4300002: protag:head
     4300004: protag:hair
@@ -234,8 +242,10 @@ ModelImporter:
     4300016: hair
     4300018: silly_hat
     4300020: outfit
+    4300022: wings1
     7400000: protag_sittingfeet
     7400002: protag_sittingfeet
+    7400004: protag_sittingfeet
     9500000: //RootNode
     13700000: protag:body
     13700002: protag:head
@@ -389,11 +399,11 @@ ModelImporter:
         weight: 1
       - path: protag_geo/head/silly_hat
         weight: 1
-      - path: protag_geo/head/silly_hat/protag:pivot
+      - path: protag_geo/head/silly_hat/pivot
         weight: 1
-      - path: protag_geo/head/silly_hat/protag:pivot/protag:wing_rotaion
+      - path: protag_geo/head/silly_hat/pivot/wing_rotaion
         weight: 1
-      - path: protag_geo/head/silly_hat/protag:pivot/protag:wing_rotaion/protag:wings1
+      - path: protag_geo/head/silly_hat/pivot/wing_rotaion/wings1
         weight: 1
       - path: protag_geo/outfit
         weight: 1
