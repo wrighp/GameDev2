@@ -161,5 +161,18 @@ public class PlayerInteraction : MonoBehaviour {
 		}
 		line.SetPositions(positions);
 	}
+	
+	//check to see if the player is holding a certain item
+	public bool IsHolding(string itemName)
+	{
+		if(!pickedUp)
+			return false;
+		
+		if(item1.GetComponent<tmpItem>().name!=null &&
+			item1.GetComponent<tmpItem>().name == itemName)
+			return true;
+		else
+			return false;
+	}
 
 }

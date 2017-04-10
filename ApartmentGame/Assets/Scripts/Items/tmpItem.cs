@@ -17,6 +17,7 @@ public class tmpItem : MonoBehaviour {
 	//for certain occurrences
 	
 	//this objects attribute(s)
+	public string name;
 	public string attribute;
 	
 	//particle system or objects to instantiate when certain

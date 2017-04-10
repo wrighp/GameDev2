@@ -34,7 +34,7 @@ public class WorldToScreenUI : MonoBehaviour {
 	void UpdatePosition () {
 		if(followTransform == null) return;
 		float z = transform.position.z;
-		Vector3 vec = Camera.main.WorldToScreenPoint(followTransform.position + offset);
+		Vector3 vec = followTransform.position + offset;
 		transform.position = Vector3.Scale(vec,new Vector3(1f,1f,0)) + new Vector3(0,0,z);
 
 		//For unexpected behavior involving objects being behind the camera, still not technically correct.

@@ -23,13 +23,17 @@ public class SceneTransition : MonoBehaviour
 	public bool play = false;
 	public bool playOnStart = false;
 	public float cutoff = 0;
-	public bool showPopup = false;
+	bool showPopup = false;
 	
 	//fade things back in if the screen is all black
 	void Start()
 	{
 		currentScene = SceneManager.GetActiveScene();
 		//call scene.name
+		
+		popup = canvas.transform.Find("Popup").gameObject;
+		popup.transform.Find("[popupText]").gameObject.GetComponent<Text>().text = 
+					currentScene.name;
 		
 		cutoff = TransitionMaterial.GetFloat("_Cutoff");
 		if(cutoff > 1 && playOnStart)
@@ -55,6 +59,7 @@ public class SceneTransition : MonoBehaviour
 		}
 		if(showPopup)
 		{
+			Debug.Log(popup);
 			popup.GetComponent<Animator>().Play("PopupFade");
 			showPopup = false;
 		}
@@ -81,9 +86,6 @@ public class SceneTransition : MonoBehaviour
 			if(cutoff < 0 && ! fadeOut)
 			{
 				//change the popup text
-				popup = canvas.transform.Find("Popup").gameObject;
-				popup.transform.Find("[popupText]").gameObject.GetComponent<Text>().text = 
-					currentScene.name;
 				play = false;
 				cutoff = 0;
 				fadeOut = true;

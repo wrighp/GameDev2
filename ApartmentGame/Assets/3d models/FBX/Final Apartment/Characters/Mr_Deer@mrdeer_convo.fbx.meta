@@ -95,7 +95,7 @@ ModelImporter:
     4300002: glasses
     4300004: tail
     4300006: antlers
-    7400000: Take 001
+    7400000: mrdeer_convo
     9500000: //RootNode
     13700000: antlers
     13700002: body_mesh
@@ -121,7 +121,122 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: mrdeer_convo
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: joints
+        weight: 1
+      - path: joints/hip
+        weight: 1
+      - path: joints/hip/lower_hip
+        weight: 1
+      - path: joints/hip/lower_hip/joint1
+        weight: 1
+      - path: joints/hip/lower_hip/joint1/joint2
+        weight: 1
+      - path: joints/hip/lower_hip/L_leg
+        weight: 1
+      - path: joints/hip/lower_hip/L_leg/L_knee
+        weight: 1
+      - path: joints/hip/lower_hip/L_leg/L_knee/L_foot
+        weight: 1
+      - path: joints/hip/lower_hip/R_leg
+        weight: 1
+      - path: joints/hip/lower_hip/R_leg/R_knee
+        weight: 1
+      - path: joints/hip/lower_hip/R_leg/R_knee/R_foot
+        weight: 1
+      - path: joints/hip/upper_hip
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3/Spine_4
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3/Spine_4/L_arm
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3/Spine_4/L_arm/L_shoulder
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3/Spine_4/L_arm/L_shoulder/L_elbow
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3/Spine_4/L_arm/L_shoulder/L_elbow/L_forearm
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3/Spine_4/L_arm/L_shoulder/L_elbow/L_forearm/L_wrist
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3/Spine_4/L_arm/L_shoulder/L_elbow/L_forearm/L_wrist/L_hand
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3/Spine_4/neck_1
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3/Spine_4/neck_1/Neck_2
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3/Spine_4/neck_1/Neck_2/Head
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3/Spine_4/neck_1/Neck_2/Head/L_ear_1
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3/Spine_4/neck_1/Neck_2/Head/L_ear_1/L_ear_2
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3/Spine_4/neck_1/Neck_2/Head/L_ear_3
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3/Spine_4/neck_1/Neck_2/Head/L_ear_3/L_ear_2
+          1
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3/Spine_4/neck_1/Neck_2/Head/Snout
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3/Spine_4/neck_1/Neck_2/Head/Snout/Nose
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3/Spine_4/R_arm
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3/Spine_4/R_arm/R_shoulder
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3/Spine_4/R_arm/R_shoulder/R_elbow
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3/Spine_4/R_arm/R_shoulder/R_elbow/R_forearm
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3/Spine_4/R_arm/R_shoulder/R_elbow/R_forearm/R_wrist
+        weight: 1
+      - path: joints/hip/upper_hip/Spine_1/Spine_2/Spine_3/Spine_4/R_arm/R_shoulder/R_elbow/R_forearm/R_wrist/R_hand
+        weight: 1
+      - path: mr_deer_geo
+        weight: 1
+      - path: mr_deer_geo/antlers
+        weight: 1
+      - path: mr_deer_geo/body_mesh
+        weight: 1
+      - path: mr_deer_geo/glasses
+        weight: 1
+      - path: mr_deer_geo/tail
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

@@ -16,6 +16,8 @@ public class npcDialogue : MonoBehaviour {
 	//the dialogue tree that's being referenced
 	Dialogue dialogue;
 	
+	public Animator animator;
+	
 	public LayerMask layer;
 	public float talkDistance = 5f;
 	public float talkCooldown = 2f;
@@ -228,7 +230,10 @@ public class npcDialogue : MonoBehaviour {
 	public IEnumerator run(){
 		//THIS WILL DO FOR NOW
 		yield return new WaitForEndOfFrame();
-	
+		
+		if(animator!=null)
+			animator.Play("conversation");
+		
 		dialogueWindow.SetActive(true);
 		
 		//disable the overhead UI
@@ -291,7 +296,7 @@ public class npcDialogue : MonoBehaviour {
 					
 					selCooldown -= Time.deltaTime;
 
-					if (Input.GetButtonDown("Fire1") && !textScroll && running 
+					if (Input.GetButtonDown("Pickup") && !textScroll && running 
 						&& selCooldown<0)
 					{
 						availableOptions[index].GetComponent<Button>().onClick.Invoke();
@@ -320,6 +325,9 @@ public class npcDialogue : MonoBehaviour {
 		dialogueWindow.SetActive(false); 
 		GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = true;
 		
+		if(animator!=null)
+			animator.Play("idle");
+		
 		if(overlay!=null)
 		{
 			overlay.enabled = true;
@@ -336,8 +344,8 @@ public class npcDialogue : MonoBehaviour {
 		textScroll = true;
 		
 		while(true){
-			//if the player presses fire1, just put the text and get out
-			if (Input.GetButtonDown("Fire1") && running){
+			//if the player presses Pickup, just put the text and get out
+			if (Input.GetButtonDown("Pickup") && running){
 				nodeText.GetComponent<Text>().text = (string)displayText;
 				yield return new WaitForSeconds(0.1f);
 				break;
@@ -405,9 +413,9 @@ public class npcDialogue : MonoBehaviour {
 		if(auto || col.tag!="Player")
 			return;
 		
-		//if the player presses "interact"/fire1, disable player movement and
+		//if the player presses "interact"/Pickup, disable player movement and
 		//run the dialogue tree
-		if (Input.GetButtonDown("Fire1") && !running && !coolingDown){
+		if (Input.GetButtonDown("Pickup") && !running && !coolingDown){
 			Vector3 p4 = col.transform.TransformDirection(Vector3.forward);
 			float PDotN = Vector3.Dot(p4, transform.position - col.transform.position);
 			

@@ -18,23 +18,27 @@ public class IndicatorOverlay : MonoBehaviour {
 	private WorldToScreenUI worldUI;
 	// Use this for initialization
 	void Start () {
-		Transform canvas = GameObject.FindObjectOfType<Canvas> ().transform;
-		indicator = (GameObject)GameObject.Instantiate (indicatorPrefab, canvas);
-		worldUI = indicator.GetComponent<WorldToScreenUI> ();
+		//Transform canvas = GameObject.FindObjectOfType<Canvas> ().transform;
+		//indicator = (GameObject)GameObject.Instantiate (indicatorPrefab, canvas);
+		indicator = Instantiate (indicatorPrefab, transform);
+		indicator.GetComponent<LookAtCamera>().setIcon(sourceImage);
+		indicator.GetComponent<LookAtCamera>().target = transform;
+		indicator.GetComponent<LookAtCamera>().yOffset = yOffset;
+		//worldUI = indicator.GetComponent<WorldToScreenUI> ();
 		indicator.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(display || alwaysDisplay){
-			worldUI.image = sourceImage;
+			//worldUI.image = sourceImage;
 			indicator.SetActive(true);
-			worldUI.offset.y = yOffset;
+			//worldUI.offset.y = yOffset;
 			Transform t = followTransform;
 			if(t == null){
 				t = transform;
 			}
-			worldUI.followTransform = t;
+			//worldUI.followTransform = t;
 		}
 		else{
 			indicator.SetActive(false);

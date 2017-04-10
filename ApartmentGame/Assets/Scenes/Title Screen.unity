@@ -3185,7 +3185,7 @@ MonoBehaviour:
   fadeOut: 1
   play: 0
   playOnStart: 0
-  cutoff: 0
+  cutoff: -0.037548847
   showPopup: 0
 --- !u!114 &1720165990
 MonoBehaviour:
