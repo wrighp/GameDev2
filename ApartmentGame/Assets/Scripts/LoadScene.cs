@@ -6,28 +6,21 @@ public class LoadScene : MonoBehaviour {
 	
 	public Camera transition;
 	//public npcDialogue dummy;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	public string scene;
 	
 	void OnTriggerEnter(Collider col){
 		Debug.Log(col.tag);
-		if(col.tag == "Player"){
-			//dummy.saveState();
+		if(col.tag == "Player" && Input.GetButtonDown("Pickup")){
+			npcDialogue.saveState();
 			//preserve.Instance.transitions+=1;
 			//SceneManager.LoadScene(scene);
+			SceneTransition.setScene(scene);
 			transition.GetComponent<SceneTransition>().play = true;
 		}
 	}
 	public void Load()
 	{
+		SceneTransition.setScene(scene);
 		transition.GetComponent<SceneTransition>().play = true;
 	}
 }

@@ -63,8 +63,7 @@ public class npcDialogue : MonoBehaviour {
 	//the list of tasks and achievements the player has accomplished or rather, hasn't
 	public static Dictionary<string, bool> tasks;
 	public static Dictionary<string, bool> chapterTasks;
-	public static string[] taskList;
-	public static int numTasks = 0;
+	public static List<string> taskList;
 	
 	// Use this for initialization
 	void Start () {
@@ -110,28 +109,33 @@ public class npcDialogue : MonoBehaviour {
 		}
 	}
 	
+	//initiate the tasks, load them from progress manager
 	private void initiateTasks(){
-		tasks = new Dictionary<string, bool>();
-		for(int i=0; i<dialogue._tasks.Count; i++)
+		if(ProgressManager.chapterTasks == null)
 		{
-			tasks[dialogue._tasks[i]] = false;
-			numTasks+=1;
+			tasks = new Dictionary<string, bool>();
+			taskList = new List<string>();
+			for(int i=0; i<dialogue._tasks.Count; i++)
+			{
+				tasks[dialogue._tasks[i]] = false;
+				taskList.Add(dialogue._tasks[i]);
+			}
 		}
-		/*taskList = new string[numTasks];
-		tasks["A"] = false;
-		tasks["B"] = false;
-		tasks["C"] = false;
-		tasks["D"] = false;
-		
-		taskList[0] = "A";
-		taskList[1] = "B";
-		taskList[2] = "C";
-		taskList[3] = "D";*/
+		//optimize?
+		else
+		{
+			loadState();
+		}
 	}
 	
 	//add the achievement to the hash table
 	public void achieve(string thing){
 		tasks[thing] = true;
+	}
+	
+	public void setReset(int reset)
+	{
+		dialogue._next = reset;
 	}
 	
 	public void loadDialogue(string newPath){
@@ -450,7 +454,7 @@ public class npcDialogue : MonoBehaviour {
 	//cycle through all tasks, if they're all complete, you win!
 	//slash, move on to the next episode
 	void checkStatus(){
-	for(int i=0; i<numTasks;i++){
+	for(int i=0; i<chapterTasks.Count;i++){
 			Debug.Log("CYCLING..." + taskList[i]);
 			if(tasks[taskList[i]] == false)
 				return;
@@ -458,6 +462,21 @@ public class npcDialogue : MonoBehaviour {
 		Debug.Log("YOU DID IT!");
 		//end the game
 		//SceneManager.LoadScene("Win");
+	}
+	
+	public static void saveState()
+	{
+		if(ProgressManager.tasks == null)
+			ProgressManager.tasks = tasks;
+		ProgressManager.chapterTasks = chapterTasks;
+		ProgressManager.taskList = taskList;
+	}
+	
+	public static void loadState()
+	{
+		tasks = ProgressManager.tasks;
+		chapterTasks = ProgressManager.chapterTasks;
+		taskList = ProgressManager.taskList;
 	}
 	
 }

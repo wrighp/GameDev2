@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //upon creation, change the dialogue node or scene
+//then self-destruct 
 public class dTrigger : MonoBehaviour {
 	
 	public string path;

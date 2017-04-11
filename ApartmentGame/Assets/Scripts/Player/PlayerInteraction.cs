@@ -177,5 +177,21 @@ public class PlayerInteraction : MonoBehaviour {
 		else
 			return false;
 	}
+	
+	public bool IsHolding(string[] items)
+	{
+		if(!pickedUp)
+			return false;
+		
+		if(item1.GetComponent<tmpItem>().name == null)
+			return false;
+		
+		for(int i=0; i<items.Length; i++)
+		{
+			if(item1.GetComponent<tmpItem>().name == items[i])
+				return true;
+		}
+		return false;
+	}
 
 }

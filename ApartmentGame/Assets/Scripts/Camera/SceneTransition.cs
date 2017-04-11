@@ -14,7 +14,7 @@ public class SceneTransition : MonoBehaviour
 	public Canvas canvas;
 	GameObject popup;
 	
-	public string scene;
+	public static string scene;
 	Scene currentScene;
 	
     public Material TransitionMaterial;
@@ -91,5 +91,10 @@ public class SceneTransition : MonoBehaviour
 				fadeOut = true;
 				showPopup = true;
 			}
+	}
+	
+	public static void setScene(string s)
+	{
+		scene = s;
 	}
 }

@@ -20,7 +20,7 @@ public class IndicatorOverlay : MonoBehaviour {
 	void Start () {
 		//Transform canvas = GameObject.FindObjectOfType<Canvas> ().transform;
 		//indicator = (GameObject)GameObject.Instantiate (indicatorPrefab, canvas);
-		indicator = Instantiate (indicatorPrefab, transform);
+		indicator = Instantiate (indicatorPrefab);
 		indicator.GetComponent<LookAtCamera>().setIcon(sourceImage);
 		indicator.GetComponent<LookAtCamera>().target = transform;
 		indicator.GetComponent<LookAtCamera>().yOffset = yOffset;
@@ -33,12 +33,12 @@ public class IndicatorOverlay : MonoBehaviour {
 		if(display || alwaysDisplay){
 			//worldUI.image = sourceImage;
 			indicator.SetActive(true);
-			//worldUI.offset.y = yOffset;
+			/*worldUI.offset.y = yOffset;
 			Transform t = followTransform;
 			if(t == null){
 				t = transform;
 			}
-			//worldUI.followTransform = t;
+			worldUI.followTransform = t;*/
 		}
 		else{
 			//indicator.SetActive(false);

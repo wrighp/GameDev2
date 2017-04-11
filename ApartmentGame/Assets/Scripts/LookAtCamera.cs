@@ -11,7 +11,7 @@ public class LookAtCamera : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		
+		transform.SetParent(target);
 	}
 	
 	// Update is called once per frame
