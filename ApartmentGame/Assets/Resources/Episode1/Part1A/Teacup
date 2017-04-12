@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Dialogue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <_nodes>
+    <Node>
+      <_ID>0</_ID>
+      <_text>Oh..It’s you again. No need to shake me down like you do those other ruffians, I have your money right here.\nWill there be anything else?</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>0</_reset>
+	  <_accomplish>TeacupRent</_accomplish>
+      <_options>
+        <dialogueOption>
+          <_text>Do you have any juice?</_text>
+          <_dest>2</_dest>
+        </dialogueOption>
+        <dialogueOption>
+          <_text>I didn’t mean to come off like that…</_text>
+          <_dest>6</_dest>
+        </dialogueOption>
+        <dialogueOption>
+          <_text>No</_text>
+          <_dest>7</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>1</_ID>
+      <_text>You have something else on your mind…?</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>1</_reset>
+      <_options>
+        <dialogueOption>
+          <_text>Do you have any juice?</_text>
+          <_dest>2</_dest>
+        </dialogueOption>
+        <dialogueOption>
+          <_text>Nevermind.</_text>
+          <_dest>7</_dest>
+        </dialogueOption>
+        <dialogueOption>
+          <_text>Your tree is very lovely</_text>
+          <_dest>8</_dest>
+          <_req>TeacupJuice</_req>
+        </dialogueOption>
+        <dialogueOption>
+          <_text>I'm sorry about your tree</_text>
+          <_dest>10</_dest>
+          <_req>TeacupTree</_req>
+        </dialogueOption>
+        <dialogueOption>
+          <_text>You like...ducks?</_text>
+          <_dest>11</_dest>
+          <_req>TeacupFriendship</_req>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>2</_ID>
+      <_text>Juice?! Not since that horrible Banana CREATURE violated my sanctuary with his- his-!</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>3</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>3</_ID>
+      <_text>Bah! Just thinking about it makes my skin crawl. </_text>
+      <_name>Ms Teacup</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>4</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>4</_ID>
+      <_text>But to answer your question, no. I do not have any juice. Perhaps you should check the market; I’m sure even that otter-boy’s stall has something of value. </_text>
+      <_name>Ms Teacup</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>5</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+      <_accomplish>TeacupTree</_accomplish>
+    </Node>
+    <Node>
+      <_ID>5</_ID>
+      <_text>Though, I doubt anything they have shall be as delightful as my oranges, teahehehe~! </_text>
+      <_name>Ms Teacup</_name>
+      <_reset>1</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>5</_dest>
+        </dialogueOption>
+        <dialogueOption>
+          <_text />
+          <_dest>1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+      <_accomplish>TeacupJuice</_accomplish>
+    </Node>
+    <Node>
+      <_ID>6</_ID>
+      <_text>Oh.  How uncharacteristic of anyone here to show remorse for their behaviour. I apologize if my tone was rather harsh.</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>1</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+      <_accomplish>TeacupRespect</_accomplish>
+    </Node>
+    <Node>
+      <_ID>7</_ID>
+      <_text>Adieu, Mr. Landlord.</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>1</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>7</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>8</_ID>
+      <_text>Teahehehe~! How observant you are to notice my tree’s glamour! It’s just like the trees by the pond I had back home.%p\nMy little home away from home.</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>1</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>9</_ID>
+      <_text>I’d rather not talk about this right now. Perhaps some other time we could take a walk and see the ducks.</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>1</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>10</_ID>
+      <_text>I’d gladly give that Banana creature another thrashing for what he’s done to it! It’s the only reminder I have of home. That and those lovely ducks…</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>1</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+      <_accomplish>TeacupFriendship</_accomplish>
+    </Node>
+    <Node>
+      <_ID>11</_ID>
+      <_text>Of course! I used to play with the darlings quite often in my younger years! I wish I had the chance to see them more often.</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>1</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>12</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>12</_ID>
+      <_text>But, you?</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>13</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>13</_ID>
+      <_text>You surprise me Mr. Landlord. I had taken you for a self-absorbed chav like the rest of them. It seems I’m mistaken. You’re full of surprises it seems.</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>14</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>13</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+      <_accomplish>TeacupFriendly</_accomplish>
+    </Node>
+    <Node>
+      <_ID>14</_ID>
+      <_text>Oh? Back again? Care for a spot of tea and a quick chat?</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>14</_reset>
+      <_options>
+        <dialogueOption>
+          <_text>Yes, please!</_text>
+          <_dest>15</_dest>
+          <_req>TeacupFriendly</_req>
+        </dialogueOption>
+        <dialogueOption>
+          <_text>Not right now, thanks</_text>
+          <_dest>16</_dest>
+          <_req>TeacupFriendly</_req>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>15</_ID>
+      <_text>Oh, just lovely!</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>14</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>15</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>16</_ID>
+      <_text>Oh poo… I understand that you’re busy… Do stop by when you have the time, I’d love to get to know you better.</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>14</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>16</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>17</_ID>
+      <_text>Hey! What do you think you’re doing!? Put that back you scoundrel!</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>18</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>-1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>18</_ID>
+      <_text>How dare you...-!</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>18</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>-1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+      <_accomplish>TeacupBetray</_accomplish>
+    </Node>
+  </_nodes>
+  <_next>0</_next>
+</Dialogue>

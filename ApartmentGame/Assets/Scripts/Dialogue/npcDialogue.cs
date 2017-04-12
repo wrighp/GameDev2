@@ -16,6 +16,7 @@ public class npcDialogue : MonoBehaviour {
 	//the dialogue tree that's being referenced
 	Dialogue dialogue;
 	
+	public string name = "";
 	public Animator animator;
 	
 	public LayerMask layer;
@@ -64,12 +65,19 @@ public class npcDialogue : MonoBehaviour {
 	public static Dictionary<string, bool> tasks;
 	public static Dictionary<string, bool> chapterTasks;
 	public static List<string> taskList;
+	public static Dictionary<string, GameObject> Characters;
 	
 	// Use this for initialization
 	void Start () {
 		
 		if(dialogueCamera == null)
 			dialogueCamera = mainCamera;
+		
+		//for focusing the camera on the appropriate characters
+		if(name!="")
+		{
+			Characters[name] = transform.parent.gameObject;
+		}
 		
 		//load the dialogue from the given path
 		dialogue = Dialogue.Load(Path);
@@ -210,7 +218,8 @@ public class npcDialogue : MonoBehaviour {
 		//display the possible options after the text has stopped scrolling
 	void displayOptions()
 	{
-		if(numOptions>1)
+		//if the number of options are greater than 1, or the option has text, display it
+		if(numOptions>1 || availableOptions[0].GetComponentInChildren<Text>().text!="")
 		{
 			for(int i=0; i<numOptions; i++)
 			{

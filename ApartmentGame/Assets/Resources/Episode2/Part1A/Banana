@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Dialogue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <_nodes>
+    <Node>
+      <_ID>0</_ID>
+      <_text>Here’s your stinkin’ rent. It blows, there’s no way that creep Sasuke isn’t a killer. Did you SEE what he did to otter-boy’s aunt last week?!</_text>
+      <_name>Banana</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>1</_ID>
+      <_text>Mark my words, it’s always the creepy quiet ones that snap. And when that happens, I’m outta here man. </_text>
+      <_name>Banana</_name>
+      <_reset>2</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>-1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+      <_accomplish>BananaRent</_accomplish>
+    </Node>
+    <Node>
+      <_ID>2</_ID>
+      <_text>Mark my words… </_text>
+      <_name>Banana</_name>
+      <_reset>2</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>-1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+  </_nodes>
+  <_next>0</_next>
+</Dialogue>
