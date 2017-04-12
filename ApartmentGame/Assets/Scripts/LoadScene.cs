@@ -8,17 +8,17 @@ public class LoadScene : MonoBehaviour {
 	//public npcDialogue dummy;
 	public string scene;
 	
-	void OnTriggerEnter(Collider col){
-		Debug.Log(col.tag);
+	void OnTriggerStay(Collider col){
 		if(col.tag!="Player")
 			return;
-		
+
 		Vector3 p4 = col.transform.TransformDirection(Vector3.forward);
 		float PDotN = Vector3.Dot(p4, transform.position - col.transform.position);
 		
 		if(Input.GetButtonDown("Pickup")
-			&& PDotN>0.25)
+			/*&& (PDotN>0.25|| Vector3.Distance(col.transform.position, transform.position) < 2)*/)
 		{
+			Debug.Log("Changing Scenes");
 			npcDialogue.saveState();
 			//preserve.Instance.transitions+=1;
 			//SceneManager.LoadScene(scene);
