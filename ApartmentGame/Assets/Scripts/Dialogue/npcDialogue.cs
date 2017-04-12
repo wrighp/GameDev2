@@ -379,11 +379,15 @@ public class npcDialogue : MonoBehaviour {
 		nodeText.GetComponent<Text>().text = "";
 		textScroll = true;
 		
+		//================================================================TEXT DELAYS ==========
+		float dDelay = 0.0001f;
+		float pDelay = 0.3f;
+		
 		while(true){
 			//if the player presses Fire1, just put the text and get out
 			if (Input.GetButtonDown("Fire1") && running){
 				nodeText.GetComponent<Text>().text = (string)displayText;
-				yield return new WaitForSeconds(0.1f);
+				yield return new WaitForSeconds(dDelay);
 				break;
 			}
 			
@@ -401,7 +405,7 @@ public class npcDialogue : MonoBehaviour {
 			if((displayText[index] == '!' || displayText[index] == '?' ||
 				displayText[index] == '.') && index<strLen-1 && 
 				(displayText[index+1] == ' '|| displayText[index+1] == '\n')){
-					yield return new WaitForSeconds(0.3f);
+					yield return new WaitForSeconds(pDelay);
 				}
 			
 			index++;
@@ -409,7 +413,7 @@ public class npcDialogue : MonoBehaviour {
 			if(index<strLen){
 				//play a sound potentially
 				//wait for a moment before adding next character
-				yield return new WaitForSeconds(0.02f);
+				yield return new WaitForSeconds(dDelay);
 			}
 			else{
 				break;

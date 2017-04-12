@@ -549,6 +549,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1789090151901428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4888804051033976}
+  - component: {fileID: 114367400116179154}
+  - component: {fileID: 136639796041282044}
+  m_Layer: 0
+  m_Name: HoldingTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1809620274258340
 GameObject:
   m_ObjectHideFlags: 1
@@ -875,6 +892,7 @@ Transform:
   m_Children:
   - {fileID: 4087030577435736}
   - {fileID: 4469573052665618}
+  - {fileID: 4888804051033976}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1382,6 +1400,19 @@ Transform:
   m_Father: {fileID: 4327276369598900}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4888804051033976
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1789090151901428}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4240722581969782}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4942106631662054
 Transform:
   m_ObjectHideFlags: 1
@@ -1575,6 +1606,24 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114367400116179154
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1789090151901428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f8c6f4185eb3c44d98c9e53a080be0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thing: Book
+  speaker: {fileID: 114523930820647258}
+  tableVal: FoundBook
+  beginVal: LookingBook
+  targetNode: 6
+  defaultNode: 5
+  target: {fileID: 0}
 --- !u!114 &114523930820647258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1600,10 +1649,10 @@ MonoBehaviour:
   speakers: []
   Source: {fileID: 0}
   Voice: {fileID: 0}
-  Path: Demo/Part1A/Firelord
+  Path: Beta/Deer
   dialogueWindow: {fileID: 1905344328228412, guid: d9518a1eaceaabf44877ef4ddbf98327,
     type: 2}
-  auto: 1
+  auto: 0
 --- !u!114 &114713620409583454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1675,6 +1724,19 @@ CapsuleCollider:
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &136639796041282044
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1789090151901428}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2.48
+  m_Height: 4.95
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &137001180468576982

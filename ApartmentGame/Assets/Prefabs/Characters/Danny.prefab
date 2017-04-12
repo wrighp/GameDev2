@@ -664,6 +664,7 @@ GameObject:
   - component: {fileID: 4656697546460746}
   - component: {fileID: 114214037483330726}
   - component: {fileID: 136517527677751344}
+  - component: {fileID: 114698278490223162}
   m_Layer: 0
   m_Name: DialogueTrigger
   m_TagString: Untagged
@@ -759,6 +760,7 @@ GameObject:
   - component: {fileID: 136048333063116908}
   - component: {fileID: 23873170844575762}
   - component: {fileID: 195079364976141024}
+  - component: {fileID: 114775507305003720}
   m_Layer: 0
   m_Name: Danny
   m_TagString: Untagged
@@ -1038,8 +1040,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1896608679955008}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.955524, y: 1.45, z: 4.693754}
+  m_LocalRotation: {x: -0, y: -0.8578556, z: -0, w: 0.5138908}
+  m_LocalPosition: {x: 3.955524, y: 1.45, z: 10.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4916623810110272}
@@ -1047,7 +1049,7 @@ Transform:
   - {fileID: 4314341634127648}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -118.15301, z: 0}
 --- !u!4 &4379253888863966
 Transform:
   m_ObjectHideFlags: 1
@@ -1743,10 +1745,48 @@ MonoBehaviour:
   speakers: []
   Source: {fileID: 0}
   Voice: {fileID: 0}
-  Path: Demo/Part1A/Teacup
+  Path: Episode0/Part1A/Danny
   dialogueWindow: {fileID: 1905344328228412, guid: d9518a1eaceaabf44877ef4ddbf98327,
     type: 2}
-  auto: 0
+  auto: 1
+--- !u!114 &114698278490223162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1786580017841726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dda6a135758b1b47ad82e1794aab185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceImage: {fileID: 21300000, guid: 0b35070129d2e484ca41907c05ff168e, type: 3}
+  display: 0
+  alwaysDisplay: 0
+  range: 3.4028235e+38
+  yOffset: 1.5
+  followTransform: {fileID: 0}
+  indicatorPrefab: {fileID: 1066566491534334, guid: 52ddc960099f5544ea6ad9daa9ad3429,
+    type: 2}
+--- !u!114 &114775507305003720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1896608679955008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96b5a3f737cb96409c3b1113e57d160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  curTarget: {fileID: 4370693710902328}
+  route: []
+  wander: 0
+  patrol: 0
+  moveTowards: 1
+  move: 1
+  moveSpeed: 2
 --- !u!124 &124246777439105804
 Behaviour:
   m_ObjectHideFlags: 1
