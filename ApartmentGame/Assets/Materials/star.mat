@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: leaves
-  m_Shader: {fileID: 4800000, guid: 4ada174349f4a834f86be0a0f548aa48, type: 3}
+  m_Name: star
+  m_Shader: {fileID: 10751, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALPHATEST_ON _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -54,7 +54,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: f4b2e1dc2db30444eae9e2eb05cc9ca5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 618d392b628584aa68b43173f593319d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -78,25 +78,22 @@ Material:
     m_Floats:
     - first:
         name: _AX
-      second: 0.01
+      second: 0.248
     - first:
         name: _AY
-      second: 0
+      second: 0.322
     - first:
         name: _AZ
-      second: 0
+      second: 0.19
     - first:
         name: _BumpScale
       second: 1
     - first:
         name: _Cutoff
-      second: 0.22
+      second: 0.5
     - first:
         name: _DetailNormalMapScale
       second: 1
-    - first:
-        name: _DiffuseThres
-      second: 0
     - first:
         name: _DstBlend
       second: 0
@@ -111,7 +108,7 @@ Material:
       second: 1
     - first:
         name: _Magnitude
-      second: 0
+      second: 0.0711
     - first:
         name: _Metallic
       second: 0
@@ -123,31 +120,25 @@ Material:
       second: 1
     - first:
         name: _PX
-      second: 5
+      second: 52.9
     - first:
         name: _PY
-      second: 0
+      second: 50.4
     - first:
         name: _PZ
-      second: 0
+      second: 57
     - first:
         name: _Parallax
       second: 0.02
     - first:
         name: _RX
-      second: 79
+      second: 50.4
     - first:
         name: _RY
-      second: 0
+      second: 35.5
     - first:
         name: _RZ
-      second: 0
-    - first:
-        name: _RimPow
-      second: 2.3
-    - first:
-        name: _Shininess
-      second: 1
+      second: 18.2
     - first:
         name: _SmoothnessTextureChannel
       second: 0
@@ -166,16 +157,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0.9485294, g: 0.9223631, b: 0, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
-    - first:
-        name: _RimCol
-      second: {r: 1, g: 0.9740366, b: 0.7647059, a: 1}
-    - first:
-        name: _SpecColor
-      second: {r: 1, g: 1, b: 1, a: 1}
-    - first:
-        name: _UnlitColor
-      second: {r: 0.4729299, g: 0.42409173, b: 0.5441177, a: 1}
