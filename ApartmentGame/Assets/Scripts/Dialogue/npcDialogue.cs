@@ -126,12 +126,15 @@ public class npcDialogue : MonoBehaviour {
 	private void initiateTasks(){
 		if(ProgressManager.chapterTasks == null)
 		{
-			tasks = new Dictionary<string, bool>();
+			if(tasks == null)
+				tasks = new Dictionary<string, bool>();
 			
-			if(ProgressManager.chapterTasks == null)
+			if(chapterTasks == null)
 				chapterTasks = new Dictionary<string, bool>();
 			
-			taskList = new List<string>();
+			if(taskList == null)
+				taskList = new List<string>();
+			
 			for(int i=0; i<dialogue._tasks.Count; i++)
 			{
 				tasks[dialogue._tasks[i]] = false;
@@ -148,6 +151,7 @@ public class npcDialogue : MonoBehaviour {
 	
 	//add the achievement to the hash table
 	public void achieve(string thing){
+		Debug.Log(thing + " HAS BEEN ACHIEVED");
 		tasks[thing] = true;
 	}
 	
@@ -280,7 +284,7 @@ public class npcDialogue : MonoBehaviour {
 			updateText(current);
 			//testing out the execute function
 			current._precalls.ForEach ((Call c) => c.execute ());
-			
+
 			//add accomplishment to dictionary
 			if(current._accomplish!=null && 
 				current._accomplish!="")

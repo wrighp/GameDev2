@@ -60,7 +60,7 @@
       </_options>
       <_precalls />
       <_postcalls />
-      <_accomplish>DeerRent</_accomplish>
+	  <_accomplish>LookingBook</_accomplish>
     </Node>
     <Node>
       <_ID>4</_ID>
@@ -70,11 +70,12 @@
       <_options>
         <dialogueOption>
           <_text />
-          <_dest>5</_dest>
+          <_dest>-1</_dest>
         </dialogueOption>
       </_options>
       <_precalls />
       <_postcalls />
+	  <_accomplish>LookingBook</_accomplish>
     </Node>
     <Node>
       <_ID>5</_ID>
@@ -89,7 +90,6 @@
       </_options>
       <_precalls />
       <_postcalls />
-	  <_achievement>LookingBook</_achievement>
     </Node>
 	<Node>
       <_ID>6</_ID>
@@ -97,7 +97,7 @@
 You had it all along. How sneaky...
 If you wouldn't mind handing it over.......</_text>
       <_name>Mr Deer</_name>
-      <_reset>0</_reset>
+      <_reset>7</_reset>
       <_options>
         <dialogueOption>
           <_text />
@@ -106,7 +106,7 @@ If you wouldn't mind handing it over.......</_text>
       </_options>
       <_precalls />
       <_postcalls />
-	  <_achievement>FoundBook</_achievement>
+	  <_accomplish>FoundBook</_accomplish>
     </Node>
 	<Node>
       <_ID>7</_ID>
@@ -121,7 +121,7 @@ If you wouldn't mind handing it over.......</_text>
       </_options>
       <_precalls />
       <_postcalls />
-	  <_achievement>DeerRent</_achievement>
+	  <_accomplish>DeerRent</_accomplish>
     </Node>
   </_nodes>
   <_tasks>DeerRent</_tasks>

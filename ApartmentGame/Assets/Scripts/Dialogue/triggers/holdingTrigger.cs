@@ -12,25 +12,34 @@ public class holdingTrigger : MonoBehaviour {
 	public int defaultNode;
 	public GameObject target;
 	
-	void onTriggerStay(Collider col)
+	void OnTriggerStay(Collider col)
 	{
 		if(col.tag!="Player")
 			return;
 		
-		if(!npcDialogue.tasks[beginVal])
-			return;
-		
-		
-		Debug.Log(Vector3.Distance(target.transform.position, transform.position));
-		//set the dialogue node to the target node
-		if(col.GetComponent<PlayerInteraction>().IsHolding(thing)
-			&& !npcDialogue.tasks[tableVal])
+		if(npcDialogue.tasks == null || !npcDialogue.tasks.ContainsKey(beginVal))
 		{
+			Debug.Log("Don't have the task yet.");
+			return;
+		}
+		
+		if(npcDialogue.tasks.ContainsKey(tableVal))
+			Destroy(this);
+		
+		//Debug.Log(Vector3.Distance(target.transform.position, transform.position));
+		//set the dialogue node to the target node
+		if(/*col.GetComponent<PlayerInteraction>().IsHolding(thing)*/
+		Vector3.Distance(target.transform.position, transform.position) < 5
+			&& npcDialogue.tasks[beginVal])
+		{
+			Debug.Log("Wa wa we wa");
 			speaker.setReset(targetNode);
 			npcDialogue.tasks[beginVal] = false;
 		}
-		else if (!npcDialogue.tasks[tableVal])
+		else if (Vector3.Distance(target.transform.position, transform.position) > 5
+			&& !npcDialogue.tasks.ContainsKey(tableVal))
 		{
+			npcDialogue.tasks[beginVal] = true;
 			speaker.setReset(defaultNode);
 		}
 	}
