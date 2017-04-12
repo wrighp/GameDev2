@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Dialogue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <_nodes>
+    <Node>
+      <_ID>0</_ID>
+      <_text>Oh-- %pI wasn’t doing anything bad. I was just ah… making sure Teacup was okay.</_text>
+      <_name>Sasuke</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>1</_ID>
+      <_text> I heard the scream and was attracted to it. Not like-- I wasn’t spying, okay?</_text>
+      <_name>Sasuke</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>2</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>2</_ID>
+      <_text>Get that out of your mind. I know this looks bad, but none of this was my fault, okay?</_text>
+      <_name>Sasuke</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>3</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>3</_ID>
+      <_text> I have nothing to do with this. I was just looking for my special teacup. N-not Ms Teacup of course, just mine. I lost it.  I thought I’d come by to get another one from her...okay?</_text>
+      <_name>Sasuke</_name>
+      <_reset>3</_reset>
+      <_options>
+        <dialogueOption>
+          <_text>Show VHS</_text>
+          <_dest>5</_dest>
+          <_req>HasVHS</_req>
+        </dialogueOption>
+        <dialogueOption>
+          <_text>That sounds like a lie.</_text>
+          <_dest>4</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>4</_ID>
+      <_text> I-I know it sounds bad, but I really miss that teacup, okay? It’s really important and I just want it back. I swear I have nothing to do with any of this.</_text>
+      <_name>Sasuke</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text>Show VHS</_text>
+          <_dest>5</_dest>
+          <_req>HasVHS</_req>
+        </dialogueOption>
+        <dialogueOption>
+          <_text>This looks really bad.</_text>
+          <_dest>6</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>5</_ID>
+      <_text>Well, well! I didn’t expect someone like you to be interested in collecting VHS’! It looks like I’ve misjudged you. I’m quite the film buff myself you know. What? You want to watch it now of all times!? How bold. %pI’m in.</_text>
+      <_name>Sasuke</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>7</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>6</_ID>
+      <_text>Please don't tell teacup...</_text>
+      <_name>Sasuke</_name>
+      <_reset>6</_reset>
+      <_options>
+        <dialogueOption>
+          <_text>Show VHS</_text>
+          <_dest>5</_dest>
+          <_req>HasVHS</_req>
+        </dialogueOption>
+        <dialogueOption>
+          <_text />
+          <_dest>6</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>7</_ID>
+      <_text>Follow me!</_text>
+      <_name>Sasuke</_name>
+      <_reset>8</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>7</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>8</_ID>
+      <_text>Try to keep up, will you?</_text>
+      <_name>Sasuke</_name>
+      <_reset>8</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>-1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+  </_nodes>
+  <_next>0</_next>
+</Dialogue>

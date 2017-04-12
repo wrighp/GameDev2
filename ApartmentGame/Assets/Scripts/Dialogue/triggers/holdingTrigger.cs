@@ -8,16 +8,6 @@ public class holdingTrigger : MonoBehaviour {
 	public npcDialogue speaker;
 	public int targetNode;
 	public int defaultNode;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 	
 	void onTriggerStay(Collider col)
 	{

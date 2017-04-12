@@ -42,6 +42,7 @@ public class Dialogue{
 		StringReader reader = new StringReader(_xml.text);
 		
 		Dialogue dialogue = (Dialogue) serial.Deserialize(reader);
+		//Debug.Log(dialogue._nodes.Count);
 		
 		reader.Close();
 		return dialogue;

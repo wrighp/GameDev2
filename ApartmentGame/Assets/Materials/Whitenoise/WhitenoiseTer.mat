@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: lineParticle
-  m_Shader: {fileID: 200, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: WhitenoiseTer
+  m_Shader: {fileID: 4800000, guid: 4ada174349f4a834f86be0a0f548aa48, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -40,6 +40,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
+        name: _DisplaceTex
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
         name: _EmissionMap
       second:
         m_Texture: {fileID: 0}
@@ -48,9 +54,9 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
-        m_Scale: {x: 5, y: 1}
-        m_Offset: {x: -0.43770802, y: 0.9652604}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - first:
         name: _MetallicGlossMap
       second:
@@ -71,8 +77,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
-        name: PixelSnap
-      second: 0
+        name: _AX
+      second: 0.1
+    - first:
+        name: _AY
+      second: 0.1
+    - first:
+        name: _AZ
+      second: 0.1
     - first:
         name: _BumpScale
       second: 1
@@ -82,6 +94,9 @@ Material:
     - first:
         name: _DetailNormalMapScale
       second: 1
+    - first:
+        name: _DiffuseThres
+      second: 0.35
     - first:
         name: _DstBlend
       second: 0
@@ -95,7 +110,7 @@ Material:
         name: _GlossyReflections
       second: 1
     - first:
-        name: _InvFade
+        name: _Magnitude
       second: 1
     - first:
         name: _Metallic
@@ -107,8 +122,32 @@ Material:
         name: _OcclusionStrength
       second: 1
     - first:
+        name: _PX
+      second: 50
+    - first:
+        name: _PY
+      second: 50
+    - first:
+        name: _PZ
+      second: 50
+    - first:
         name: _Parallax
       second: 0.02
+    - first:
+        name: _RX
+      second: 50
+    - first:
+        name: _RY
+      second: 50
+    - first:
+        name: _RZ
+      second: 50
+    - first:
+        name: _RimPow
+      second: 3
+    - first:
+        name: _Shininess
+      second: 1
     - first:
         name: _SmoothnessTextureChannel
       second: 0
@@ -132,5 +171,11 @@ Material:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
-        name: _TintColor
+        name: _RimCol
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _SpecColor
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _UnlitColor
       second: {r: 1, g: 1, b: 1, a: 1}

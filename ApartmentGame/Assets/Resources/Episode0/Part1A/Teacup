@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Dialogue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <_nodes>
+    <Node>
+      <_ID>0</_ID>
+      <_text>How dare they-!</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>1</_ID>
+      <_text>%p How dare YOU-!\nYou-!\nYou and your..."people"-! How DARE you let them violate my privacy with their- their-</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>2</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>2</_ID>
+      <_text>This never would’ve happened if Dom was still around!</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>3</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>3</_ID>
+      <_text>Oh, she seems upset!</_text>
+      <_name>Danny</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>4</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>4</_ID>
+      <_text>You.%pIt was you, wasn't it.\nDon't think I don't notice you eyeing my oranges with your greedy little eyes!</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>5</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>5</_ID>
+      <_text>My eyes aren't little!</_text>
+      <_name>Danny</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>6</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>6</_ID>
+      <_text>You're an awful creature!</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text>Are you okay, Ms Teacup?</_text>
+          <_dest>7</_dest>
+        </dialogueOption>
+        <dialogueOption>
+          <_text>Did someone trash your room?</_text>
+          <_dest>8</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>7</_ID>
+      <_text>Heavens, no, are you daft?! \nA rotten thief has violated my sanctuary, and as your most valued tenant I demand justice. \nChop chop.</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>9</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>8</_ID>
+      <_text>Did someone-- NO! \nMy tree! Just look at it! A thief has stripped my poor baby bare! \nHow could someone be so cruel…! When I get my hands on them, I’ll tear their furry little head off!</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>9</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>9</_ID>
+      <_text>A thief…? \nThat's impossible, Ms Teacup, everyone here is so nice! </_text>
+      <_name>Danny</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>10</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>10</_ID>
+      <_text>Don’t be daft! What could you know about the people here?</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>11</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>11</_ID>
+      <_text>Mr. Deer is nice, he likes watching me play in the street!</_text>
+      <_name>Danny</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>12</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>12</_ID>
+      <_text>[small]Why do I waste my time… [/small]You’re all so useless!</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>13</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>13</_ID>
+      <_text>Oh… Don’t be upset Ms Teacup, I’ll help you find your oranges, just you watch! \nI’ll be your hero!</_text>
+      <_name>Danny</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>14</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>14</_ID>
+      <_text>… \n“My hero”...? \nHe’s starting to sound like..- bah, nevermind…-! \nShouldn’t you be looking around for clues or something?! </_text>
+      <_name>Ms Teacup</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>15</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>15</_ID>
+      <_text>Huh-?! \nYou can’t expect me to concentrate on your silly rent money at a time like this! \nNot until I get my oranges back for heaven’s sake!</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>15</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>-1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>16</_ID>
+      <_text>Where do you think you’re going?! \nYou can’t just leave me here without any closure!</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>15</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>-1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+  </_nodes>
+  <_next>0</_next>
+</Dialogue>

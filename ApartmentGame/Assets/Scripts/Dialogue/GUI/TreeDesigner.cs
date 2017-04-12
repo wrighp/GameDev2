@@ -7,9 +7,10 @@ using UnityEditor;
 public class TreeDesigner : EditorWindow {
 	
 	//==========================Dialogue Tree Components===========================
-	Dialogue dialogue = new Dialogue();
-	List<Node> nodes = new List<Node>();
-	List<dialogueOption> options = new List<dialogueOption>();
+	static Dialogue dialogue = new Dialogue();
+	static List<Node> nodes = new List<Node>();
+	static List<dialogueOption> options = new List<dialogueOption>();
+	static bool redrawLinks = false;
 	//List<Call> calls;
 	
 	Node currentNode;
@@ -32,11 +33,11 @@ public class TreeDesigner : EditorWindow {
 	
 	//============================Node Editor Components===================
 	//index'd the same way as the nodes
-	List<Rect> windows = new List<Rect>();
+	static List<Rect> windows = new List<Rect>();
     List<int> windowsToAttach = new List<int>();
     List<int> attachedWindows = new List<int>();
 	
-	Dictionary<int, List<int>> nodeConnections = new Dictionary<int, List<int>>();
+	static Dictionary<int, List<int>> nodeConnections = new Dictionary<int, List<int>>();
 	
 	//styles
 	static GUIStyle textStyle;
@@ -61,6 +62,12 @@ public class TreeDesigner : EditorWindow {
 	//similar to start/awake function
 	void OnEnable()
 	{
+		dialogue = new Dialogue();
+		nodes = new List<Node>();
+		options = new List<dialogueOption>();
+		windows = new List<Rect>();
+		nodeConnections = new Dictionary<int, List<int>>();
+		
 		InitTex();
 	}
 	
@@ -167,6 +174,21 @@ public class TreeDesigner : EditorWindow {
             }
         }
 		
+		if(redrawLinks)
+		{
+			Debug.Log("Redrawing");
+			for(int i = 0; i<nodes.Count;i++)
+			{
+				//Debug.Log("Node " + i);
+				for(int j=0; j<nodeConnections[i].Count; j++)
+				{
+					//Debug.Log("EY");
+					DrawNodeCurve(windows[i], windows[nodeConnections[i][j]]);
+				}
+			}
+			redrawLinks = false;
+		}
+		
 		//for the node editor
 		//mark beginning area for all popup windows
 		BeginWindows();
@@ -198,7 +220,7 @@ public class TreeDesigner : EditorWindow {
     }
 	
 	//node curve
-	void DrawNodeCurve(Rect start, Rect end) {
+	static void DrawNodeCurve(Rect start, Rect end) {
         Vector3 startPos = new Vector3(start.x + start.width, start.y + start.height / 2, 0);
         Vector3 endPos = new Vector3(end.x, end.y + end.height / 2, 0);
         Vector3 startTan = startPos + Vector3.right * 50;
@@ -263,11 +285,40 @@ public class TreeDesigner : EditorWindow {
 	//update the state of the tree
 	//clear everything that's been drawn and redraw the tree
 	//go through the whole list of nodes and draw the stuff from there
-	static public void UpdateTree()
+	static public void UpdateTree(Dialogue d)
 	{
+		redrawLinks = true;
 		
+		dialogue = d;
+		//Debug.Log(dialogue._nodes.Count);
+		//reset the node lists
+		//this could actually take a while, optimize
+		nodes = dialogue._nodes;
+		options = new List<dialogueOption>();
 		
+		windows = new List<Rect>();
+		nodeConnections = new Dictionary<int, List<int>>();
 		
+		//attach the windows
+		for(int i=0; i<dialogue._nodes.Count; i++)
+		{
+			//Debug.Log("AAAA");
+			windows.Add(new Rect(10, 10, 100, 100));
+			nodeConnections[i] = new List<int>();
+		}
+		
+		//iterate and draw node curves and remake the node connection array
+		for(int i=0; i<dialogue._nodes.Count; i++)
+		{
+			for(int j=0; j<dialogue._nodes[i]._options.Count; j++)
+			{
+				if(nodes[i]._options[j]._dest!=-1)
+				{
+					//DrawNodeCurve(windows[i], windows[nodes[i]._options[j]._dest]);
+					nodeConnections[i].Add(nodes[i]._options[j]._dest);
+				}
+			}
+		}
 	}
 	
 }
@@ -587,6 +638,17 @@ public class TreeManager : EditorWindow
 		
 		if(GUILayout.Button("Save", GUILayout.Height(40)))
 		{
+			dialogueOption opt;
+			//make sure the nodes have an exit
+			for(int i=0; i<dialogue._nodes.Count; i++)
+			{
+				if(dialogue._nodes[i]._options.Count == 0)
+				{
+					opt = new dialogueOption();
+					opt._dest = -1;
+					dialogue._nodes[i]._options.Add(opt);
+				}
+			}
 			Save(path);
 			this.Close();
 			//Debug.Log("Saved to " +path);
@@ -604,8 +666,9 @@ public class TreeManager : EditorWindow
 		if(GUILayout.Button("Load", GUILayout.Height(40)))
 		{
 			dialogue = Load(path);
+			//Debug.Log(dialogue._nodes.Count);
 			//Debug.Log("Loaded " + path);
-			TreeDesigner.UpdateTree();
+			TreeDesigner.UpdateTree(dialogue);
 			this.Close();
 		}
 	}

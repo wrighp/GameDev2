@@ -67,6 +67,10 @@ public class npcDialogue : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		
+		if(dialogueCamera == null)
+			dialogueCamera = mainCamera;
+		
 		//load the dialogue from the given path
 		dialogue = Dialogue.Load(Path);
 		
