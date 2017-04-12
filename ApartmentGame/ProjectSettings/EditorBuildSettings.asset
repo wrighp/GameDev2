@@ -21,3 +21,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Teacup Room.unity
   - enabled: 1
     path: Assets/Scenes/Laundry Room.unity
+  - enabled: 1
+    path: Assets/Scenes/Mrdeer_room.unity
+  - enabled: 1
+    path: Assets/Scenes/banana_room.unity
+  - enabled: 1
+    path: Assets/Scenes/Larry_room.unity
+  - enabled: 1
+    path: Assets/Scenes/danny_room.unity
