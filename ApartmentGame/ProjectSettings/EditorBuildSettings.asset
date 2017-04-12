@@ -19,3 +19,5 @@ EditorBuildSettings:
     path: Assets/Scenes/APARTMENT outside SCENE.unity
   - enabled: 1
     path: Assets/Scenes/Teacup Room.unity
+  - enabled: 1
+    path: Assets/Scenes/Laundry Room.unity
