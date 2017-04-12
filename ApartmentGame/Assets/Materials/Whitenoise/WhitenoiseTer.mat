@@ -81,10 +81,10 @@ Material:
       second: 0.1
     - first:
         name: _AY
-      second: 0.1
+      second: 0.175
     - first:
         name: _AZ
-      second: 0.1
+      second: 0.032
     - first:
         name: _BumpScale
       second: 1
@@ -123,13 +123,13 @@ Material:
       second: 1
     - first:
         name: _PX
-      second: 50
+      second: 73.2
     - first:
         name: _PY
       second: 50
     - first:
         name: _PZ
-      second: 50
+      second: 50.7
     - first:
         name: _Parallax
       second: 0.02
@@ -138,10 +138,10 @@ Material:
       second: 50
     - first:
         name: _RY
-      second: 50
+      second: 63.2
     - first:
         name: _RZ
-      second: 50
+      second: 65.3
     - first:
         name: _RimPow
       second: 3
@@ -166,7 +166,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 1, g: 1, b: 1, a: 1}
+      second: {r: 0.9852941, g: 0.9852941, b: 0.9852941, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
@@ -178,4 +178,4 @@ Material:
       second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _UnlitColor
-      second: {r: 1, g: 1, b: 1, a: 1}
+      second: {r: 0.19896194, g: 0.58823526, b: 0.21775448, a: 1}
