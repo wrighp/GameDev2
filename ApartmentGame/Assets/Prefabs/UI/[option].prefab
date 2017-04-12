@@ -68,7 +68,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 57c1624f7615c4cfcadcaf10ef7ad769, type: 3}
     m_FontSize: 20
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
@@ -141,7 +141,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 25766d38e7405bc49ae8487304298001, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 24ae3dea8091cfc4a903150d347d0b4a, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -186,8 +186,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1623473630335436}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 34.274258}
-  m_LocalScale: {x: 1.2224264, y: 1.5433958, z: 1.2224267}
+  m_LocalPosition: {x: 0, y: 0, z: 97.20698}
+  m_LocalScale: {x: 1.9038659, y: 2.4037588, z: 1.9038663}
   m_Children:
   - {fileID: 224381208428032158}
   m_Father: {fileID: 0}

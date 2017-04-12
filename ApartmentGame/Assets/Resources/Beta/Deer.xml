@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Dialogue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <_nodes>
+    <Node>
+      <_ID>0</_ID>
+      <_text>Oh… it’s you… Come to return my book, have you…?</_text>
+      <_name>Mr Deer</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>1</_ID>
+      <_text>…</_text>
+      <_name>Mr Deer</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>2</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>2</_ID>
+      <_text>So, what DID you come here for? Something important, I hope.</_text>
+      <_name>Mr Deer</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text>I came to collect rent!</_text>
+          <_dest>3</_dest>
+        </dialogueOption>
+        <dialogueOption>
+          <_text>Fork over your rent money my dear Deer!</_text>
+          <_dest>4</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>3</_ID>
+      <_text>Oh... Right... If that’s all then, I’m very busy, I don’t have time to waste.  </_text>
+      <_name>Mr Deer</_name>
+      <_reset>5</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>-1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+      <_accomplish>DeerRent</_accomplish>
+    </Node>
+    <Node>
+      <_ID>4</_ID>
+      <_text>... Haven’t heard that one before. You should tell your jokes to someone else now. I’m sure that otter boy will appreciate your level of humour. </_text>
+      <_name>Mr Deer</_name>
+      <_reset>5</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>-1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+      <_accomplish>DeerRent</_accomplish>
+    </Node>
+    <Node>
+      <_ID>5</_ID>
+      <_text>If there isn't anything else, I really need to find my book...</_text>
+      <_name>Mr Deer</_name>
+      <_reset>5</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>-1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+	<Node>
+      <_ID>6</_ID>
+      <_text>Oh......
+You had it all along. How sneaky...
+If you wouldn't mind handing it over.......</_text>
+      <_name>Mr Deer</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>6</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+	  <_achievement>FoundBook</_achievement>
+    </Node>
+	<Node>
+      <_ID>7</_ID>
+      <_text>Tsk, tsk...resorting to petty theft, eh?</_text>
+      <_name>Mr Deer</_name>
+      <_reset>6</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>-1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+	  <_achievement>DeerRent</_achievement>
+    </Node>
+  </_nodes>
+  <_tasks>DeerRent</_tasks>
+  <_next>0</_next>
+</Dialogue>
