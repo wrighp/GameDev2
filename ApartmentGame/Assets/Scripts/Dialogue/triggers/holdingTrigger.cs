@@ -7,6 +7,7 @@ public class holdingTrigger : MonoBehaviour {
 	public string thing;
 	public npcDialogue speaker;
 	public string tableVal;
+	public string beginVal;
 	public int targetNode;
 	public int defaultNode;
 	public GameObject target;
@@ -15,14 +16,20 @@ public class holdingTrigger : MonoBehaviour {
 	{
 		if(col.tag!="Player")
 			return;
+		
+		if(!npcDialogue.tasks[beginVal])
+			return;
+		
+		
 		Debug.Log(Vector3.Distance(target.transform.position, transform.position));
 		//set the dialogue node to the target node
-		if(/*col.GetComponent<PlayerInteraction>().IsHolding(thing)*/ 
-		Vector3.Distance(target.transform.position, transform.position) < 5&& !npcDialogue.tasks[tableVal])
+		if(col.GetComponent<PlayerInteraction>().IsHolding(thing)
+			&& !npcDialogue.tasks[tableVal])
 		{
 			speaker.setReset(targetNode);
+			npcDialogue.tasks[beginVal] = false;
 		}
-		else if (!npcDialogue.tasks[tableVal] && Vector3.Distance(target.transform.position, transform.position) > 5)
+		else if (!npcDialogue.tasks[tableVal])
 		{
 			speaker.setReset(defaultNode);
 		}

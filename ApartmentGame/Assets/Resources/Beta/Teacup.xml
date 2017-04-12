@@ -103,15 +103,16 @@
       <_precalls />
       <_postcalls />
     </Node>
-    <Node>
+	<Node>
       <_ID>7</_ID>
-      <_text>Heavens, no, are you daft?! \nA rotten thief has violated my sanctuary, and as your most valued tenant I demand justice. \nChop chop.</_text>
+      <_text>Of course not!
+[small]Why do I waste my time… [/small]You’re all so useless!</_text>
       <_name>Ms Teacup</_name>
       <_reset>0</_reset>
       <_options>
         <dialogueOption>
           <_text />
-          <_dest>9</_dest>
+          <_dest>8</_dest>
         </dialogueOption>
       </_options>
       <_precalls />
@@ -119,79 +120,9 @@
     </Node>
     <Node>
       <_ID>8</_ID>
-      <_text>Did someone-- NO! \nMy tree! Just look at it! A thief has stripped my poor baby bare! \nHow could someone be so cruel…! When I get my hands on them, I’ll tear their furry little head off!</_text>
+      <_text>YES! Please just find my oranges!</_text>
       <_name>Ms Teacup</_name>
-      <_reset>0</_reset>
-      <_options>
-        <dialogueOption>
-          <_text />
-          <_dest>9</_dest>
-        </dialogueOption>
-      </_options>
-      <_precalls />
-      <_postcalls />
-    </Node>
-    <Node>
-      <_ID>9</_ID>
-      <_text>A thief…? \nThat's impossible, Ms Teacup, everyone here is so nice! </_text>
-      <_name>Danny</_name>
-      <_reset>0</_reset>
-      <_options>
-        <dialogueOption>
-          <_text />
-          <_dest>10</_dest>
-        </dialogueOption>
-      </_options>
-      <_precalls />
-      <_postcalls />
-    </Node>
-    <Node>
-      <_ID>10</_ID>
-      <_text>Don’t be daft! What could you know about the people here?</_text>
-      <_name>Ms Teacup</_name>
-      <_reset>0</_reset>
-      <_options>
-        <dialogueOption>
-          <_text />
-          <_dest>11</_dest>
-        </dialogueOption>
-      </_options>
-      <_precalls />
-      <_postcalls />
-    </Node>
-    <Node>
-      <_ID>11</_ID>
-      <_text>Mr. Deer is nice, he likes watching me play in the street!</_text>
-      <_name>Danny</_name>
-      <_reset>0</_reset>
-      <_options>
-        <dialogueOption>
-          <_text />
-          <_dest>12</_dest>
-        </dialogueOption>
-      </_options>
-      <_precalls />
-      <_postcalls />
-    </Node>
-    <Node>
-      <_ID>12</_ID>
-      <_text>[small]Why do I waste my time… [/small]You’re all so useless!</_text>
-      <_name>Ms Teacup</_name>
-      <_reset>0</_reset>
-      <_options>
-        <dialogueOption>
-          <_text />
-          <_dest>13</_dest>
-        </dialogueOption>
-      </_options>
-      <_precalls />
-      <_postcalls />
-    </Node>
-    <Node>
-      <_ID>13</_ID>
-      <_text>Just find my oranges!</_text>
-      <_name>Ms Teacup</_name>
-      <_reset>13</_reset>
+      <_reset>8</_reset>
       <_options>
         <dialogueOption>
           <_text />
@@ -200,17 +131,18 @@
       </_options>
       <_precalls />
       <_postcalls />
+	  <_achievement>LookingOrange</_achievement>
     </Node>
     <Node>
-      <_ID>15</_ID>
+      <_ID>9</_ID>
       <_text>Huh-?! \nSo you STOLE it!
 I see how it is.</_text>
       <_name>Ms Teacup</_name>
-      <_reset>15</_reset>
+      <_reset>10</_reset>
       <_options>
         <dialogueOption>
           <_text />
-          <_dest>16</_dest>
+          <_dest>10</_dest>
         </dialogueOption>
       </_options>
       <_precalls />
@@ -218,10 +150,10 @@ I see how it is.</_text>
 	  <_achievement>FoundOrange</_achievement>
     </Node>
     <Node>
-      <_ID>16</_ID>
+      <_ID>10</_ID>
       <_text>Thanks for nothing. Hmph!</_text>
       <_name>Ms Teacup</_name>
-      <_reset>15</_reset>
+      <_reset>10</_reset>
       <_options>
         <dialogueOption>
           <_text />

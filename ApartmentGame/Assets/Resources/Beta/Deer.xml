@@ -17,7 +17,7 @@
     </Node>
     <Node>
       <_ID>1</_ID>
-      <_text>…</_text>
+      <_text>. . . </_text>
       <_name>Mr Deer</_name>
       <_reset>0</_reset>
       <_options>
@@ -49,7 +49,7 @@
     </Node>
     <Node>
       <_ID>3</_ID>
-      <_text>Oh... Right... If that’s all then, I’m very busy, I don’t have time to waste.  </_text>
+      <_text>Oh... Right... If that’s all then, I’m very busy, I don’t have time to waste.</_text>
       <_name>Mr Deer</_name>
       <_reset>5</_reset>
       <_options>
@@ -70,12 +70,11 @@
       <_options>
         <dialogueOption>
           <_text />
-          <_dest>-1</_dest>
+          <_dest>5</_dest>
         </dialogueOption>
       </_options>
       <_precalls />
       <_postcalls />
-      <_accomplish>DeerRent</_accomplish>
     </Node>
     <Node>
       <_ID>5</_ID>
@@ -90,6 +89,7 @@
       </_options>
       <_precalls />
       <_postcalls />
+	  <_achievement>LookingBook</_achievement>
     </Node>
 	<Node>
       <_ID>6</_ID>

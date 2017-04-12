@@ -11437,6 +11437,7 @@ MonoBehaviour:
   thing: Book
   speaker: {fileID: 1744978980}
   tableVal: FoundBook
+  beginVal: LookingBook
   targetNode: 15
   defaultNode: 13
   target: {fileID: 1754960848}
@@ -15845,6 +15846,7 @@ MonoBehaviour:
   thing: Orange
   speaker: {fileID: 771484988}
   tableVal: FoundOrange
+  beginVal: LookingOrange
   targetNode: 6
   defaultNode: 5
   target: {fileID: 1860398994}

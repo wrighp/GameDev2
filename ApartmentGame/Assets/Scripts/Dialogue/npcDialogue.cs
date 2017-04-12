@@ -127,15 +127,20 @@ public class npcDialogue : MonoBehaviour {
 		if(ProgressManager.chapterTasks == null)
 		{
 			tasks = new Dictionary<string, bool>();
+			
+			if(ProgressManager.chapterTasks == null)
+				chapterTasks = new Dictionary<string, bool>();
+			
 			taskList = new List<string>();
 			for(int i=0; i<dialogue._tasks.Count; i++)
 			{
 				tasks[dialogue._tasks[i]] = false;
 				taskList.Add(dialogue._tasks[i]);
+				chapterTasks[dialogue._tasks[i]] = false;
 			}
 		}
 		//optimize?
-		else
+		else if (tasks!=null)
 		{
 			loadState();
 		}
@@ -317,7 +322,7 @@ public class npcDialogue : MonoBehaviour {
 					
 					selCooldown -= Time.deltaTime;
 
-					if (Input.GetButtonDown("Pickup") && !textScroll && running 
+					if (Input.GetButtonDown("Fire1") && !textScroll && running 
 						&& selCooldown<0)
 					{
 						availableOptions[index].GetComponent<Button>().onClick.Invoke();
@@ -371,8 +376,8 @@ public class npcDialogue : MonoBehaviour {
 		textScroll = true;
 		
 		while(true){
-			//if the player presses Pickup, just put the text and get out
-			if (Input.GetButtonDown("Pickup") && running){
+			//if the player presses Fire1, just put the text and get out
+			if (Input.GetButtonDown("Fire1") && running){
 				nodeText.GetComponent<Text>().text = (string)displayText;
 				yield return new WaitForSeconds(0.1f);
 				break;
@@ -440,9 +445,9 @@ public class npcDialogue : MonoBehaviour {
 		if(auto || col.tag!="Player")
 			return;
 		
-		//if the player presses "interact"/Pickup, disable player movement and
+		//if the player presses "interact"/Fire1, disable player movement and
 		//run the dialogue tree
-		if (Input.GetButtonDown("Pickup") && !running && !coolingDown){
+		if (Input.GetButtonDown("Fire1") && !running && !coolingDown){
 			Vector3 p4 = col.transform.TransformDirection(Vector3.forward);
 			float PDotN = Vector3.Dot(p4, transform.position - col.transform.position);
 			
