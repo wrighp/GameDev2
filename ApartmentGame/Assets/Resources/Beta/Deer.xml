@@ -101,7 +101,7 @@ If you wouldn't mind handing it over.......</_text>
       <_options>
         <dialogueOption>
           <_text />
-          <_dest>6</_dest>
+          <_dest>7</_dest>
         </dialogueOption>
       </_options>
       <_precalls />
@@ -112,7 +112,7 @@ If you wouldn't mind handing it over.......</_text>
       <_ID>7</_ID>
       <_text>Tsk, tsk...resorting to petty theft, eh?</_text>
       <_name>Mr Deer</_name>
-      <_reset>6</_reset>
+      <_reset>7</_reset>
       <_options>
         <dialogueOption>
           <_text />
