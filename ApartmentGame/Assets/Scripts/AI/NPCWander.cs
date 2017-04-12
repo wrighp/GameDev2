@@ -33,8 +33,9 @@ public class NPCWander : MonoBehaviour {
 		//Debug.Log(Vector3.Magnitude(nav.velocity));
 		//Debug.Log("SHT");
 		
-		if(move)
+		if(move && !npcDialogue.running)
 		{
+			nav.Resume();
 			if(wander)
 			{
 				moveTowards = false;
@@ -57,6 +58,7 @@ public class NPCWander : MonoBehaviour {
 		else
 		{
 			animator.SetFloat("MoveSpeed", 0f);
+			nav.Stop();
 		}
 	}
 	
@@ -102,10 +104,13 @@ public class NPCWander : MonoBehaviour {
 		while(distance>1f)
 		{
 			//Debug.Log("Patroling");
-			moveTo(curTarget);
-			distance = Vector3.Distance (curTarget.position, transform.position);
-			animator.SetFloat("MoveSpeed", (float) Vector3.Magnitude(nav.velocity));
-			//Debug.Log(Vector3.Magnitude(nav.velocity));
+			if(!npcDialogue.running)
+			{
+				moveTo(curTarget);
+				distance = Vector3.Distance (curTarget.position, transform.position);
+				animator.SetFloat("MoveSpeed", (float) Vector3.Magnitude(nav.velocity));
+				//Debug.Log(Vector3.Magnitude(nav.velocity));
+			}
 			yield return null;
 		}
 	}
@@ -142,12 +147,16 @@ public class NPCWander : MonoBehaviour {
 		//Debug.Log(distance);
 		while(distance>1f)
 		{
-			//Debug.Log("Patroling");
-			moveTo(target);
-			distance = Vector3.Distance (target, transform.position);
-			animator.SetFloat("MoveSpeed", (float) Vector3.Magnitude(nav.velocity));
-			//Debug.Log(Vector3.Magnitude(nav.velocity));
+			if(!npcDialogue.running)
+			{
+				//Debug.Log("Patroling");
+				moveTo(target);
+				distance = Vector3.Distance (target, transform.position);
+				animator.SetFloat("MoveSpeed", (float) Vector3.Magnitude(nav.velocity));
+				//Debug.Log(Vector3.Magnitude(nav.velocity));
+			}
 			yield return null;
+			
 		}
 	}
 	

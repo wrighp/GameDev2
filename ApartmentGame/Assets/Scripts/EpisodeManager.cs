@@ -18,7 +18,10 @@ public class EpisodeManager : MonoBehaviour {
 	// Use this for initialization
 	//deactivate the previous objects, set the chapter tasks as null to be loaded
 	//by the dialogue objects
-	void Start () {
+	void Awake () {
+		//Debug.Log("LOADING EPISODE");
+		if(current == null)
+			current = Episodes[0];
 		current.SetActive(false);
 		current = Episodes[epNum];
 		current.SetActive(true);

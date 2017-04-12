@@ -10,7 +10,15 @@ public class LoadScene : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider col){
 		Debug.Log(col.tag);
-		if(col.tag == "Player" && Input.GetButtonDown("Pickup")){
+		if(col.tag!="Player")
+			return;
+		
+		Vector3 p4 = col.transform.TransformDirection(Vector3.forward);
+		float PDotN = Vector3.Dot(p4, transform.position - col.transform.position);
+		
+		if(Input.GetButtonDown("Pickup")
+			&& PDotN>0.25)
+		{
 			npcDialogue.saveState();
 			//preserve.Instance.transitions+=1;
 			//SceneManager.LoadScene(scene);

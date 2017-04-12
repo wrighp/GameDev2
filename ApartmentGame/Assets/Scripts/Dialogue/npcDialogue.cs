@@ -59,6 +59,7 @@ public class npcDialogue : MonoBehaviour {
 	//trigger area
 	public bool auto = false;
 	public static bool running = false;
+	public static bool endEpisode = false;
 	private bool textScroll = false;
 	
 	//the list of tasks and achievements the player has accomplished or rather, hasn't
@@ -249,7 +250,10 @@ public class npcDialogue : MonoBehaviour {
 		yield return new WaitForEndOfFrame();
 		
 		if(animator!=null)
-			animator.Play("conversation");
+		{
+			//animator.SetBool("InConversation", true);
+			animator.Play("Conversation");
+		}
 		
 		dialogueWindow.SetActive(true);
 		
@@ -341,6 +345,12 @@ public class npcDialogue : MonoBehaviour {
 		dialogueCamera.gameObject.SetActive(false);
 		dialogueWindow.SetActive(false); 
 		GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = true;
+		
+		if(endEpisode)
+		{
+			var canvas = GameObject.Find("Canvas");
+			canvas.transform.Find("EndDay").gameObject.SetActive(true);
+		}
 		
 		if(animator!=null)
 			animator.Play("idle");
@@ -473,6 +483,7 @@ public class npcDialogue : MonoBehaviour {
 				return;
 		}
 		Debug.Log("YOU DID IT!");
+		endEpisode = true;
 		//end the game
 		//SceneManager.LoadScene("Win");
 	}
