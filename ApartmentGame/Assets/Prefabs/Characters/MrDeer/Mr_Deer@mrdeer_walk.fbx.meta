@@ -102,7 +102,7 @@ ModelImporter:
     13700004: glasses
     13700006: tail
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:

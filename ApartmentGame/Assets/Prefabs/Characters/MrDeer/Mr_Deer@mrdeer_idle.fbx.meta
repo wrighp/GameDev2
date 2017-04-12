@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f44bc6413df5741388b3f7d67e580778
-timeCreated: 1491558775
+guid: 306f2d8da401a4916a418d72250b4f96
+timeCreated: 1491558773
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -95,14 +95,14 @@ ModelImporter:
     4300002: glasses
     4300004: tail
     4300006: antlers
-    7400000: mrdeer_convo
+    7400000: mrdeer_idle
     9500000: //RootNode
     13700000: antlers
     13700002: body_mesh
     13700004: glasses
     13700006: tail
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -115,7 +115,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -123,10 +123,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: mrdeer_convo
+      name: mrdeer_idle
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 40
+      lastFrame: 74
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

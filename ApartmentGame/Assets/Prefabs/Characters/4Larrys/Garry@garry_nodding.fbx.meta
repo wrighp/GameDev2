@@ -122,7 +122,7 @@ ModelImporter:
     13700002: body
     13700004: head
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
