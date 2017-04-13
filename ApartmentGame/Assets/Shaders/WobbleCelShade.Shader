@@ -195,15 +195,11 @@
 				//remove the saturate and dot for circumference lighting
 				float3 rimLight = saturate(dot(normalD, lightD) * _RimCol.xyz *
 					pow(rim, _RimPow));
-					
-				// compute shadow attenuation (1.0 = fully lit, 0.0 = fully shadowed)
-                fixed shd = SHADOW_ATTENUATION(i);	
-				int shadow = (int) (shd+0.5);
 				
 				float3 lightFinal = rimLight + (
-					lerp(_UnlitColor.rgb, diffuseReflection, shadow)
+					diffuseReflection
 					) + specularReflection 
-					 +ambientLight * shadow;
+					 +ambientLight;
 					//UNITY_LIGHTMODEL_AMBIENT;
 					
 				//lightFinal = (ambientLight + diffuseReflection) * outlineStr + specularReflection

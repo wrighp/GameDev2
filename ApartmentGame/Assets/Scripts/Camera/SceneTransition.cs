@@ -30,10 +30,12 @@ public class SceneTransition : MonoBehaviour
 	{
 		currentScene = SceneManager.GetActiveScene();
 		//call scene.name
-		
-		popup = canvas.transform.Find("Popup").gameObject;
-		popup.transform.Find("[popupText]").gameObject.GetComponent<Text>().text = 
-					currentScene.name;
+		if(canvas.transform.Find("Popup")!=null)
+		{
+			popup = canvas.transform.Find("Popup").gameObject;
+			popup.transform.Find("[popupText]").gameObject.GetComponent<Text>().text = 
+						currentScene.name;
+		}
 		
 		cutoff = TransitionMaterial.GetFloat("_Cutoff");
 		if(cutoff > 1 && playOnStart)

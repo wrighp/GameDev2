@@ -304,7 +304,7 @@ public class npcDialogue : MonoBehaviour {
 			{
 				if(!textScroll)
 				{
-					availableOptions[index].GetComponent<Button>().Select();
+					//availableOptions[index].GetComponent<Button>().Select();
 						
 					direction = -(int) Input.GetAxisRaw("Vertical");
 							
@@ -380,7 +380,7 @@ public class npcDialogue : MonoBehaviour {
 		textScroll = true;
 		
 		//================================================================TEXT DELAYS ==========
-		float dDelay = 0.0001f;
+		float dDelay = 0.1f;
 		float pDelay = 0.3f;
 		
 		while(true){
@@ -399,7 +399,7 @@ public class npcDialogue : MonoBehaviour {
 			//otherwise go normally
 			else{
 				nodeText.GetComponent<Text>().text += displayText[index];
-				Source.PlayOneShot(Voice);
+				//Source.PlayOneShot(Voice);
 			}
 			
 			if((displayText[index] == '!' || displayText[index] == '?' ||
