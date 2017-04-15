@@ -15,7 +15,8 @@ public class ProgressManager : MonoBehaviour {
 	public static Dictionary<string, bool> tasks;
 	public static Dictionary<string, bool> chapterTasks;
 	public static List<string> taskList;
-
+	
+	public static int doorID;
 	
 	void Awake(){
 		if(Instance == null){
@@ -25,5 +26,11 @@ public class ProgressManager : MonoBehaviour {
 		else if(Instance!=this){
 			Destroy(gameObject);
 		}
+	}
+	
+	public static void setPlayerLocation(GameObject player)
+	{
+		//GameObject player = GameObject.FindGameObjectsWithTag("player")[0];
+		player.transform.position = LoadScene.doors[doorID].position;
 	}
 }

@@ -37,4 +37,11 @@ public class EpisodeManager : MonoBehaviour {
 		epNum+=1;
 	}
 	
+	public static void SetPlayerLocation()
+	{
+		
+		
+		return;
+	}
+	
 }

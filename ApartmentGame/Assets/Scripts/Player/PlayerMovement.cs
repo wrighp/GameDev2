@@ -7,6 +7,8 @@ using UnityEngine;
 /// </summary>
 [RequireComponent (typeof (Rigidbody))]
 public class PlayerMovement : MonoBehaviour {
+	
+	public static PlayerMovement Instance;
 
 	public Camera cam;
 	public float acceleration;
@@ -19,15 +21,38 @@ public class PlayerMovement : MonoBehaviour {
 	private Animator animator;
 	private Rigidbody rb;
 	private float horizontalSpeed;
+	
+	//testing persistant stuff
+	void Awake()
+	{
+		if(Instance == null){
+			DontDestroyOnLoad (gameObject);
+			Instance = this;
+		}
+		else if(Instance!=this){
+			Destroy(gameObject);
+		}
+	}
+	
+	
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
 		cam = cam ?? Camera.main;
 		animator = GetComponentInChildren<Animator> ();
 	}
+	
+	void OnLevelWasLoaded()
+	{
+		ProgressManager.setPlayerLocation(this.gameObject);
+	}
 
 	// Update is called once per frame
 	void Update () {
+		
+		if(cam == null)
+			cam = Camera.main;
+		
 		//Animations here
 		float speedAmount = horizontalSpeed/maxSpeed;
 		animator.SetFloat("MoveSpeed", speedAmount);

@@ -52,7 +52,7 @@ public class PlayerInteraction : MonoBehaviour {
 			}
 			Vector3 throwVector = (transform.forward + new Vector3(0,angle,0f)).normalized;
 
-			if(Input.GetButton("Fire1") || triggerDown){
+			if((Input.GetButton("Throw") || triggerDown) && !npcDialogue.running){
 				ThrowGuide(throwVector, transform.forward);
 				line.enabled = true;
 			}

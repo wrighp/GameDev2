@@ -6,6 +6,8 @@ using System.Collections;
 /// </summary>
 [AddComponentMenu("Camera-Control/Mouse Orbit with zoom")]
 public class MouseOrbitImproved : MonoBehaviour {
+	
+	public static MouseOrbitImproved Instance;
 
 	public Transform target;
 	public LayerMask cameraCollisionLayer;
@@ -26,6 +28,16 @@ public class MouseOrbitImproved : MonoBehaviour {
 
 	float x = 0.0f;
 	float y = 0.0f;
+	
+	void Awake()
+	{
+		if(Instance == null){
+			DontDestroyOnLoad (gameObject);
+			Instance = this;
+		}
+		else if(Instance!=this)
+			Destroy(gameObject);
+	}
 
 	// Use this for initialization
 	void Start () 
