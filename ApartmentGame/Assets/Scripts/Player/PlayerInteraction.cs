@@ -17,6 +17,9 @@ public class PlayerInteraction : MonoBehaviour {
 	float cooldown = 0;
 	bool triggerDown = false; //Was Throw trigger held down last frame
 	LineRenderer line;
+	
+	bool aimingR = false;
+	bool aimingL = false;
 	// Use this for initialization
 	void Start () {
 		line = GetComponentInChildren<LineRenderer>();
@@ -55,11 +58,13 @@ public class PlayerInteraction : MonoBehaviour {
 			if((Input.GetButton("Throw") || triggerDown) && !npcDialogue.running){
 				ThrowGuide(throwVector, transform.forward);
 				line.enabled = true;
+				aimingR = true;
 			}
 			else{
 				line.enabled = false;
+				aimingR = false;
 			}
-			if(Input.GetButtonUp("Throw") || throwReleased){
+			if(/*Input.GetButtonUp("Throw") || throwReleased*/aimingR && Input.GetButton("Pickup")){
 				throwReleased = false;
 				//Debug.Log("Thrown");
 				//Map 10-15 to 45-0
@@ -168,12 +173,16 @@ public class PlayerInteraction : MonoBehaviour {
 	//check to see if the player is holding a certain item
 	public bool IsHolding(string itemName)
 	{
+		//Debug.Log("Checking item "+ itemName);
 		if(!pickedUp)
 			return false;
 		
 		if(item1.GetComponent<tmpItem>().name!=null &&
 			item1.GetComponent<tmpItem>().name == itemName)
-			return true;
+			{
+				//Debug.Log("player is holding " + itemName);
+				return true;
+			}
 		else
 			return false;
 	}

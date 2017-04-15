@@ -26,13 +26,16 @@ public class holdingTrigger : MonoBehaviour {
 		if(npcDialogue.tasks.ContainsKey(tableVal))
 			Destroy(this);
 		
+		//Debug.Log(col.GetComponentsInChildren<PlayerInteraction>()[0].IsHolding(thing));
+		
 		//Debug.Log(Vector3.Distance(target.transform.position, transform.position));
 		//set the dialogue node to the target node
-		if(col.GetComponent<PlayerInteraction>().IsHolding(thing)
+		if(col.GetComponentsInChildren<PlayerInteraction>()[0].IsHolding(thing)
 		/*Vector3.Distance(target.transform.position, transform.position) < 5*/
-			&& npcDialogue.tasks[beginVal])
+			//&& npcDialogue.tasks[beginVal]
+			)
 		{
-			Debug.Log("Wa wa we wa");
+			//Debug.Log("Wa wa we wa");
 			speaker.setReset(targetNode);
 			npcDialogue.tasks[beginVal] = false;
 		}
