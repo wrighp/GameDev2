@@ -5529,7 +5529,7 @@ MonoBehaviour:
   fadeOut: 1
   play: 0
   playOnStart: 1
-  cutoff: -0.035581734
+  cutoff: -0.027030405
 --- !u!114 &426459814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10669,7 +10669,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4959248294023944, guid: c4a0836f9e3f35c4a90658bd3b01f59a, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114472655697928290, guid: c4a0836f9e3f35c4a90658bd3b01f59a,
         type: 2}
@@ -10681,12 +10681,22 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 1860398994}
+    - target: {fileID: 114472655697928290, guid: c4a0836f9e3f35c4a90658bd3b01f59a,
+        type: 2}
+      propertyPath: dialogueCamera
+      value: 
+      objectReference: {fileID: 771484988}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4a0836f9e3f35c4a90658bd3b01f59a, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &771484987 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4959248294023944, guid: c4a0836f9e3f35c4a90658bd3b01f59a,
+    type: 2}
+  m_PrefabInternal: {fileID: 771484986}
+--- !u!20 &771484988 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 20748561127051830, guid: c4a0836f9e3f35c4a90658bd3b01f59a,
     type: 2}
   m_PrefabInternal: {fileID: 771484986}
 --- !u!1 &784373739
@@ -13098,6 +13108,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114523930820647258, guid: 281b3e18c027c7e44a867974445f93ba,
+        type: 2}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1874858305}
+    - target: {fileID: 114367400116179154, guid: 281b3e18c027c7e44a867974445f93ba,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1754960848}
     - target: {fileID: 114713620409583454, guid: 281b3e18c027c7e44a867974445f93ba,
         type: 2}
       propertyPath: route.Array.data[0]
@@ -13108,16 +13128,10 @@ Prefab:
       propertyPath: route.Array.data[1]
       value: 
       objectReference: {fileID: 1194638039}
-    - target: {fileID: 114367400116179154, guid: 281b3e18c027c7e44a867974445f93ba,
-        type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1754960848}
-    - target: {fileID: 114523930820647258, guid: 281b3e18c027c7e44a867974445f93ba,
-        type: 2}
-      propertyPath: mainCamera
-      value: 
-      objectReference: {fileID: 1874858305}
+    - target: {fileID: 1685135068776826, guid: 281b3e18c027c7e44a867974445f93ba, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 281b3e18c027c7e44a867974445f93ba, type: 2}
   m_IsPrefabParent: 0
