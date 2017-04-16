@@ -539,7 +539,7 @@ MonoBehaviour:
   fadeOut: 1
   play: 0
   playOnStart: 0
-  cutoff: -0.010242868
+  cutoff: -0.027030405
 --- !u!1 &1045069223
 GameObject:
   m_ObjectHideFlags: 0
@@ -3485,7 +3485,7 @@ Prefab:
     - target: {fileID: 224646403739543898, guid: d9518a1eaceaabf44877ef4ddbf98327,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: -1214.692
+      value: -1214.653
       objectReference: {fileID: 0}
     - target: {fileID: 224646403739543898, guid: d9518a1eaceaabf44877ef4ddbf98327,
         type: 2}

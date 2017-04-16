@@ -475,7 +475,7 @@ public class npcDialogue : MonoBehaviour {
 			}
 			//if the player is too close to raycast, it's probably alright
 			else if(Vector3.Distance(col.transform.position, transform.position) < 2
-				&& PDotN>0.25)
+				&& PDotN>0.75)
 			{
 				mainCamera.gameObject.SetActive(false);
 				dialogueCamera.gameObject.SetActive(true);

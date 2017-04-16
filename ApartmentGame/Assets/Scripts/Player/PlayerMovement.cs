@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		horizontalSpeed = hVel.magnitude;
 		float max = maxSpeed;
-		if(animator.GetFloat("RunTime") > 8){
+		if(animator.GetFloat("RunTime") > 7){
 			if(!particleChild){
 				particleChild = (GameObject)GameObject.Instantiate(particleTrail,transform, false);
 			}

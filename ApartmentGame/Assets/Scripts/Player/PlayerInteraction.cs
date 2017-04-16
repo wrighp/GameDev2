@@ -63,6 +63,11 @@ public class PlayerInteraction : MonoBehaviour {
 		if(cooldownL<0){
 			cooldownL = 0;
 		}
+		
+		if(item1 != null && item2 != null && triggerDown && triggerDownLeft)
+		{
+			Debug.Log("Fusion!");
+		}
 			
 		if(pickedUpRight){
 			throwLogic("Throw", item1, true);
@@ -80,7 +85,7 @@ public class PlayerInteraction : MonoBehaviour {
 		{
 			pickedUpLeft = true;
 		}
-			
+		
 	}
 	
 	void throwLogic(string Axis, GameObject item, bool right)
