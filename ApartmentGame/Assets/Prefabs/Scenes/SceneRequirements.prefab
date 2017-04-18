@@ -1166,7 +1166,7 @@ MonoBehaviour:
   fadeOut: 1
   play: 0
   playOnStart: 1
-  cutoff: -0.0009890236
+  cutoff: -0.02503689
 --- !u!114 &114240580817451800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1784,7 +1784,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -167, y: -54}
+  m_AnchoredPosition: {x: -167, y: -45}
   m_SizeDelta: {x: 1060, y: 285}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224833164937852002
