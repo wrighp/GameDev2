@@ -29,7 +29,7 @@ public class NPCWander : MonoBehaviour {
 	// Update is called once per frame
 	//play animation if velocity is 0, otherwise don't
 	void Update () {
-		animator.SetFloat("MoveSpeed", Vector3.Magnitude(nav.velocity));	
+		animator.SetFloat("MoveSpeed", Vector3.Magnitude(nav.velocity)/nav.speed);	
 		//Debug.Log(Vector3.Magnitude(nav.velocity));
 		//Debug.Log("SHT");
 		
