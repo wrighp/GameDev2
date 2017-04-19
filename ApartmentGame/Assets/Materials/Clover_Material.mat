@@ -7,11 +7,12 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Clover_Material
-  m_Shader: {fileID: 4800000, guid: 358144b8871302744a71100c033b81e0, type: 3}
-  m_ShaderKeywords: _ALPHATEST_ON _EMISSION _GLOSSYREFLECTIONS_OFF _NORMALMAP _SPECULARHIGHLIGHTS_OFF
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _ALPHATEST_ON _GLOSSYREFLECTIONS_OFF _NORMALMAP _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2450
+  stringTagMap:
+    RenderType: TransparentCutout
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -202,10 +203,10 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0.44221604, g: 0.78676474, b: 0.052065317, a: 1}
+      second: {r: 0.4434098, g: 0.78676474, b: 0.16443382, a: 1}
     - first:
         name: _EmissionColor
-      second: {r: 0.39525786, g: 0.5514706, b: 0.32033953, a: 1}
+      second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _RimCol
       second: {r: 1, g: 1, b: 1, a: 1}
