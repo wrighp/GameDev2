@@ -16,7 +16,7 @@ TagManager:
   - Collision
   - CameraCollision
   - NPC
-  - 
+  - CameraAndNormalCollision
   - 
   - 
   - 
