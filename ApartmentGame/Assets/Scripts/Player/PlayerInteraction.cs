@@ -313,6 +313,11 @@ public class PlayerInteraction : MonoBehaviour {
 
 	void ReleaseItem (GameObject item)
 	{
+		IndicatorOverlay overlay = item.GetComponent<IndicatorOverlay> ();
+		if(overlay != null){
+			//For displaying icon over object
+			overlay.display = true;
+		}
 		item.transform.parent = null;
 		item.GetComponent<Rigidbody>().velocity = Vector3.zero;
 		item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
