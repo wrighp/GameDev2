@@ -33,6 +33,8 @@
 		_RimCol("Rim Colour", Color) = (1, 1, 1, 1)
 		_RimPow("Rim Power", Range(0.1, 10.0)) = 3.0
 		
+		_TexBlend("TexBlend", Range(0, 1)) = 0.0
+		
 	}
 	SubShader {
 		
@@ -73,6 +75,8 @@
 			uniform float _PZ;
 			uniform float _RZ;
 			uniform float _AZ;
+			
+			uniform float _TexBlend;
 			
 			uniform float _Magnitude;
 			
@@ -221,10 +225,16 @@
 				
 				float3 finalAddition = lerp(float3(1, 1, 1), dotL*attenuation, 
 					_WorldSpaceLightPos0.w);
+				
 				//get the texture
 				//textureMaps
-				float4 tex = tex2D(_MainTex, i.tex.xy * _MainTex_ST.xy + 
+				float4 main = tex2D(_MainTex, i.tex.xy * _MainTex_ST.xy + 
 					_MainTex_ST.zw);
+				
+				float4 noise = tex2D(_DisplaceTex, i.tex.xy * _DisplaceTex_ST + 
+					_DisplaceTex_ST.zw);
+				
+				float4 tex = lerp(main, noise, _TexBlend);
 					
 				//discard transparent pixels ======================================= TRANSPARENCY
 				if(tex.a == 0)
