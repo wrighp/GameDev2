@@ -16,7 +16,7 @@
 		<Node>
 			<_ID>1</_ID>
 			<_name></_name>
-			<_text>I should fill this up</_text>
+			<_text>I should probably fill this up...</_text>
 			<_reset>2</_reset>
 			<_options><dialogueOption><_dest>-1</_dest></dialogueOption></_options>
 			<_precalls>
@@ -28,7 +28,7 @@
 		<Node>
 			<_ID>2</_ID>
 			<_name></_name>
-			<_text>Maybe later</_text>
+			<_text>...tomorrow</_text>
 			<_reset>2</_reset>
 			<_options><dialogueOption><_dest>-1</_dest></dialogueOption></_options>
 			<_precalls>
