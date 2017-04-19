@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Dialogue>
+	<_nodes>
+		<Node>
+			<_ID>0</_ID>
+			<_name></_name>
+			<_text>...empty</_text>
+			<_reset>1</_reset>
+			<_options><dialogueOption><_dest>-1</_dest></dialogueOption></_options>
+			<_precalls>
+			</_precalls>
+			<_postcalls>
+			</_postcalls>
+		</Node>
+		
+		<Node>
+			<_ID>1</_ID>
+			<_name></_name>
+			<_text>garbage text 2</_text>
+			<_reset>2</_reset>
+			<_options><dialogueOption><_dest>-1</_dest></dialogueOption></_options>
+			<_precalls>
+			</_precalls>
+			<_postcalls>
+			</_postcalls>
+		</Node>
+		
+		<Node>
+			<_ID>2</_ID>
+			<_name></_name>
+			<_text>garbage text 3</_text>
+			<_reset>2</_reset>
+			<_options><dialogueOption><_dest>-1</_dest></dialogueOption></_options>
+			<_precalls>
+			</_precalls>
+			<_postcalls>
+			</_postcalls>
+		</Node>
+
+	</_nodes>
+</Dialogue>
