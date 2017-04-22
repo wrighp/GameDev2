@@ -5,13 +5,16 @@ using UnityEngine.UI;
 
 public class LookAtCamera : MonoBehaviour {
 	
-	public Camera camera;
+	//public Camera camera;
 	public Transform target;
 	public float yOffset = 0;
 	
 	// Use this for initialization
 	void Start () {
-		transform.SetParent(target);
+		if(target!=null)
+			transform.SetParent(target);
+		else
+			target = transform.parent;
 	}
 	
 	// Update is called once per frame

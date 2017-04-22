@@ -22,6 +22,10 @@ public class EpisodeManager : MonoBehaviour {
 		//Debug.Log("LOADING EPISODE");
 		if(current == null)
 			current = Episodes[0];
+		
+		if(current == null)
+			return;
+		
 		current.SetActive(false);
 		current = Episodes[epNum];
 		current.SetActive(true);

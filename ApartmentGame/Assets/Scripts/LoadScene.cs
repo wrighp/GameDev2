@@ -16,7 +16,8 @@ public class LoadScene : MonoBehaviour {
 		if(doors == null)
 			doors = new Dictionary<int, Transform>();
 		
-		doors[doorID] = this.gameObject.transform.GetChild(0);
+		if(transform.childCount > 0)
+			doors[doorID] = this.gameObject.transform.GetChild(0);
 	}
 	
 	void OnTriggerStay(Collider col){

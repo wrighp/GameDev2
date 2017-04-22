@@ -153,6 +153,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &491889457 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1718263710946720, guid: 54f82b6e9b84cb8479d4bd961c6a748b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1560931816}
+--- !u!114 &491889459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 491889457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c62c517da892e6441807e5581fb633b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: Demo/Part1A/Danny
+  dialogueWindow: {fileID: 0}
+  bigBox: {fileID: 1429921127097024, guid: acc80d592499ee04680b645bf490d880, type: 2}
+  smallBox: {fileID: 1429921127097024, guid: acc80d592499ee04680b645bf490d880, type: 2}
+  background: 1
+  auto: 1
+  scripts: []
 --- !u!224 &525154325 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224646403739543898, guid: d9518a1eaceaabf44877ef4ddbf98327,
@@ -736,7 +759,7 @@ Prefab:
     - target: {fileID: 224646403739543898, guid: d9518a1eaceaabf44877ef4ddbf98327,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: -1078.678
+      value: -1214.653
       objectReference: {fileID: 0}
     - target: {fileID: 224646403739543898, guid: d9518a1eaceaabf44877ef4ddbf98327,
         type: 2}
@@ -775,7 +798,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1905344328228412, guid: d9518a1eaceaabf44877ef4ddbf98327, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1070291836702326, guid: d9518a1eaceaabf44877ef4ddbf98327, type: 2}
       propertyPath: m_Name

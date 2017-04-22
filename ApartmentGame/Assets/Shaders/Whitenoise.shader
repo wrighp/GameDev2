@@ -232,12 +232,12 @@
 					_MainTex_ST.zw);
 				
 				float4 noise = tex2D(_DisplaceTex, i.tex.xy * _DisplaceTex_ST + 
-					_DisplaceTex_ST.zw);
+					_DisplaceTex_ST.zw + _Time.xy);
 				
 				float4 tex = lerp(main, noise, _TexBlend);
 					
 				//discard transparent pixels ======================================= TRANSPARENCY
-				if(tex.a == 0)
+				if(tex.a < 0.5)
 					discard;
 				
 				return float4(tex.xyz * lightFinal * _Color.rgb * finalAddition, 1.0);
