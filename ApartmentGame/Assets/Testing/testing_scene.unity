@@ -426,6 +426,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.899
       objectReference: {fileID: 0}
+    - target: {fileID: 1896608679955008, guid: dfa87cd262e920a4b9dc57e424db0d60, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dfa87cd262e920a4b9dc57e424db0d60, type: 2}
   m_IsPrefabParent: 0
@@ -653,6 +657,37 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 36414883}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &36606710 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1879574762821884, guid: 430332cd57ca4ea44a0e22aa3845fe76,
+    type: 2}
+  m_PrefabInternal: {fileID: 599046637}
+--- !u!114 &36606711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 36606710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b401773d41b4528a7dfca44eec52b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1874858305}
+  acceleration: 32
+  maxSpeed: 7
+  forceMode: 5
+  jumpMask:
+    serializedVersion: 2
+    m_Bits: 256
+  jumpForce: 0
+  particleTrail: {fileID: 1720475460875186, guid: e7d59ee91359f4c46a25e0725380239a,
+    type: 2}
+--- !u!136 &36606716 stripped
+CapsuleCollider:
+  m_PrefabParentObject: {fileID: 136901308561756936, guid: 430332cd57ca4ea44a0e22aa3845fe76,
+    type: 2}
+  m_PrefabInternal: {fileID: 599046637}
 --- !u!4 &39977827 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4860735469673404, guid: 307db1ce08fba6643a61ef014ecc3826,
@@ -2404,6 +2439,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 187316673}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &193700358 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4772453833365596, guid: 430332cd57ca4ea44a0e22aa3845fe76,
+    type: 2}
+  m_PrefabInternal: {fileID: 599046637}
 --- !u!1 &205401441
 GameObject:
   m_ObjectHideFlags: 0
@@ -6765,6 +6805,16 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114294035643194254, guid: 430332cd57ca4ea44a0e22aa3845fe76,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114779644892257818, guid: 430332cd57ca4ea44a0e22aa3845fe76,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 430332cd57ca4ea44a0e22aa3845fe76, type: 2}
   m_IsPrefabParent: 0
@@ -9182,6 +9232,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 794619462}
   m_Mesh: {fileID: 4300000, guid: f59af9af3e1274c44928ba596a7482a2, type: 3}
+--- !u!4 &795042756 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4821798349917078, guid: 430332cd57ca4ea44a0e22aa3845fe76,
+    type: 2}
+  m_PrefabInternal: {fileID: 599046637}
 --- !u!1 &805253903
 GameObject:
   m_ObjectHideFlags: 0
@@ -21875,6 +21930,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1992341213}
   m_Mesh: {fileID: 4300000, guid: f59af9af3e1274c44928ba596a7482a2, type: 3}
+--- !u!1 &1997134988 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1097341581141384, guid: 430332cd57ca4ea44a0e22aa3845fe76,
+    type: 2}
+  m_PrefabInternal: {fileID: 599046637}
+--- !u!114 &1997134995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1997134988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 718dc6bed4e8d463ba4baa8a6e976888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentCollider: {fileID: 36606716}
+  rightHand: {fileID: 193700358}
+  leftHand: {fileID: 795042756}
+  item1: {fileID: 0}
+  item2: {fileID: 0}
+  maxAngle: 70
+  force: 1
+  guideTime: 1.5
+  guideSegments: 20
+  downTime: 0
+  upTime: 0
+  pressTime: 0
 --- !u!1 &2006826116
 GameObject:
   m_ObjectHideFlags: 0
