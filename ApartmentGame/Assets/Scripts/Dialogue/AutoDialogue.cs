@@ -16,6 +16,7 @@ public class AutoDialogue : MonoBehaviour {
 	//the dialogue tree that's being referenced
 	Dialogue dialogue;
 	//and its path
+	public Color color = new Color(0.2F, 0.3F, 0.4F, 0.5F);
 	public string Path;
 	
 	//the dialogue window to be used
@@ -24,6 +25,11 @@ public class AutoDialogue : MonoBehaviour {
 	//dialogue boxes to be instantiated with the correct text
 	public GameObject bigBox;
 	public GameObject smallBox;
+	
+	//================================================================TEXT DELAYS ==========
+	public float dDelay = 0.1f;
+	public float pDelay = 0.3f;
+	public float nDelay = 0.75f;
 	
 	public float yOffset = 1.5f;
 	
@@ -77,6 +83,11 @@ public class AutoDialogue : MonoBehaviour {
 			smallBox.GetComponent<LookAtCamera>().yOffset = yOffset;
 			
 			nodeText = bigBox.transform.Find("Box").gameObject.transform.Find("Text").gameObject;
+			
+			bigBox.transform.Find("Box").gameObject.GetComponent<Image>().color = color;
+			
+			bigBox.SetActive(false);
+			smallBox.SetActive(false);
 		}
 		
 		
@@ -86,6 +97,9 @@ public class AutoDialogue : MonoBehaviour {
 	
 	public void runDialogue()
 	{
+		bigBox.SetActive(true);
+		//smallBox.SetActive(true);
+		
 		runCoroutine = run();
 		StartCoroutine(runCoroutine);
 	}
@@ -94,6 +108,9 @@ public class AutoDialogue : MonoBehaviour {
 	{
 		if(runCoroutine!=null)
 			StopCoroutine(runCoroutine);
+		
+		bigBox.SetActive(false);
+		//smallBox.SetActive(false);
 	}
 	
 	//run the dialogue tree coroutine
@@ -115,7 +132,7 @@ public class AutoDialogue : MonoBehaviour {
 				yield return null;
 			}
 			nodeID = current._options[0]._dest;
-			yield return new WaitForSeconds(0.75f);
+			yield return new WaitForSeconds(nDelay);
 		}
 	}
 	
@@ -137,10 +154,6 @@ public class AutoDialogue : MonoBehaviour {
 		
 		nodeText.GetComponent<Text>().text = "";
 		textScroll = true;
-		
-		//================================================================TEXT DELAYS ==========
-		float dDelay = 0.1f;
-		float pDelay = 0.3f;
 		
 		while(true){
 			//deal with newline character

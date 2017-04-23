@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: WhitenoiseTer
-  m_Shader: {fileID: 4800000, guid: 4ada174349f4a834f86be0a0f548aa48, type: 3}
+  m_Shader: {fileID: 4800000, guid: 358144b8871302744a71100c033b81e0, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -157,6 +157,9 @@ Material:
     - first:
         name: _SrcBlend
       second: 1
+    - first:
+        name: _TexBlend
+      second: 0
     - first:
         name: _UVSec
       second: 0
