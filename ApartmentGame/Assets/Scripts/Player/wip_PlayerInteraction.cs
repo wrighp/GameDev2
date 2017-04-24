@@ -88,17 +88,18 @@ public class wip_PlayerInteraction : MonoBehaviour {
 				{	
 					throwLogic("ThrowL", item2, false);
 				}
-				
-				
-				
-				if(Input.GetButtonUp("ThrowL"))
+				else{
+					aimingL = false;
+					line.enabled = false;
+				}
+
+				if(/*Input.GetButtonUp("ThrowL")*/Input.GetButtonDown("PickupL")
+					&&aimingL)
 				{	
 					Throw(item2, false);
 				}
 				
-				
-				
-				if(Input.GetButtonDown("PickupL"))
+				else if(Input.GetButtonDown("PickupL"))
 				{	
 					ReleaseItem(item2);
 					item2 = null;
@@ -111,12 +112,18 @@ public class wip_PlayerInteraction : MonoBehaviour {
 				{
 					throwLogic("Throw", item1,true);
 				}
+				else
+				{
+					aimingR = false;
+					line.enabled = false;
+				}
 				
-				if(Input.GetButtonUp("Throw")){
+				if(/*Input.GetButtonUp("Throw")*/Input.GetButtonDown("Pickup")
+					&& aimingR){
 					Throw(item1, true);
 				}
 				
-				if(Input.GetButtonDown("Pickup")){
+				else if(Input.GetButtonDown("Pickup")){
 					ReleaseItem(item1);
 					item1 = null;
 				}
