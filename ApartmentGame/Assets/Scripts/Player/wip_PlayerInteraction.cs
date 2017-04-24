@@ -72,39 +72,54 @@ public class wip_PlayerInteraction : MonoBehaviour {
 		//if dialogue is running, ignore all of this
 		if(!npcDialogue.running)
 		{
-		
-			if(item1 != null && item2 != null && triggerDown && triggerDownLeft)
+			if(pickedUpLeft && pickedUpRight)
 			{
-				Debug.Log("Fusion!");
+				if(Input.GetButton("ThrowL") && Input.GetButton("Throw"))
+				{
+					Debug.Log("Fusion!");
+					//pickedUpRight = false;
+					//pickedUpLeft = false;
+				}
 			}
+			
+			if(pickedUpLeft)
+			{
+				if(Input.GetButton("ThrowL"))
+				{	
+					throwLogic("ThrowL", item2, false);
+				}
 				
-			if(pickedUpRight && Input.GetButton("Throw")){
-				throwLogic("Throw", item1,true);
+				
+				
+				if(Input.GetButtonUp("ThrowL"))
+				{	
+					Throw(item2, false);
+				}
+				
+				
+				
+				if(Input.GetButtonDown("PickupL"))
+				{	
+					ReleaseItem(item2);
+					item2 = null;
+				}
 			}
 			
-			if(pickedUpLeft && Input.GetButton("ThrowL"))
-			{	
-				throwLogic("ThrowL", item2, false);
-			}
-			
-			if(pickedUpRight && Input.GetButtonUp("Throw")){
-				Throw(item1, true);
-			}
-			
-			if(pickedUpLeft && Input.GetButtonUp("ThrowL"))
-			{	
-				Throw(item2, false);
-			}
-			
-			if(pickedUpRight && Input.GetButtonDown("Pickup")){
-				ReleaseItem(item1);
-				item1 = null;
-			}
-			
-			if(pickedUpLeft && Input.GetButtonDown("PickupL"))
-			{	
-				ReleaseItem(item2);
-				item2 = null;
+			if(pickedUpRight)
+			{
+				if(Input.GetButton("Throw"))
+				{
+					throwLogic("Throw", item1,true);
+				}
+				
+				if(Input.GetButtonUp("Throw")){
+					Throw(item1, true);
+				}
+				
+				if(Input.GetButtonDown("Pickup")){
+					ReleaseItem(item1);
+					item1 = null;
+				}
 			}
 		}
 
@@ -124,16 +139,7 @@ public class wip_PlayerInteraction : MonoBehaviour {
 		//Debug.Log(Axis);
 		float throwAxis = Input.GetAxis (Axis);
 		bool throwReleased = Input.GetButtonUp(Axis);
-		
-	/*	if (right) {
-			throwReleased = triggerDown && throwAxis < .1f;
-			triggerDown = throwAxis >= .1f; //Reset to false after thrown
-		} else {
-			throwReleased = triggerDownLeft && throwAxis < .1f;
-			triggerDownLeft = throwAxis >= .1f; //Reset to false after thrown
-		}*/
-		
-		//10 and 15 hardcoded in currently for camera min and max angles
+
 		MouseOrbitImproved mo = Camera.main.GetComponent<MouseOrbitImproved> ();
 		float angle = maxAngle * .5f;
 		if (mo != null) {
