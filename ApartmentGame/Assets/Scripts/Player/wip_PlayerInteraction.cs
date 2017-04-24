@@ -90,7 +90,9 @@ public class wip_PlayerInteraction : MonoBehaviour {
 				}
 				else{
 					aimingL = false;
-					line.enabled = false;
+					if(!aimingR)
+						line.enabled = false;
+					//this.transform.SetParent(null);
 				}
 
 				if(/*Input.GetButtonUp("ThrowL")*/Input.GetButtonDown("PickupL")
@@ -115,7 +117,9 @@ public class wip_PlayerInteraction : MonoBehaviour {
 				else
 				{
 					aimingR = false;
-					line.enabled = false;
+					if(!aimingL)
+						line.enabled = false;
+					//this.transform.SetParent(null);
 				}
 				
 				if(/*Input.GetButtonUp("Throw")*/Input.GetButtonDown("Pickup")
@@ -143,6 +147,7 @@ public class wip_PlayerInteraction : MonoBehaviour {
 	
 	void throwLogic (string Axis, GameObject item, bool right)
 	{
+		line.enabled = true;
 		//Debug.Log(Axis);
 		float throwAxis = Input.GetAxis (Axis);
 		bool throwReleased = Input.GetButtonUp(Axis);
@@ -152,11 +157,14 @@ public class wip_PlayerInteraction : MonoBehaviour {
 		if (mo != null) {
 			angle = Mathf.Deg2Rad * (maxAngle - (Camera.main.transform.eulerAngles.x - mo.yMinLimit) * (maxAngle) / (mo.yMaxLimit - mo.yMinLimit));
 		}
-		Vector3 throwVector = (transform.forward + new Vector3 (0, angle, 0f)).normalized;
-
+		
+		//this.transform.SetParent(Camera.main.transform);
+		//transform.parent.gameObject.transform.forward = Vector3.Normalize(Camera.main.transform.forward);
+		
+		Vector3 throwVector = (/*Camera.main.*/transform.forward + new Vector3 (0, angle, 0f)).normalized;
+		
 		//Debug.Log("throwthrow");
-		ThrowGuide (item, throwVector, transform.forward);
-		line.enabled = true;
+		ThrowGuide (item, throwVector, /*Camera.main.*/transform.forward);
 		aimingR = right;
 		aimingL = !right;
 	}
@@ -170,7 +178,7 @@ public class wip_PlayerInteraction : MonoBehaviour {
 		if (mo != null) {
 			angle = Mathf.Deg2Rad * (maxAngle - (Camera.main.transform.eulerAngles.x - mo.yMinLimit) * (maxAngle) / (mo.yMaxLimit - mo.yMinLimit));
 		}
-		Vector3 throwVector = (transform.forward + new Vector3 (0, angle, 0f)).normalized;
+		Vector3 throwVector = (/*Camera.main.*/transform.forward + new Vector3 (0, angle, 0f)).normalized;
 		
 		Collider childCollider = item.transform.GetComponentInChildren<Collider> ();
 		rb.AddForce (throwVector * force, ForceMode.Impulse);		

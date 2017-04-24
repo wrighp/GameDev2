@@ -5,6 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Player movement, direction based off of camera rotation
 /// </summary>
+
 [RequireComponent (typeof (Rigidbody))]
 public class PlayerMovement : MonoBehaviour {
 	
@@ -53,6 +54,9 @@ public class PlayerMovement : MonoBehaviour {
 		if(cam == null)
 			cam = Camera.main;
 		
+		if(npcDialogue.running)
+			return;
+		
 		//Animations here
 		float speedAmount = horizontalSpeed/maxSpeed;
 		animator.SetFloat("MoveSpeed", speedAmount);
@@ -70,6 +74,11 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
+		if(npcDialogue.running)
+		{
+			animator.SetFloat("MoveSpeed", 0);
+			return;
+		}
 		
 		Vector3 camAngle = new Vector3(0, cam.transform.eulerAngles.y, 0);
 		Quaternion quat = Quaternion.Euler(camAngle);

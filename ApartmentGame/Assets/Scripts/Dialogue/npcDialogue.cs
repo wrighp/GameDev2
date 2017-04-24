@@ -22,7 +22,9 @@ public class npcDialogue : MonoBehaviour {
 	public LayerMask layer;
 	public float talkDistance = 5f;
 	public float talkCooldown = 2f;
+	
 	bool coolingDown = false;
+	bool skip = false;
 	
 	//the dialogue box info
 	GameObject Name;
@@ -70,6 +72,10 @@ public class npcDialogue : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		
+		//since the main camera has a don't destroy on load
+		if(mainCamera == null)
+			mainCamera = Camera.main;
 		
 		if(dialogueCamera == null)
 			dialogueCamera = mainCamera;
@@ -120,6 +126,8 @@ public class npcDialogue : MonoBehaviour {
 			talkCooldown = 0.5f;
 			coolingDown = false;
 		}
+		
+		skip = Input.GetButtonDown("Fire1");
 	}
 	
 	//initiate the tasks, load them from progress manager
@@ -257,6 +265,7 @@ public class npcDialogue : MonoBehaviour {
 	public IEnumerator run(){
 		//THIS WILL DO FOR NOW
 		yield return new WaitForEndOfFrame();
+		yield return new WaitForEndOfFrame();
 		
 		if(animator!=null)
 		{
@@ -353,12 +362,16 @@ public class npcDialogue : MonoBehaviour {
 		mainCamera.gameObject.SetActive(true);
 		dialogueCamera.gameObject.SetActive(false);
 		dialogueWindow.SetActive(false); 
-		GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = true;
+		
 		
 		if(endEpisode)
 		{
 			var canvas = GameObject.Find("Canvas");
 			canvas.transform.Find("EndDay").gameObject.SetActive(true);
+		}
+		else
+		{
+			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = true;
 		}
 		
 		if(animator!=null)
@@ -383,9 +396,15 @@ public class npcDialogue : MonoBehaviour {
 		float dDelay = 0.1f;
 		float pDelay = 0.3f;
 		
+		bool dummy = false;
+		
 		while(true){
+			
+			dummy = Input.GetButtonUp("Fire1");
+			
 			//if the player presses Fire1, just put the text and get out
-			if (Input.GetButtonDown("Fire1") && running){
+			if (skip){
+				dummy = false;
 				nodeText.GetComponent<Text>().text = (string)displayText;
 				yield return new WaitForSeconds(dDelay);
 				break;
@@ -436,6 +455,9 @@ public class npcDialogue : MonoBehaviour {
 				//if the ray hits this character, run the thing
 				if(hit.collider.gameObject == this.transform.parent.gameObject)
 				{
+					if(mainCamera == null)
+						mainCamera = Camera.main;
+		
 					mainCamera.gameObject.SetActive(false);
 					dialogueCamera.gameObject.SetActive(true);
 					running = true;
@@ -466,6 +488,9 @@ public class npcDialogue : MonoBehaviour {
 				//if the ray hits this character, run the thing
 				if(hit.collider.gameObject == this.transform.parent.gameObject)
 				{
+					if(mainCamera == null)
+						mainCamera = Camera.main;
+		
 					mainCamera.gameObject.SetActive(false);
 					dialogueCamera.gameObject.SetActive(true);
 					running = true;
@@ -477,6 +502,9 @@ public class npcDialogue : MonoBehaviour {
 			else if(Vector3.Distance(col.transform.position, transform.position) < 2
 				&& PDotN>0.75)
 			{
+				if(mainCamera == null)
+					mainCamera = Camera.main;
+				
 				mainCamera.gameObject.SetActive(false);
 				dialogueCamera.gameObject.SetActive(true);
 				running = true;

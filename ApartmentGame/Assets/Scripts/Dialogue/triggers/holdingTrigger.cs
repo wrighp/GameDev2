@@ -27,12 +27,13 @@ public class holdingTrigger : MonoBehaviour {
 		//set the dialogue node to the target node
 		if(col.GetComponentsInChildren<PlayerInteraction>()[0].IsHolding(thing))
 		{
+			Debug.Log("STOP.");
 			speaker.setReset(targetNode);
 			npcDialogue.tasks[beginVal] = false;
 		}
 		else if (!npcDialogue.tasks.ContainsKey(tableVal))
 		{
-			npcDialogue.tasks[beginVal] = true;
+			//npcDialogue.tasks[beginVal] = true;
 			speaker.setReset(defaultNode);
 		}
 	}

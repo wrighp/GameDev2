@@ -99,8 +99,8 @@ public class NPCWander : MonoBehaviour {
 	{
 		curTarget = target;
 		float distance = Vector3.Distance (curTarget.position, transform.position);
-		Debug.Log("The distance is...");
-		Debug.Log(distance);
+		//Debug.Log("The distance is...");
+		//Debug.Log(distance);
 		while(distance>1f)
 		{
 			//Debug.Log("Patroling");

@@ -54,6 +54,9 @@ public class wip_PlayerMovement : MonoBehaviour {
 		if(cam == null)
 			cam = Camera.main;
 		
+		if(npcDialogue.running)
+			return;
+		
 		//Animations here
 		float speedAmount = horizontalSpeed/maxSpeed;
 		animator.SetFloat("MoveSpeed", speedAmount);
@@ -71,6 +74,11 @@ public class wip_PlayerMovement : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
+		if(npcDialogue.running)
+		{
+			animator.SetFloat("MoveSpeed", 0);
+			return;
+		}
 		
 		Vector3 camAngle = new Vector3(0, cam.transform.eulerAngles.y, 0);
 		Quaternion quat = Quaternion.Euler(camAngle);

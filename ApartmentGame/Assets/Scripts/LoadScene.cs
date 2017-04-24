@@ -44,4 +44,9 @@ public class LoadScene : MonoBehaviour {
 		SceneTransition.setScene(scene);
 		transition.GetComponent<SceneTransition>().play = true;
 	}
+	
+	public void setScene(string newScene)
+	{
+		scene = newScene;
+	}
 }
