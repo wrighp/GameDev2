@@ -60,12 +60,12 @@ public class MouseOrbitImproved : MonoBehaviour {
 		if (target) 
 		{
 			//RMB to move camera
-			if(Input.GetMouseButton(1)){
+			if(Input.GetMouseButton(1) || Input.GetMouseButton(0)){
 				x += Input.GetAxis("Mouse X") * mouseXSpeed * Time.deltaTime;
 				y -= Input.GetAxis("Mouse Y") * mouseYSpeed * Time.deltaTime;
 			}
-			x += Input.GetAxis("RHorizontal") * controllerXSpeed * Time.deltaTime;
-			y += Input.GetAxis("RVertical") * controllerYSpeed * Time.deltaTime;
+			//x += Input.GetAxis("RHorizontal") * controllerXSpeed * Time.deltaTime;
+			//y += Input.GetAxis("RVertical") * controllerYSpeed * Time.deltaTime;
 	
 
 			y = ClampAngle(y, yMinLimit, yMaxLimit);

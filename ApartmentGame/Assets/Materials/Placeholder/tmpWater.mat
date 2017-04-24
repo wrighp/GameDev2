@@ -95,6 +95,9 @@ Material:
         name: _DetailNormalMapScale
       second: 1
     - first:
+        name: _DiffuseThres
+      second: 0.35
+    - first:
         name: _DstBlend
       second: 0
     - first:
@@ -140,6 +143,12 @@ Material:
         name: _RZ
       second: 50
     - first:
+        name: _RimPow
+      second: 3
+    - first:
+        name: _Shininess
+      second: 1
+    - first:
         name: _SmoothnessTextureChannel
       second: 0
     - first:
@@ -161,3 +170,12 @@ Material:
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _RimCol
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _SpecColor
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _UnlitColor
+      second: {r: 1, g: 1, b: 1, a: 1}

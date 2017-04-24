@@ -20,7 +20,7 @@ public class wip_PlayerInteraction : MonoBehaviour {
 
 	const float PICKUP_DELAY = .25f; //Time until object can be picked up again after dropped to avoid spamming
 
-	public float downTime, upTime, pressTime = 0;
+	float downTime, upTime, pressTime = 0;
 	float droptime = 1f;
 
 	bool pickedUpRight = false;
@@ -69,24 +69,44 @@ public class wip_PlayerInteraction : MonoBehaviour {
 			cooldownL = 0;
 		}
 		
-		if(item1 != null && item2 != null && triggerDown && triggerDownLeft)
+		//if dialogue is running, ignore all of this
+		if(!npcDialogue.running)
 		{
-			Debug.Log("Fusion!");
-		}
-			
-		if(pickedUpRight){
-			throwLogic("Throw", item1,true);
-
-		}
 		
-		if(pickedUpLeft)
-		{
+			if(item1 != null && item2 != null && triggerDown && triggerDownLeft)
+			{
+				Debug.Log("Fusion!");
+			}
 				
-			throwLogic("ThrowL", item2, false);
-
+			if(pickedUpRight && Input.GetButton("Throw")){
+				throwLogic("Throw", item1,true);
+			}
+			
+			if(pickedUpLeft && Input.GetButton("ThrowL"))
+			{	
+				throwLogic("ThrowL", item2, false);
+			}
+			
+			if(pickedUpRight && Input.GetButtonUp("Throw")){
+				Throw(item1, true);
+			}
+			
+			if(pickedUpLeft && Input.GetButtonUp("ThrowL"))
+			{	
+				Throw(item2, false);
+			}
+			
+			if(pickedUpRight && Input.GetButtonDown("Pickup")){
+				ReleaseItem(item1);
+				item1 = null;
+			}
+			
+			if(pickedUpLeft && Input.GetButtonDown("PickupL"))
+			{	
+				ReleaseItem(item2);
+				item2 = null;
+			}
 		}
-
-
 
 		//Can only start throwing again if button used to pick up object is released
 		if(item1 != null && Input.GetButtonUp("Pickup")){
@@ -96,8 +116,6 @@ public class wip_PlayerInteraction : MonoBehaviour {
 		{
 			pickedUpLeft = true;
 		}
-
-
 		
 	}
 	
@@ -105,16 +123,16 @@ public class wip_PlayerInteraction : MonoBehaviour {
 	{
 		//Debug.Log(Axis);
 		float throwAxis = Input.GetAxis (Axis);
-		bool throwReleased;
+		bool throwReleased = Input.GetButtonUp(Axis);
 		
-		if (right) {
+	/*	if (right) {
 			throwReleased = triggerDown && throwAxis < .1f;
 			triggerDown = throwAxis >= .1f; //Reset to false after thrown
 		} else {
 			throwReleased = triggerDownLeft && throwAxis < .1f;
 			triggerDownLeft = throwAxis >= .1f; //Reset to false after thrown
-		}
-		Rigidbody rb = item.GetComponent<Rigidbody> ();
+		}*/
+		
 		//10 and 15 hardcoded in currently for camera min and max angles
 		MouseOrbitImproved mo = Camera.main.GetComponent<MouseOrbitImproved> ();
 		float angle = maxAngle * .5f;
@@ -123,205 +141,46 @@ public class wip_PlayerInteraction : MonoBehaviour {
 		}
 		Vector3 throwVector = (transform.forward + new Vector3 (0, angle, 0f)).normalized;
 
-
-		//RIGHT HAND THROW
-		if ((Input.GetButtonDown("Throw")) && !npcDialogue.running) {
-			Debug.Log ("righthand");
-			downTime = Time.time;
-			pressTime = downTime + droptime;
-		}
-
-		//drop or throw
-		if (Time.time < pressTime) {	
-			Debug.Log ("right drop");
-			if (Input.GetButtonUp ("Throw")) {
-				downTime = pressTime = 0;
-
-				Collider childCollider = item.transform.GetComponentInChildren<Collider> ();
-				StartCoroutine (EnableColliders (0, childCollider, parentCollider));
-				ReleaseItem (item);
-				item = null;
-				Debug.Log (item);
-				item1 = null;
-				pickedUpRight = false;
-			}
-			rb.freezeRotation = false;
-			rb.velocity = GetComponentInParent<Rigidbody> ().velocity;
-		}
-		else if (Input.GetButton("Throw")){
-			Debug.Log("throwthrow");
-			ThrowGuide (item, throwVector, transform.forward);
-			line.enabled = true;
-			aimingR = true;
-		}
-
-		//LEFT HAND THROW
-		if ((Input.GetButtonDown ("ThrowL")) && !npcDialogue.running ) {
-			Debug.Log ("leftlef");
-			downTime = Time.time;
-			pressTime = downTime + droptime;
-		}
-			//drop
-		if (Time.time < pressTime) {	
-			Debug.Log ("doprdoprdopr");
-			if (Input.GetButtonUp ("ThrowL")) {
-				downTime = pressTime = 0;
-
-				Collider childCollider = item.transform.GetComponentInChildren<Collider> ();
-				StartCoroutine (EnableColliders (0, childCollider, parentCollider));
-				ReleaseItem (item);
-				item = null;
-				Debug.Log (item);
-				if (right) {
-					item1 = null;
-					pickedUpRight = false;
-				} else {
-					item2 = null;
-					pickedUpLeft = false;
-				}
-
-				rb.freezeRotation = false;
-				rb.velocity = GetComponentInParent<Rigidbody> ().velocity;
-			}
-		}
-			//throw
-		else if (Input.GetButton("ThrowL"))
-			{
-			Debug.Log("throwthrow");
-			ThrowGuide (item, throwVector, transform.forward);
-			line.enabled = true;
-			aimingL = true;
-		}
-
-
-
-		/*	if(Input.GetButtonUp("Throw") || throwReleased//aimingR && Input.GetButton("Pickup")){
-			Debug.Log("tossing Right!");
-			throwReleased = false;
-			//Debug.Log("Thrown");
-			//Map 10-15 to 45-0
-			Collider childCollider = item.transform.GetComponentInChildren<Collider> ();
-			rb.AddForce(throwVector * force, ForceMode.Impulse);		
-			StartCoroutine(EnableColliders(.3f,childCollider,parentCollider));
-			ReleaseItem(item);
-			item = null;
-			
-			if(right)
-			{
-				item1 = null;
-				pickedUpRight = false;
-			}
-			else
-			{
-				item2 = null;
-				pickedUpLeft = false;
-			}
-			
-			rb.freezeRotation = false;
-
-		}
-		else if(aimingL && (Input.GetKey("PickupL") //|| Input.GetButton("Pickup")))
-		}*/
-
-		if (/*Input.GetButtonUp ("ThrowL") || */throwReleased) {
-			
-			downTime = pressTime = 0;
-			Debug.Log ("tossing");
-			throwReleased = false;
-			//Debug.Log("Thrown");
-			//Map 10-15 to 45-0
-			Collider childCollider = item.transform.GetComponentInChildren<Collider> ();
-			rb.AddForce (throwVector * force, ForceMode.Impulse);		
-			StartCoroutine (EnableColliders (.5f, childCollider, parentCollider));
-			ReleaseItem (item);
-			item = null;
-
-			if (right) {
-				item1 = null;
-				pickedUpRight = false;
-			} else {
-				item2 = null;
-				pickedUpLeft = false;
-			}
-
-			Debug.Log (item);
-			rb.freezeRotation = false;
-
-			line.enabled = false;
-			aimingR = false;
-			aimingL = false;
-
-		}
-/*		if (Input.GetButtonUp ("ThrowL") || throwReleased) {
-
-			Debug.Log ("tossing Left");
-			throwReleased = false;
-			//Debug.Log("Thrown");
-			//Map 10-15 to 45-0
-			Collider childCollider = item.transform.GetComponentInChildren<Collider> ();
-			rb.AddForce (throwVector * force, ForceMode.Impulse);		
-			StartCoroutine (EnableColliders (.5f, childCollider, parentCollider));
-			ReleaseItem (item);
-			item = null;
-			
-			if (right) {
-				item1 = null;
-				pickedUpRight = false;
-			} else {
-				item2 = null;
-				pickedUpLeft = false;
-			}
-			
-			Debug.Log (item);
-			rb.freezeRotation = false;
-		}*/
-	
+		//Debug.Log("throwthrow");
+		ThrowGuide (item, throwVector, transform.forward);
+		line.enabled = true;
+		aimingR = right;
+		aimingL = !right;
 	}
-		/*if(item == item1 && Input.GetButtonDown("Drop")){
-			//Debug.Log("Dropped");
-			Collider childCollider = item.transform.GetComponentInChildren<Collider> ();
-			StartCoroutine(EnableColliders(0,childCollider,parentCollider));
-			ReleaseItem (item);
-			item = null;
-			Debug.Log(item);
-			
-			if(right)
-			{
-				item1 = null;
-				pickedUpRight = false;
-			}
-			else
-			{
-				item2 = null;
-				pickedUpLeft = false;
-			}
-			
-			rb.freezeRotation = false;
-			rb.velocity = GetComponentInParent<Rigidbody>().velocity;
+	
+	void Throw(GameObject item, bool right)
+	{
+		Rigidbody rb = item.GetComponent<Rigidbody> ();
+		
+		MouseOrbitImproved mo = Camera.main.GetComponent<MouseOrbitImproved> ();
+		float angle = maxAngle * .5f;
+		if (mo != null) {
+			angle = Mathf.Deg2Rad * (maxAngle - (Camera.main.transform.eulerAngles.x - mo.yMinLimit) * (maxAngle) / (mo.yMaxLimit - mo.yMinLimit));
+		}
+		Vector3 throwVector = (transform.forward + new Vector3 (0, angle, 0f)).normalized;
+		
+		Collider childCollider = item.transform.GetComponentInChildren<Collider> ();
+		rb.AddForce (throwVector * force, ForceMode.Impulse);		
+		StartCoroutine (EnableColliders (.5f, childCollider, parentCollider));
+		ReleaseItem (item);
+		item = null;
+
+		if (right) {
+			item1 = null;
+			pickedUpRight = false;
+		} else {
+			item2 = null;
+			pickedUpLeft = false;
 		}
 
-		if(item == item2 && Input.GetButtonDown("DropL")){
-			//Debug.Log("Dropped");
-			Collider childCollider = item.transform.GetComponentInChildren<Collider> ();
-			StartCoroutine(EnableColliders(0,childCollider,parentCollider));
-			ReleaseItem (item);
-			item = null;
-			Debug.Log(item);
-			
-			if(right)
-			{
-				item1 = null;
-				pickedUpRight = false;
-			}
-			else
-			{
-				item2 = null;
-				pickedUpLeft = false;
-			}
-			
-			rb.freezeRotation = false;
-			rb.velocity = GetComponentInParent<Rigidbody>().velocity;
-		}*/
+		Debug.Log (item);
+		rb.freezeRotation = false;
+		line.enabled = false;
+		
+		aimingR = false;
+		aimingL = false;
+	}
+
 
 	
 	void OnTriggerStay(Collider other) {
@@ -358,7 +217,7 @@ public class wip_PlayerInteraction : MonoBehaviour {
 				}
 			}		
 		}
-		else if(other.gameObject!= item1 && 
+		if(other.gameObject!= item1 && 
 		Input.GetButtonDown("PickupL") && !pickedUpLeft && cooldownL<0.01f)
 		{
 			if(other.GetComponent<tmpItem>()!=null){
@@ -427,6 +286,8 @@ public class wip_PlayerInteraction : MonoBehaviour {
 			pickedUpLeft = false;
 			cooldownL = PICKUP_DELAY;
 		}
+		
+		item = null;
 
 	}
 

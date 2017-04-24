@@ -100,6 +100,7 @@ public class AutoDialogue : MonoBehaviour {
 		bigBox.SetActive(true);
 		//smallBox.SetActive(true);
 		
+		//bigBox.GetComponent<Animator>().Play("ChatterPopUp");
 		runCoroutine = run();
 		StartCoroutine(runCoroutine);
 	}
@@ -109,6 +110,7 @@ public class AutoDialogue : MonoBehaviour {
 		if(runCoroutine!=null)
 			StopCoroutine(runCoroutine);
 		
+		//bigBox.GetComponent<Animator>().Play("ChatterBoxDisappear");
 		bigBox.SetActive(false);
 		//smallBox.SetActive(false);
 	}
