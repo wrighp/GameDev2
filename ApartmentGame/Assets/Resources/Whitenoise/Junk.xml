@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Dialogue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <_nodes>
+    <Node>
+      <_ID>0</_ID>
+      <_text>#$9 *{^] I cA2' T ^&amp;\n#@|[</_text>
+      <_name>%30 *1</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>1</_ID>
+      <_text>*09!\n$$$ No. 9)92 |</_text>
+      <_name>48)2 9</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>-1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>2</_ID>
+      <_text>Ho# 4R3 &amp;0U?\n%p&amp;10#...?</_text>
+      <_name>902) </_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>3</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>3</_ID>
+      <_text>...%p\n%p...\n*31!</_text>
+      <_name>000</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>-1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>4</_ID>
+      <_text>7H1s 15N't 15$ 7H3 sMp7</_text>
+      <_name>4u7H0r</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>5</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>5</_ID>
+      <_text>No.</_text>
+      <_name>000</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>-1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>6</_ID>
+      <_text>15 25N't?</_text>
+      <_name>4949</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>7</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>7</_ID>
+      <_text>???\n8()1@........\n@#(&amp;$)*@)*12)*#@</_text>
+      <_name>Z3D</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>-1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>8</_ID>
+      <_text>NULL\nI7'5 b3E| 50 L4#ng!</_text>
+      <_name>H3r0</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>9</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>9</_ID>
+      <_text>...?\nD0n'T 10U rMe4@br M1...?</_text>
+      <_name>H3R0</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>-1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+  </_nodes>
+  <_next>0</_next>
+</Dialogue>

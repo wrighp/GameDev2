@@ -14,7 +14,12 @@ public class LookAtCamera : MonoBehaviour {
 		if(target!=null)
 			transform.SetParent(target);
 		else
-			target = transform.parent;
+		{
+			if(transform.parent!=null)
+				target = transform.parent;
+			else
+				target = transform;
+		}
 	}
 	
 	// Update is called once per frame
