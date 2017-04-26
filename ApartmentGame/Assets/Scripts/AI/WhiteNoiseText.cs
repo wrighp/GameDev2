@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class WhiteNoiseText : MonoBehaviour {
 	
+	bool move = true;
 	public Transform moveTarget;
 	public float speed = 3f;
 	public float maxT = 0.5f;
@@ -30,7 +31,7 @@ public class WhiteNoiseText : MonoBehaviour {
 			whitenoiseText = GetComponentInChildren<Text>();
 		}
 		
-		if(D2T > distance && D2T < farDistance)
+		if(D2T > distance && D2T < farDistance && move)
 		{
 			float step = speed * Time.deltaTime;
 			transform.position = Vector3.MoveTowards(transform.position, moveTarget.position, step);
