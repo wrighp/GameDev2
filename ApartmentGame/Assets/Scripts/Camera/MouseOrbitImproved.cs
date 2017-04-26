@@ -64,8 +64,8 @@ public class MouseOrbitImproved : MonoBehaviour {
 				x += Input.GetAxis("Mouse X") * mouseXSpeed * Time.deltaTime;
 				y -= Input.GetAxis("Mouse Y") * mouseYSpeed * Time.deltaTime;
 			}
-			//x += Input.GetAxis("RHorizontal") * controllerXSpeed * Time.deltaTime;
-			//y += Input.GetAxis("RVertical") * controllerYSpeed * Time.deltaTime;
+			x += Input.GetAxis("RHorizontal") * controllerXSpeed * Time.deltaTime;
+			y += Input.GetAxis("RVertical") * controllerYSpeed * Time.deltaTime;
 	
 
 			y = ClampAngle(y, yMinLimit, yMaxLimit);

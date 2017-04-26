@@ -44,13 +44,13 @@ public class PlayerInteraction : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(item1 != null && pickedUpRight){
+		if(item1 != null/* && pickedUpRight*/){
 			//Object will keep moving due to its rigidbody
 			item1.transform.position = rightHand.position;
 			item1.transform.parent = rightHand;
 		}
 		
-		if(item2 != null && pickedUpLeft)
+		if(item2 != null/* && pickedUpLeft*/)
 		{
 			item2.transform.position = leftHand.position;
 			item2.transform.parent = leftHand;
@@ -161,10 +161,10 @@ public class PlayerInteraction : MonoBehaviour {
 		//this.transform.SetParent(Camera.main.transform);
 		//transform.parent.gameObject.transform.forward = Vector3.Normalize(Camera.main.transform.forward);
 		
-		Vector3 throwVector = (/*Camera.main.*/transform.forward + new Vector3 (0, angle, 0f)).normalized;
+		Vector3 throwVector = (Camera.main.transform.forward + new Vector3 (0, angle, 0f)).normalized;
 		
 		//Debug.Log("throwthrow");
-		ThrowGuide (item, throwVector, /*Camera.main.*/transform.forward);
+		ThrowGuide (item, throwVector, Camera.main.transform.forward);
 		aimingR = right;
 		aimingL = !right;
 	}
@@ -178,7 +178,7 @@ public class PlayerInteraction : MonoBehaviour {
 		if (mo != null) {
 			angle = Mathf.Deg2Rad * (maxAngle - (Camera.main.transform.eulerAngles.x - mo.yMinLimit) * (maxAngle) / (mo.yMaxLimit - mo.yMinLimit));
 		}
-		Vector3 throwVector = (/*Camera.main.*/transform.forward + new Vector3 (0, angle, 0f)).normalized;
+		Vector3 throwVector = (Camera.main.transform.forward + new Vector3 (0, angle, 0f)).normalized;
 		
 		Collider childCollider = item.transform.GetComponentInChildren<Collider> ();
 		rb.AddForce (throwVector * force, ForceMode.Impulse);		
@@ -291,6 +291,7 @@ public class PlayerInteraction : MonoBehaviour {
 		if(overlay != null){
 			//For displaying icon over object
 			overlay.display = true;
+			overlay.Enable ();
 		}
 		item.transform.parent = null;
 		item.GetComponent<Rigidbody>().velocity = Vector3.zero;

@@ -16,8 +16,11 @@ public class AutoDialogue : MonoBehaviour {
 	//the dialogue tree that's being referenced
 	Dialogue dialogue;
 	//and its path
-	public Color color = new Color(0.2F, 0.3F, 0.4F, 0.5F);
+	public Color Panelcolor = new Color(0.2F, 0.3F, 0.4F, 0.5F);
+	public Color Textcolor = new Color(1F, 1F, 1F, 1F);
+	
 	public string Path;
+	public bool scroll = true;
 	
 	//the dialogue window to be used
 	public GameObject dialogueWindow;
@@ -71,23 +74,25 @@ public class AutoDialogue : MonoBehaviour {
 		else
 		{
 			bigBox = Instantiate<GameObject>(bigBox);
-			smallBox = Instantiate<GameObject>(smallBox);
+			//smallBox = Instantiate<GameObject>(smallBox);
 			
 			bigBox.transform.SetParent(transform, false);
-			smallBox.transform.SetParent(transform, false);
+			//smallBox.transform.SetParent(transform, false);
 			
 			bigBox.GetComponent<LookAtCamera>().target = transform;
 			bigBox.GetComponent<LookAtCamera>().yOffset = yOffset;
 			
-			smallBox.GetComponent<LookAtCamera>().target = transform;
-			smallBox.GetComponent<LookAtCamera>().yOffset = yOffset;
+			//smallBox.GetComponent<LookAtCamera>().target = transform;
+			//smallBox.GetComponent<LookAtCamera>().yOffset = yOffset;
 			
 			nodeText = bigBox.transform.Find("Box").gameObject.transform.Find("Text").gameObject;
 			
-			bigBox.transform.Find("Box").gameObject.GetComponent<Image>().color = color;
+			bigBox.transform.Find("Box").gameObject.GetComponent<Image>().color = Panelcolor;
+			bigBox.transform.Find("Box").Find("Text").GetComponent<Text>().color = Textcolor;
+			
 			
 			bigBox.SetActive(false);
-			smallBox.SetActive(false);
+			//smallBox.SetActive(false);
 		}
 		
 		
@@ -151,17 +156,48 @@ public class AutoDialogue : MonoBehaviour {
 	//handle text wrapping too
 	//size box based on size?
 	private IEnumerator DisplayText(string displayText){
+		
 		int strLen = displayText.Length;
 		int index = 0;
 		
 		nodeText.GetComponent<Text>().text = "";
 		textScroll = true;
 		
+		Rect box = bigBox.GetComponent<RectTransform>().rect;
+		
+		if(!scroll)
+		{
+			//Debug.Log("AAAA");
+			nodeText.GetComponent<Text>().text = (string)displayText;
+			
+			//Debug.Log(nodeText.GetComponent<Text>().preferredWidth);
+			
+			/*bigBox.GetComponent<RectTransform>().rect.Set(
+			box.x, box.y, 
+			nodeText.GetComponent<Text>().preferredWidth, 
+			nodeText.GetComponent<Text>().preferredHeight);
+			
+			bigBox.GetComponent<RectTransform>().rect.width = nodeText.GetComponent<Text>().preferredWidth;
+			*/
+			//Vector2 fuck = new Vector2(nodeText.GetComponent<Text>().preferredWidth, nodeText.GetComponent<Text>().preferredHeight);
+			
+			bigBox.GetComponent<RectTransform>().sizeDelta = new Vector2(nodeText.GetComponent<Text>().preferredWidth, nodeText.GetComponent<Text>().preferredHeight);
+			nodeText.GetComponent<Text>().GetComponent<RectTransform>().sizeDelta = new Vector2(nodeText.GetComponent<Text>().preferredWidth, nodeText.GetComponent<Text>().preferredHeight);
+			
+			
+			textScroll = false;
+			yield break;
+		}
+		
 		while(true){
 			//deal with newline character
 			if(displayText[index] == '\\' && index<strLen-1 && displayText[index+1] == 'n'){
 				index++;
 				nodeText.GetComponent<Text>().text+='\n';
+				nodeText.GetComponent<Text>().text = (string)displayText;
+				bigBox.GetComponent<RectTransform>().sizeDelta = new Vector2(nodeText.GetComponent<Text>().preferredWidth, nodeText.GetComponent<Text>().preferredHeight);
+			nodeText.GetComponent<Text>().GetComponent<RectTransform>().sizeDelta = new Vector2(nodeText.GetComponent<Text>().preferredWidth, nodeText.GetComponent<Text>().preferredHeight);
+				//box.rect.Set(box.rect.x, box.rect.y, nodeText.GetComponent<Text>().preferredHeight, box.rect.width);
 			}
 			else if(displayText[index] == '%' && index<strLen-1 && displayText[index+1] == 'f'
 				&& scriptIndex<scripts.Count)
@@ -173,6 +209,10 @@ public class AutoDialogue : MonoBehaviour {
 			//otherwise go normally
 			else{
 				nodeText.GetComponent<Text>().text += displayText[index];
+				nodeText.GetComponent<Text>().text = (string)displayText;
+				bigBox.GetComponent<RectTransform>().sizeDelta = new Vector2(nodeText.GetComponent<Text>().preferredWidth, nodeText.GetComponent<Text>().preferredHeight);
+			nodeText.GetComponent<Text>().GetComponent<RectTransform>().sizeDelta = new Vector2(nodeText.GetComponent<Text>().preferredWidth, nodeText.GetComponent<Text>().preferredHeight);
+				//box.rect.Set(box.rect.x, box.rect.y, nodeText.GetComponent<Text>().preferredWidth, box.rect.height);
 				//Source.PlayOneShot(Voice);
 			}
 			
@@ -193,6 +233,10 @@ public class AutoDialogue : MonoBehaviour {
 				break;
 			}
 		}
+		nodeText.GetComponent<Text>().text = (string)displayText;
+		bigBox.GetComponent<RectTransform>().sizeDelta = new Vector2(nodeText.GetComponent<Text>().preferredWidth, nodeText.GetComponent<Text>().preferredHeight);
+			nodeText.GetComponent<Text>().GetComponent<RectTransform>().sizeDelta = new Vector2(nodeText.GetComponent<Text>().preferredWidth, nodeText.GetComponent<Text>().preferredHeight);
+		//box.rect.Set(box.rect.x, box.rect.y, nodeText.GetComponent<Text>().preferredWidth, box.rect.height);
 		textScroll = false;
 	}
 	
