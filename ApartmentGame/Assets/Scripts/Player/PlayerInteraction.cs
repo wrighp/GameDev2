@@ -291,6 +291,7 @@ public class PlayerInteraction : MonoBehaviour {
 		if(overlay != null){
 			//For displaying icon over object
 			overlay.display = true;
+			overlay.Enable ();
 		}
 		item.transform.parent = null;
 		item.GetComponent<Rigidbody>().velocity = Vector3.zero;
