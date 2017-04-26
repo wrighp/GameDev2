@@ -22,8 +22,9 @@ public class WaterPump : MonoBehaviour {
 
 		if (Input.GetButton ("Fire1") && !spawning) {
 			spawning = true;
-			StartCoroutine(spawnballoon ());
+			print ("pumpthatshit");
 			animator.SetTrigger ("Pump");
+			StartCoroutine(spawnballoon ());
 		//	for (var f = 1.0; f >= 0; f -= 0.1) {
 		//	}
 
