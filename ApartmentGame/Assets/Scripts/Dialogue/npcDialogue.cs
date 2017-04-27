@@ -72,8 +72,14 @@ public class npcDialogue : MonoBehaviour {
 	public static List<string> taskList;
 	public static Dictionary<string, GameObject> Characters;
 	
+	private Whitenoise whitenoise;
+	
 	// Use this for initialization
 	void Start () {
+		
+		whitenoise = gameObject.GetComponent<Whitenoise>();
+		if(whitenoise == null)
+			Debug.Log("whoops, "+name+"'s whitenoise is null!");
 		
 		
 		//since the main camera has a don't destroy on load
@@ -294,6 +300,9 @@ public class npcDialogue : MonoBehaviour {
 	//run the dialogue tree coroutine
 	public IEnumerator run()
 	{
+		
+		if( whitenoise!=null)
+			whitenoise.Play();
 		
 		if(Enter!=null)
 			Source.PlayOneShot(Enter);

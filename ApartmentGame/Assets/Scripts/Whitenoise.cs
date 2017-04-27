@@ -7,7 +7,7 @@ public class Whitenoise : MonoBehaviour {
 	public Material WhitenoiseMaterial;
 	public Shader regularShader;
 	
-	public float Step;
+	//public float Step;
 	
 	float whiteNoise = 1;
 	float XAmp;
@@ -15,7 +15,7 @@ public class Whitenoise : MonoBehaviour {
 	float ZAmp;
 	
 	float currTime = 0;
-	float fadeTime = 5f;
+	public float fadeTime = 3.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -25,14 +25,16 @@ public class Whitenoise : MonoBehaviour {
 		ZAmp = WhitenoiseMaterial.GetFloat("_AZ");
 	}
 	
-	void Play()
+	public void Play()
 	{
-		StartCoroutine(Normalize());
+		if(WhitenoiseMaterial.shader != regularShader)
+			StartCoroutine(Normalize());
 	}
 	
 	//lerp all the amplitudes and frequencies
 	IEnumerator Normalize()
 	{
+		//Debug.Log("Normalizing!");
 		currTime = Time.deltaTime;
 		while(whiteNoise>=0 && XAmp>=0 && YAmp>=0 && ZAmp>=0)
 		{
