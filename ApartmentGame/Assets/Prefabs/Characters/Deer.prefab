@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 114523930820647258}
   - component: {fileID: 136110455058227720}
   - component: {fileID: 114799878671687264}
+  - component: {fileID: 114393010554428632}
   m_Layer: 10
   m_Name: DialogueTrigger
   m_TagString: Untagged
@@ -503,7 +504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1690841106475004
 GameObject:
   m_ObjectHideFlags: 1
@@ -1026,7 +1027,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1344295952332908}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.3, z: -0.03}
+  m_LocalPosition: {x: 0, y: -1.13, z: -0.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4327085275565584}
@@ -1623,7 +1624,20 @@ MonoBehaviour:
   beginVal: LookingBook
   targetNode: 6
   defaultNode: 5
-  target: {fileID: 0}
+--- !u!114 &114393010554428632
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1444706356291546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987e1c162cb635f45a08b6f45b92b864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WhitenoiseMaterial: {fileID: 2100000, guid: 307f0b8faf9a242a0a280d92f5cde8b5, type: 2}
+  regularShader: {fileID: 4800000, guid: 550e3cdbe03f87e43831eb7b858905ee, type: 3}
+  fadeTime: 3.5
 --- !u!114 &114523930820647258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1649,6 +1663,8 @@ MonoBehaviour:
   speakers: []
   Source: {fileID: 0}
   Voice: {fileID: 0}
+  Enter: {fileID: 0}
+  Exit: {fileID: 0}
   Path: Beta/Deer
   dialogueWindow: {fileID: 1905344328228412, guid: d9518a1eaceaabf44877ef4ddbf98327,
     type: 2}
