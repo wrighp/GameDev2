@@ -31,6 +31,17 @@ ModelImporter:
     100046: tray
     100048: tree_polySurface887
     100050: walls
+    100052: polySurface695
+    100054: polySurface696
+    100056: polySurface713
+    100058: polySurface754
+    100060: polySurface781
+    100062: tea_plate
+    100064: tea_plate 1
+    100066: teacup
+    100068: teacup 1
+    100070: teacup 2
+    100072: teacup1
     400000: cakething_15
     400002: MrDeer_room:MrDeer_room:polySurface648
     400004: pCube12
@@ -57,6 +68,17 @@ ModelImporter:
     400046: tray
     400048: tree_polySurface887
     400050: walls
+    400052: polySurface695
+    400054: polySurface696
+    400056: polySurface713
+    400058: polySurface754
+    400060: polySurface781
+    400062: tea_plate
+    400064: tea_plate 1
+    400066: teacup
+    400068: teacup 1
+    400070: teacup 2
+    400072: teacup1
     2300000: cakething_15
     2300002: MrDeer_room:MrDeer_room:polySurface648
     2300004: pCube12
@@ -78,6 +100,14 @@ ModelImporter:
     2300036: tray
     2300038: tree_polySurface887
     2300040: walls
+    2300042: polySurface695
+    2300044: polySurface713
+    2300046: polySurface754
+    2300048: polySurface781
+    2300050: tea_plate
+    2300052: tea_plate 1
+    2300054: teacup 1
+    2300056: teacup 2
     3300000: cakething_15
     3300002: MrDeer_room:MrDeer_room:polySurface648
     3300004: pCube12
@@ -99,6 +129,14 @@ ModelImporter:
     3300036: tray
     3300038: tree_polySurface887
     3300040: walls
+    3300042: polySurface695
+    3300044: polySurface713
+    3300046: polySurface754
+    3300048: polySurface781
+    3300050: tea_plate
+    3300052: tea_plate 1
+    3300054: teacup 1
+    3300056: teacup 2
     4300000: polySurface110
     4300002: polySurface136
     4300004: walls
@@ -120,6 +158,14 @@ ModelImporter:
     4300036: teacup1_teacup
     4300038: polySurface685
     4300040: polySurface688
+    4300042: polySurface713
+    4300044: polySurface695
+    4300046: polySurface781
+    4300048: polySurface754
+    4300050: teacup
+    4300052: tea_plate
+    4300054: teacup
+    4300056: tea_plate
     9500000: //RootNode
   materials:
     importMaterials: 0
