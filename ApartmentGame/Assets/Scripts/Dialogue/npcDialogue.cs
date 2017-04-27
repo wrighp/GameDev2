@@ -172,13 +172,13 @@ public class npcDialogue : MonoBehaviour {
 		//get the correct reset node
 		if(ProgressManager.resetNodes == tmp)
 		{
-			Debug.Log("The resetNodes thing is null, re-initializing");
+			//Debug.Log("The resetNodes thing is null, re-initializing");
 			ProgressManager.resetNodes = new Dictionary<string, int>();
 		}
 		
 		if(!ProgressManager.resetNodes.ContainsKey(name))
 		{
-			Debug.Log("No next value assigned for " + name);
+			//Debug.Log("No next value assigned for " + name);
 			ProgressManager.resetNodes[name] = dialogue._next;
 		}
 		
@@ -189,7 +189,7 @@ public class npcDialogue : MonoBehaviour {
 	
 	//add the achievement to the hash table
 	public void achieve(string thing){
-		Debug.Log(thing + " HAS BEEN ACHIEVED");
+		//Debug.Log(thing + " HAS BEEN ACHIEVED");
 		tasks[thing] = true;
 	}
 	

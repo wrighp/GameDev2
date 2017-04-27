@@ -338,13 +338,13 @@ public class PlayerInteraction : MonoBehaviour {
 		if(!pickedUpRight && !pickedUpLeft)
 			return false;
 		
-		if(item1.GetComponent<tmpItem>().name!=null &&
+		if(item1!= null && item1.GetComponent<tmpItem>().name!=null &&
 			item1.GetComponent<tmpItem>().name == itemName)
 			{
 				//Debug.Log("player is holding " + itemName);
 				return true;
 			}
-		else if(item2.GetComponent<tmpItem>().name!=null &&
+		else if(item2!= null && item2.GetComponent<tmpItem>().name!=null &&
 			item2.GetComponent<tmpItem>().name == itemName)
 			{
 				//Debug.Log("player is holding " + itemName);
