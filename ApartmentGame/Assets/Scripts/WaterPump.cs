@@ -19,8 +19,8 @@ public class WaterPump : MonoBehaviour {
 		if (col.tag == "Player" && Input.GetButton ("Fire1") && !spawning) 
 		{
 			spawning = true;
-			StartCoroutine(spawnballoon ());
 			animator.SetTrigger ("Pump");
+			StartCoroutine(spawnballoon ());
 		}
 	}
 	IEnumerator spawnballoon(){
