@@ -43,6 +43,8 @@ public class npcDialogue : MonoBehaviour {
 	
 	public AudioSource Source;
 	public AudioClip Voice;
+	public AudioClip Enter;
+	public AudioClip Exit;
 	//public static AudioSource InitiateSound;
 	
 	//coroutine stuff
@@ -73,6 +75,7 @@ public class npcDialogue : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
+		
 		//since the main camera has a don't destroy on load
 		if(mainCamera == null)
 			mainCamera = Camera.main;
@@ -83,6 +86,8 @@ public class npcDialogue : MonoBehaviour {
 		//for focusing the camera on the appropriate characters
 		if(name!="")
 		{
+			if(Characters == null)
+				Characters = new Dictionary<string, GameObject>();
 			Characters[name] = transform.parent.gameObject;
 		}
 		
@@ -131,30 +136,55 @@ public class npcDialogue : MonoBehaviour {
 	}
 	
 	//initiate the tasks, load them from progress manager
-	private void initiateTasks(){
+
+	private void initiateTasks()
+	{
+		if(ProgressManager.tasks == null)
+		{
+			ProgressManager.tasks = new Dictionary<string, bool>();
+		}	
+		
 		if(ProgressManager.chapterTasks == null)
 		{
-			if(tasks == null)
-				tasks = new Dictionary<string, bool>();
-			
-			if(chapterTasks == null)
-				chapterTasks = new Dictionary<string, bool>();
-			
-			if(taskList == null)
-				taskList = new List<string>();
-			
-			for(int i=0; i<dialogue._tasks.Count; i++)
-			{
-				tasks[dialogue._tasks[i]] = false;
-				taskList.Add(dialogue._tasks[i]);
-				chapterTasks[dialogue._tasks[i]] = false;
-			}
+			ProgressManager.chapterTasks = new Dictionary<string, bool>();
 		}
-		//optimize?
-		else if (tasks!=null)
+		
+		
+		if(ProgressManager.taskList == null)
 		{
-			loadState();
+			ProgressManager.taskList = new List<string>();
+		}	
+		
+		//iterate through all of the tasks and add them in
+		for(int i=0; i<dialogue._tasks.Count; i++)
+		{
+			ProgressManager.chapterTasks[dialogue._tasks[i]] = false;
+			ProgressManager.tasks[dialogue._tasks[i]] = false;
+			ProgressManager.taskList.Add(dialogue._tasks[i]);
 		}
+		
+		
+		tasks = ProgressManager.tasks;
+		chapterTasks = ProgressManager.chapterTasks;
+		taskList = ProgressManager.taskList;
+		
+		Dictionary<string, int> tmp = null;
+		//get the correct reset node
+		if(ProgressManager.resetNodes == tmp)
+		{
+			Debug.Log("The resetNodes thing is null, re-initializing");
+			ProgressManager.resetNodes = new Dictionary<string, int>();
+		}
+		
+		if(!ProgressManager.resetNodes.ContainsKey(name))
+		{
+			Debug.Log("No next value assigned for " + name);
+			ProgressManager.resetNodes[name] = dialogue._next;
+		}
+		
+		dialogue._next = ProgressManager.resetNodes[name];
+		
+		Debug.Log(ProgressManager.resetNodes[name]);
 	}
 	
 	//add the achievement to the hash table
@@ -262,7 +292,12 @@ public class npcDialogue : MonoBehaviour {
 		StartCoroutine(runCoroutine);
 	}
 	//run the dialogue tree coroutine
-	public IEnumerator run(){
+	public IEnumerator run()
+	{
+		
+		if(Enter!=null)
+			Source.PlayOneShot(Enter);
+		
 		//THIS WILL DO FOR NOW
 		yield return new WaitForEndOfFrame();
 		yield return new WaitForEndOfFrame();
@@ -356,6 +391,9 @@ public class npcDialogue : MonoBehaviour {
 			nodeID = select;
 		}
 		//}
+		if(Exit!=null)
+			Source.PlayOneShot(Exit);
+		
 		running = false;
 		coolingDown = true;
 		talkCooldown = 0f;
@@ -363,16 +401,20 @@ public class npcDialogue : MonoBehaviour {
 		dialogueCamera.gameObject.SetActive(false);
 		dialogueWindow.SetActive(false); 
 		
+		//store the reset node
+		ProgressManager.resetNodes[name] = dialogue._next;
+		Debug.Log(name + "'s reset node should now be " + ProgressManager.resetNodes[name]);
+		
 		
 		if(endEpisode)
 		{
 			var canvas = GameObject.Find("Canvas");
 			canvas.transform.Find("EndDay").gameObject.SetActive(true);
 		}
-		else
+		/*else
 		{
 			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = true;
-		}
+		}*/
 		
 		if(animator!=null)
 			animator.Play("idle");
@@ -418,7 +460,9 @@ public class npcDialogue : MonoBehaviour {
 			//otherwise go normally
 			else{
 				nodeText.GetComponent<Text>().text += displayText[index];
-				//Source.PlayOneShot(Voice);
+				
+				if(Voice!=null)
+					Source.PlayOneShot(Voice);
 			}
 			
 			if((displayText[index] == '!' || displayText[index] == '?' ||
@@ -461,7 +505,7 @@ public class npcDialogue : MonoBehaviour {
 					mainCamera.gameObject.SetActive(false);
 					dialogueCamera.gameObject.SetActive(true);
 					running = true;
-					GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
+					//GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
 					runDialogue();
 					auto = false;
 				}
@@ -494,7 +538,7 @@ public class npcDialogue : MonoBehaviour {
 					mainCamera.gameObject.SetActive(false);
 					dialogueCamera.gameObject.SetActive(true);
 					running = true;
-					GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
+					//GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
 					runDialogue();
 				}
 			}
@@ -508,7 +552,7 @@ public class npcDialogue : MonoBehaviour {
 				mainCamera.gameObject.SetActive(false);
 				dialogueCamera.gameObject.SetActive(true);
 				running = true;
-				GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
+				//GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
 				runDialogue();
 			}
 		}
@@ -526,13 +570,12 @@ public class npcDialogue : MonoBehaviour {
 		Debug.Log("YOU DID IT!");
 		endEpisode = true;
 		//end the game
-		//SceneManager.LoadScene("Win");
 	}
 	
 	public static void saveState()
 	{
-		if(ProgressManager.tasks == null)
-			ProgressManager.tasks = tasks;
+		Debug.Log("Saving State.");
+		ProgressManager.tasks = tasks;
 		ProgressManager.chapterTasks = chapterTasks;
 		ProgressManager.taskList = taskList;
 	}

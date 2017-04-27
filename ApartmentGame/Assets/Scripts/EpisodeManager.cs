@@ -29,16 +29,16 @@ public class EpisodeManager : MonoBehaviour {
 		current.SetActive(false);
 		current = Episodes[epNum];
 		current.SetActive(true);
-		
-		ProgressManager.chapterTasks = null;
-		ProgressManager.taskList = null;
-		
 	}
 	
 	//on load episode also set the ProgressTask variables to null
 	public static void LoadEpisode()
 	{
 		epNum+=1;
+		//don't reset the overall tasks
+		ProgressManager.chapterTasks = null;
+		ProgressManager.taskList = null;
+		ProgressManager.resetNodes = null;
 	}
 	
 	public static void SetPlayerLocation()

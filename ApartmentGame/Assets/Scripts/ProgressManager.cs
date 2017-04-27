@@ -14,6 +14,9 @@ public class ProgressManager : MonoBehaviour {
 	//dialogue's tasks
 	public static Dictionary<string, bool> tasks;
 	public static Dictionary<string, bool> chapterTasks;
+	//each character's reset node
+	public static Dictionary<string, int> resetNodes;
+	
 	public static List<string> taskList;
 	
 	public static int doorID;
@@ -30,7 +33,6 @@ public class ProgressManager : MonoBehaviour {
 	
 	public static void setPlayerLocation(GameObject player)
 	{
-		//GameObject player = GameObject.FindGameObjectsWithTag("player")[0];
 		player.transform.position = LoadScene.doors[doorID].position;
 	}
 }

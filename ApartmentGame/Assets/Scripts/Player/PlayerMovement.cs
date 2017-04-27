@@ -55,7 +55,10 @@ public class PlayerMovement : MonoBehaviour {
 			cam = Camera.main;
 		
 		if(npcDialogue.running)
+		{
+			animator.SetFloat("MoveSpeed", 0);
 			return;
+		}
 		
 		//Animations here
 		float speedAmount = horizontalSpeed/maxSpeed;
