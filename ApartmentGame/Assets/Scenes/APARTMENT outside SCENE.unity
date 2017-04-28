@@ -6920,12 +6920,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f8c6f4185eb3c44d98c9e53a080be0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thing: 
-  speaker: {fileID: 0}
-  tableVal: 
-  beginVal: 
-  targetNode: 0
-  defaultNode: 0
+  thing: orock
+  speaker: {fileID: 1567734865}
+  tableVal: FoundRock
+  beginVal: LookingOrange3
+  targetNode: 12
+  defaultNode: 13
 --- !u!1 &496116764
 GameObject:
   m_ObjectHideFlags: 0
@@ -26304,7 +26304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a6f2daf5c3a484fa416187d056801e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: orock
   attribute: 
   effects: []
   affects: []
