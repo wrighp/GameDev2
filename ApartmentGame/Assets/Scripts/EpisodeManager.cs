@@ -15,6 +15,7 @@ public class EpisodeManager : MonoBehaviour {
 	public static int epNum = 0;
 	GameObject current;
 
+	public Canvas pause_screen;
 	// Use this for initialization
 	//deactivate the previous objects, set the chapter tasks as null to be loaded
 	//by the dialogue objects
@@ -47,5 +48,16 @@ public class EpisodeManager : MonoBehaviour {
 		
 		return;
 	}
-	
+	void Update (){
+		if (Input.GetButtonDown("Submit")){
+			Debug.Log ("submit is working");
+			if (pause_screen.gameObject.activeInHierarchy == true) {
+				pause_screen.gameObject.SetActive(false);
+				Time.timeScale = 1;
+			}else{
+				pause_screen.gameObject.SetActive(true);
+				Time.timeScale = 0;
+			}
+		}
+	}
 }
