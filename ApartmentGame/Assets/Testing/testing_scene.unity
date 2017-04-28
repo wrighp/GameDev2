@@ -12803,6 +12803,8 @@ MonoBehaviour:
   speakers: []
   Source: {fileID: 0}
   Voice: {fileID: 0}
+  Enter: {fileID: 0}
+  Exit: {fileID: 0}
   Path: Descriptions/tree
   dialogueWindow: {fileID: 1905344328228412, guid: d9518a1eaceaabf44877ef4ddbf98327,
     type: 2}
@@ -19696,6 +19698,8 @@ MonoBehaviour:
   speakers: []
   Source: {fileID: 0}
   Voice: {fileID: 0}
+  Enter: {fileID: 0}
+  Exit: {fileID: 0}
   Path: Descriptions/Mailbox
   dialogueWindow: {fileID: 1905344328228412, guid: d9518a1eaceaabf44877ef4ddbf98327,
     type: 2}
@@ -21955,9 +21959,6 @@ MonoBehaviour:
   force: 1
   guideTime: 1.5
   guideSegments: 20
-  downTime: 0
-  upTime: 0
-  pressTime: 0
 --- !u!1 &2006826116
 GameObject:
   m_ObjectHideFlags: 0
