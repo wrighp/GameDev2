@@ -138,6 +138,11 @@ Camera:
   m_PrefabParentObject: {fileID: 20423769140310450, guid: 3bd66ebc3d799994b8251ec3c719d91e,
     type: 2}
   m_PrefabInternal: {fileID: 554395084}
+--- !u!1 &554395086 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1111684689226410, guid: 3bd66ebc3d799994b8251ec3c719d91e,
+    type: 2}
+  m_PrefabInternal: {fileID: 554395084}
 --- !u!1001 &1259258386
 Prefab:
   m_ObjectHideFlags: 0
@@ -728,6 +733,16 @@ Prefab:
       propertyPath: transition
       value: 
       objectReference: {fileID: 554395085}
+    - target: {fileID: 114025055621456094, guid: 762f73cdbf087f44897e70ac11c74a50,
+        type: 2}
+      propertyPath: room
+      value: B-Lot
+      objectReference: {fileID: 0}
+    - target: {fileID: 114025055621456094, guid: 762f73cdbf087f44897e70ac11c74a50,
+        type: 2}
+      propertyPath: doorSign
+      value: 
+      objectReference: {fileID: 554395086}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 762f73cdbf087f44897e70ac11c74a50, type: 2}
   m_IsPrefabParent: 0

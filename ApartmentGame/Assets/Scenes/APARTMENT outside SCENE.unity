@@ -6186,6 +6186,16 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114025055621456094, guid: 762f73cdbf087f44897e70ac11c74a50,
+        type: 2}
+      propertyPath: room
+      value: 1C
+      objectReference: {fileID: 0}
+    - target: {fileID: 114025055621456094, guid: 762f73cdbf087f44897e70ac11c74a50,
+        type: 2}
+      propertyPath: doorSign
+      value: 
+      objectReference: {fileID: 1710770816}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 762f73cdbf087f44897e70ac11c74a50, type: 2}
   m_IsPrefabParent: 0
@@ -8436,6 +8446,16 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0.87
       objectReference: {fileID: 0}
+    - target: {fileID: 114025055621456094, guid: 762f73cdbf087f44897e70ac11c74a50,
+        type: 2}
+      propertyPath: room
+      value: 2C
+      objectReference: {fileID: 0}
+    - target: {fileID: 114025055621456094, guid: 762f73cdbf087f44897e70ac11c74a50,
+        type: 2}
+      propertyPath: doorSign
+      value: 
+      objectReference: {fileID: 1710770816}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 762f73cdbf087f44897e70ac11c74a50, type: 2}
   m_IsPrefabParent: 0
@@ -16275,6 +16295,16 @@ Prefab:
       propertyPath: scene
       value: protag_room
       objectReference: {fileID: 0}
+    - target: {fileID: 114025055621456094, guid: 762f73cdbf087f44897e70ac11c74a50,
+        type: 2}
+      propertyPath: room
+      value: 2A
+      objectReference: {fileID: 0}
+    - target: {fileID: 114025055621456094, guid: 762f73cdbf087f44897e70ac11c74a50,
+        type: 2}
+      propertyPath: doorSign
+      value: 
+      objectReference: {fileID: 1710770816}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 762f73cdbf087f44897e70ac11c74a50, type: 2}
   m_IsPrefabParent: 0
@@ -21429,6 +21459,16 @@ Prefab:
       propertyPath: scene
       value: Teacup Room
       objectReference: {fileID: 0}
+    - target: {fileID: 114025055621456094, guid: 762f73cdbf087f44897e70ac11c74a50,
+        type: 2}
+      propertyPath: room
+      value: 2B
+      objectReference: {fileID: 0}
+    - target: {fileID: 114025055621456094, guid: 762f73cdbf087f44897e70ac11c74a50,
+        type: 2}
+      propertyPath: doorSign
+      value: 
+      objectReference: {fileID: 1710770816}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 762f73cdbf087f44897e70ac11c74a50, type: 2}
   m_IsPrefabParent: 0
@@ -23054,6 +23094,11 @@ Transform:
   m_Father: {fileID: 402505254}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1710770816 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1111684689226410, guid: 3bd66ebc3d799994b8251ec3c719d91e,
+    type: 2}
+  m_PrefabInternal: {fileID: 712001275}
 --- !u!1 &1723849651
 GameObject:
   m_ObjectHideFlags: 0
@@ -23708,6 +23753,16 @@ Prefab:
       propertyPath: scene
       value: danny_room
       objectReference: {fileID: 0}
+    - target: {fileID: 114025055621456094, guid: 762f73cdbf087f44897e70ac11c74a50,
+        type: 2}
+      propertyPath: room
+      value: 2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 114025055621456094, guid: 762f73cdbf087f44897e70ac11c74a50,
+        type: 2}
+      propertyPath: doorSign
+      value: 
+      objectReference: {fileID: 1710770816}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 762f73cdbf087f44897e70ac11c74a50, type: 2}
   m_IsPrefabParent: 0
@@ -25808,6 +25863,16 @@ Prefab:
       propertyPath: scene
       value: banana_room
       objectReference: {fileID: 0}
+    - target: {fileID: 114025055621456094, guid: 762f73cdbf087f44897e70ac11c74a50,
+        type: 2}
+      propertyPath: room
+      value: 1D
+      objectReference: {fileID: 0}
+    - target: {fileID: 114025055621456094, guid: 762f73cdbf087f44897e70ac11c74a50,
+        type: 2}
+      propertyPath: doorSign
+      value: 
+      objectReference: {fileID: 1710770816}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 762f73cdbf087f44897e70ac11c74a50, type: 2}
   m_IsPrefabParent: 0
@@ -28207,6 +28272,16 @@ Prefab:
       propertyPath: scene
       value: sasuke_room
       objectReference: {fileID: 0}
+    - target: {fileID: 114025055621456094, guid: 762f73cdbf087f44897e70ac11c74a50,
+        type: 2}
+      propertyPath: room
+      value: 1A
+      objectReference: {fileID: 0}
+    - target: {fileID: 114025055621456094, guid: 762f73cdbf087f44897e70ac11c74a50,
+        type: 2}
+      propertyPath: doorSign
+      value: 
+      objectReference: {fileID: 1710770816}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 762f73cdbf087f44897e70ac11c74a50, type: 2}
   m_IsPrefabParent: 0
@@ -28368,6 +28443,16 @@ Prefab:
       propertyPath: doorID
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114025055621456094, guid: 762f73cdbf087f44897e70ac11c74a50,
+        type: 2}
+      propertyPath: room
+      value: 1B
+      objectReference: {fileID: 0}
+    - target: {fileID: 114025055621456094, guid: 762f73cdbf087f44897e70ac11c74a50,
+        type: 2}
+      propertyPath: doorSign
+      value: 
+      objectReference: {fileID: 1710770816}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 762f73cdbf087f44897e70ac11c74a50, type: 2}
   m_IsPrefabParent: 0
