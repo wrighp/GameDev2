@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 82526334349424162}
   m_Layer: 0
   m_Name: WaterBalloon
-  m_TagString: Balloon
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,7 +181,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 520e7d945b90c4898b294f49c49a57a3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.07
+  m_Volume: 0.14
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -190,7 +190,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 2
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a6f2daf5c3a484fa416187d056801e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Balloon
   attribute: Wet
   effects: []
   affects: []
@@ -328,5 +328,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.62
+  m_Radius: 0.2
   m_Center: {x: -0.0000000018626451, y: 0.0032562017, z: -0.0000000018626451}
