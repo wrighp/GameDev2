@@ -658,6 +658,10 @@ Prefab:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100050, guid: d1ebe4236cae54e92a6de3953781e902, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d1ebe4236cae54e92a6de3953781e902, type: 3}
   m_IsPrefabParent: 0

@@ -1748,6 +1748,10 @@ Prefab:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100230, guid: 2dcd491928624486983efee7bb51045d, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2dcd491928624486983efee7bb51045d, type: 3}
   m_IsPrefabParent: 0
@@ -2238,10 +2242,6 @@ Prefab:
     - target: {fileID: 4722008791326816, guid: a325513d538cd614897f583f460ffd67, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989490442083912, guid: a325513d538cd614897f583f460ffd67, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 2.87
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a325513d538cd614897f583f460ffd67, type: 2}

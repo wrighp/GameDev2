@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4989490442083912}
   - component: {fileID: 65270991968050612}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Invisible walls (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4086191104321142}
   - component: {fileID: 65883951273045418}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Invisible walls (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4722008791326816}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: invWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1737367982907310}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9472632, y: 0.5140121, z: 4.4888773}
+  m_LocalPosition: {x: 0.6449347, y: 1.4308157, z: 7.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4402923788375942}
