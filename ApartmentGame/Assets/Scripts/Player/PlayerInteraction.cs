@@ -262,7 +262,7 @@ public class PlayerInteraction : MonoBehaviour {
 
 					if(overlay != null){
 						//For displaying icon over object
-						overlay.display = false;
+						overlay.Disable();
 					}
 				}
 			}		
@@ -289,7 +289,7 @@ public class PlayerInteraction : MonoBehaviour {
 
 					if(overlay != null){
 						//For displaying icon over object
-						overlay.display = false;
+						overlay.Disable();
 					}
 				}
 			}		
