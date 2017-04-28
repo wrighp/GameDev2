@@ -4447,6 +4447,29 @@ Transform:
   m_PrefabParentObject: {fileID: 4370693710902328, guid: dfa87cd262e920a4b9dc57e424db0d60,
     type: 2}
   m_PrefabInternal: {fileID: 18494513}
+--- !u!1 &315277782 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1080135120127094, guid: deb4dbecc9b284c4b92407daa4887785,
+    type: 2}
+  m_PrefabInternal: {fileID: 595059526}
+--- !u!114 &315277786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 315277782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a6f2daf5c3a484fa416187d056801e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  attribute: 
+  effects: []
+  affects: []
+  grabbable: 1
+  destroyAfterUse: 0
+  soundclips: []
 --- !u!1 &329675012
 GameObject:
   m_ObjectHideFlags: 0
@@ -7270,11 +7293,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4341385153709008, guid: deb4dbecc9b284c4b92407daa4887785, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.2956884
+      value: 0.44
       objectReference: {fileID: 0}
     - target: {fileID: 4341385153709008, guid: deb4dbecc9b284c4b92407daa4887785, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 12.89
+      value: 8.3
       objectReference: {fileID: 0}
     - target: {fileID: 4341385153709008, guid: deb4dbecc9b284c4b92407daa4887785, type: 2}
       propertyPath: m_LocalRotation.x
@@ -7301,6 +7324,61 @@ Prefab:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1874858305}
+    - target: {fileID: 1080135120127094, guid: deb4dbecc9b284c4b92407daa4887785, type: 2}
+      propertyPath: m_Name
+      value: rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447371233228876, guid: deb4dbecc9b284c4b92407daa4887785, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447371233228876, guid: deb4dbecc9b284c4b92407daa4887785, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447371233228876, guid: deb4dbecc9b284c4b92407daa4887785, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447371233228876, guid: deb4dbecc9b284c4b92407daa4887785, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 65646036338599234, guid: deb4dbecc9b284c4b92407daa4887785,
+        type: 2}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 65646036338599234, guid: deb4dbecc9b284c4b92407daa4887785,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 65646036338599234, guid: deb4dbecc9b284c4b92407daa4887785,
+        type: 2}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772674390949518, guid: deb4dbecc9b284c4b92407daa4887785, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772674390949518, guid: deb4dbecc9b284c4b92407daa4887785, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772674390949518, guid: deb4dbecc9b284c4b92407daa4887785, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667115325696246, guid: deb4dbecc9b284c4b92407daa4887785, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667115325696246, guid: deb4dbecc9b284c4b92407daa4887785, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: deb4dbecc9b284c4b92407daa4887785, type: 2}
   m_IsPrefabParent: 0

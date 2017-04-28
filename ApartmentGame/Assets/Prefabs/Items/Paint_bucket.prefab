@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4713067035592872}
   - component: {fileID: 33110524435646348}
   - component: {fileID: 23295500753959852}
+  - component: {fileID: 114022686671473668}
   m_Layer: 0
   m_Name: Paint_bucket
   m_TagString: Untagged
@@ -80,3 +81,24 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1341303236398308}
   m_Mesh: {fileID: 4300000, guid: db85f113846989c4aa47bafe439629d4, type: 3}
+--- !u!114 &114022686671473668
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1341303236398308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a6f2daf5c3a484fa416187d056801e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Orange Paint
+  attribute: 
+  effects:
+  - {fileID: 0}
+  affects:
+  - wet
+  - paint
+  grabbable: 1
+  destroyAfterUse: 0
+  soundclips: []
