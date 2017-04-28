@@ -6,10 +6,97 @@ ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: polySurface255
+    100004: polySurface256
+    100006: polySurface261
+    100008: polySurface262
+    100010: polySurface266
+    100012: polySurface267
+    100014: polySurface268
+    100016: polySurface269
+    100018: polySurface320
+    100020: polySurface355
+    100022: polySurface357
+    100024: polySurface358
+    100026: polySurface360
+    100028: polySurface364
+    100030: polySurface367
+    100032: polySurface368
+    100034: polySurface369
+    100036: Teacup_room:walls
     400000: //RootNode
+    400002: polySurface255
+    400004: polySurface256
+    400006: polySurface261
+    400008: polySurface262
+    400010: polySurface266
+    400012: polySurface267
+    400014: polySurface268
+    400016: polySurface269
+    400018: polySurface320
+    400020: polySurface355
+    400022: polySurface357
+    400024: polySurface358
+    400026: polySurface360
+    400028: polySurface364
+    400030: polySurface367
+    400032: polySurface368
+    400034: polySurface369
+    400036: Teacup_room:walls
     2300000: //RootNode
+    2300002: polySurface256
+    2300004: polySurface261
+    2300006: polySurface262
+    2300008: polySurface266
+    2300010: polySurface267
+    2300012: polySurface268
+    2300014: polySurface269
+    2300016: polySurface320
+    2300018: polySurface355
+    2300020: polySurface357
+    2300022: polySurface358
+    2300024: polySurface360
+    2300026: polySurface364
+    2300028: polySurface367
+    2300030: polySurface368
+    2300032: polySurface369
+    2300034: Teacup_room:walls
     3300000: //RootNode
+    3300002: polySurface256
+    3300004: polySurface261
+    3300006: polySurface262
+    3300008: polySurface266
+    3300010: polySurface267
+    3300012: polySurface268
+    3300014: polySurface269
+    3300016: polySurface320
+    3300018: polySurface355
+    3300020: polySurface357
+    3300022: polySurface358
+    3300024: polySurface360
+    3300026: polySurface364
+    3300028: polySurface367
+    3300030: polySurface368
+    3300032: polySurface369
+    3300034: Teacup_room:walls
     4300000: polySurface74
+    4300002: polySurface261
+    4300004: polySurface262
+    4300006: polySurface266
+    4300008: polySurface267
+    4300010: polySurface268
+    4300012: polySurface360
+    4300014: Teacup_room:walls
+    4300016: polySurface357
+    4300018: polySurface256
+    4300020: polySurface358
+    4300022: polySurface269
+    4300024: polySurface320
+    4300026: polySurface355
+    4300028: polySurface364
+    4300030: polySurface367
+    4300032: polySurface368
+    4300034: polySurface369
     9500000: //RootNode
   materials:
     importMaterials: 0
