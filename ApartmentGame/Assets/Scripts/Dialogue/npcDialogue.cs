@@ -510,7 +510,10 @@ public class npcDialogue : MonoBehaviour {
 				{
 					if(mainCamera == null)
 						mainCamera = Camera.main;
-		
+					
+					if(transform.parent!= null && transform.parent.parent!=null)
+						transform.parent.parent.LookAt(col.transform);
+					
 					mainCamera.gameObject.SetActive(false);
 					dialogueCamera.gameObject.SetActive(true);
 					running = true;
@@ -543,7 +546,10 @@ public class npcDialogue : MonoBehaviour {
 				{
 					if(mainCamera == null)
 						mainCamera = Camera.main;
-		
+					
+					if(transform.parent!= null && transform.parent.parent!=null)
+						transform.parent.parent.LookAt(col.transform);
+					
 					mainCamera.gameObject.SetActive(false);
 					dialogueCamera.gameObject.SetActive(true);
 					running = true;
@@ -557,6 +563,9 @@ public class npcDialogue : MonoBehaviour {
 			{
 				if(mainCamera == null)
 					mainCamera = Camera.main;
+				
+				if(transform.parent!= null && transform.parent.parent!=null)
+						transform.parent.parent.LookAt(col.transform);
 				
 				mainCamera.gameObject.SetActive(false);
 				dialogueCamera.gameObject.SetActive(true);
