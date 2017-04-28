@@ -183,6 +183,17 @@ public class PlayerInteraction : MonoBehaviour {
 		Collider childCollider = item.transform.GetComponentInChildren<Collider> ();
 		rb.AddForce (throwVector * force, ForceMode.Impulse);		
 		StartCoroutine (EnableColliders (.5f, childCollider, parentCollider));
+		
+		//if the item is a ball, the dog will fitch it (if it's around)
+		if(item.GetComponent<tmpItem>().name == "Ball")
+		{
+			GameObject dog = GameObject.Find("Dog");
+			if(dog != null)
+			{
+				dog.GetComponentInChildren<Dog>().Fetch(item);
+			}
+		}
+		
 		ReleaseItem (item);
 		item = null;
 

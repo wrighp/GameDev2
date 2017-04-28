@@ -2296,6 +2296,11 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: -0.057
       objectReference: {fileID: 0}
+    - target: {fileID: 114754968163043784, guid: 7c556008059411245a6973981ab0a8ce,
+        type: 2}
+      propertyPath: name
+      value: Ball
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c556008059411245a6973981ab0a8ce, type: 2}
   m_IsPrefabParent: 0
@@ -2660,6 +2665,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 187316673}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &200377979 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4435647795370532, guid: 307db1ce08fba6643a61ef014ecc3826,
+    type: 2}
+  m_PrefabInternal: {fileID: 1864181644}
 --- !u!1 &205401441
 GameObject:
   m_ObjectHideFlags: 0
@@ -21749,7 +21759,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114691103477538046, guid: 6fe8611854244cf4b94b5cf9e2e4050d,
+        type: 2}
+      propertyPath: name
+      value: Ball
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114592925985354024, guid: 6fe8611854244cf4b94b5cf9e2e4050d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6fe8611854244cf4b94b5cf9e2e4050d, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1857399094 stripped
@@ -22141,7 +22157,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1361980938697106, guid: 307db1ce08fba6643a61ef014ecc3826, type: 2}
       propertyPath: m_Name
-      value: Doggo (4)
+      value: Dog
       objectReference: {fileID: 0}
     - target: {fileID: 1013417118453688, guid: 307db1ce08fba6643a61ef014ecc3826, type: 2}
       propertyPath: m_IsActive
@@ -22209,6 +22225,11 @@ Prefab:
       propertyPath: m_AABB.m_Extent.x
       value: 0.018090796
       objectReference: {fileID: 0}
+    - target: {fileID: 114330466941303422, guid: 307db1ce08fba6643a61ef014ecc3826,
+        type: 2}
+      propertyPath: mouth
+      value: 
+      objectReference: {fileID: 200377979}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 307db1ce08fba6643a61ef014ecc3826, type: 2}
   m_IsPrefabParent: 0
