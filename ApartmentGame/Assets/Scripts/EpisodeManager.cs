@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
 	Episode manager for each scene
@@ -16,6 +17,7 @@ public class EpisodeManager : MonoBehaviour {
 	GameObject current;
 
 	public Canvas pause_screen;
+	Camera main;
 	// Use this for initialization
 	//deactivate the previous objects, set the chapter tasks as null to be loaded
 	//by the dialogue objects
@@ -47,6 +49,13 @@ public class EpisodeManager : MonoBehaviour {
 		
 		
 		return;
+	}
+	void Start () {
+		main = Camera.main;
+		if (SceneManager.GetActiveScene().name != "APARTMENT outside SCENE")
+			main.GetComponent<MouseOrbitImproved> ().distanceMax = 3;
+		else
+			main.GetComponent<MouseOrbitImproved> ().distanceMax = 7;
 	}
 	void Update (){
 		if (Input.GetButtonDown("Submit")){
