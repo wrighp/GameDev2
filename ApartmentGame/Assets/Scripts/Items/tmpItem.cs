@@ -38,6 +38,9 @@ public class tmpItem : MonoBehaviour {
 		dictionary = new Dictionary<string, GameObject>();
 		
 		for(int i=0; i<affects.Count; i++){
+			if(i + 1 >= effects.Length){
+				break;
+			}
 			dictionary[affects[i]] = effects[i];
 		}
 
@@ -59,7 +62,7 @@ public class tmpItem : MonoBehaviour {
 		if (col.tag == "Player") {
 			if(soundclips.Count!=0)
 			{
-				if(soundclips[0]!=null)
+				if(soundclips[0]!=null && audio_source != null)
 				{
 					audio_source.clip = soundclips [0];
 					audio_source.Play ();
