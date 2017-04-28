@@ -40,20 +40,20 @@ public class IndicatorOverlay : MonoBehaviour {
 			}
 			worldUI.followTransform = t;*/
 		}
-		else{
+		//else{
 			//indicator.SetActive(false);
-			if (indicator.activeInHierarchy) {
-				indicator.GetComponent<Animator> ().Play ("OverheadDisappear");
-			}
-		}
+		//	if (indicator.activeInHierarchy) {
+			//	indicator.GetComponent<Animator> ().Play ("OverheadDisappear");
+			//}
+		//}
 		
 	}
-	void OnDisable(){
+	/*void OnDisable(){
 		if(indicator && indicator.activeInHierarchy){
 			indicator.GetComponent<Animator>().Play("OverheadDisappear");
 			//indicator.SetActive(false);
 		}
-	}
+	}*/
 	void OnDestroy(){
 		Destroy (indicator);
 	}
@@ -61,6 +61,7 @@ public class IndicatorOverlay : MonoBehaviour {
 	public void Disable()
 	{
 		display = false;
+		indicator.GetComponent<Animator> ().Play ("OverheadDisappear");
 	}
 	
 	public void Enable()
