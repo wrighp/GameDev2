@@ -45,7 +45,7 @@ public class Dog : MonoBehaviour {
 			float navDistance = Vector3.Distance (nav.destination, transform.position);
 
 			if (distance >= 10f) {
-				nav.speed = 20f;
+				nav.speed = 7f;
 				nav.angularSpeed = 240f;
 			}
 			else{

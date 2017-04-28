@@ -577,6 +577,14 @@ public class npcDialogue : MonoBehaviour {
 			
 	}
 	
+	//face the player
+	IEnumerator Face(Transform t)
+	{
+		float curr = Time.deltaTime;
+		float dur = 1.5f;
+		yield return null;
+	}
+	
 	//cycle through all tasks, if they're all complete, you win!
 	//slash, move on to the next episode
 	void checkStatus(){
