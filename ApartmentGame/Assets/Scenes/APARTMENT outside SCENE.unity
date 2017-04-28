@@ -2292,14 +2292,10 @@ Prefab:
       propertyPath: m_Name
       value: WaterBalloon (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 4123832722411146, guid: 7c556008059411245a6973981ab0a8ce, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.057
-      objectReference: {fileID: 0}
-    - target: {fileID: 114754968163043784, guid: 7c556008059411245a6973981ab0a8ce,
+    - target: {fileID: 95512135093936920, guid: 7c556008059411245a6973981ab0a8ce,
         type: 2}
-      propertyPath: name
-      value: Ball
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c556008059411245a6973981ab0a8ce, type: 2}
@@ -2497,7 +2493,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee295f33b0a149e42a5baf07df56c0fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WaterBalloon: {fileID: 1887303822}
+  WaterBalloon: {fileID: 1752065814470212, guid: 7c556008059411245a6973981ab0a8ce,
+    type: 2}
   spawnPoint: {fileID: 1801453581}
   spawn_time: 2
 --- !u!65 &155425862
@@ -6019,6 +6016,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1066566491534334, guid: 52ddc960099f5544ea6ad9daa9ad3429,
         type: 2}
+    - target: {fileID: 95512135093936920, guid: 7c556008059411245a6973981ab0a8ce,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c556008059411245a6973981ab0a8ce, type: 2}
   m_IsPrefabParent: 0
@@ -6783,6 +6785,16 @@ Prefab:
     - target: {fileID: 1752065814470212, guid: 7c556008059411245a6973981ab0a8ce, type: 2}
       propertyPath: m_Name
       value: WaterBalloon (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 95512135093936920, guid: 7c556008059411245a6973981ab0a8ce,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95512135093936920, guid: 7c556008059411245a6973981ab0a8ce,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c556008059411245a6973981ab0a8ce, type: 2}
@@ -16001,6 +16013,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95512135093936920, guid: 7c556008059411245a6973981ab0a8ce,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c556008059411245a6973981ab0a8ce, type: 2}
   m_IsPrefabParent: 0
@@ -20239,6 +20256,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95512135093936920, guid: 7c556008059411245a6973981ab0a8ce,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c556008059411245a6973981ab0a8ce, type: 2}
   m_IsPrefabParent: 0
@@ -21104,7 +21126,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1801453580}
   m_LocalRotation: {x: -0, y: 0.9994565, z: -0, w: -0.032964632}
-  m_LocalPosition: {x: -0.33447307, y: -0.60276246, z: 0.0008584298}
+  m_LocalPosition: {x: -0.33447307, y: -0.533, z: 0.0008584298}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 155425863}
@@ -21248,6 +21270,16 @@ Prefab:
         type: 2}
       propertyPath: MaxDistance
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 95512135093936920, guid: 7c556008059411245a6973981ab0a8ce,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95512135093936920, guid: 7c556008059411245a6973981ab0a8ce,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c556008059411245a6973981ab0a8ce, type: 2}
@@ -22760,11 +22792,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d19bd7e70e4e4809b805a2bf41792b7, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1887303822 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1752065814470212, guid: 7c556008059411245a6973981ab0a8ce,
-    type: 2}
-  m_PrefabInternal: {fileID: 473648276}
 --- !u!1001 &1895785480
 Prefab:
   m_ObjectHideFlags: 0
@@ -26031,6 +26058,16 @@ Prefab:
       propertyPath: soundclips.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 520e7d945b90c4898b294f49c49a57a3, type: 3}
+    - target: {fileID: 95512135093936920, guid: 7c556008059411245a6973981ab0a8ce,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 95512135093936920, guid: 7c556008059411245a6973981ab0a8ce,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c556008059411245a6973981ab0a8ce, type: 2}
   m_IsPrefabParent: 0

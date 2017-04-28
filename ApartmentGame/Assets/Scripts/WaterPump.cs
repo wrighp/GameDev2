@@ -26,6 +26,15 @@ public class WaterPump : MonoBehaviour {
 	IEnumerator spawnballoon(){
 		yield return new WaitForSeconds (spawn_time);
 		GameObject instance = Instantiate (WaterBalloon, spawnPoint.position, spawnPoint.rotation);
+		
+		Rigidbody rb = instance.GetComponent<Rigidbody>();
+		
+		rb.constraints = RigidbodyConstraints.FreezePosition;
+		
+		yield return new WaitForSeconds(3f);
+		
+		rb.constraints = RigidbodyConstraints.None;
+		
 		spawning = false;
 	}
 }
