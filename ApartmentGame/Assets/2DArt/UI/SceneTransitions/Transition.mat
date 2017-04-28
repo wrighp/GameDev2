@@ -87,7 +87,7 @@ Material:
       second: 1
     - first:
         name: _Cutoff
-      second: -0.014081124
+      second: -0.020642906
     - first:
         name: _DetailNormalMapScale
       second: 1

@@ -23,3 +23,7 @@ EditorBuildSettings:
     path: Assets/Scenes/danny_room.unity
   - enabled: 1
     path: Assets/Scenes/Win.unity
+  - enabled: 1
+    path: Assets/Scenes/protag_room.unity
+  - enabled: 1
+    path: Assets/Scenes/sasuke_room.unity
