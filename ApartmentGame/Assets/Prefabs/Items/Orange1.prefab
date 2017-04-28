@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: orange1
-  attribute: orange
+  attribute: Orange
   effects: []
   affects: []
   grabbable: 1
