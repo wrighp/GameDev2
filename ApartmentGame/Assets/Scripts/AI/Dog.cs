@@ -7,6 +7,7 @@ public class Dog : MonoBehaviour {
 	public Transform player;
 	public bool autoAddPlayer = true;
 	private NavMeshAgent nav;
+	Animator anim;
 
 	public float followResetTime = 6f;
 	private float timer = 0;
@@ -19,6 +20,7 @@ public class Dog : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		nav = GetComponent<NavMeshAgent> ();
+		anim = GetComponentInChildren<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -85,10 +87,15 @@ public class Dog : MonoBehaviour {
 		//pick up the ball
 		//play pickup animation
 		//Debug.Log("Picking up the ball");
-		item = target;
-		Physics.IgnoreCollision (item.transform.GetComponentInChildren<Collider>(), 
+		
+		Physics.IgnoreCollision (target.transform.GetComponentInChildren<Collider>(), 
 			transform.GetComponentInChildren<Collider>());
-			
+		
+		anim.Play("Pickup");
+		
+		yield return new WaitForSeconds(0.5f);
+		
+		item = target;
 		item.transform.position = mouth.position;
 		item.transform.parent = mouth;
 		item.transform.localPosition = Vector3.zero;
