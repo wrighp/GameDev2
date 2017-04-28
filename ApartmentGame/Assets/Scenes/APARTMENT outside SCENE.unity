@@ -11284,6 +11284,18 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 136969215464991228, guid: c4a0836f9e3f35c4a90658bd3b01f59a,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: fd634fbbf6e833446a2142e02f64984b,
+        type: 2}
+    - target: {fileID: 136635459922248456, guid: c4a0836f9e3f35c4a90658bd3b01f59a,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: fd634fbbf6e833446a2142e02f64984b,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4a0836f9e3f35c4a90658bd3b01f59a, type: 2}
   m_IsPrefabParent: 0
@@ -14145,6 +14157,18 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 136132605188167308, guid: 281b3e18c027c7e44a867974445f93ba,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: fd634fbbf6e833446a2142e02f64984b,
+        type: 2}
+    - target: {fileID: 65898018810964184, guid: 281b3e18c027c7e44a867974445f93ba,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: fd634fbbf6e833446a2142e02f64984b,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 281b3e18c027c7e44a867974445f93ba, type: 2}
   m_IsPrefabParent: 0
@@ -16742,7 +16766,7 @@ CapsuleCollider:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1227925612}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: fd634fbbf6e833446a2142e02f64984b, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -20074,7 +20098,7 @@ CapsuleCollider:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1486611986}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: fd634fbbf6e833446a2142e02f64984b, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5

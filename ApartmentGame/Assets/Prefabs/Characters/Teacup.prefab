@@ -1933,7 +1933,6 @@ MonoBehaviour:
   beginVal: LookingOrange
   targetNode: 9
   defaultNode: 8
-  target: {fileID: 0}
 --- !u!114 &114472655697928290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1959,6 +1958,8 @@ MonoBehaviour:
   speakers: []
   Source: {fileID: 0}
   Voice: {fileID: 0}
+  Enter: {fileID: 0}
+  Exit: {fileID: 0}
   Path: Beta/Teacup
   dialogueWindow: {fileID: 1905344328228412, guid: d9518a1eaceaabf44877ef4ddbf98327,
     type: 2}
@@ -1976,7 +1977,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1514732997966898}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: fd634fbbf6e833446a2142e02f64984b, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -2015,7 +2016,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1843350056171162}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: fd634fbbf6e833446a2142e02f64984b, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
