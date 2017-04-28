@@ -31,11 +31,18 @@ public class WhiteNoiseText : MonoBehaviour {
 			whitenoiseText = GetComponentInChildren<Text>();
 		}
 		
+		float step = speed * Time.deltaTime;
+		
 		if(D2T > distance && D2T < farDistance && move)
 		{
-			float step = speed * Time.deltaTime;
 			transform.position = Vector3.MoveTowards(transform.position, moveTarget.position, step);
 			transform.position = new Vector3(transform.position.x, yPlane, transform.position.z);
+		}
+		else
+		{
+			Vector3 orbit = new Vector3(transform.position.x + Mathf.Sin(Time.time),
+				transform.position.y + Mathf.Cos(Time.time), transform.position.z + Mathf.Cos(Time.time));
+			transform.position = Vector3.MoveTowards(transform.position, orbit, step);
 		}
 		
 		if(whitenoiseText!=null)
