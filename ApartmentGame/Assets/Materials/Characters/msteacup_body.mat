@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: msteacup_body
-  m_Shader: {fileID: 4800000, guid: 550e3cdbe03f87e43831eb7b858905ee, type: 3}
+  m_Shader: {fileID: 4800000, guid: 358144b8871302744a71100c033b81e0, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -78,13 +78,13 @@ Material:
     m_Floats:
     - first:
         name: _AX
-      second: 0.1
+      second: 0.059
     - first:
         name: _AY
-      second: 0.1
+      second: 0.057
     - first:
         name: _AZ
-      second: 0.1
+      second: 0.07
     - first:
         name: _BumpScale
       second: 1
@@ -159,6 +159,9 @@ Material:
       second: 1
     - first:
         name: _SrcBlend
+      second: 1
+    - first:
+        name: _TexBlend
       second: 1
     - first:
         name: _UVSec

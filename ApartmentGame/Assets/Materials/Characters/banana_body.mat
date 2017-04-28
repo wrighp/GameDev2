@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: banana_body
-  m_Shader: {fileID: 4800000, guid: 550e3cdbe03f87e43831eb7b858905ee, type: 3}
+  m_Shader: {fileID: 4800000, guid: 358144b8871302744a71100c033b81e0, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -35,6 +35,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     - first:
         name: _DetailNormalMap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _DisplaceTex
       second:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -83,6 +89,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
+        name: _AX
+      second: 0.066
+    - first:
+        name: _AY
+      second: 0.066
+    - first:
+        name: _AZ
+      second: 0.079
+    - first:
         name: _BumpScale
       second: 1
     - first:
@@ -110,6 +125,9 @@ Material:
         name: _GlossyReflections
       second: 1
     - first:
+        name: _Magnitude
+      second: 1
+    - first:
         name: _Metallic
       second: 0
     - first:
@@ -122,8 +140,26 @@ Material:
         name: _Outline
       second: 0.005
     - first:
+        name: _PX
+      second: 50
+    - first:
+        name: _PY
+      second: 50
+    - first:
+        name: _PZ
+      second: 50
+    - first:
         name: _Parallax
       second: 0.02
+    - first:
+        name: _RX
+      second: 50
+    - first:
+        name: _RY
+      second: 50
+    - first:
+        name: _RZ
+      second: 50
     - first:
         name: _RimPow
       second: 0.1
@@ -138,6 +174,9 @@ Material:
       second: 1
     - first:
         name: _SrcBlend
+      second: 1
+    - first:
+        name: _TexBlend
       second: 1
     - first:
         name: _UVSec

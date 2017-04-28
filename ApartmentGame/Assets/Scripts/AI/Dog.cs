@@ -45,11 +45,11 @@ public class Dog : MonoBehaviour {
 			float navDistance = Vector3.Distance (nav.destination, transform.position);
 
 			if (distance >= 10f) {
-				nav.speed = 7f;
+				nav.speed = 2f;
 				nav.angularSpeed = 240f;
 			}
 			else{
-				nav.speed = Mathf.Lerp(.75f, 20f,  distance / 10f);
+				nav.speed = Mathf.Lerp(.75f, 2f,  distance / 10f);
 				nav.angularSpeed = Mathf.Lerp(120f, 240f,  distance / 10f);
 			}
 
@@ -57,6 +57,8 @@ public class Dog : MonoBehaviour {
 				timer = Random.Range (0, followResetTime);
 				nav.destination = player.position + moveDirection * Random.Range(2f, 8f);
 			}
+			
+			anim.SetFloat("MoveSpeed", nav.speed);
 		}
 
 		//nav.destination = nav.destination + moveDirection * Time.deltaTime * 2.5f;
@@ -141,15 +143,16 @@ public class Dog : MonoBehaviour {
 		float navDistance = Vector3.Distance (nav.destination, transform.position);
 		
 		if (distance >= 10f) {
-			nav.speed = 7f;
+			nav.speed = 4f;
 			nav.angularSpeed = 240f;
 		}
 		else{
-			nav.speed = Mathf.Lerp(.75f, 7f,  distance / 10f);
+			nav.speed = Mathf.Lerp(.75f, 4f,  distance / 10f);
 			nav.angularSpeed = Mathf.Lerp(120f, 240f,  distance / 10f);
 		}
 		
 		nav.destination = location + moveDirection;
+		anim.SetFloat("MoveSpeed", nav.speed);
 		
 		//set this to be wander later but for now just copy dog
 	}
