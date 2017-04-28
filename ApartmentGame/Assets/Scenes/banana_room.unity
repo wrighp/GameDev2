@@ -1825,6 +1825,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1402710284938194, guid: 74274b8afd5e54a3e9b145ed28c21ec3, type: 2}
+      propertyPath: m_Name
+      value: fake_walks
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74274b8afd5e54a3e9b145ed28c21ec3, type: 2}
   m_IsPrefabParent: 0
