@@ -78,13 +78,13 @@ Material:
     m_Floats:
     - first:
         name: _AX
-      second: 0.068
+      second: 0
     - first:
         name: _AY
-      second: 0.062
+      second: 0
     - first:
         name: _AZ
-      second: 0.062
+      second: 0
     - first:
         name: _BumpScale
       second: 1
@@ -159,7 +159,7 @@ Material:
       second: 1
     - first:
         name: _TexBlend
-      second: 1
+      second: 0
     - first:
         name: _UVSec
       second: 0
