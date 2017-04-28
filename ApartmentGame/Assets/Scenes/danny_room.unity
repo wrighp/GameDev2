@@ -782,6 +782,10 @@ Prefab:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100034, guid: f9de612e1aa356a46b12dc2dfeeb1be8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f9de612e1aa356a46b12dc2dfeeb1be8, type: 3}
   m_IsPrefabParent: 0
