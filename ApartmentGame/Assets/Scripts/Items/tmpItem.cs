@@ -19,7 +19,6 @@ public class tmpItem : MonoBehaviour {
 	//this objects attribute(s)
 	public string name;
 	public string attribute;
-	
 	//particle system or objects to instantiate when certain
 	//incoming attributes collide
 	public GameObject[] effects;
@@ -29,6 +28,10 @@ public class tmpItem : MonoBehaviour {
 	public bool grabbable = false;
 	public bool destroyAfterUse = false;
 
+	public AudioClip[] soundclips = new AudioClip[2]; 
+
+	private AudioSource audio_source;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -36,6 +39,10 @@ public class tmpItem : MonoBehaviour {
 		
 		for(int i=0; i<affects.Count; i++){
 			dictionary[affects[i]] = effects[i];
+		}
+
+		if (tag == "Balloon") {
+			audio_source = GetComponent<AudioSource> ();
 		}
 	}
 	
@@ -49,6 +56,11 @@ public class tmpItem : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider col){
+		if (tag == "Balloon") {
+			audio_source.clip = soundclips [0];
+			audio_source.Play ();
+		}
+
 		if(col.gameObject.GetComponent<tmpItem>() == null)
 			return;
 		//see note above
@@ -88,11 +100,14 @@ public class tmpItem : MonoBehaviour {
 			}
 			else if (attribute == "Sparks" && inAttribute == "Rubber"){
 				Destroy(this.gameObject);
+
 			}
 			
-			if(destroyAfterUse)
-				Destroy(this.gameObject);
+			if (destroyAfterUse) {
+				Destroy (this.gameObject);
+			}
 			Destroy(particle, 3f);
+
 		}
 	}
 	
@@ -101,6 +116,7 @@ public class tmpItem : MonoBehaviour {
 	}
 	
 	void OnTriggerStay(Collider col){
-		
+
+
 	}
 }
