@@ -238,7 +238,7 @@ public class PlayerInteraction : MonoBehaviour {
 		if(overlay != null && other.gameObject != item1 && other.gameObject != item2 && 
 		overlay.display == false)
 		{
-			overlay.Enable();
+			//overlay.Enable();
 		}
 		
 		if(other.gameObject != item2 &&
@@ -319,7 +319,7 @@ public class PlayerInteraction : MonoBehaviour {
 		IndicatorOverlay overlay = item.GetComponent<IndicatorOverlay> ();
 		if(overlay != null){
 			//For displaying icon over object
-			overlay.display = true;
+			//overlay.display = true;
 			overlay.Enable ();
 		}
 		item.transform.parent = null;
