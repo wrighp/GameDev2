@@ -28,7 +28,7 @@ public class tmpItem : MonoBehaviour {
 	public bool grabbable = false;
 	public bool destroyAfterUse = false;
 
-	public AudioClip[] soundclips = new AudioClip[2]; 
+	public List<AudioClip> soundclips = new List<AudioClip>(); 
 
 	private AudioSource audio_source;
 
@@ -56,9 +56,15 @@ public class tmpItem : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider col){
-		if (tag == "Balloon") {
-			audio_source.clip = soundclips [0];
-			audio_source.Play ();
+		if (col.tag == "Player") {
+			if(soundclips.Count!=0)
+			{
+				if(soundclips[0]!=null)
+				{
+					audio_source.clip = soundclips [0];
+					audio_source.Play ();
+				}
+			}
 		}
 
 		if(col.gameObject.GetComponent<tmpItem>() == null)
