@@ -24,7 +24,7 @@ public class WhiteNoiseText : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		float D2T = Vector3.Distance(transform.position, moveTarget.position);
+		float D2T = Mathf.Clamp(Vector3.Distance(transform.position, moveTarget.position), 0, farDistance);
 		
 		if(transform.childCount!=0 && whitenoiseText == null)
 		{
