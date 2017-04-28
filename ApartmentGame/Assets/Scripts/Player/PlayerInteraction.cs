@@ -56,24 +56,6 @@ public class PlayerInteraction : MonoBehaviour {
 			item2.transform.parent = leftHand;
 		}
 
-		if (Input.GetButtonDown ("Pickup") && Input.GetButtonDown ("PickupL")) {
-			if (item1 != null && item2 != null) {
-				Debug.Log ("combine these thingies");
-
-				Material newcolor;
-				if (((item1.GetComponent<tmpItem> ()).effects [0] == item2)) {
-					Debug.Log ("is combining now");
-					newcolor = (item1.GetComponent<Renderer> ()).materials [1];
-					(item2.GetComponent<Renderer> ()).material = newcolor;
-				} else if (((item2.GetComponent<tmpItem> ()).effects [0] == item1)) {
-					Debug.Log ("is combining now");
-					newcolor = (item2.GetComponent<Renderer> ()).materials [1];
-					(item1.GetComponent<Renderer> ()).material = newcolor;
-				}
-
-			}
-		}
-
 		if(cooldown>0){
 			cooldown -= Time.deltaTime;
 		}
@@ -95,6 +77,16 @@ public class PlayerInteraction : MonoBehaviour {
 				if(Input.GetButton("ThrowL") && Input.GetButton("Throw"))
 				{
 					Debug.Log("Fusion!");
+					Material newcolor;
+					if (((item1.GetComponent<tmpItem> ()).effects [0] == item2)) {
+						Debug.Log ("is combining now");
+						newcolor = (item1.GetComponentInChildren<Renderer> ()).materials [1];
+						(item2.GetComponentInChildren<Renderer> ()).material = newcolor;
+					} else if (((item2.GetComponent<tmpItem> ()).effects [0] == item1)) {
+						Debug.Log ("is combining now");
+						newcolor = (item2.GetComponentInChildren<Renderer> ()).materials [1];
+						(item1.GetComponentInChildren<Renderer> ()).material = newcolor;
+					}
 					//pickedUpRight = false;
 					//pickedUpLeft = false;
 				}

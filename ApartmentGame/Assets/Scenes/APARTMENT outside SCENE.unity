@@ -20813,6 +20813,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114022686671473668, guid: 74cd1cb9056024f69961c5f0b8bd11f8,
+        type: 2}
+      propertyPath: effects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1954597998}
     m_RemovedComponents:
     - {fileID: 33110524435646348, guid: 74cd1cb9056024f69961c5f0b8bd11f8, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 74cd1cb9056024f69961c5f0b8bd11f8, type: 2}
