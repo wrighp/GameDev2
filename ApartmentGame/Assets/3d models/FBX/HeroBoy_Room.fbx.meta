@@ -69,6 +69,7 @@ ModelImporter:
     100122: polySurface355
     100124: polySurface356
     100126: polySurface357
+    100128: walls
     400000: //RootNode
     400002: MrDeer_room:polySurface592
     400004: polySurface204
@@ -133,6 +134,7 @@ ModelImporter:
     400122: polySurface355
     400124: polySurface356
     400126: polySurface357
+    400128: walls
     2300000: //RootNode
     2300002: polySurface205
     2300004: polySurface210
@@ -192,6 +194,7 @@ ModelImporter:
     2300112: polySurface355
     2300114: polySurface356
     2300116: polySurface357
+    2300118: walls
     3300000: //RootNode
     3300002: polySurface205
     3300004: polySurface210
@@ -251,6 +254,7 @@ ModelImporter:
     3300112: polySurface355
     3300114: polySurface356
     3300116: polySurface357
+    3300118: walls
     4300000: polySurface204
     4300002: polySurface205
     4300004: polySurface210
@@ -310,6 +314,7 @@ ModelImporter:
     4300112: polySurface355
     4300114: polySurface356
     4300116: polySurface357
+    4300118: walls
     9500000: //RootNode
   materials:
     importMaterials: 0
