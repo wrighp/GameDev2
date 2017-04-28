@@ -84,6 +84,7 @@
       </_options>
       <_precalls />
       <_postcalls />
+      <_accomplish>LookingOrange3</_accomplish>
     </Node>
     <Node>
       <_ID>6</_ID>
@@ -102,11 +103,11 @@
       </_options>
       <_precalls />
       <_postcalls />
+      <_accomplish>LookingOrange2</_accomplish>
     </Node>
 	<Node>
       <_ID>7</_ID>
-      <_text>Of course not!
-[small]Why do I waste my time...You’re all so useless!</_text>
+      <_text>Of course not! Why do I waste my time...You are all so useless!</_text>
       <_name>Ms Teacup</_name>
       <_reset>0</_reset>
       <_options>
@@ -138,22 +139,82 @@
       <_text>Huh-?!So you STOLE it!
 I see how it is.</_text>
       <_name>Ms Teacup</_name>
-      <_reset>10</_reset>
+      <_reset>14</_reset>
       <_options>
         <dialogueOption>
           <_text />
-          <_dest>10</_dest>
+          <_dest>14</_dest>
         </dialogueOption>
       </_options>
       <_precalls />
       <_postcalls />
 	  <_accomplish>FoundOrange</_accomplish>
     </Node>
-    <Node>
+     <Node>
       <_ID>10</_ID>
+      <_text>Is this a joke...</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>11</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>11</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+	  <_accomplish>FoundCarrot</_accomplish>
+    </Node>
+     <Node>
+      <_ID>11</_ID>
+      <_text>GO OUT THERE AND FIND MY ORANGES!</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>11</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>-1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+	  <_accomplish>LookingOrange2</_accomplish>
+    </Node>
+     <Node>
+      <_ID>12</_ID>
+      <_text>...</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>13</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>13</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+	  <_accomplish>FoundRock</_accomplish>
+    </Node>
+    <Node>
+      <_ID>13</_ID>
+      <_text>Go. find. my. oranges.</_text>
+      <_name>Ms Teacup</_name>
+      <_reset>13</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>-1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+	  <_accomplish>LookingOrange3</_accomplish>
+    </Node>
+    <Node>
+      <_ID>14</_ID>
       <_text>Thanks for nothing. Hmph!</_text>
       <_name>Ms Teacup</_name>
-      <_reset>10</_reset>
+      <_reset>14</_reset>
       <_options>
         <dialogueOption>
           <_text />
