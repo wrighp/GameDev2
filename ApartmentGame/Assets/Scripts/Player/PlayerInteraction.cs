@@ -44,6 +44,7 @@ public class PlayerInteraction : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		GetComponentInParent<TurnToVelocity>().enabled = true;
 		if(item1 != null/* && pickedUpRight*/){
 			//Object will keep moving due to its rigidbody
 			item1.transform.position = rightHand.position;
@@ -74,7 +75,7 @@ public class PlayerInteraction : MonoBehaviour {
 		{
 			if(pickedUpLeft && pickedUpRight)
 			{
-				if(Input.GetButton("ThrowL") && Input.GetButton("Throw"))
+				if(Input.GetButton("ThrowL") && Input.GetButton("ThrowR"))
 				{
 					Debug.Log("Fusion!");
 					Material newcolor;
@@ -94,7 +95,7 @@ public class PlayerInteraction : MonoBehaviour {
 			
 			if(pickedUpLeft)
 			{
-				if(Input.GetButton("ThrowL"))
+				if(Input.GetButton("ThrowL") || Input.GetAxis("LeftTrigger") > 0)
 				{	
 					throwLogic("ThrowL", item2, false);
 				}
@@ -105,8 +106,7 @@ public class PlayerInteraction : MonoBehaviour {
 					//this.transform.SetParent(null);
 				}
 
-				if(/*Input.GetButtonUp("ThrowL")*/Input.GetButtonDown("PickupL")
-					&&aimingL)
+				if(/*Input.GetButtonUp("ThrowL")*/Input.GetButtonDown("PickupL") && aimingL)
 				{	
 					Throw(item2, false);
 				}
@@ -120,9 +120,9 @@ public class PlayerInteraction : MonoBehaviour {
 			
 			if(pickedUpRight)
 			{
-				if(Input.GetButton("Throw"))
+				if(Input.GetButton("ThrowR") || Input.GetAxis("RightTrigger") > 0)
 				{
-					throwLogic("Throw", item1,true);
+					throwLogic("ThrowR", item1,true);
 				}
 				else
 				{
@@ -132,8 +132,7 @@ public class PlayerInteraction : MonoBehaviour {
 					//this.transform.SetParent(null);
 				}
 				
-				if(/*Input.GetButtonUp("Throw")*/Input.GetButtonDown("Pickup")
-					&& aimingR){
+				if(/*Input.GetButtonUp("Throw")*/Input.GetButtonDown("Pickup")	&& aimingR){
 					Throw(item1, true);
 				}
 				
@@ -145,7 +144,8 @@ public class PlayerInteraction : MonoBehaviour {
 		}
 
 		//Can only start throwing again if button used to pick up object is released
-		if(item1 != null && Input.GetButtonUp("Pickup")){
+		if(item1 != null && Input.GetButtonUp("Pickup"))
+		{
 			pickedUpRight = true;
 		}
 		if(item2 != null && Input.GetButtonUp("PickupL"))
@@ -169,12 +169,12 @@ public class PlayerInteraction : MonoBehaviour {
 		}
 		
 		//this.transform.SetParent(Camera.main.transform);
-		//transform.parent.gameObject.transform.forward = Vector3.Normalize(Camera.main.transform.forward);
+		//transform.parent.gameObject.transform.forward = Vector3.Normalize(transform.forward);
 		
-		Vector3 throwVector = (Camera.main.transform.forward + new Vector3 (0, angle, 0f)).normalized;
-		
+		Vector3 throwVector = (transform.forward + new Vector3 (0, angle, 0f)).normalized;
+		GetComponentInParent<TurnToVelocity>().enabled = false;
 		//Debug.Log("throwthrow");
-		ThrowGuide (item, throwVector, Camera.main.transform.forward);
+		ThrowGuide (item, throwVector, transform.forward);
 		aimingR = right;
 		aimingL = !right;
 	}
@@ -188,7 +188,8 @@ public class PlayerInteraction : MonoBehaviour {
 		if (mo != null) {
 			angle = Mathf.Deg2Rad * (maxAngle - (Camera.main.transform.eulerAngles.x - mo.yMinLimit) * (maxAngle) / (mo.yMaxLimit - mo.yMinLimit));
 		}
-		Vector3 throwVector = (Camera.main.transform.forward + new Vector3 (0, angle, 0f)).normalized;
+
+		Vector3 throwVector = (transform.forward + new Vector3 (0, angle, 0f)).normalized;
 		
 		Collider childCollider = item.transform.GetComponentInChildren<Collider> ();
 		rb.AddForce (throwVector * force, ForceMode.Impulse);		
