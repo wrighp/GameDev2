@@ -70,21 +70,4 @@ public class IndicatorOverlay : MonoBehaviour {
 		indicator.GetComponent<Animator>().Play("OverheadPopUp");
 		display = true;
 	}
-	/*
-	void OnTriggerEnter(Collider col)
-	{
-		if(col.tag != "Player")
-			return;
-		indicator.SetActive(true);
-		indicator.GetComponent<Animator>().Play("OverheadPopUp");
-		display = true;
-	}
-	
-	void OnTriggerExit(Collider col)
-	{
-		if(col.tag!="Player")
-			return;
-		
-		indicator.GetComponent<Animator> ().Play ("OverheadDisappear");
-	}*/
 }
