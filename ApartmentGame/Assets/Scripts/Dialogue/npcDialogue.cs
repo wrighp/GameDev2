@@ -5,15 +5,26 @@ using UnityEngine.SceneManagement;
 
 using UnityEngine.UI;
 
-//Needs to have a canvas in the scene (doesn't have to be attached to camera)
-//player could have a hash table <string, bool> of tasks to perform
-//for dialogue options and triggers, could check event name as such to see if 
-//the player has done it
+/*Needs to have a canvas in the scene (doesn't have to be attached to camera)
+	player could have a hash table <string, bool> of tasks to perform
+	for dialogue options and triggers, could check event name as such to see if 
+	the player has done it
+*/
 
 public class npcDialogue : MonoBehaviour {
 	
 	//the dialogue tree that's being referenced
 	Dialogue dialogue;
+	
+	public string name = "";
+	public Animator animator;
+	
+	public LayerMask layer;
+	public float talkDistance = 5f;
+	public float talkCooldown = 2f;
+	
+	bool coolingDown = false;
+	bool skip = false;
 	
 	//the dialogue box info
 	GameObject Name;
@@ -22,16 +33,19 @@ public class npcDialogue : MonoBehaviour {
 	GameObject[] options;
 	GameObject[] availableOptions;
 	
-	GameObject option1;
-	GameObject option2;
-	GameObject option3;
-	
-	GameObject exit;
-	
+	public GameObject buttonPrefab;
+	RectTransform ParentPanel;
+
 	//cameras to use
 	public Camera mainCamera;
 	public Camera dialogueCamera;
 	public List<GameObject> speakers;
+	
+	public AudioSource Source;
+	public AudioClip Voice;
+	public AudioClip Enter;
+	public AudioClip Exit;
+	//public static AudioSource InitiateSound;
 	
 	//coroutine stuff
 	private IEnumerator runCoroutine;
@@ -40,6 +54,7 @@ public class npcDialogue : MonoBehaviour {
 	//node selection stuff
 	private int select = -2;
 	int nodeID = -1;
+	int numOptions = 0;
 	
 	public string Path;
 	public GameObject dialogueWindow;
@@ -47,21 +62,41 @@ public class npcDialogue : MonoBehaviour {
 	//Auto would cause the dialogue to run once the player enters the
 	//trigger area
 	public bool auto = false;
-	private bool running = false;
+	public static bool running = false;
+	public static bool endEpisode = false;
 	private bool textScroll = false;
-	private bool protection = false;
 	
 	//the list of tasks and achievements the player has accomplished or rather, hasn't
 	public static Dictionary<string, bool> tasks;
 	public static Dictionary<string, bool> chapterTasks;
-	public static string[] taskList;
-	public static string[] chapterTaskList;
-	public static int numTasks = 4;
+	public static List<string> taskList;
+	public static Dictionary<string, GameObject> Characters;
+	
+	private Whitenoise whitenoise;
 	
 	// Use this for initialization
-	
-	
 	void Start () {
+		
+		whitenoise = gameObject.GetComponent<Whitenoise>();
+		if(whitenoise == null)
+			Debug.Log("whoops, "+name+"'s whitenoise is null!");
+		
+		
+		//since the main camera has a don't destroy on load
+		if(mainCamera == null)
+			mainCamera = Camera.main;
+		
+		if(dialogueCamera == null)
+			dialogueCamera = mainCamera;
+		
+		//for focusing the camera on the appropriate characters
+		if(name!="")
+		{
+			if(Characters == null)
+				Characters = new Dictionary<string, GameObject>();
+			Characters[name] = transform.parent.gameObject;
+		}
+		
 		//load the dialogue from the given path
 		dialogue = Dialogue.Load(Path);
 		
@@ -70,6 +105,8 @@ public class npcDialogue : MonoBehaviour {
 		
 		initiateTasks();
 		
+		Source = transform.parent.GetComponent<AudioSource>();
+		
 		dialogueWindow = Instantiate<GameObject>(dialogueWindow);
 		dialogueWindow.transform.SetParent(canvas.transform, false);
 		
@@ -77,53 +114,94 @@ public class npcDialogue : MonoBehaviour {
 		windowTrans.localPosition = new Vector3(0,-100,0);
 		
 		
-		Name = dialogueWindow.transform.Find("[npc]").gameObject;
+		Name = dialogueWindow.transform.Find("SpeakerPanel").gameObject.transform.Find("[npc]").gameObject;
 		
 		options = new GameObject[4];
 		availableOptions = new GameObject[4];
 		
-		options[0] = option1 = dialogueWindow.transform.Find("[option 1]").gameObject;
-		options[1] = option2 = dialogueWindow.transform.Find("[option 2]").gameObject;
-		options[2] = option3 = dialogueWindow.transform.Find("[option 3]").gameObject;
-		options[3] = exit = dialogueWindow.transform.Find("[end convo]").gameObject;
+		ParentPanel = dialogueWindow.transform.Find("ButtonPanel").gameObject.GetComponent<RectTransform>();
 		
-		nodeText = dialogueWindow.transform.Find("[dialogue]").gameObject;
-		
-		//add an action to the exit button
-		exit.GetComponent<Button>().onClick.AddListener(delegate {
-				setSelect(-1);
-		});
+		nodeText = dialogueWindow.transform.Find("TextPanel").gameObject.transform.Find("[dialogue]").gameObject;
 		
 		dialogueWindow.SetActive(false);
-		
-		//to test
-		//move this runDialogue to a different function later
-		//runDialogue();
-		
 	}
 	
-	private void initiateTasks(){
-		tasks = new Dictionary<string, bool>();
-		taskList = new string[numTasks];
-		tasks["A"] = false;
-		tasks["B"] = false;
-		tasks["C"] = false;
-		tasks["D"] = false;
+	void Update()
+	{
+		if(coolingDown)
+		{
+			talkCooldown+=Time.deltaTime;
+		}
+		if(coolingDown && talkCooldown>0.5f)
+		{
+			talkCooldown = 0.5f;
+			coolingDown = false;
+		}
 		
-		taskList[0] = "A";
-		taskList[1] = "B";
-		taskList[2] = "C";
-		taskList[3] = "D";
+		skip = Input.GetButtonDown("Fire1");
 	}
 	
-	//bla bla bla
+	//initiate the tasks, load them from progress manager
+
+	private void initiateTasks()
+	{
+		if(ProgressManager.tasks == null)
+		{
+			ProgressManager.tasks = new Dictionary<string, bool>();
+		}	
+		
+		if(ProgressManager.chapterTasks == null)
+		{
+			ProgressManager.chapterTasks = new Dictionary<string, bool>();
+		}
+		
+		
+		if(ProgressManager.taskList == null)
+		{
+			ProgressManager.taskList = new List<string>();
+		}	
+		
+		//iterate through all of the tasks and add them in
+		for(int i=0; i<dialogue._tasks.Count; i++)
+		{
+			ProgressManager.chapterTasks[dialogue._tasks[i]] = false;
+			ProgressManager.tasks[dialogue._tasks[i]] = false;
+			ProgressManager.taskList.Add(dialogue._tasks[i]);
+		}
+		
+		
+		tasks = ProgressManager.tasks;
+		chapterTasks = ProgressManager.chapterTasks;
+		taskList = ProgressManager.taskList;
+		
+		Dictionary<string, int> tmp = null;
+		//get the correct reset node
+		if(ProgressManager.resetNodes == tmp)
+		{
+			//Debug.Log("The resetNodes thing is null, re-initializing");
+			ProgressManager.resetNodes = new Dictionary<string, int>();
+		}
+		
+		if(!ProgressManager.resetNodes.ContainsKey(name))
+		{
+			//Debug.Log("No next value assigned for " + name);
+			ProgressManager.resetNodes[name] = dialogue._next;
+		}
+		
+		dialogue._next = ProgressManager.resetNodes[name];
+		
+		Debug.Log(ProgressManager.resetNodes[name]);
+	}
+	
+	//add the achievement to the hash table
 	public void achieve(string thing){
+		//Debug.Log(thing + " HAS BEEN ACHIEVED");
 		tasks[thing] = true;
 	}
 	
-	public void runDialogue(){
-		runCoroutine = run();
-		StartCoroutine(runCoroutine);
+	public void setReset(int reset)
+	{
+		dialogue._next = reset;
 	}
 	
 	public void loadDialogue(string newPath){
@@ -135,7 +213,77 @@ public class npcDialogue : MonoBehaviour {
 		nodeID = -1;
 	}
 	
-	//method for selecting the next dialogue node to load
+	//update the text
+	private void updateText(Node node){
+		if(node._name == null || node._name == "")
+		{
+			Name.transform.parent.gameObject.SetActive(false);
+		}
+		else
+		{
+			Name.transform.parent.gameObject.SetActive(true);
+			Name.GetComponent<Text>().text = node._name;
+		}
+		if(displayCoroutine!=null)
+			StopCoroutine(displayCoroutine);
+		
+		displayCoroutine = DisplayText(node._text);
+		StartCoroutine(displayCoroutine);
+		
+		options = new GameObject[node._options.Count];
+		availableOptions = new GameObject[node._options.Count];
+		
+		//loop through all of this node's possible options and display them
+		int j=0;
+		for(int i=0;i<node._options.Count;i++){
+			if(updateButton(node, node._options[i], i))
+			{
+				availableOptions[j] = options[i];
+				j++;
+			}
+		}
+		numOptions = j;
+	}
+	
+	bool updateButton(Node node, dialogueOption option, int index)
+	{
+		if(option._req != null && option._req != ""){
+			//if the dictionary[option._req] == false, return
+			if(!tasks[option._req])
+				return false;
+		}
+		
+		GameObject newButton = (GameObject) Instantiate(buttonPrefab);
+		newButton.transform.SetParent(ParentPanel, false);
+		newButton.transform.localScale = new Vector3(1, 1, 1);
+			
+		newButton.GetComponentInChildren<Text>().text = option._text;
+		Button tmpButton = newButton.GetComponent<Button>();
+		tmpButton.onClick.AddListener(delegate{
+		setSelect(option._dest);});
+		
+		options[index] = newButton;
+		
+		//display the options in displayOptions
+		newButton.SetActive(false);
+		return true;
+	}
+	
+		//display the possible options after the text has stopped scrolling
+	void displayOptions()
+	{
+		//if the number of options are greater than 1, or the option has text, display it
+		if(numOptions>1 || availableOptions[0].GetComponentInChildren<Text>().text!="")
+		{
+			for(int i=0; i<numOptions; i++)
+			{
+				availableOptions[i].SetActive(true);
+			}
+			availableOptions[0].GetComponent<Button>().Select();
+		}
+	}
+	
+		//method for selecting the next dialogue node to load
 	public void setSelect(int x){
 		select = x;
 	}
@@ -144,176 +292,146 @@ public class npcDialogue : MonoBehaviour {
 		dialogue._next = x;
 	}
 	
-	//update the text
-	private void updateText(Node node){
-		Name.GetComponent<Text>().text = node._name;
-		if(displayCoroutine!=null)
-			StopCoroutine(displayCoroutine);
-		
-		displayCoroutine = DisplayText(node._text);
-		StartCoroutine(displayCoroutine);
-		
-		//nodeText.GetComponent<Text>().text = node._text;
-		
-		option1.SetActive(false);
-		option2.SetActive(false);
-		option3.SetActive(false);
-		exit.SetActive(false);
-		
-		//loop through all of this node's possible options and display them, currently
-		//a maximum of 3 options per node
-		//CHECK THIS OUT ===============================================================
-		//instantiate buttons over each other instead of using predefined buttons
-		for(int i=0;i<node._options.Count/*||i<2for later expansion?*/;i++){
-			switch(i){
-				case 0:
-					updateButton(node, option1, node._options[i]);
-				break;
-				
-				case 1:
-					updateButton(node, option2, node._options[i]);
-				break;
-				
-				case 2:
-					updateButton(node, option3, node._options[i]);
-				break;
-				
-			}
-		}
-		
-		if(node._options.Count>1){
-			exit.SetActive(true);
-		}
-	}
 	
-	//make the buttons visible
-	private void updateButton(Node node, GameObject button, dialogueOption option){
-		//check to see if the option has any requirements
-		//if it does, check the hash table
-		if(option._req != null && option._req != ""){
-			//if the dictionary[option._req] == false, return
-			if(!tasks[option._req])
-				return;
-			//else setActive and continue
-		}
-		
-		if(node._options.Count > 1){
-			button.SetActive(true);
-		}
-		
-		button.GetComponentInChildren<Text>().text = option._text;
-		button.GetComponent<Button>().onClick.AddListener(delegate {
-			//Debug.Log(option._dest);
-			setSelect(option._dest);});
+	public void runDialogue(){
+		runCoroutine = run();
+		StartCoroutine(runCoroutine);
 	}
-	
 	//run the dialogue tree coroutine
-	public IEnumerator run(){
+	public IEnumerator run()
+	{
+		
+		if( whitenoise!=null)
+			whitenoise.Play();
+		
+		if(Enter!=null)
+			Source.PlayOneShot(Enter);
+		
 		//THIS WILL DO FOR NOW
 		yield return new WaitForEndOfFrame();
-
+		yield return new WaitForEndOfFrame();
+		
+		if(animator!=null)
+		{
+			//animator.SetBool("InConversation", true);
+			animator.Play("Conversation");
+		}
+		
 		dialogueWindow.SetActive(true);
+		
+		//disable the overhead UI
+		IndicatorOverlay overlay = transform.GetComponent<IndicatorOverlay> ();
+		if(overlay!=null)
+		{
+			overlay.enabled = false;
+		}
+		
 		
 		nodeID = dialogue._next;
 		
+		Node current;
 		//while the node isn't an exit node...
-		while(nodeID!=-1){
-			updateText(dialogue._nodes[nodeID]);
+		while(nodeID!=-1)
+		{
+			current = dialogue._nodes[nodeID];
+			updateText(current);
 			//testing out the execute function
-			dialogue._nodes [nodeID]._precalls.ForEach ((Call c) => c.execute ());
-			
+			current._precalls.ForEach ((Call c) => c.execute ());
+
 			//add accomplishment to dictionary
-			if(dialogue._nodes[nodeID]._accomplish!=null && 
-				dialogue._nodes[nodeID]._accomplish!=""){
-				tasks[dialogue._nodes[nodeID]._accomplish] = true;
-				Debug.Log("ACCOMPLISHED " + dialogue._nodes[nodeID]._accomplish);
+			if(current._accomplish!=null && 
+				current._accomplish!="")
+			{
+				tasks[current._accomplish] = true;
+				Debug.Log("ACCOMPLISHED " + current._accomplish);
 				checkStatus();
 			}
-			
-			//set the corresponding button active
-			//for some reason, this works,  not complaining
-			//CHECK THIS OUT ============================================================
-			int j=0;
-			for(int i=0; i<4;i++){
-				if(options[i].activeSelf){
-					//options[i].GetComponent<Button>().Select();
-					availableOptions[j] = options[i];
-					j++;
-				}
-			}
-			
-			
+
 			select = -2;
 			
 			int index = 0;
 			int direction;
 			float selCooldown = 0.25f;
-			
-			//only one option, fire1 goes straight to the next one
-			if(j == 0){
-				while(select == -2){
-					if (Input.GetButtonDown("Fire1")&& !textScroll && running
-						&& selCooldown<0){
-						//invoke a click through script
-						// referenceToTheButton.onClick.Invoke();
-						options[0].GetComponent<Button>().onClick.Invoke();
+			int j = numOptions;
+			while(select == -2)
+			{
+				if(!textScroll)
+				{
+					//availableOptions[index].GetComponent<Button>().Select();
+						
+					direction = -(int) Input.GetAxisRaw("Vertical");
+							
+					if(selCooldown<0){
+						index+=direction;
+							
+						//bind the indices
+						if(index<0)
+							index = 0;
+						if(index>j-1)
+							index = j-1;
+					
+					}
+
+					//testing
+					if(direction!=0 && selCooldown<0){
+						selCooldown = 0.25f;
+					}
+					
+					selCooldown -= Time.deltaTime;
+
+					if (Input.GetButtonDown("Fire1") && !textScroll && running 
+						&& selCooldown<0)
+					{
+						availableOptions[index].GetComponent<Button>().onClick.Invoke();
+						selCooldown = 0.25f;
 						
 					}
-					selCooldown -=Time.deltaTime;
-					yield return /*new WaitForEndOfFrame()*/null;
 				}
+				yield return /*new WaitForEndOfFrame()*/null;
 			}
-			else{
-				availableOptions[0].GetComponent<Button>().Select();
-				
-				//cooldown to make selection less sensitive
-				while(select == -2){
-						
-						availableOptions[index].GetComponent<Button>().Select();
-						
-						direction = -(int) Input.GetAxisRaw("Vertical");
-						
-						if(selCooldown<0){
-							index+=direction;
-							
-							//bind the indices
-							if(index<0)
-								index = 0;
-							if(index>j-1)
-								index = j-1;
-						
-						}
-						
-						//Debug.Log( index + " " + options[index].GetComponentInChildren<Text>().text);
-						
-						//testing
-						if(direction!=0 && selCooldown<0){
-							selCooldown = 0.25f;
-						}
-						
-						selCooldown -= Time.deltaTime;
-						
-						//look for player input
-						if (Input.GetButtonDown("Fire1") && !textScroll && running 
-							&& selCooldown<0){
-							//invoke a click through script
-							// referenceToTheButton.onClick.Invoke();
-							availableOptions[index].GetComponent<Button>().onClick.Invoke();
-							selCooldown = 0.25f;
-							
-						}
-						yield return /*new WaitForEndOfFrame()*/null;
-				}
+			//destroy the buttons
+			for(int i=0; i<current._options.Count;i++)
+			{
+				Destroy(options[i]);
 			}
-			dialogue._nodes [nodeID]._postcalls.ForEach ((Call c) => c.execute ());
-			dialogue._next = dialogue._nodes[nodeID]._reset;
+			
+			current._postcalls.ForEach ((Call c) => c.execute ());
+			dialogue._next = current._reset;
 			nodeID = select;
 		}
+		//}
+		if(Exit!=null)
+			Source.PlayOneShot(Exit);
+		
 		running = false;
+		coolingDown = true;
+		talkCooldown = 0f;
 		mainCamera.gameObject.SetActive(true);
 		dialogueCamera.gameObject.SetActive(false);
 		dialogueWindow.SetActive(false); 
-		GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = true;
+		
+		//store the reset node
+		ProgressManager.resetNodes[name] = dialogue._next;
+		Debug.Log(name + "'s reset node should now be " + ProgressManager.resetNodes[name]);
+		
+		
+		if(endEpisode)
+		{
+			var canvas = GameObject.Find("Canvas");
+			canvas.transform.Find("EndDay").gameObject.SetActive(true);
+		}
+		/*else
+		{
+			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = true;
+		}*/
+		
+		if(animator!=null)
+			animator.Play("idle");
+		
+		if(overlay!=null)
+		{
+			overlay.enabled = true;
+		}
 	}
 	
 	//coroutine for displaying the text
@@ -325,10 +443,21 @@ public class npcDialogue : MonoBehaviour {
 		nodeText.GetComponent<Text>().text = "";
 		textScroll = true;
 		
+		//================================================================TEXT DELAYS ==========
+		float dDelay = 0.1f;
+		float pDelay = 0.3f;
+		
+		bool dummy = false;
+		
 		while(true){
-			//if the player presses fire1, just put the text and get out
-			if (Input.GetButtonDown("Fire1") && running){
+			
+			dummy = Input.GetButtonUp("Fire1");
+			
+			//if the player presses Fire1, just put the text and get out
+			if (skip){
+				dummy = false;
 				nodeText.GetComponent<Text>().text = (string)displayText;
+				yield return new WaitForSeconds(dDelay);
 				break;
 			}
 			
@@ -340,12 +469,15 @@ public class npcDialogue : MonoBehaviour {
 			//otherwise go normally
 			else{
 				nodeText.GetComponent<Text>().text += displayText[index];
+				
+				if(Voice!=null)
+					Source.PlayOneShot(Voice);
 			}
 			
 			if((displayText[index] == '!' || displayText[index] == '?' ||
 				displayText[index] == '.') && index<strLen-1 && 
 				(displayText[index+1] == ' '|| displayText[index+1] == '\n')){
-					yield return new WaitForSeconds(0.3f);
+					yield return new WaitForSeconds(pDelay);
 				}
 			
 			index++;
@@ -353,62 +485,132 @@ public class npcDialogue : MonoBehaviour {
 			if(index<strLen){
 				//play a sound potentially
 				//wait for a moment before adding next character
-				yield return new WaitForSeconds(0.02f);
+				yield return new WaitForSeconds(dDelay);
 			}
 			else{
 				break;
 			}
 		}
+		displayOptions();
 		textScroll = false;
 	}
 	
 	void OnTriggerEnter(Collider col){
 		//Debug.Log(col.tag);
 		if(col.tag == "Player" && auto && !running){
-			//run the dialogue
-			mainCamera.gameObject.SetActive(false);
-			dialogueCamera.gameObject.SetActive(true);
-			running = true;
-			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
-			runDialogue();
-			auto = false;
-		}
-	}
-	
-	void OnTriggerStay(Collider col){
-		if(auto || col.tag!="Player")
-			return;
-
-		//if the player presses "interact"/fire1, disable player movement and
-		//run the dialogue tree
-		if (Input.GetButtonDown("Fire1") && !running){
-			//get player's forward facing direction
 			Vector3 p4 = col.transform.TransformDirection(Vector3.forward);
-			Vector3 npc4 = -transform.forward;
-			float dp = Vector3.Dot(p4, npc4);
-			float dst = Vector3.Distance(col.transform.position, transform.position);
-			//only run dialogue if they're facing each other (more or less) or
-			//within a certain distance 
-			if((dp<=1 &&dp>=0.75) || dst<10){
-				mainCamera.gameObject.SetActive(false);
-				dialogueCamera.gameObject.SetActive(true);
-				running = true;
-				GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
-				runDialogue();
+			float PDotN = Vector3.Dot(p4, transform.position - col.transform.position);
+			
+			RaycastHit hit;
+			//raycast from player, the player's forward, store it in hit, of distance hit
+			if(Physics.SphereCast(col.transform.position, 1, p4, out hit, talkDistance, layer))
+			{
+				//if the ray hits this character, run the thing
+				if(hit.collider.gameObject == this.transform.parent.gameObject)
+				{
+					if(mainCamera == null)
+						mainCamera = Camera.main;
+					
+					if(transform.parent!= null && transform.parent.parent!=null)
+						transform.parent.parent.LookAt(col.transform);
+					
+					mainCamera.gameObject.SetActive(false);
+					dialogueCamera.gameObject.SetActive(true);
+					running = true;
+					//GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
+					runDialogue();
+					auto = false;
+				}
 			}
 		}
 	}
 	
+	//have a talking cooldown so the player doesn't automatically jump back when they
+	//exit conversation
+	void OnTriggerStay(Collider col){
+		if(auto || col.tag!="Player")
+			return;
+		
+		//if the player presses "interact"/Fire1, disable player movement and
+		//run the dialogue tree
+		if (Input.GetButtonDown("Fire1") && !running && !coolingDown){
+			Vector3 p4 = col.transform.TransformDirection(Vector3.forward);
+			float PDotN = Vector3.Dot(p4, transform.position - col.transform.position);
+			
+			RaycastHit hit;
+			//raycast from player, the player's forward, store it in hit, of distance hit
+			if(Physics.SphereCast(col.transform.position, 1, p4, out hit, talkDistance, layer))
+			{
+				//if the ray hits this character, run the thing
+				if(hit.collider.gameObject == this.transform.parent.gameObject)
+				{
+					if(mainCamera == null)
+						mainCamera = Camera.main;
+					
+					if(transform.parent!= null && transform.parent.parent!=null)
+						transform.parent.parent.LookAt(col.transform);
+					
+					mainCamera.gameObject.SetActive(false);
+					dialogueCamera.gameObject.SetActive(true);
+					running = true;
+					//GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
+					runDialogue();
+				}
+			}
+			//if the player is too close to raycast, it's probably alright
+			else if(Vector3.Distance(col.transform.position, transform.position) < 2
+				&& PDotN>0.75)
+			{
+				if(mainCamera == null)
+					mainCamera = Camera.main;
+				
+				if(transform.parent!= null && transform.parent.parent!=null)
+						transform.parent.parent.LookAt(col.transform);
+				
+				mainCamera.gameObject.SetActive(false);
+				dialogueCamera.gameObject.SetActive(true);
+				running = true;
+				//GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
+				runDialogue();
+			}
+		}
+			
+	}
+	
+	//face the player
+	IEnumerator Face(Transform t)
+	{
+		float curr = Time.deltaTime;
+		float dur = 1.5f;
+		yield return null;
+	}
+	
 	//cycle through all tasks, if they're all complete, you win!
+	//slash, move on to the next episode
 	void checkStatus(){
-		for(int i=0; i<numTasks;i++){
+	for(int i=0; i<chapterTasks.Count;i++){
 			Debug.Log("CYCLING..." + taskList[i]);
 			if(tasks[taskList[i]] == false)
 				return;
 		}
 		Debug.Log("YOU DID IT!");
+		endEpisode = true;
 		//end the game
-		SceneManager.LoadScene("Win");
+	}
+	
+	public static void saveState()
+	{
+		Debug.Log("Saving State.");
+		ProgressManager.tasks = tasks;
+		ProgressManager.chapterTasks = chapterTasks;
+		ProgressManager.taskList = taskList;
+	}
+	
+	public static void loadState()
+	{
+		tasks = ProgressManager.tasks;
+		chapterTasks = ProgressManager.chapterTasks;
+		taskList = ProgressManager.taskList;
 	}
 	
 }

@@ -14,12 +14,19 @@ public class Dialogue{
 	[XmlArrayItem("Node")]
 	public List<Node> _nodes;
 	
+	[XmlElement("_tasks")]
+	public List<string> _tasks;
 	//where to start off the conversation the next time this
 	//npc is spoken to
 	public int _next = 0;
 	
 	public Dialogue(){
 		_nodes = new List<Node>();
+	}
+	
+	public void addNode(Node node)
+	{
+		_nodes.Add(node);
 	}
 	
 	//static dialogue loader for use of all instances of Dialogue
@@ -35,6 +42,7 @@ public class Dialogue{
 		StringReader reader = new StringReader(_xml.text);
 		
 		Dialogue dialogue = (Dialogue) serial.Deserialize(reader);
+		//Debug.Log(dialogue._nodes.Count);
 		
 		reader.Close();
 		return dialogue;

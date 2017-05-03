@@ -5,8 +5,11 @@ using UnityEngine;
 /// <summary>
 /// Player movement, direction based off of camera rotation
 /// </summary>
+
 [RequireComponent (typeof (Rigidbody))]
 public class PlayerMovement : MonoBehaviour {
+	
+	public static PlayerMovement Instance;
 
 	public Camera cam;
 	public float acceleration;
@@ -14,19 +17,72 @@ public class PlayerMovement : MonoBehaviour {
 	public ForceMode forceMode;
 	public LayerMask jumpMask;
 	public float jumpForce = 8f;
+	public GameObject particleTrail; //spawned when you go fast
+	private GameObject particleChild;
+	private Animator animator;
 	private Rigidbody rb;
+	private float horizontalSpeed;
+	
+	//testing persistant stuff
+	void Awake()
+	{
+		if(Instance == null){
+			DontDestroyOnLoad (gameObject);
+			Instance = this;
+		}
+		else if(Instance!=this){
+			Destroy(gameObject);
+		}
+	}
+	
+	
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
 		cam = cam ?? Camera.main;
+		animator = GetComponentInChildren<Animator> ();
+	}
+	
+	void OnLevelWasLoaded()
+	{
+		ProgressManager.setPlayerLocation(this.gameObject);
 	}
 
 	// Update is called once per frame
 	void Update () {
 		
+		if(cam == null)
+			cam = Camera.main;
+		
+		if(npcDialogue.running)
+		{
+			animator.SetFloat("MoveSpeed", 0);
+			return;
+		}
+		
+		//Animations here
+		float speedAmount = horizontalSpeed/maxSpeed;
+		animator.SetFloat("MoveSpeed", speedAmount);
+		if(speedAmount > .9){
+			animator.SetFloat("RunTime",animator.GetFloat("RunTime")+Time.deltaTime);
+		}
+		else{
+			animator.SetFloat("RunTime",0);
+			if(particleChild){
+				//Will autodestruct due to trail renderer
+				particleChild.transform.parent = null;
+				particleChild = null;
+			}
+		}
 	}
 
 	void FixedUpdate(){
+		if(npcDialogue.running)
+		{
+			animator.SetFloat("MoveSpeed", 0);
+			return;
+		}
+		
 		Vector3 camAngle = new Vector3(0, cam.transform.eulerAngles.y, 0);
 		Quaternion quat = Quaternion.Euler(camAngle);
 		Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal"), 0 ,Input.GetAxisRaw("Vertical")).normalized;
@@ -39,7 +95,17 @@ public class PlayerMovement : MonoBehaviour {
 		//Cap max horizontal speed;
 		Vector3 hVel = rb.velocity;
 		hVel.y = 0;
-		hVel = hVel.sqrMagnitude > maxSpeed * maxSpeed ? hVel.normalized * maxSpeed : hVel;
+
+		horizontalSpeed = hVel.magnitude;
+		float max = maxSpeed;
+		if(animator.GetFloat("RunTime") > 7){
+			if(!particleChild){
+				particleChild = (GameObject)GameObject.Instantiate(particleTrail,transform, false);
+			}
+			max *= 2f;
+		}
+		hVel = horizontalSpeed > maxSpeed ? hVel.normalized * max : hVel;
+
 		//Jumping
 		hVel.y =  rb.velocity.y;
 		rb.velocity = hVel;

@@ -20,7 +20,7 @@ public class dialogueOption{
 	
 	dialogueOption() {}
 	
-	public dialogueOption(string text, int dest){
+	public dialogueOption(string text="", int dest=0){
 		_text = text;
 		_dest = dest;
 	}

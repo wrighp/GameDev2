@@ -6,6 +6,8 @@ using System.Collections;
 /// </summary>
 [AddComponentMenu("Camera-Control/Mouse Orbit with zoom")]
 public class MouseOrbitImproved : MonoBehaviour {
+	
+	public static MouseOrbitImproved Instance;
 
 	public Transform target;
 	public LayerMask cameraCollisionLayer;
@@ -26,6 +28,16 @@ public class MouseOrbitImproved : MonoBehaviour {
 
 	float x = 0.0f;
 	float y = 0.0f;
+	
+	void Awake()
+	{
+		if(Instance == null){
+			DontDestroyOnLoad (gameObject);
+			Instance = this;
+		}
+		else if(Instance!=this)
+			Destroy(gameObject);
+	}
 
 	// Use this for initialization
 	void Start () 
@@ -48,7 +60,7 @@ public class MouseOrbitImproved : MonoBehaviour {
 		if (target) 
 		{
 			//RMB to move camera
-			if(Input.GetMouseButton(1)){
+			if(Input.GetMouseButton(1) || Input.GetMouseButton(0)){
 				x += Input.GetAxis("Mouse X") * mouseXSpeed * Time.deltaTime;
 				y -= Input.GetAxis("Mouse Y") * mouseYSpeed * Time.deltaTime;
 			}
