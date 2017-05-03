@@ -1,0 +1,48 @@
+﻿<?xml version = "1.0" encoding = "UTF-8"?>
+<Dialogue>
+	<_nodes>
+		<Node>
+			<_ID>0</_ID>
+			<_name>Mr. Deer</_name>
+			<_text>Oh… it’s you... Come to return my book, have you…?\n…\nNo...? Alright… well, did you want something important or......?</_text>
+			<_reset>0</_reset>
+			<_options>
+				<dialogueOption>
+					<_text>I came to collect rent!</_text>
+					<_dest>1</_dest>
+				</dialogueOption>
+				<dialogueOption>
+					<_text>Fork over your rent money my dear Deer!</_text>
+					<_dest>2</_dest>
+				</dialogueOption>
+			</_options>
+			<_precalls>
+				<Call _m="P1ADeerPeekOut"></Call>
+			</_precalls>
+		</Node>
+
+		<Node>
+			<_ID>1</_ID>
+			<_name>Mr. Deer</_name>
+			<_text>Oh... Right... If that's all then, I'm very busy, I don't have time to waste.</_text>
+			<_options><dialogueOption><_dest>-1</_dest></dialogueOption></_options>
+			<_reset>-1</_reset>
+			<_postcalls>
+				<Call _m="P1ADeerHandsMoneySlamDoor"></Call>
+			</_postcalls>
+		</Node>
+		
+		<Node>
+			<_ID>2</_ID>
+			<_name>Mr. Deer</_name>
+			<_reset>-1</_reset>
+			<_text>... Haven't heard that one before. You should tell your jokes to someone else now. I'm sure that otter boy will appreciate your level of humour.</_text>
+			<_options><dialogueOption><_dest>-1</_dest></dialogueOption></_options>
+			<_reset>-1</_reset>
+			<_postcalls>
+				<Call _m="P1ADeerHandsMoneySlamDoor"></Call>
+			</_postcalls>
+		</Node>
+		
+	</_nodes>
+</Dialogue>

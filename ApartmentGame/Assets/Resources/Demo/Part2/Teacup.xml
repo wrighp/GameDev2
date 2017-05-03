@@ -1,0 +1,47 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<Dialogue>
+	<_nodes>
+	
+		<Node>
+			<_ID>0</_ID>
+			<_name>Ms Teacup</_name>
+			<_text>Oh, thank god- That was dreadful! How could you let something like this happen under your watch! This is just disgraceful!
+Huh?\nYou saved me just for your silly rent money?! 
+Fine! Take it. But you’d better spend that on better plumbing, hmph.
+			</_text>
+			<_accomplish>C</_accomplish>
+			<_reset>1</_reset>
+			
+			<_options>
+				<dialogueOption>
+					<_text></_text>
+					<_dest>-1</_dest>
+				</dialogueOption>
+			</_options>
+			<_precalls>
+			</_precalls>
+			<_postcalls>
+			</_postcalls>
+		</Node>
+		
+		<Node>
+			<_ID>1</_ID>
+			<_name>Ms Teacup</_name>
+			<_text>You’ve already taken my dignity and my money, what more do you want from me?
+Just leave me alone.</_text>
+			<_reset>1</_reset>			
+
+			<_options>
+				<dialogueOption>
+					<_text></_text>
+					<_dest>-1</_dest>
+				</dialogueOption>
+			</_options>
+			<_precalls>
+			</_precalls>
+			<_postcalls>
+			</_postcalls>
+		</Node>
+		
+	</_nodes>
+</Dialogue>

@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<Dialogue>
+	<_nodes>
+		<Node>
+			<_ID>0</_ID>
+			<_name>Danny</_name>
+			<_text>(giggles) Oh! Hey there, bud [insert name instead?]! Rent money…? My new job pays a lot better, so I actually have it this time! By the way, have you seen my--</_text>
+			<_options><dialogueOption><_dest>1</_dest></dialogueOption></_options>
+		</Node>
+
+		<Node>
+			<_ID>1</_ID>
+			<_name>Danny</_name>
+			<_text>...\nWhoa! Did you hear THAT? Sounded like Ms. Teacup... Maybe you should go check it out…? I’ll come too!</_text>
+			<_calls>
+				<Call _m="P1ADannyScreamAndFollow"></Call>
+			<_calls>
+			<_options><dialogueOption><_dest>-1</_dest></dialogueOption></_options>
+		</Node>
+	</_nodes>
+</Dialogue>

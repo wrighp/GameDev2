@@ -1,0 +1,46 @@
+<recipes>
+	<recipe name = "pie">
+		<ingredients>
+			<ingredient>
+				<item></item>
+				<amount></amount>
+			</ingredient>
+		</ingredients>
+	</recipe>
+	
+	<recipe name = "Hammer">
+		<ingredients>
+			<ingredient>
+				<item></item>
+				<amount></amount>
+			</ingredient>
+		</ingredients>
+	</recipe>
+	
+	<recipe name = "juice">
+		<ingredients>
+			<ingredient>
+				<item></item>
+				<amount></amount>
+			</ingredient>
+		</ingredients>
+	</recipe>
+	
+	<recipe name = "omlette">
+		<ingredients>
+			<ingredient>
+				<item></item>
+				<amount></amount>
+			</ingredient>
+		</ingredients>
+	</recipe>
+	
+	<recipe name = "saw">
+		<ingredients>
+			<ingredient>
+				<item></item>
+				<amount></amount>
+			</ingredient>
+		</ingredients>
+	</recipe>
+</recipes>

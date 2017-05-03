@@ -1,0 +1,40 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<Dialogue>
+	<_nodes>
+	
+		<Node>
+			<_ID>0</_ID>
+			<_name>Danny</_name>
+			<_text>She sure is upset :D\nI wonder how can we get her out though...</_text>
+			<_reset>0</_reset>
+			<_options>
+				<dialogueOption>
+					<_text></_text>
+					<_dest>-1</_dest>
+				</dialogueOption>
+			</_options>
+			<_precalls>
+			</_precalls>
+			<_postcalls>
+			</_postcalls>
+		</Node>
+		
+		<Node>
+			<_ID>1</_ID>
+			<_name>Danny</_name>
+			<_text>Wow, that was quick thinking!</_text>
+			<_reset>1</_reset>
+			<_options>
+				<dialogueOption>
+					<_text></_text>
+					<_dest>-1</_dest>
+				</dialogueOption>
+			</_options>
+			<_precalls>
+			</_precalls>
+			<_postcalls>
+			</_postcalls>
+		</Node>
+
+	</_nodes>
+</Dialogue>

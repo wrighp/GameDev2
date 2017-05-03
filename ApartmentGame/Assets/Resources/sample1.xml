@@ -1,0 +1,52 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<Dialogues>
+	<message>Help a guy out, will you?</message>
+	<Characters>
+		
+		<Character name="Monty">
+			<choices>
+				<choice id="Fuck off.">
+				</choice>
+				<choice id="Mmmaybe....">
+				</choice>
+				<choice id="Alright!">
+				</choice>
+			</choices>
+		</Character>
+		
+		<Character name="Doug">
+			<choices>
+				<choice id="Fuck off.">
+				</choice>
+				<choice id="Mmmaybe....">
+				</choice>
+				<choice id="Alright!">
+				</choice>
+			</choices>
+		</Character>
+		
+		<Character name="Jeff">
+			<choices>
+				<choice id="Fuck off.">
+				</choice>
+				<choice id="Mmmaybe....">
+				</choice>
+				<choice id="Alright!">
+				</choice>
+			</choices>
+		</Character>
+		
+		<Character name="Rocket">
+			<choices>
+				<choice id="Fuck off.">
+				</choice>
+				<choice id="Mmmaybe....">
+				</choice>
+				<choice id="Alright!">
+				</choice>
+			</choices>
+		</Character>
+	
+	</Characters>
+</Dialogues>
