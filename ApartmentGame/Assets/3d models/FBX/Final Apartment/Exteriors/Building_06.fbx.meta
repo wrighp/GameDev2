@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: e232bfc9b1443403b8f648b9980b62e9
+timeCreated: 1491070560
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: polySurface1199
+    100004: polySurface904
+    100006: polySurface918
+    100008: polySurface920
+    100010: polySurface922
+    100012: polySurface923
+    100014: polySurface926
+    100016: polySurface940
+    100018: polySurface943
+    100020: polySurface944
+    100022: polySurface945
+    100024: polySurface946
+    100026: polySurface947
+    100028: polySurface948
+    100030: polySurface949
+    100032: polySurface952
+    100034: polySurface955
+    100036: polySurface956
+    100038: polySurface967
+    100040: polySurface968
+    100042: polySurface972
+    100044: polySurface977
+    100046: polySurface978
+    100048: polySurface979
+    100050: polySurface980
+    100052: stick_blanket_S
+    100054: building_06
+    100056: blanket
+    100058: building
+    100060: metal_thing
+    400000: //RootNode
+    400002: polySurface1199
+    400004: polySurface904
+    400006: polySurface918
+    400008: polySurface920
+    400010: polySurface922
+    400012: polySurface923
+    400014: polySurface926
+    400016: polySurface940
+    400018: polySurface943
+    400020: polySurface944
+    400022: polySurface945
+    400024: polySurface946
+    400026: polySurface947
+    400028: polySurface948
+    400030: polySurface949
+    400032: polySurface952
+    400034: polySurface955
+    400036: polySurface956
+    400038: polySurface967
+    400040: polySurface968
+    400042: polySurface972
+    400044: polySurface977
+    400046: polySurface978
+    400048: polySurface979
+    400050: polySurface980
+    400052: stick_blanket_S
+    400054: building_06
+    400056: blanket
+    400058: building
+    400060: metal_thing
+    2300000: polySurface1199
+    2300002: polySurface904
+    2300004: polySurface918
+    2300006: polySurface920
+    2300008: polySurface922
+    2300010: polySurface923
+    2300012: polySurface926
+    2300014: polySurface940
+    2300016: polySurface943
+    2300018: polySurface944
+    2300020: polySurface945
+    2300022: polySurface946
+    2300024: polySurface947
+    2300026: polySurface948
+    2300028: polySurface949
+    2300030: polySurface952
+    2300032: polySurface955
+    2300034: polySurface956
+    2300036: polySurface967
+    2300038: polySurface968
+    2300040: polySurface972
+    2300042: polySurface977
+    2300044: polySurface978
+    2300046: polySurface979
+    2300048: polySurface980
+    2300050: stick_blanket_S
+    2300052: blanket
+    2300054: building
+    2300056: metal_thing
+    3300000: polySurface1199
+    3300002: polySurface904
+    3300004: polySurface918
+    3300006: polySurface920
+    3300008: polySurface922
+    3300010: polySurface923
+    3300012: polySurface926
+    3300014: polySurface940
+    3300016: polySurface943
+    3300018: polySurface944
+    3300020: polySurface945
+    3300022: polySurface946
+    3300024: polySurface947
+    3300026: polySurface948
+    3300028: polySurface949
+    3300030: polySurface952
+    3300032: polySurface955
+    3300034: polySurface956
+    3300036: polySurface967
+    3300038: polySurface968
+    3300040: polySurface972
+    3300042: polySurface977
+    3300044: polySurface978
+    3300046: polySurface979
+    3300048: polySurface980
+    3300050: stick_blanket_S
+    3300052: blanket
+    3300054: building
+    3300056: metal_thing
+    4300000: polySurface980
+    4300002: polySurface979
+    4300004: polySurface978
+    4300006: polySurface977
+    4300008: polySurface972
+    4300010: polySurface968
+    4300012: polySurface967
+    4300014: polySurface956
+    4300016: polySurface955
+    4300018: polySurface952
+    4300020: polySurface948
+    4300022: polySurface947
+    4300024: polySurface946
+    4300026: polySurface945
+    4300028: polySurface944
+    4300030: polySurface943
+    4300032: polySurface940
+    4300034: polySurface926
+    4300036: polySurface922
+    4300038: polySurface920
+    4300040: polySurface918
+    4300042: polySurface904
+    4300044: stick_blanket_S
+    4300046: polySurface949
+    4300048: polySurface923
+    4300050: polySurface1199
+    4300052: blanket
+    4300054: building
+    4300056: metal_thing
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

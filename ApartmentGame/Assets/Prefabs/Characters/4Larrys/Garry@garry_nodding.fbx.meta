@@ -1,0 +1,327 @@
+fileFormatVersion: 2
+guid: c1e4624eb1f234a3d873d6e0a1eb1c6b
+timeCreated: 1491558774
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: arms
+    100002: body
+    100004: Garry
+    100006: //RootNode
+    100008: head
+    100010: head 1
+    100012: hip
+    100014: joints
+    100016: L_ankle
+    100018: L_arm
+    100020: L_elbow
+    100022: L_foot
+    100024: L_forearm
+    100026: L_hand
+    100028: L_hand_1
+    100030: L_hand_2
+    100032: L_helper1
+    100034: L_helper2
+    100036: L_knee
+    100038: L_leg
+    100040: L_leg_helper1
+    100042: L_leg_helper2
+    100044: L_shoulder
+    100046: L_thumb1
+    100048: L_thumb2
+    100050: L_toe
+    100052: L_wrist
+    100054: lowerhip
+    100056: neck1
+    100058: neck2
+    100060: R_ankle
+    100062: R_arm
+    100064: R_elbow
+    100066: R_foot
+    100068: R_forearm
+    100070: R_hand
+    100072: R_hand_1
+    100074: R_hand_2
+    100076: R_helper1
+    100078: R_helper2
+    100080: R_knee
+    100082: R_leg
+    100084: R_leg_helper1
+    100086: R_leg_helper2
+    100088: R_shoulder
+    100090: R_thumb1
+    100092: R_thumb2
+    100094: R_toe
+    100096: R_wrist
+    100098: spine1
+    100100: spine2
+    100102: spine3
+    100104: spine4
+    100106: upperhip
+    400000: arms
+    400002: body
+    400004: Garry
+    400006: //RootNode
+    400008: head
+    400010: head 1
+    400012: hip
+    400014: joints
+    400016: L_ankle
+    400018: L_arm
+    400020: L_elbow
+    400022: L_foot
+    400024: L_forearm
+    400026: L_hand
+    400028: L_hand_1
+    400030: L_hand_2
+    400032: L_helper1
+    400034: L_helper2
+    400036: L_knee
+    400038: L_leg
+    400040: L_leg_helper1
+    400042: L_leg_helper2
+    400044: L_shoulder
+    400046: L_thumb1
+    400048: L_thumb2
+    400050: L_toe
+    400052: L_wrist
+    400054: lowerhip
+    400056: neck1
+    400058: neck2
+    400060: R_ankle
+    400062: R_arm
+    400064: R_elbow
+    400066: R_foot
+    400068: R_forearm
+    400070: R_hand
+    400072: R_hand_1
+    400074: R_hand_2
+    400076: R_helper1
+    400078: R_helper2
+    400080: R_knee
+    400082: R_leg
+    400084: R_leg_helper1
+    400086: R_leg_helper2
+    400088: R_shoulder
+    400090: R_thumb1
+    400092: R_thumb2
+    400094: R_toe
+    400096: R_wrist
+    400098: spine1
+    400100: spine2
+    400102: spine3
+    400104: spine4
+    400106: upperhip
+    4300000: arms
+    4300002: body
+    4300004: head
+    7400000: garry_nodding
+    9500000: //RootNode
+    13700000: arms
+    13700002: body
+    13700004: head
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: garry_nodding
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Garry
+        weight: 1
+      - path: Garry/arms
+        weight: 1
+      - path: Garry/body
+        weight: 1
+      - path: Garry/head
+        weight: 1
+      - path: joints
+        weight: 1
+      - path: joints/hip
+        weight: 1
+      - path: joints/hip/lowerhip
+        weight: 1
+      - path: joints/hip/lowerhip/L_leg
+        weight: 1
+      - path: joints/hip/lowerhip/L_leg/L_leg_helper1
+        weight: 1
+      - path: joints/hip/lowerhip/L_leg/L_leg_helper1/L_knee
+        weight: 1
+      - path: joints/hip/lowerhip/L_leg/L_leg_helper1/L_knee/L_leg_helper2
+        weight: 1
+      - path: joints/hip/lowerhip/L_leg/L_leg_helper1/L_knee/L_leg_helper2/L_ankle
+        weight: 1
+      - path: joints/hip/lowerhip/L_leg/L_leg_helper1/L_knee/L_leg_helper2/L_ankle/L_foot
+        weight: 1
+      - path: joints/hip/lowerhip/L_leg/L_leg_helper1/L_knee/L_leg_helper2/L_ankle/L_foot/L_toe
+        weight: 1
+      - path: joints/hip/lowerhip/R_leg
+        weight: 1
+      - path: joints/hip/lowerhip/R_leg/R_leg_helper1
+        weight: 1
+      - path: joints/hip/lowerhip/R_leg/R_leg_helper1/R_knee
+        weight: 1
+      - path: joints/hip/lowerhip/R_leg/R_leg_helper1/R_knee/R_leg_helper2
+        weight: 1
+      - path: joints/hip/lowerhip/R_leg/R_leg_helper1/R_knee/R_leg_helper2/R_ankle
+        weight: 1
+      - path: joints/hip/lowerhip/R_leg/R_leg_helper1/R_knee/R_leg_helper2/R_ankle/R_foot
+        weight: 1
+      - path: joints/hip/lowerhip/R_leg/R_leg_helper1/R_knee/R_leg_helper2/R_ankle/R_foot/R_toe
+        weight: 1
+      - path: joints/hip/upperhip
+        weight: 1
+      - path: joints/hip/upperhip/spine1
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm/L_shoulder
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm/L_shoulder/L_helper1
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm/L_shoulder/L_helper1/L_helper2
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm/L_shoulder/L_helper1/L_helper2/L_elbow
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm/L_shoulder/L_helper1/L_helper2/L_elbow/L_forearm
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm/L_shoulder/L_helper1/L_helper2/L_elbow/L_forearm/L_wrist
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm/L_shoulder/L_helper1/L_helper2/L_elbow/L_forearm/L_wrist/L_hand
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm/L_shoulder/L_helper1/L_helper2/L_elbow/L_forearm/L_wrist/L_hand/L_hand_1
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm/L_shoulder/L_helper1/L_helper2/L_elbow/L_forearm/L_wrist/L_hand/L_hand_1/L_hand_2
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm/L_shoulder/L_helper1/L_helper2/L_elbow/L_forearm/L_wrist/L_hand/L_thumb1
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/L_arm/L_shoulder/L_helper1/L_helper2/L_elbow/L_forearm/L_wrist/L_hand/L_thumb1/L_thumb2
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/neck1
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/neck1/neck2
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/neck1/neck2/head 1
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm/R_shoulder
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm/R_shoulder/R_helper1
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm/R_shoulder/R_helper1/R_helper2
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm/R_shoulder/R_helper1/R_helper2/R_elbow
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm/R_shoulder/R_helper1/R_helper2/R_elbow/R_forearm
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm/R_shoulder/R_helper1/R_helper2/R_elbow/R_forearm/R_wrist
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm/R_shoulder/R_helper1/R_helper2/R_elbow/R_forearm/R_wrist/R_hand
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm/R_shoulder/R_helper1/R_helper2/R_elbow/R_forearm/R_wrist/R_hand/R_hand_1
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm/R_shoulder/R_helper1/R_helper2/R_elbow/R_forearm/R_wrist/R_hand/R_hand_1/R_hand_2
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm/R_shoulder/R_helper1/R_helper2/R_elbow/R_forearm/R_wrist/R_hand/R_thumb1
+        weight: 1
+      - path: joints/hip/upperhip/spine1/spine2/spine3/spine4/R_arm/R_shoulder/R_helper1/R_helper2/R_elbow/R_forearm/R_wrist/R_hand/R_thumb1/R_thumb2
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

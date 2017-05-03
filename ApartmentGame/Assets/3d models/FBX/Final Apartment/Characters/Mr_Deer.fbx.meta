@@ -1,0 +1,178 @@
+fileFormatVersion: 2
+guid: 7d12c47acb3ef3c41b07b30b5d818032
+timeCreated: 1488646499
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: antlers
+    100002: body_mesh
+    100004: glasses
+    100006: //RootNode
+    100008: tail
+    100010: Head
+    100012: hip
+    100014: joint1
+    100016: joint2
+    100018: joints
+    100020: L_arm
+    100022: L_ear_1
+    100024: L_ear_2
+    100026: L_ear_2 1
+    100028: L_ear_3
+    100030: L_elbow
+    100032: L_foot
+    100034: L_forearm
+    100036: L_hand
+    100038: L_knee
+    100040: L_leg
+    100042: L_shoulder
+    100044: L_wrist
+    100046: lower_hip
+    100048: mr_deer_geo
+    100050: neck_1
+    100052: Neck_2
+    100054: Nose
+    100056: R_arm
+    100058: R_elbow
+    100060: R_foot
+    100062: R_forearm
+    100064: R_hand
+    100066: R_knee
+    100068: R_leg
+    100070: R_shoulder
+    100072: R_wrist
+    100074: Snout
+    100076: Spine_1
+    100078: Spine_2
+    100080: Spine_3
+    100082: Spine_4
+    100084: upper_hip
+    400000: antlers
+    400002: body_mesh
+    400004: glasses
+    400006: //RootNode
+    400008: tail
+    400010: Head
+    400012: hip
+    400014: joint1
+    400016: joint2
+    400018: joints
+    400020: L_arm
+    400022: L_ear_1
+    400024: L_ear_2
+    400026: L_ear_2 1
+    400028: L_ear_3
+    400030: L_elbow
+    400032: L_foot
+    400034: L_forearm
+    400036: L_hand
+    400038: L_knee
+    400040: L_leg
+    400042: L_shoulder
+    400044: L_wrist
+    400046: lower_hip
+    400048: mr_deer_geo
+    400050: neck_1
+    400052: Neck_2
+    400054: Nose
+    400056: R_arm
+    400058: R_elbow
+    400060: R_foot
+    400062: R_forearm
+    400064: R_hand
+    400066: R_knee
+    400068: R_leg
+    400070: R_shoulder
+    400072: R_wrist
+    400074: Snout
+    400076: Spine_1
+    400078: Spine_2
+    400080: Spine_3
+    400082: Spine_4
+    400084: upper_hip
+    2300000: antlers
+    2300002: body_mesh
+    2300004: glasses
+    2300006: tail
+    3300000: antlers
+    3300002: body_mesh
+    3300004: glasses
+    3300006: tail
+    4300000: body_mesh
+    4300002: glasses
+    4300004: tail
+    4300006: antlers
+    9500000: //RootNode
+    13700000: antlers
+    13700002: body_mesh
+    13700004: glasses
+    13700006: tail
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

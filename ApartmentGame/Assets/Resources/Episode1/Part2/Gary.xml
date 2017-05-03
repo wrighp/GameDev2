@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Dialogue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <_nodes>
+    <Node>
+      <_ID>0</_ID>
+      <_text>Sigh… don’t have rent… \nThose jerks dug into my savings and spent it all on pizza last night. \nI’m so sick of them… </_text>
+      <_name>Gary</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>1</_ID>
+      <_text>And that Sasuke too… telling me to “back off” Ms Teacup… \nWho does he think he is, anyway?</_text>
+      <_name>Gary</_name>
+      <_reset>2</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>2</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    <Node>
+      <_ID>2</_ID>
+      <_text>I hate them...</_text>
+      <_name>Gary</_name>
+      <_reset>2</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>-1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+      <_accomplish>GaryRent</_accomplish>
+    </Node>
+  </_nodes>
+  <_next>0</_next>
+</Dialogue>

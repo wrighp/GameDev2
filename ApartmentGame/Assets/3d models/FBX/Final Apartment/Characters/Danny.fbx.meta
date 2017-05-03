@@ -1,0 +1,193 @@
+fileFormatVersion: 2
+guid: 3f6dcb8e46a89481398e927d3aa0db2a
+timeCreated: 1488394518
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: backpack_geo
+    100002: //RootNode
+    100004: danny_head_geo
+    100006: work_clothes
+    100008: Danny
+    100010: body_geo
+    100012: danny_body_geo
+    100014: head
+    100016: hip
+    100018: joints
+    100020: L_ankle
+    100022: L_arm
+    100024: L_elbow
+    100026: L_foot
+    100028: L_forearm
+    100030: L_hand
+    100032: L_hand1
+    100034: L_hand2
+    100036: L_knee
+    100038: L_leg
+    100040: L_shoulder
+    100042: L_thumb2
+    100044: L_thumb_1
+    100046: L_toe
+    100048: L_wrist
+    100050: lower_hip
+    100052: neck_1
+    100054: neck_2
+    100056: R_ankle
+    100058: R_arm
+    100060: R_elbow
+    100062: R_foot
+    100064: R_forearm
+    100066: R_hand
+    100068: R_hand1
+    100070: R_hand2
+    100072: R_knee
+    100074: R_leg
+    100076: R_shoulder
+    100078: R_thumb2
+    100080: R_thumb_1
+    100082: R_toe
+    100084: R_wrist
+    100086: spine_1
+    100088: spine_2
+    100090: spine_3
+    100092: spine_4
+    100094: upperhip
+    100096: shell
+    400000: backpack_geo
+    400002: //RootNode
+    400004: danny_head_geo
+    400006: work_clothes
+    400008: Danny
+    400010: body_geo
+    400012: danny_body_geo
+    400014: head
+    400016: hip
+    400018: joints
+    400020: L_ankle
+    400022: L_arm
+    400024: L_elbow
+    400026: L_foot
+    400028: L_forearm
+    400030: L_hand
+    400032: L_hand1
+    400034: L_hand2
+    400036: L_knee
+    400038: L_leg
+    400040: L_shoulder
+    400042: L_thumb2
+    400044: L_thumb_1
+    400046: L_toe
+    400048: L_wrist
+    400050: lower_hip
+    400052: neck_1
+    400054: neck_2
+    400056: R_ankle
+    400058: R_arm
+    400060: R_elbow
+    400062: R_foot
+    400064: R_forearm
+    400066: R_hand
+    400068: R_hand1
+    400070: R_hand2
+    400072: R_knee
+    400074: R_leg
+    400076: R_shoulder
+    400078: R_thumb2
+    400080: R_thumb_1
+    400082: R_toe
+    400084: R_wrist
+    400086: spine_1
+    400088: spine_2
+    400090: spine_3
+    400092: spine_4
+    400094: upperhip
+    400096: shell
+    2300000: backpack_geo
+    2300002: danny_head_geo
+    2300004: work_clothes
+    2300006: body_geo
+    2300008: shell
+    3300000: backpack_geo
+    3300002: danny_head_geo
+    3300004: work_clothes
+    3300006: body_geo
+    3300008: shell
+    4300000: danny_head_geo
+    4300002: work_clothes
+    4300004: backpack_geo
+    4300006: body_geo
+    4300008: shell
+    9500000: //RootNode
+    13700000: backpack_geo
+    13700002: body_geo
+    13700004: danny_head_geo
+    13700006: work_clothes
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

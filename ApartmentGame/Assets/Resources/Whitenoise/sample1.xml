@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Dialogue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <_nodes>
+    <Node>
+      <_ID>0</_ID>
+      <_text>A̝̝r̼̘̪̯̠̳̀e͇̝̭̣͙͍̫ ̟̹y̦̤̟̼̠͔o̟̠̼̠̘u҉̯ a̜̤̜l̷͚̬̙r̡͙̝̲͈̞̺i̙̕g̯̳͕ͅh̯͉̠̘̜͖t̛ ͈̦̳̫͔n͎̣͇̱͔͕ͅu͢l̡lͅptr̻?́</_text>
+      <_name>D̳̫͟4̸d̝̝̘̮͖̩͍͠d̡̝̟̼̼͎i͟e͔̣</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>1</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+	  <Node>
+      <_ID>1</_ID>
+      <_text>͙͍̫ ̟̹y̦̤̟�A̝̝r̀�̝̝̘̮�̠̼̠̘u҉̯ a̜̤̜l̷͚̬̙r̡͙̝̲͈̞̺i̙̕g̯�̩ͼ̘̪̯̠̳e͇̝̭̣�̠͔o̟̳͕ͅh̯͉̠̘̜͖t̛</_text>
+      <_name>D̳̫͟4̸d͠�d̡̝̟̼̼͎i͟e͔̣</_name>
+      <_reset>0</_reset>
+      <_options>
+        <dialogueOption>
+          <_text />
+          <_dest>0</_dest>
+        </dialogueOption>
+      </_options>
+      <_precalls />
+      <_postcalls />
+    </Node>
+    </Node>
+  </_nodes>
+  <_next>0</_next>
+</Dialogue>
